@@ -1,471 +1,764 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NexEV - Comprehensive electric vehicle solutions including trading, manufacturing, after-sales service, training, and technical support for e-scooters, e-bikes, and three-wheelers.">
-  <meta name="keywords" content="electric vehicles, EV parts, batteries, BMS, motors, controllers, chargers, e-bikes, e-scooters, three-wheelers, training, service centers">
-  <title>NexEV - Complete Electric Vehicle Ecosystem Solutions</title>
-  
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexEV – Engineering the Next Evolution of Practical Mobility</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="NexEV is an Indian electric mobility company engineering practical, scalable EV solutions — from stand-on scooters to smart mobility systems. Dealer, investor, and partner opportunities available." />
+  <meta name="keywords" content="NexEV, electric scooter India, EV manufacturer, electric mobility, 250W scooter, EV dealer India, electric vehicle startup India" />
+  <meta name="author" content="NexEV" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="NexEV – Practical Electric Mobility" />
+  <meta property="og:description" content="Engineering the Next Evolution of Practical Mobility. Made in India." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nexev.in" />
+  <link rel="canonical" href="https://nexev.in" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <nav class="navbar">
-        <a href="index.html" class="logo">
-		  <div class="logo-container">
-			<img src="assets/images/logo.png" alt="NexEV Logo">
-			<span class="logo-slogan">Driven by Electric Future</span>
-		  </div>
-		</a>
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="pages/about.html" class="nav-link">About</a></li>
-          <li><a href="pages/services.html" class="nav-link">Services</a></li>
-          <li><a href="pages/products.html" class="nav-link">Products</a></li>
-          <li><a href="pages/training.html" class="nav-link">Training</a></li>
-          <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
-        </ul>
-        <button class="mobile-toggle">
-          <i class="fas fa-bars"></i>
-        </button>
-      </nav>
-    </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>Complete Electric Vehicle Ecosystem Solutions</h1>
-          <p>From trading and manufacturing to comprehensive after-sales service, training, and technical support for electric scooters, e-bikes, and three-wheelers across India.</p>
-          <div class="hero-buttons">
-            <a href="pages/products.html" class="btn btn-primary btn-large">Explore Products</a>
-            <a href="pages/services.html" class="btn btn-outline btn-large">Our Services</a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <div style="background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%); border-radius: 16px; padding: 60px; text-align: center;">
-            <i class="fas fa-charging-station" style="font-size: 120px; color: #1E40AF;"></i>
-            <p style="margin-top: 20px; color: #1E40AF; font-weight: 600; font-size: 18px;">End-to-End EV Solutions</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- ===================== NAVBAR ===================== -->
+<header class="navbar" id="navbar" role="banner">
+  <div class="nav-container">
 
-  <!-- Core Business Areas -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Our Core Business Activities</h2>
-        <p class="section-subtitle">Comprehensive solutions across the entire electric vehicle value chain</p>
+    <!-- Logo: tries assets/logo/nexev-logo.png, falls back to text logo -->
+    <a href="#home" class="nav-logo-wrap" aria-label="NexEV Home">
+      <img id="navLogoImg" src="assets/logo/nexev-logo.png" alt="NexEV"
+           class="nav-logo-img"
+           onerror="this.style.display='none';document.getElementById('navLogoText').style.display='flex';" />
+      <span class="nav-logo-text" id="navLogoText" style="display:none;">
+        <span class="logo-nex">nex</span><span class="logo-ev">EV</span>
+        <span class="logo-streak" aria-hidden="true"></span>
+      </span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="nav-links" role="navigation" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#technology">Technology</a>
+      <a href="#opportunities">Opportunities</a>
+      <a href="#enquiry" class="nav-cta">Enquire Now</a>
+    </nav>
+
+    <!-- Hamburger -->
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu (inside header so it positions relative to nav bar) -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#technology">Technology</a>
+    <a href="#opportunities">Opportunities</a>
+    <a href="#enquiry" class="mobile-cta">Enquire Now</a>
+  </div>
+</header>
+
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="home" aria-label="Hero section">
+  <div class="hero-container">
+
+    <div class="hero-content fade-in">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Made in India · Electric Mobility
       </div>
-      
-      <div class="grid-3">
-        <div class="card service-card">
-          <div class="card-icon">
-            <i class="fas fa-globe"></i>
-          </div>
-          <h3 class="card-title">Trading & Distribution</h3>
-          <p class="card-text">Complete trading, importing, exporting, and distribution of electric vehicles and components including batteries, BMS, motors, controllers, chargers, inverters, wiring harnesses, and electronic modules.</p>
-          <a href="pages/services.html#trading" class="btn btn-outline mt-2">Learn More</a>
+
+      <h1 class="hero-headline">
+        Engineering the<br/>
+        <span class="headline-highlight">Next Evolution</span><br/>
+        of Practical Mobility
+      </h1>
+
+      <p class="hero-sub">
+        NexEV builds engineered electric mobility solutions for real-world Indian conditions — starting with stand-on scooters and scaling toward a fully integrated EV ecosystem.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-green">View Products</a>
+        <a href="/cdn-cgi/l/email-protection#c6a3a8b7b3afb4afa3b586a8a3bea3b0e8afa8f9b5b3a4aca3a5b2fb88a3be8390e3f4f683a8b7b3afb4bfe0a4a9a2bffb8ea3aaaaa9e3f4f688a3be8390e3f4f692a3a7abe3f485e3f687e3f6878fe3f4f6a7abe3f4f6afa8b2a3b4a3b5b2a3a2e3f4f6afa8e3f4f6aaa3a7b4a8afa8a1e3f4f6aba9b4a3e3f4f6a7a4a9b3b2e3f4f688a3be8390e8e3f687e3f68788a7aba3e3f587e3f4f6e3f68785a9abb6a7a8bfe3f587e3f4f6e3f68796aea9a8a3e3f587e3f4f6e3f68783a8b7b3afb4bfe3f4f692bfb6a3e3f587e3f4f6e3f6878ba3b5b5a7a1a3e3f587e3f4f6" class="btn btn-blue">Enquire Now</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">250W</span>
+          <span class="stat-label">Flagship Motor</span>
         </div>
-        
-        <div class="card service-card">
-          <div class="card-icon">
-            <i class="fas fa-industry"></i>
-          </div>
-          <h3 class="card-title">Manufacturing & Assembly</h3>
-          <p class="card-text">Assembly, manufacturing, testing, inspection, refurbishment, and quality control of EVs under our brand or for OEMs. Contract manufacturing and technical support services available.</p>
-          <a href="pages/services.html#manufacturing" class="btn btn-outline mt-2">Learn More</a>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">Phase 1</span>
+          <span class="stat-label">Now Active</span>
         </div>
-        
-        <div class="card service-card">
-          <div class="card-icon">
-            <i class="fas fa-tools"></i>
-          </div>
-          <h3 class="card-title">After-Sales Service</h3>
-          <p class="card-text">Comprehensive network of service centers, workshops, warehouses, and spare-parts hubs providing repair, maintenance, diagnostics, warranty support, and technical assistance.</p>
-          <a href="pages/services.html#aftersales" class="btn btn-outline mt-2">Learn More</a>
-        </div>
-        
-        <div class="card service-card">
-          <div class="card-icon">
-            <i class="fas fa-graduation-cap"></i>
-          </div>
-          <h3 class="card-title">Training & Education</h3>
-          <p class="card-text">Professional certification programs for technicians, mechanics, dealers, and service partners in EV installation, diagnostics, repair, servicing, and safety handling.</p>
-          <a href="pages/training.html" class="btn btn-outline mt-2">Training Programs</a>
-        </div>
-        
-        <div class="card service-card">
-          <div class="card-icon">
-            <i class="fas fa-users-cog"></i>
-          </div>
-          <h3 class="card-title">Consultancy Services</h3>
-          <p class="card-text">Technical advisory, system integration, installation support, troubleshooting, fleet maintenance, and operational guidance for dealers, distributors, and fleet operators.</p>
-          <a href="pages/services.html#consultancy" class="btn btn-outline mt-2">Learn More</a>
-        </div>
-        
-        <div class="card service-card">
-          <div class="card-icon">
-            <i class="fas fa-network-wired"></i>
-          </div>
-          <h3 class="card-title">Ecosystem Support</h3>
-          <p class="card-text">Strengthening the entire EV ecosystem through infrastructure development, dealer support, technical partnerships, and comprehensive after-sales capabilities.</p>
-          <a href="pages/services.html" class="btn btn-outline mt-2">Learn More</a>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">India</span>
+          <span class="stat-label">Based &amp; Built</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Product Categories -->
-  <section class="section bg-light">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Complete Product Range</h2>
-        <p class="section-subtitle">Premium components and complete vehicles for electric mobility</p>
+    <!-- Hero product visual -->
+    <div class="hero-visual fade-in-delay">
+      <div class="hero-image-frame">
+        <div class="product-tag-float">Gen 1 · 2026</div>
+        <div class="product-visual-wrap img-fallback-wrap img-fallback--scooter">
+          <img src="assets/products/scooter-250w.png"
+               alt="NexEV 250W Stand-On Electric Scooter" class="product-real-img"
+               onerror="this.closest('.img-fallback-wrap').classList.add('img-error');" />
+          <div class="css-fallback" aria-hidden="true">
+            <div class="fallback-label">nex<strong>EV</strong> · 250W Stand-On</div>
+          </div>
+        </div>
+        <div class="frame-glow" aria-hidden="true"></div>
       </div>
-      
-      <div class="grid-4">
-        <div class="card">
-          <div class="card-icon">
-            <i class="fas fa-battery-full"></i>
-          </div>
-          <h3 class="card-title">Batteries & BMS</h3>
-          <p class="card-text">High-capacity lithium-ion batteries with advanced Battery Management Systems for optimal performance and safety.</p>
+      <p class="visual-caption">250W Stand-On Electric Scooter · Gen 1</p>
+    </div>
+
+  </div>
+  <div class="hero-bottom-accent" aria-hidden="true"></div>
+</section>
+
+
+<!-- ===================== ABOUT ===================== -->
+<section class="about section-pad" id="about">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-eyebrow">Who We Are</span>
+      <h2 class="section-title">Built on Engineering.<br/>Driven by Purpose.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-card fade-in">
+        <div class="card-icon card-icon--blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </div>
-        
-        <div class="card">
-          <div class="card-icon">
-            <i class="fas fa-cog"></i>
-          </div>
-          <h3 class="card-title">Motors & Controllers</h3>
-          <p class="card-text">Efficient BLDC motors and smart controllers with regenerative braking and multiple riding modes.</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">
-            <i class="fas fa-plug"></i>
-          </div>
-          <h3 class="card-title">Chargers & Inverters</h3>
-          <p class="card-text">Fast-charging solutions and power inverters with safety features and auto-cutoff protection.</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">
-            <i class="fas fa-bicycle"></i>
-          </div>
-          <h3 class="card-title">Complete Vehicles</h3>
-          <p class="card-text">E-scooters, e-bikes, and electric three-wheelers ready for immediate deployment with full warranty.</p>
-        </div>
+        <h3>Vision</h3>
+        <p>To become India's most trusted engineering-led electric mobility company — building practical, scalable EV solutions that work in real-world conditions across every tier of the market.</p>
       </div>
-      
-      <div class="text-center mt-4">
-        <a href="pages/products.html" class="btn btn-secondary btn-large">View Full Catalog</a>
+      <div class="about-card fade-in">
+        <div class="card-icon card-icon--green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Mission</h3>
+        <p>Design, assemble, and scale electric mobility products that prioritise performance-per-rupee, repairability, and local supply chain depth — starting from stand-on scooters and expanding systematically.</p>
+      </div>
+      <div class="about-card fade-in">
+        <div class="card-icon card-icon--yellow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Engineering Approach</h3>
+        <p>Every NexEV product begins with a systems engineering brief. We validate components before assembling, source strategically, and build internal IP in battery management, motor control, and chassis integration — phase by phase.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Training & Development -->
-  <section class="section">
-    <div class="container">
-      <div class="grid-2" style="gap: 60px; align-items: center;">
-        <div>
-          <h2 style="color: #1E40AF;">Professional Training & Skill Development</h2>
-          <p>Comprehensive certification programs and workshops for building expertise in electric vehicle technology, maintenance, and service operations.</p>
-          
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-certificate"></i>
-            </div>
-            <div>
-              <h4>Technician Certification</h4>
-              <p>Industry-recognized certification for EV installation, diagnostics, and repair</p>
-            </div>
-          </div>
-          
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-chalkboard-teacher"></i>
-            </div>
-            <div>
-              <h4>Dealer Training Programs</h4>
-              <p>Comprehensive training for showroom staff and service partners</p>
+
+<!-- ===================== PRODUCTS ===================== -->
+<section class="products section-pad section-alt" id="products">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-eyebrow">Product Line</span>
+      <h2 class="section-title">Engineered for India.<br/>Designed to Scale.</h2>
+      <p class="section-sub">Every product in the NexEV line is validated for real-world Indian operating conditions — load, road surface, temperature, and serviceability.</p>
+    </div>
+
+    <!-- Featured Product -->
+    <div class="product-featured fade-in">
+      <div class="product-featured-badge">Currently in Engineering & Prototype Development</div>
+      <div class="product-featured-layout">
+
+        <div class="product-featured-visual">
+          <div class="product-3d-frame img-fallback-wrap img-fallback--scooter">
+            <img src="assets/products/scooter-250w.png"
+                 alt="NexEV 250W Stand-On Electric Scooter" class="product-real-img"
+                 onerror="this.closest('.img-fallback-wrap').classList.add('img-error');" />
+            <div class="css-fallback" aria-hidden="true">
+              <div class="fallback-label">nex<strong>EV</strong> · 250W Stand-On</div>
             </div>
           </div>
-          
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-laptop"></i>
-            </div>
-            <div>
-              <h4>Online & Physical Training</h4>
-              <p>Flexible learning through physical centers, mobile units, and online platforms</p>
-            </div>
-          </div>
-          
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
-            <div>
-              <h4>Safety Handling</h4>
-              <p>Critical training on safe handling of batteries and charging systems</p>
-            </div>
-          </div>
-          
-          <a href="pages/training.html" class="btn btn-primary mt-3">Explore Training Programs</a>
+          <div class="product-tag-float">Gen 1 · 2026</div>
         </div>
-        <div>
-          <div style="background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%); border-radius: 16px; padding: 80px 40px; text-align: center;">
-            <i class="fas fa-user-graduate" style="font-size: 100px; color: #1E40AF;"></i>
-            <h3 style="color: #1E40AF; margin-top: 20px;">Build EV Expertise</h3>
+
+        <div class="product-featured-info">
+          <h3 class="product-name">250W Stand-On Electric Scooter</h3>
+          <p class="product-tagline">The workhorse. Built for last-mile, campus, and warehouse mobility.</p>
+          <div class="spec-grid">
+            <div class="spec-item"><span class="spec-label">Motor</span><span class="spec-val">250W BLDC Hub</span></div>
+            <div class="spec-item"><span class="spec-label">Battery</span><span class="spec-val">36V / 48V Li-Ion</span></div>
+            <div class="spec-item"><span class="spec-label">Range</span><span class="spec-val">25–40 km / charge</span></div>
+            <div class="spec-item"><span class="spec-label">Top Speed</span><span class="spec-val">25 km/h (governed)</span></div>
+            <div class="spec-item"><span class="spec-label">Deck Load</span><span class="spec-val">120 kg rated</span></div>
+            <div class="spec-item"><span class="spec-label">Charge Time</span><span class="spec-val">4–6 hours</span></div>
+            <div class="spec-item"><span class="spec-label">Brakes</span><span class="spec-val">Dual disc mechanical</span></div>
+            <div class="spec-item"><span class="spec-label">Assembly</span><span class="spec-val">India (local)</span></div>
           </div>
+          <div class="product-use-cases">
+            <span class="use-case">Campus</span>
+            <span class="use-case">Warehouse</span>
+            <span class="use-case">Last-Mile</span>
+            <span class="use-case">Hospitality</span>
+          </div>
+          <a href="/cdn-cgi/l/email-protection#37525946425e455e52447759524f5241195e59084442555d5254430a67455853425443120507725946425e454e120507127205120f07120e041205070502076012050764435659531a785912050764545858435245115558534e0a7f525b5b5812050779524f72611205076352565a1205741207761207767e120507565a1205075e5943524552444352531205075e59120507435f521205070502076012050764435659531a7859120507725b525443455e54120507645458584352451912077612077679565a5212047612050712077674585a4756594e120476120507120776675f58595212047612050712077666425659435e434e120507655246425e455253120476120507120776745e434e1205717b585456435e58591204761205071207767a524444565052120476120507" class="btn btn-green btn-product">Enquire About This Product &rarr;</a>
         </div>
+
       </div>
     </div>
-  </section>
 
-  <!-- Service Infrastructure -->
-  <section class="section bg-blue-light">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Comprehensive Service Infrastructure</h2>
-        <p class="section-subtitle">Pan-India network of service centers and support facilities</p>
-      </div>
-      
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-icon">
-            <i class="fas fa-warehouse"></i>
-          </div>
-          <h4>Service Centers</h4>
-          <p style="font-size: 14px;">Strategically located workshops for repair, maintenance, and diagnostics</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">
-            <i class="fas fa-box"></i>
-          </div>
-          <h4>Spare Parts Hubs</h4>
-          <p style="font-size: 14px;">Dedicated warehouses ensuring quick availability of genuine parts</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">
-            <i class="fas fa-headset"></i>
-          </div>
-          <h4>Technical Support</h4>
-          <p style="font-size: 14px;">24/7 assistance for warranty support and troubleshooting</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">
-            <i class="fas fa-truck"></i>
-          </div>
-          <h4>Distribution Centers</h4>
-          <p style="font-size: 14px;">Efficient logistics network for timely delivery nationwide</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h4>Mobile Service Units</h4>
-          <p style="font-size: 14px;">On-site service and support for fleet operators</p>
-        </div>
-        
-        <div class="card">
-          <div class="card-icon">
-            <i class="fas fa-clipboard-check"></i>
-          </div>
-          <h4>Quality Assurance</h4>
-          <p style="font-size: 14px;">Rigorous testing and inspection at every service point</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Roadmap -->
+    <div class="products-coming fade-in">
+      <h3 class="coming-title">Roadmap Products</h3>
+      <div class="coming-grid">
 
-  <!-- Stats Section -->
-  <!--<section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <h3 data-count="1000">0</h3>
-          <p>EV Components</p>
-        </div>
-        <div class="stat-item">
-          <h3 data-count="50">0</h3>
-          <p>Service Centers</p>
-        </div>
-        <div class="stat-item">
-          <h3 data-count="500">0</h3>
-          <p>Trained Technicians</p>
-        </div>
-        <div class="stat-item">
-          <h3 data-count="2000">0</h3>
-          <p>Happy Customers</p>
-        </div>
-      </div>
-    </div>
-  </section>-->
-
-  <!-- Why Choose Us -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Why Choose NexEV</h2>
-        <p class="section-subtitle">Your comprehensive partner in electric mobility</p>
-      </div>
-      
-      <div class="grid-2">
-        <div>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-tasks"></i>
-            </div>
-            <div>
-              <h4>End-to-End Solutions</h4>
-              <p>Complete ecosystem support from product supply to after-sales service and training</p>
-            </div>
-          </div>
-          
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
-            <div>
-              <h4>Quality Certified</h4>
-              <p>All products meet international standards with comprehensive testing and warranties</p>
-            </div>
-          </div>
-          
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-hands-helping"></i>
-            </div>
-            <div>
-              <h4>Expert Support</h4>
-              <p>Technical specialists providing consultation, training, and ongoing assistance</p>
-            </div>
-          </div>
-        </div>
-        
-        <div>
-		
-		  <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div>
-              <h4>Professional Training</h4>
-              <p>Certification programs building skilled workforce for the EV industry</p>
-            </div>
-          </div>
-          <!--<div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-map-marked-alt"></i>
-            </div>
-            <div>
-              <h4>Pan-India Presence</h4>
-              <p>Nationwide network of service centers, warehouses, and distribution points</p>
-            </div>
-          </div>
-          
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div>
-              <h4>Professional Training</h4>
-              <p>Certification programs building skilled workforce for the EV industry</p>
-            </div>
-          </div>
-          
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-handshake"></i>
-            </div>
-            <div>
-              <h4>Trusted Partnerships</h4>
-              <p>Collaboration with manufacturers, dealers, and government skill-development initiatives</p>
+        <div class="coming-card">
+          <div class="coming-badge">Phase 2</div>
+          <!--<div class="coming-img-wrap img-fallback-wrap img-fallback--urban">
+            <img src="assets/products/scooter-urban.png" alt="Urban Electric Scooter"
+                 onerror="this.closest('.img-fallback-wrap').classList.add('img-error');" />
+            <div class="css-fallback" aria-hidden="true">
+              <div class="fallback-label">Urban EV · Phase 2</div>
             </div>
           </div>-->
+          <h4>Small Urban Electric Scooters</h4>
+          <p>Seated 2-wheeler scooters optimised for Indian urban terrain — lightweight, practical, serviceable.</p>
+          <span class="coming-timeline">Target: 2026–27</span>
+          <ul class="product-status-list">
+            <li class="status-item status-engineering">
+              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Currently in Engineering &amp; Prototype Development
+            </li>
+            <li class="status-item status-dealers">
+              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Seeking Dealers &amp; Strategic Partners
+            </li>
+            <li class="status-item status-registration">
+              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Early Interest Registration Open
+            </li>
+          </ul>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <h2>Ready to Transform Your EV Business?</h2>
-      <p>Partner with NexEV for comprehensive solutions covering products, services, training, and support</p>
-      <div class="hero-buttons" style="justify-content: center;">
-        <a href="pages/contact.html" class="btn btn-primary btn-large">Get Started Today</a>
-        <a href="pages/products.html" class="btn btn-outline btn-large" style="color: white; border-color: white;">View Products</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-		  <h4>About NexEV
-		  </h4>
-          <p>Complete electric vehicle ecosystem solutions including trading, manufacturing, service infrastructure, professional training, and technical support for e-scooters, e-bikes, and three-wheelers.</p>
-          <!--<div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <div class="coming-card">
+          <div class="coming-badge">Phase 3</div>
+          <!--<div class="coming-img-wrap img-fallback-wrap img-fallback--appliance">
+            <img src="assets/products/appliance.png" alt="Smart Engineered Appliances"
+                 onerror="this.closest('.img-fallback-wrap').classList.add('img-error');" />
+            <div class="css-fallback" aria-hidden="true">
+              <div class="fallback-label">Smart Appliance · Phase 3</div>
+            </div>
           </div>-->
+          <h4>Smart Engineered Appliances</h4>
+          <p>Intelligent cooking systems and robotic kitchen assistants — applying EV-grade electronics to home automation.</p>
+          <span class="coming-timeline">Target: 2027–28</span>
+          <ul class="product-status-list">
+            <li class="status-item status-engineering">
+              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Currently in Engineering &amp; Prototype Development
+            </li>
+            <li class="status-item status-dealers">
+              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Seeking Dealers &amp; Strategic Partners
+            </li>
+            <li class="status-item status-registration">
+              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Early Interest Registration Open
+            </li>
+          </ul>
         </div>
-        
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <a href="pages/about.html">About Us</a>
-          <a href="pages/services.html">Services</a>
-          <a href="pages/products.html">Products</a>
-          <a href="pages/training.html">Training</a>
-          <a href="pages/careers.html">Careers</a>
+
+        <div class="coming-card">
+          <div class="coming-badge">Phase 4</div>
+          <!--<div class="coming-img-wrap img-fallback-wrap img-fallback--robotics">
+            <img src="assets/products/robotics.png" alt="Robotics Platform"
+                 onerror="this.closest('.img-fallback-wrap').classList.add('img-error');" />
+            <div class="css-fallback" aria-hidden="true">
+              <div class="fallback-label">Robotics · Phase 4</div>
+            </div>
+          </div> -->
+          <h4>Robotics &amp; Autonomous Systems</h4>
+          <p>Leveraging BMS and motor control IP to develop lightweight robotics for industrial and logistics applications.</p>
+          <span class="coming-timeline">Target: 2028+</span>
+          <ul class="product-status-list">
+            <li class="status-item status-engineering">
+              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Currently in Engineering &amp; Prototype Development
+            </li>
+            <li class="status-item status-dealers">
+              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Seeking Dealers &amp; Strategic Partners
+            </li>
+            <li class="status-item status-registration">
+              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Early Interest Registration Open
+            </li>
+          </ul>
         </div>
-        
-        <div class="footer-section">
-          <h4>Services</h4>
-          <a href="pages/services.html#trading">Trading & Distribution</a>
-          <a href="pages/services.html#manufacturing">Manufacturing</a>
-          <a href="pages/services.html#aftersales">After-Sales Service</a>
-          <a href="pages/training.html">Professional Training</a>
-          <a href="pages/services.html#consultancy">Consultancy</a>
-        </div>
-        
-        <div class="footer-section">
-          <h4>Contact Info</h4>
-          <p><i class="fas fa-map-marker-alt"></i> Chinthamani, Chikkaballpur, Karnataka-563125</p>
-          <p><i class="fas fa-phone"></i> +91 9110600369</p>
-          <p><i class="fas fa-envelope"></i>info@nexev.com</p>
-          <p><i class="fas fa-clock"></i> Mon-Sat: 9AM - 6PM</p>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2025 NexEV. All rights reserved. | <a href="pages/privacy-policy.html">Privacy Policy</a> | <a href="pages/terms-of-service.html">Terms of Service</a></p>
+
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="assets/js/main.js"></script>
+
+<!-- ===================== TECHNOLOGY ===================== -->
+<section class="technology section-pad" id="technology">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-eyebrow">Engineering Roadmap</span>
+      <h2 class="section-title">Phased. Deliberate.<br/>Built to Last.</h2>
+      <p class="section-sub">We don't try to build everything at once. Each phase generates revenue, reduces risk, and deepens technical capability before the next step.</p>
+    </div>
+    <div class="roadmap fade-in">
+
+      <div class="roadmap-item roadmap-active">
+        <div class="roadmap-marker"><span class="roadmap-num">01</span><div class="roadmap-line"></div></div>
+        <div class="roadmap-body">
+          <div class="roadmap-phase-tag active-tag">Active · Phase 1</div>
+          <h3>Local Assembly &amp; Validation</h3>
+          <p>Sourcing validated components and assembling at our local facility. Focus: quality control, field-testing in real Indian conditions, and building dealer relationships.</p>
+          <div class="roadmap-metrics"><span>CKD assembly</span><span>QC process</span><span>Field validation</span><span>Dealer network</span></div>
+        </div>
+      </div>
+
+      <div class="roadmap-item">
+        <div class="roadmap-marker"><span class="roadmap-num">02</span><div class="roadmap-line"></div></div>
+        <div class="roadmap-body">
+          <div class="roadmap-phase-tag">Phase 2 · 2025</div>
+          <h3>In-House Battery Pack Development</h3>
+          <p>Design and assemble custom Li-Ion battery packs locally. Reduces BOM cost by 15–25%, improves warranty serviceability, and creates proprietary IP in pack geometry and thermal management.</p>
+          <div class="roadmap-metrics"><span>Custom BMS</span><span>Cell sourcing</span><span>Thermal design</span><span>Cost reduction</span></div>
+        </div>
+      </div>
+
+      <div class="roadmap-item">
+        <div class="roadmap-marker"><span class="roadmap-num">03</span><div class="roadmap-line"></div></div>
+        <div class="roadmap-body">
+          <div class="roadmap-phase-tag">Phase 3 · 2026</div>
+          <h3>BMS &amp; Motor Controller Integration</h3>
+          <p>Develop proprietary BMS firmware and integrate with motor controller for smart regen braking, SOC tracking, and over-the-air diagnostics.</p>
+          <div class="roadmap-metrics"><span>Proprietary firmware</span><span>Regen braking</span><span>OTA diagnostics</span><span>SOC management</span></div>
+        </div>
+      </div>
+
+      <div class="roadmap-item">
+        <div class="roadmap-marker"><span class="roadmap-num">04</span></div>
+        <div class="roadmap-body">
+          <div class="roadmap-phase-tag">Phase 4 · 2027+</div>
+          <h3>Vertical Integration &amp; Product Expansion</h3>
+          <p>In-house frame fabrication, motor winding R&amp;D, and expansion into seated scooters and robotics. NexEV operates as a full-stack EV engineering company with defensible IP.</p>
+          <div class="roadmap-metrics"><span>Frame fabrication</span><span>Motor R&amp;D</span><span>Product expansion</span><span>Export readiness</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== OPPORTUNITIES ===================== -->
+<section class="opportunities section-pad section-alt" id="opportunities">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-eyebrow">Grow With NexEV</span>
+      <h2 class="section-title">Four Ways to<br/>Build With Us.</h2>
+      <p class="section-sub">NexEV is building its supply chain, distribution, and capital structure with long-term partners. We are selective, structured, and serious about who we grow with.</p>
+    </div>
+    <div class="opp-grid fade-in">
+
+      <div class="opp-card">
+        <div class="opp-num">01</div>
+        <div class="opp-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="26" height="18" rx="3"/><path d="M21 10V7a5 5 0 0 0-10 0v3"/><line x1="16" y1="17" x2="16" y2="20"/></svg></div>
+        <h3>Dealer Partner</h3>
+        <p>Authorised dealers get exclusive territory rights, product training, marketing support, and direct factory pricing.</p>
+        <ul class="opp-list"><li>Exclusive territory allocation</li><li>Demo unit support</li><li>Co-branded marketing</li><li>Direct supply chain</li></ul>
+        <a href="/cdn-cgi/l/email-protection#98fdf6e9edf1eaf1fdebd8f6fde0fdeeb6f1f6a7ebedfaf2fdfbeca5dcfdf9f4fdeabdaaa8c8f9eaecf6fdeaebf0f1e8bdaaa8ddf6e9edf1eae1bdaaa8bdddaabda0a8bda1abbdaaa8d6fde0ddcebefaf7fce1a5d0fdf4f4f7bdaaa8d6fde0ddcebdaaa8ccfdf9f5bdaadbbda8d9bda8d9d1bdaaa8f9f5bdaaa8f1f6ecfdeafdebecfdfcbdaaa8f1f6bdaaa8fafdfbf7f5f1f6ffbdaaa8f9f6bdaaa8f9edecf0f7eaf1ebfdfcbdaaa8fcfdf9f4fdeab6bda8d9bda8d9d6f9f5fdbdabd9bdaaa8bda8d9dbf7f5e8f9f6e1bdabd9bdaaa8bda8d9c8f0f7f6fdbdabd9bdaaa8bda8d9dbf1ece1bdaadecafdfff1f7f6bdabd9bdaaa8bda8d9dde0f1ebecf1f6ffbdaaa8daedebf1f6fdebebbdabd9bdaaa8bda8d9d5fdebebf9fffdbdabd9bdaaa8" class="opp-link">Apply as Dealer &rarr;</a>
+      </div>
+
+      <div class="opp-card opp-card--featured">
+        <div class="opp-num">02</div>
+        <div class="opp-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="13"/><path d="M16 8v8l5 3"/></svg></div>
+        <h3>Investor</h3>
+        <p>We are raising a seed round to scale production, fund battery R&amp;D, and expand dealer network to Tier 1 and Tier 2 cities.</p>
+        <ul class="opp-list"><li>Equity &amp; revenue share models</li><li>Milestone-based tranches</li><li>Transparent unit economics</li><li>Due diligence pack available</li></ul>
+        <a href="/cdn-cgi/l/email-protection#9bfef5eaeef2e9f2fee8dbf5fee3feedb5f2f5a4e8eef9f1fef8efa6d2f5edfee8eff4e9bea9abdef5eaeef2e9e2bea9abbedea9bea3abbea2a8bea9abd5fee3decdbdf9f4ffe2a6d3fef7f7f4bea9abd5fee3decdbea9abcffefaf6bea9d8beabdabeabdad2bea9abfaf6bea9abf2f5effee9fee8effeffbea9abf2f5bea9abf2f5edfee8eff6fef5efbea9abf4ebebf4e9efeef5f2eff2fee8bea9abecf2eff3bea9abd5fee3decdb5beabdabeabdad5faf6febea8dabea9abbeabdaddeef5ffbea9ddd4e9fcfaf5f2e8faeff2f4f5bea8dabea9abbeabdacbf3f4f5febea8dabea9abbeabdad2f5edfee8eff6fef5efbea9abc9faf5fcfebea8dabea9abbeabdad6fee8e8fafcfebea8dabea9ab" class="opp-link">Request Investor Brief &rarr;</a>
+      </div>
+
+      <div class="opp-card">
+        <div class="opp-num">03</div>
+        <div class="opp-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v14H4z"/><path d="M14 6h6v22h-6z"/><path d="M24 10h4v18h-4z"/></svg></div>
+        <h3>Component Supplier</h3>
+        <p>Building a robust local supply chain. If you supply motors, controllers, cells, frames, or electronics — we want to qualify you.</p>
+        <ul class="opp-list"><li>Long-term purchase agreements</li><li>Technical specification alignment</li><li>Quality audit process</li><li>Scalable order volumes</li></ul>
+        <a href="/cdn-cgi/l/email-protection#d9bcb7a8acb0abb0bcaa99b7bca1bcaff7b0b7e6aaacbbb3bcbaade48aaca9a9b5b0bcabfcebe98bbcbeb0aaadabb8adb0b6b7fcebe9fc9cebfce1e9fce0eafcebe997bca19c8fffbbb6bda0e491bcb5b5b6fcebe997bca19c8ffcebe98dbcb8b4fceb9afce998fce99890fcebe9aeb6acb5bdfcebe9b5b0b2bcfcebe9adb6fcebe9abbcbeb0aaadbcabfcebe9b8aafcebe9b8fcebe9bab6b4a9b6b7bcb7adfcebe9aaaca9a9b5b0bcabf7fce998fce99897b8b4bcfcea98fcebe9fce9989ab6b4a9b8b7a0fcea98fcebe9fce99889b1b6b7bcfcea98fcebe9fce9989ab6b4a9b6b7bcb7adaafcebe98aaca9a9b5b0bcbdfcea98fcebe9fce9989ab8a9b8bab0ada0fceb9f949688aafcea98fcebe9fce99894bcaaaab8bebcfcea98fcebe9" class="opp-link">Register as Supplier &rarr;</a>
+      </div>
+
+      <div class="opp-card">
+        <div class="opp-num">04</div>
+        <div class="opp-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="5"/><circle cx="22" cy="22" r="5"/><path d="M14.5 14.5l3 3"/></svg></div>
+        <h3>Strategic Partner</h3>
+        <p>Companies in logistics, campus management, hospitality, or manufacturing seeking custom EV fleet or co-development arrangements.</p>
+        <ul class="opp-list"><li>Fleet pricing &amp; SLA</li><li>Custom product development</li><li>White-label options</li><li>Joint go-to-market</li></ul>
+        <a href="/cdn-cgi/l/email-protection#c0a5aeb1b5a9b2a9a5b380aea5b8a5b6eea9aeffb3b5a2aaa5a3b4fd93b4b2a1b4a5a7a9a3e5f2f090a1b2b4aea5b2b3a8a9b0e5f2f085aeb1b5a9b2b9e5f2f0e585f2e5f8f0e5f9f3e5f2f08ea5b88596e6a2afa4b9fd88a5acacafe5f2f08ea5b88596e5f2f094a5a1ade5f283e5f081e5f08189e5f2f0a1ade5f2f0a9aeb4a5b2a5b3b4a5a4e5f2f0a9aee5f2f0a1e5f2f0b3b4b2a1b4a5a7a9a3e5f2f0b0a1b2b4aea5b2b3a8a9b0e5f2f0b7a9b4a8e5f2f08ea5b88596eee5f081e5f0818ea1ada5e5f381e5f2f0e5f08183afadb0a1aeb9e5f381e5f2f0e5f08190a8afaea5e5f381e5f2f0e5f08190a1b2b4aea5b2b3a8a9b0e5f2f094b9b0a5e5f381e5f2f0e5f0818da5b3b3a1a7a5e5f381e5f2f0" class="opp-link">Discuss Partnership &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== ENQUIRY ===================== -->
+<section class="enquiry section-pad" id="enquiry">
+  <div class="container">
+    <div class="enquiry-layout">
+
+      <div class="enquiry-info fade-in">
+        <span class="section-eyebrow">Get In Touch</span>
+        <h2 class="section-title enquiry-title">Let's Start a<br/>Real Conversation.</h2>
+        <p>Whether you are a dealer, investor, supplier, or interested in our products — fill in the form or email us directly. We respond within 48 business hours with information specific to your enquiry.</p>
+        <div class="enquiry-contact-items">
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>India — Manufacturing &amp; Distribution</span>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="/cdn-cgi/l/email-protection#e7828996928e958e8294a789829f8291c98e89" class="contact-email-link"><span class="__cf_email__" data-cfemail="ec89829d99859e85899fac828994899ac28582">[email&#160;protected]</span></a>
+          </div>
+          <div class="contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span>Response within 48 business hours</span>
+          </div>
+        </div>
+        <!-- Direct email button — opens platform email client (Gmail app / Mail / Outlook) -->
+        <div class="direct-email-box">
+          <p>Prefer to email us directly?</p>
+          <a href="/cdn-cgi/l/email-protection#ea8f849b9f8398838f99aa848f928f9cc48384d5999f88808f899ed7ad8f848f988b86cfd8daaf849b9f839893cfd8dacfafd8cfd2dacfd3d9cfd8daa48f92afbccc88858e93d7a28f868685cfd8daa48f92afbccfd8dabe8f8b87cfd8a9cfdaabcfdaab" class="btn btn-blue direct-email-btn">
+            <svg viewBox="0 0 20 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="1" width="18" height="14" rx="2"/><polyline points="1,1 10,9 19,1"/></svg>
+            Open Email App
+          </a>
+        </div>
+      </div>
+
+      <div class="enquiry-form-wrap fade-in-delay">
+        <form class="enquiry-form" id="enquiryForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Full Name <span class="req">*</span></label>
+              <input type="text" id="fname" name="name" placeholder="Your full name" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="fcompany">Company / Organisation</label>
+              <input type="text" id="fcompany" name="company" placeholder="Company name (if applicable)" autocomplete="organization" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="femail">Email Address <span class="req">*</span></label>
+              <input type="email" id="femail" name="email" placeholder="you@company.com" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="fphone">Phone Number</label>
+              <input type="tel" id="fphone" name="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="fenquiry">Enquiry Type <span class="req">*</span></label>
+            <div class="select-wrap">
+              <select id="fenquiry" name="enquiry_type" required>
+                <option value="" disabled selected>Select your enquiry type</option>
+                <option value="product">Product Information</option>
+                <option value="dealer">Dealer Partnership</option>
+                <option value="investor">Investment Enquiry</option>
+                <option value="supplier">Supplier Registration</option>
+                <option value="partner">Strategic Partnership</option>
+                <option value="fleet">Fleet / Bulk Order</option>
+                <option value="other">Other</option>
+              </select>
+              <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="fmessage">Message <span class="req">*</span></label>
+            <textarea id="fmessage" name="message" rows="5" placeholder="Tell us about your requirements, scale, location, and timeline." required></textarea>
+          </div>
+          <div class="form-footer-row">
+            <p class="form-note">
+              <span class="req">*</span> Required. By submitting you agree to our
+              <button type="button" class="terms-link" id="openTermsBtn">Terms &amp; Conditions</button>
+              and <button type="button" class="terms-link" id="openPrivacyBtn">Privacy Policy</button>.
+            </p>
+            <button type="submit" class="btn btn-blue btn-submit">
+              <span>Send Enquiry</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+          <div class="form-success" id="formSuccess" aria-live="polite">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div>
+              <strong>Enquiry Received!</strong>
+              <p>We will respond within 48 business hours with information specific to your enquiry type.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <a href="#home" class="nav-logo-wrap footer-logo-wrap" aria-label="NexEV">
+          <img src="assets/logo/nexev-logo.png" alt="NexEV" class="nav-logo-img footer-logo-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <span class="nav-logo-text footer-logo-text" style="display:none;">
+            <span class="logo-nex logo-nex--white">nex</span><span class="logo-ev">EV</span>
+            <span class="logo-streak" aria-hidden="true"></span>
+          </span>
+        </a>
+        <p class="footer-tagline">Engineering the Next Evolution<br/>of Practical Mobility.</p>
+        
+        <div class="footer-legal-entity">
+          <p class="footer-company-name">NexEV Private Limited.</p>
+          <p class="footer-cin">CIN: U27103KA2026PTC215387</p>
+          
+		  <p class="footer-loc">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+          Registered in Karnataka, India
+         </p>
+        </div>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Company</h4>
+        <a href="#about">About NexEV</a>
+        <a href="#technology">Technology</a>
+        <a href="#products">Products</a>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Engage</h4>
+        <a href="#opportunities">Dealer Programme</a>
+        <a href="#opportunities">Investor Relations</a>
+        <a href="#opportunities">Supplier Network</a>
+        <a href="#enquiry">Enquire Now</a>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Contact</h4>
+        <!-- mailto: opens platform default email client on desktop and mobile -->
+        <a href="/cdn-cgi/l/email-protection#2a4f445b5f4358434f596a444f524f5c044344"><span class="__cf_email__" data-cfemail="04616a75716d766d6177446a617c61722a6d6a">[email&#160;protected]</span></a>
+        <span class="footer-note">Response within 48 hrs</span>
+        <span class="footer-note">Made in India &#127470;&#127475;</span>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 NexEV. All rights reserved.</p>
+      <div class="footer-legal">
+        <button type="button" class="footer-legal-btn" id="openPrivacyBtn2">Privacy Policy</button>
+        <button type="button" class="footer-legal-btn" id="openTermsBtn2">Terms &amp; Conditions</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ===================== TERMS MODAL ===================== -->
+<div class="modal-overlay" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsTitle" aria-hidden="true">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2 id="termsTitle">Terms &amp; Conditions</h2>
+      <button class="modal-close" id="closeTermsBtn" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-date">Effective: March 4, 2026</p>
+      <h3>1. Use of This Website</h3>
+      <p>This website is operated by NexEV. By accessing nexev.in, you agree to these Terms. If you do not agree, please do not use this site.</p>
+      <h3>2. Enquiry Submissions</h3>
+      <p>When you submit an enquiry, you consent to NexEV using your details to respond to your specific enquiry only. We do not use submitted data for marketing without explicit consent.</p>
+      <h3>3. Product Information</h3>
+      <p>All product specifications, timelines, and roadmap information are indicative and subject to change. Actual product details will be confirmed at the time of formal order or partnership agreement.</p>
+      <h3>4. Intellectual Property</h3>
+      <p>All content on this website — text, graphics, logos, SVG illustrations, and design — is the intellectual property of NexEV and may not be reproduced without prior written permission.</p>
+      <h3>5. Limitation of Liability</h3>
+      <p>NexEV shall not be liable for any direct, indirect, incidental, or consequential damages arising from use of this website or reliance on information herein. Nothing on this site constitutes a legally binding offer or contract.</p>
+      <h3>6. Partnership &amp; Investment Enquiries</h3>
+      <p>Enquiries regarding dealership, investment, or supplier registration are expressions of interest only and do not create any binding obligation on either party.</p>
+      <h3>7. Governing Law</h3>
+      <p>These Terms are governed by the laws of India. Disputes are subject to the exclusive jurisdiction of competent courts in India.</p>
+      <h3>8. Contact</h3>
+      <p>For questions: <a href="/cdn-cgi/l/email-protection#284d46595d415a414d5b68464d504d5e064146"><span class="__cf_email__" data-cfemail="88ede6f9fde1fae1edfbc8e6edf0edfea6e1e6">[email&#160;protected]</span></a></p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-blue" id="closeTermsBtn2">I Understand</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PRIVACY MODAL ===================== -->
+<div class="modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle" aria-hidden="true">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2 id="privacyTitle">Privacy Policy</h2>
+      <button class="modal-close" id="closePrivacyBtn" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-date">Effective: March 4, 2026</p>
+      <h3>1. Information We Collect</h3>
+      <p>When you submit an enquiry, we collect: name, company, email address, phone number, and message content. We do not use tracking cookies or advertising analytics.</p>
+      <h3>2. How We Use Your Information</h3>
+      <p>Information submitted is used exclusively to respond to your specific enquiry. We will not add you to any marketing list or third-party database without your explicit written consent.</p>
+      <h3>3. Data Storage &amp; Security</h3>
+      <p>Enquiry data is stored securely and accessed only by authorised NexEV team members. We do not sell, rent, or share your personal data with any third party, except where required by law.</p>
+      <h3>4. Email Communications</h3>
+      <p>If you email us directly, your email and its contents are stored in our email system for correspondence purposes only.</p>
+      <h3>5. Your Rights</h3>
+      <p>You may request access to, correction of, or deletion of any personal data we hold. Contact: <a href="/cdn-cgi/l/email-protection#46232837332f342f23350628233e2330682f28"><span class="__cf_email__" data-cfemail="82e7ecf3f7ebf0ebe7f1c2ece7fae7f4acebec">[email&#160;protected]</span></a></p>
+      <h3>6. Data Retention</h3>
+      <p>We retain enquiry data for a maximum of 24 months, after which it is securely deleted unless a formal business relationship has been established.</p>
+      <h3>7. Governing Law</h3>
+      <p>This policy is governed by the Information Technology Act, 2000, and applicable data protection rules of India.</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-blue" id="closePrivacyBtn2">Got It</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===================== JS ===================== -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function () {
+  'use strict';
+
+  /* ---- Navbar scroll state ---- */
+  var navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function () {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  /* ---- Hamburger ---- */
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', function () {
+    var open = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', String(open));
+    mobileMenu.setAttribute('aria-hidden', String(!open));
+  });
+  mobileMenu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+    });
+  });
+
+  /* ---- Smooth scroll with navbar offset ---- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var href = this.getAttribute('href');
+      if (!href || href === '#') return;
+      var target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - navbar.offsetHeight - 8, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ---- Fade-in on scroll ---- */
+  var fadeEls = document.querySelectorAll('.fade-in, .fade-in-delay');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(function (el) { io.observe(el); });
+  } else {
+    fadeEls.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  /* ---- CSS fallback: trigger onerror on cached-broken images ---- */
+  document.querySelectorAll('.img-fallback-wrap img').forEach(function (img) {
+    if (img.complete && img.naturalWidth === 0) {
+      img.closest('.img-fallback-wrap').classList.add('img-error');
+    }
+  });
+
+  /* ---- Enquiry form (wire to Formspree/backend in production) ---- */
+  var form = document.getElementById('enquiryForm');
+  var successBox = document.getElementById('formSuccess');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    /* PRODUCTION: Replace with fetch POST to your form endpoint */
+    successBox.classList.add('show');
+    form.reset();
+    setTimeout(function () { successBox.classList.remove('show'); }, 8000);
+  });
+
+  /* ---- Modal system ---- */
+  function openModal(id) {
+    var m = document.getElementById(id);
+    if (!m) return;
+    m.classList.add('open');
+    m.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    var focusable = m.querySelector('button, a, input');
+    if (focusable) setTimeout(function () { focusable.focus(); }, 50);
+  }
+  function closeModal(id) {
+    var m = document.getElementById(id);
+    if (!m) return;
+    m.classList.remove('open');
+    m.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  /* Terms */
+  document.getElementById('openTermsBtn').addEventListener('click',  function () { openModal('termsModal'); });
+  document.getElementById('openTermsBtn2').addEventListener('click', function () { openModal('termsModal'); });
+  document.getElementById('closeTermsBtn').addEventListener('click', function () { closeModal('termsModal'); });
+  document.getElementById('closeTermsBtn2').addEventListener('click',function () { closeModal('termsModal'); });
+
+  /* Privacy */
+  document.getElementById('openPrivacyBtn').addEventListener('click',  function () { openModal('privacyModal'); });
+  document.getElementById('openPrivacyBtn2').addEventListener('click', function () { openModal('privacyModal'); });
+  document.getElementById('closePrivacyBtn').addEventListener('click', function () { closeModal('privacyModal'); });
+  document.getElementById('closePrivacyBtn2').addEventListener('click',function () { closeModal('privacyModal'); });
+
+  /* Click outside to close */
+  document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(overlay.id); });
+  });
+
+  /* Escape key */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(function (m) { closeModal(m.id); });
+  });
+
+})();
+</script>
 </body>
 </html>
