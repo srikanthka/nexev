@@ -5,375 +5,870 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NexEV – Engineering the Next Evolution of Practical Mobility</title>
 
-  <!-- SEO Meta -->
-  <meta name="description" content="NexEV is an Indian electric mobility company engineering practical, scalable EV solutions — from stand-on scooters to smart mobility systems. Dealer, investor, and partner opportunities available." />
-  <meta name="keywords" content="NexEV, electric scooter India, EV manufacturer, electric mobility, 250W scooter, EV dealer India, electric vehicle startup India" />
+  <!-- SEO -->
+  <meta name="description" content="NexEV sources and distributes BIS-certified EV components from Taiwan — BMS, chargers, controllers, motors and wiring — while engineering India's next-generation stand-on electric scooter in Karnataka." />
+  <meta name="keywords" content="NexEV, BIS certified EV components India, electric scooter India, EV aftermarket parts, BMS charger India, 250W scooter Karnataka" />
   <meta name="author" content="NexEV" />
   <meta name="robots" content="index, follow" />
   <meta property="og:title" content="NexEV – Practical Electric Mobility" />
-  <meta property="og:description" content="Engineering the Next Evolution of Practical Mobility. Made in India." />
+  <meta property="og:description" content="Sourcing validated EV components in Taiwan. Building rugged electric scooters in India." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nexev.in" />
   <link rel="canonical" href="https://nexev.in" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <script>if(location.protocol!=='file:'){var l=document.createElement('link');l.rel='manifest';l.href='/site.webmanifest';document.head.appendChild(l);}</script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+
+  <!-- Single stylesheet — matches live page architecture -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<link rel="shortcut icon" href="/favicon.ico" />
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-	<link rel="manifest" href="/site.webmanifest" />
+
+<style>
+/* ═══════════════════════════════════════════════════════════
+   NEXEV ENHANCED — all inline styles
+   Designed to co-exist with style.css; overrides only where needed
+═══════════════════════════════════════════════════════════ */
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --blue:   #1a3a5c;
+  --green:  #22c55e;
+  --yellow: #f5c518;
+  --white:  #ffffff;
+  --bg:     #ffffff;
+  --bg-alt: #f8fafc;
+  --text:   #1e293b;
+  --muted:  #64748b;
+  --border: #e2e8f0;
+  --radius: 12px;
+  --nav-h:  64px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+.section-pad { padding: 5rem 0; }
+.section-alt { background: var(--bg-alt); }
+
+/* Fade-in animation */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: none; }
+.fade-in-delay { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s; }
+.fade-in-delay.visible { opacity: 1; transform: none; }
+
+/* Section header pattern */
+.section-eyebrow { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 0.5rem; }
+.section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 4vw, 2.75rem); font-weight: 800; color: var(--blue); line-height: 1.15; margin-bottom: 1rem; }
+.section-title mark { background: none; color: var(--green); }
+.section-sub { color: var(--muted); max-width: 60ch; line-height: 1.7; font-size: 0.95rem; }
+.section-header { margin-bottom: 3rem; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.75rem 1.5rem; border-radius: 10px; font-weight: 700; font-size: 0.875rem; cursor: pointer; transition: all 0.2s; text-decoration: none; border: none; }
+.btn-green { background: var(--green); color: #fff; box-shadow: 0 4px 14px rgba(34,197,94,0.3); }
+.btn-green:hover { background: #16a34a; transform: translateY(-1px); }
+.btn-blue  { background: var(--blue);  color: #fff; box-shadow: 0 4px 14px rgba(26,58,92,0.25); }
+.btn-blue:hover  { background: #0f2540; transform: translateY(-1px); }
+.btn-outline { border: 1.5px solid var(--border); color: var(--text); background: transparent; }
+.btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+
+/* ── NAVBAR ── */
+.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav-h); background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color 0.3s, box-shadow 0.3s; }
+.navbar.scrolled { border-color: var(--border); box-shadow: 0 2px 20px rgba(0,0,0,0.07); }
+.nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.nav-logo-wrap { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+.nav-logo-img { height: 32px; width: auto; }
+.nav-logo-text { display: flex; align-items: center; font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800; line-height: 1; }
+.logo-nex { color: var(--blue); }
+.logo-ev  { color: var(--green); }
+.nav-links { display: flex; align-items: center; gap: 0.25rem; list-style: none; }
+.nav-links a { padding: 0.4rem 0.75rem; border-radius: 7px; font-size: 0.875rem; font-weight: 500; color: var(--muted); transition: color 0.2s, background 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--blue); background: #f1f5f9; }
+.nav-links .nav-cta { background: var(--blue); color: #fff; padding: 0.45rem 1rem; }
+.nav-links .nav-cta:hover { background: #0f2540; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--blue); border-radius: 2px; transition: all 0.3s; }
+@media (max-width: 860px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+}
+.mobile-menu { position: fixed; top: var(--nav-h); left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--border); padding: 1rem 1.5rem 1.5rem; display: none; flex-direction: column; gap: 0.25rem; box-shadow: 0 8px 24px rgba(0,0,0,0.1); z-index: 99; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { padding: 0.65rem 0.75rem; border-radius: 8px; font-weight: 500; color: var(--text); transition: background 0.15s; }
+.mobile-menu a:hover { background: var(--bg-alt); }
+.mobile-menu .mobile-cta { margin-top: 0.5rem; background: var(--blue); color: #fff; text-align: center; padding: 0.75rem; border-radius: 10px; font-weight: 700; }
+
+/* ── HERO CAROUSEL ── */
+#nexev-hero { position: relative; width: 100%; min-height: 100vh; overflow: hidden; background: #060d1a; }
+.nh-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.7s ease; z-index: 0; pointer-events: none; }
+.nh-slide.nh-active { opacity: 1; z-index: 10; pointer-events: auto; }
+.nh-grad-lr { position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.6) 55%, rgba(0,0,0,0.1) 100%); z-index: 2; }
+.nh-grad-tb { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%); z-index: 2; }
+.nh-visual { position: absolute; right: 4%; top: 50%; transform: translateY(-50%); width: 42%; max-width: 560px; z-index: 1; display: flex; align-items: center; justify-content: center; }
+@media (max-width: 768px) { .nh-visual { width: 90%; right: 50%; transform: translate(50%, -50%); opacity: 0.15; } }
+.nh-visual svg { width: 100%; height: auto; }
+.nh-content { position: relative; z-index: 20; min-height: 100vh; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; flex-direction: column; justify-content: center; padding-top: 7rem; padding-bottom: 7rem; }
+.nh-inner { max-width: 580px; }
+.nh-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.85rem; border-radius: 999px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid; margin-bottom: 1.25rem; }
+.nh-badge-dot { width: 6px; height: 6px; border-radius: 50%; animation: nhPulse 2s ease-in-out infinite; }
+@keyframes nhPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+.nh-headline { font-family: 'Syne', sans-serif; font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; color: #fff; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+.nh-subtitle { font-size: 0.76rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 1rem; }
+.nh-desc { font-size: clamp(0.88rem, 1.4vw, 1rem); color: rgba(255,255,255,0.68); line-height: 1.75; margin-bottom: 1.75rem; max-width: 520px; }
+.nh-specs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+.nh-spec-chip { display: flex; flex-direction: column; align-items: center; padding: 0.5rem 0.9rem; border-radius: 9px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); backdrop-filter: blur(4px); min-width: 68px; gap: 0.1rem; }
+.nh-spec-val { font-size: 0.95rem; font-weight: 700; color: #fff; line-height: 1; }
+.nh-spec-lbl { font-size: 0.6rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.07em; }
+.nh-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.nh-cta-p { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.75rem 1.4rem; border-radius: 10px; font-size: 0.875rem; font-weight: 700; color: #fff; text-decoration: none; transition: filter 0.2s, transform 0.15s; }
+.nh-cta-p:hover { filter: brightness(1.1); transform: translateY(-1px); }
+.nh-cta-s { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.75rem 1.4rem; border-radius: 10px; font-size: 0.875rem; font-weight: 600; color: rgba(255,255,255,0.8); text-decoration: none; border: 1px solid rgba(255,255,255,0.2); transition: background 0.2s; }
+.nh-cta-s:hover { background: rgba(255,255,255,0.1); }
+/* Carousel controls */
+.nh-controls { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 30; display: flex; align-items: center; gap: 0.6rem; }
+.nh-dot { border: none; background: none; cursor: pointer; padding: 3px; }
+.nh-dot-inner { display: block; height: 7px; width: 7px; border-radius: 999px; background: rgba(255,255,255,0.3); transition: all 0.35s; }
+.nh-dot.active .nh-dot-inner { width: 26px; }
+.nh-counter { position: absolute; bottom: 2rem; right: 1.5rem; z-index: 30; font-size: 0.7rem; color: rgba(255,255,255,0.3); display: none; gap: 0.2rem; align-items: center; }
+@media(min-width:768px){.nh-counter{display:flex;}}
+.nh-counter em { color: rgba(255,255,255,0.75); font-style: normal; font-weight: 700; }
+.nh-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 30; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: #fff; cursor: pointer; display: none; align-items: center; justify-content: center; transition: background 0.2s; }
+.nh-arrow:hover { background: rgba(255,255,255,0.18); }
+@media(min-width:768px){.nh-arrow{display:flex;}}
+.nh-prev { left: 1rem; }
+.nh-next { right: 1rem; }
+.nh-scroll-hint { position: absolute; bottom: 1.8rem; left: 2rem; z-index: 30; flex-direction: column; align-items: center; gap: 0.4rem; display: none; }
+@media(min-width:1024px){.nh-scroll-hint{display:flex;}}
+.nh-scroll-mouse { width: 18px; height: 30px; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 9px; display: flex; align-items: flex-start; justify-content: center; padding-top: 4px; }
+.nh-scroll-wheel { width: 3px; height: 6px; background: rgba(255,255,255,0.35); border-radius: 2px; animation: nhScroll 1.6s ease-in-out infinite; }
+@keyframes nhScroll { 0%{transform:translateY(0);opacity:1} 80%{transform:translateY(8px);opacity:0} 100%{transform:translateY(0);opacity:0} }
+.nh-scroll-lbl { font-size: 0.56rem; color: rgba(255,255,255,0.2); text-transform: uppercase; letter-spacing: 0.15em; }
+/* Product img fallback in slide 1 */
+#nh-slide-0 .nh-visual { position: absolute; right: 4%; top: 50%; transform: translateY(-50%); width: 42%; max-width: 560px; display: block; aspect-ratio: 4/3; }
+@media(max-width:768px){ #nh-slide-0 .nh-visual { width: 90%; right: 50%; transform: translate(50%,-50%); opacity: 0.15; } }
+.nh-product-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center; filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5)); z-index: 2; }
+.nh-svg-fallback { display: block; width: 100%; height: auto; position: relative; z-index: 1; }
+
+/* ── ABOUT / BRIDGE ── */
+.about-section { padding: 5rem 0; }
+.bridge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem; }
+@media(max-width:768px){ .bridge-grid { grid-template-columns: 1fr; } }
+.bridge-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; background: #fff; position: relative; overflow: hidden; }
+.bridge-card::before { content:''; position: absolute; top:0; left:0; right:0; height:3px; }
+.bridge-card--tw::before { background: var(--blue); }
+.bridge-card--in::before { background: var(--green); }
+.bridge-flag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); background: var(--bg-alt); padding: 0.2rem 0.55rem; border-radius: 4px; margin-bottom: 0.75rem; }
+.bridge-card h4 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--blue); margin-bottom: 0.6rem; }
+.bridge-card p { font-size: 0.85rem; line-height: 1.65; color: var(--muted); margin-bottom: 0.9rem; }
+.bridge-list { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+.bridge-list li { font-size: 0.8rem; color: #334155; padding-left: 1.2rem; position: relative; }
+.bridge-list li::before { content:'→'; position: absolute; left:0; color: var(--green); font-weight: 700; }
+.about-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem; }
+@media(max-width:768px){ .about-pillars { grid-template-columns: 1fr; } }
+.pillar-card { padding: 1.5rem; border: 1px solid var(--border); border-radius: var(--radius); background: #fff; }
+.pillar-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.85rem; }
+.pillar-icon--blue  { background: #eff6ff; color: var(--blue); }
+.pillar-icon--green { background: #f0fdf4; color: #16a34a; }
+.pillar-icon--yellow{ background: #fefce8; color: #b45309; }
+.pillar-card h3 { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--blue); margin-bottom: 0.4rem; }
+.pillar-card p { font-size: 0.82rem; line-height: 1.6; color: var(--muted); }
+.status-strip { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; padding: 1rem 1.25rem; background: var(--blue); border-radius: 10px; }
+.status-chip { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.8); }
+.chip-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.chip-dot--green  { background: var(--green); }
+.chip-dot--yellow { background: var(--yellow); }
+.chip-dot--white  { background: #fff; }
+
+/* ── PHASE STEPPER ── */
+.phase-stepper { position: relative; display: flex; align-items: flex-start; justify-content: space-between; padding: 1.5rem 1.75rem; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 2.5rem; }
+.phase-track-line { position: absolute; top: calc(1.5rem + 16px); left: calc(1.75rem + 16px); right: calc(1.75rem + 16px); height: 2px; background: var(--border); z-index: 0; }
+.phase-track-fill { height: 100%; width: 12%; background: linear-gradient(90deg, var(--green), var(--blue)); }
+.ph-step { position: relative; flex: 1; display: flex; flex-direction: column; align-items: center; gap: 0.55rem; z-index: 1; }
+.ph-dot { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; border: 2px solid var(--border); background: var(--bg-alt); color: var(--muted); }
+.ph-step.done .ph-dot  { background: var(--green); border-color: var(--green); color: #fff; }
+.ph-step.active .ph-dot{ background: #fff; border-color: var(--blue); border-width: 2.5px; }
+.ph-pulse { display: block; width: 10px; height: 10px; background: var(--blue); border-radius: 50%; }
+.ph-pulse::after { content:''; position: absolute; inset: -5px; border-radius: 50%; border: 2px solid var(--blue); opacity: 0; animation: phPulse 2s ease-out infinite; }
+@keyframes phPulse { 0%{opacity:0.6;transform:scale(0.8)} 100%{opacity:0;transform:scale(1.8)} }
+.ph-label { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.1rem; }
+.ph-num  { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.ph-step.done .ph-num, .ph-step.active .ph-num { color: var(--blue); }
+.ph-name { font-size: 0.8rem; font-weight: 600; color: var(--text); }
+.ph-step.upcoming .ph-name { color: var(--muted); }
+.ph-tag { font-size: 0.66rem; padding: 0.12rem 0.45rem; border-radius: 999px; background: var(--bg-alt); color: var(--muted); font-weight: 500; }
+.ph-step.done .ph-tag  { background: #dcfce7; color: #166534; }
+.ph-step.active .ph-tag{ background: #eff6ff; color: #1d4ed8; }
+@media(max-width:540px){
+  .phase-stepper { flex-direction: column; gap: 1.1rem; padding: 1.25rem; }
+  .phase-track-line { display: none; }
+  .ph-step { flex-direction: row; align-items: center; gap: 0.75rem; }
+  .ph-label { align-items: flex-start; text-align: left; }
+}
+
+/* ── PRODUCTS (featured card) ── */
+.product-featured { border: 1px solid var(--border); border-radius: 16px; background: #fff; overflow: hidden; }
+.product-badge { background: var(--green); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.5rem 1.25rem; }
+.product-layout { display: grid; grid-template-columns: 1fr 1.15fr; gap: 0; }
+@media(max-width:860px){ .product-layout { grid-template-columns: 1fr; } }
+.product-visual-panel { background: #f1f5f9; display: flex; align-items: center; justify-content: center; padding: 2.5rem; min-height: 300px; position: relative; }
+.product-img-wrap { position: relative; width: 100%; max-width: 340px; }
+.product-img-wrap img { width: 100%; object-fit: contain; filter: drop-shadow(0 12px 32px rgba(0,0,0,0.18)); }
+.product-svg-fallback { width: 100%; height: auto; }
+.product-tag { position: absolute; top: 1rem; left: 1rem; background: var(--blue); color: #fff; font-size: 0.68rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 5px; }
+.product-info { padding: 2rem 2rem 2rem; }
+.product-series { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--green); margin-bottom: 0.3rem; }
+.product-name { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--blue); margin-bottom: 0.35rem; }
+.product-tagline { font-size: 0.875rem; color: var(--muted); margin-bottom: 1.25rem; }
+.spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 1rem; }
+.spec-item { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 7px; padding: 0.4rem 0.65rem; display: flex; flex-direction: column; gap: 0.05rem; }
+.spec-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; }
+.spec-val   { font-size: 0.82rem; font-weight: 700; color: var(--blue); }
+.use-cases  { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+.use-case   { font-size: 0.74rem; padding: 0.2rem 0.7rem; border-radius: 999px; background: #f1f5f9; color: var(--muted); font-weight: 500; border: 1px solid var(--border); }
+.ckd-badge  { display: flex; align-items: flex-start; gap: 0.55rem; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 0.7rem 0.9rem; margin-bottom: 1.25rem; }
+.ckd-check  { flex-shrink: 0; width: 20px; height: 20px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; margin-top: 1px; }
+.ckd-check svg { display: block; width: 11px; height: 11px; }
+.ckd-text strong { font-size: 0.8rem; color: #166534; display: block; }
+.ckd-text span   { font-size: 0.76rem; color: #166534; opacity: 0.85; }
+.product-cta-row { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+
+/* ── AFTERMARKET ── */
+.am-context { display: flex; align-items: center; background: var(--blue); border-radius: var(--radius); padding: 1.25rem 2rem; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 0; }
+.am-ctx-item { flex: 1; min-width: 110px; display: flex; flex-direction: column; align-items: center; gap: 0.2rem; padding: 0.25rem 0; }
+.am-ctx-num   { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--green); line-height: 1; }
+.am-ctx-label { font-size: 0.7rem; color: rgba(255,255,255,0.65); text-align: center; max-width: 110px; line-height: 1.4; }
+.am-ctx-div   { width: 1px; height: 38px; background: rgba(255,255,255,0.14); flex-shrink: 0; }
+@media(max-width:600px){ .am-ctx-div { display: none; } .am-context { gap: 1rem; padding: 1rem; } }
+.am-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+@media(max-width:1024px){ .am-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(max-width:580px)  { .am-grid { grid-template-columns: 1fr; } }
+.am-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem; background: #fff; display: flex; flex-direction: column; gap: 0.7rem; transition: border-color 0.2s, box-shadow 0.2s; }
+.am-card:hover { border-color: var(--blue); box-shadow: 0 4px 18px rgba(26,58,92,0.08); }
+.am-card-head { display: flex; align-items: center; justify-content: space-between; }
+.am-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.am-icon--blue   { background: #eff6ff; color: var(--blue); }
+.am-icon--green  { background: #f0fdf4; color: #16a34a; }
+.am-icon--yellow { background: #fefce8; color: #b45309; }
+.am-bis { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--blue); background: #eff6ff; border: 1px solid #bfdbfe; padding: 0.18rem 0.45rem; border-radius: 4px; white-space: nowrap; }
+.am-card h4 { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--blue); }
+.am-desc { font-size: 0.8rem; line-height: 1.6; color: var(--muted); }
+.am-specs { list-style: none; border: 1px solid #f1f5f9; border-radius: 6px; overflow: hidden; }
+.am-specs li { display: flex; justify-content: space-between; align-items: center; padding: 0.3rem 0.6rem; font-size: 0.74rem; border-bottom: 1px solid #f1f5f9; gap: 0.5rem; }
+.am-specs li:last-child { border-bottom: none; }
+.am-specs li span:first-child { color: #94a3b8; font-weight: 500; }
+.am-specs li span:last-child  { color: var(--text); font-weight: 600; text-align: right; }
+.am-avail { display: flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; font-weight: 600; color: var(--muted); margin-top: auto; }
+.avail-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.avail-dot--green  { background: var(--green); }
+.avail-dot--yellow { background: var(--yellow); }
+.am-card--cta { background: linear-gradient(135deg, var(--blue) 0%, #0f2540 100%); border-color: var(--blue); }
+.am-card--cta:hover { border-color: var(--green); box-shadow: 0 4px 24px rgba(26,58,92,0.3); }
+.am-cta-inner { display: flex; flex-direction: column; gap: 0.7rem; height: 100%; }
+.am-cta-icon { color: var(--green); }
+.am-card--cta h4 { color: #fff; }
+.am-card--cta .am-desc { color: rgba(255,255,255,0.7); }
+.am-benefits { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+.am-benefits li { display: flex; align-items: center; gap: 0.45rem; font-size: 0.78rem; color: rgba(255,255,255,0.82); }
+.am-benefits li svg { flex-shrink: 0; color: var(--green); }
+.am-cta-btn { display: block; text-align: center; background: var(--green); color: #fff; border-radius: 9px; padding: 0.65rem 1.2rem; font-size: 0.84rem; font-weight: 700; text-decoration: none; transition: background 0.2s; margin-top: 0.25rem; }
+.am-cta-btn:hover { background: #16a34a; }
+.am-cta-link { display: block; text-align: center; font-size: 0.74rem; color: rgba(255,255,255,0.5); text-decoration: none; margin-top: 0.1rem; transition: color 0.2s; }
+.am-cta-link:hover { color: rgba(255,255,255,0.9); }
+.am-footnote { font-size: 0.72rem; color: #94a3b8; text-align: center; margin: 2rem auto 0; max-width: 72ch; line-height: 1.6; }
+
+/* ── OPPORTUNITIES ── */
+.opp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+@media(max-width:760px){ .opp-grid { grid-template-columns: 1fr; } }
+.opp-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; background: #fff; display: flex; flex-direction: column; gap: 0.6rem; transition: box-shadow 0.2s, border-color 0.2s; }
+.opp-card:hover { border-color: var(--blue); box-shadow: 0 4px 18px rgba(26,58,92,0.09); }
+.opp-card--featured { border-color: var(--blue); background: #f8faff; }
+.opp-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--border); line-height: 1; }
+.opp-icon { color: var(--blue); }
+.opp-card h3 { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--blue); }
+.opp-card p  { font-size: 0.84rem; color: var(--muted); line-height: 1.6; }
+.opp-list { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
+.opp-list li { font-size: 0.8rem; color: #475569; padding-left: 1rem; position: relative; }
+.opp-list li::before { content:'·'; position: absolute; left:0; color: var(--green); font-weight: 900; }
+.opp-link { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.82rem; font-weight: 700; color: var(--blue); margin-top: auto; transition: gap 0.2s; }
+.opp-link:hover { gap: 0.5rem; }
+
+/* ── ENQUIRY ── */
+.enquiry-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+@media(max-width:860px){ .enquiry-layout { grid-template-columns: 1fr; gap: 2rem; } }
+.enquiry-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 0.5rem; }
+.enquiry-title { font-family: 'Syne', sans-serif; font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 800; color: var(--blue); line-height: 1.2; margin-bottom: 0.75rem; }
+.enquiry-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+.contact-item { display: flex; align-items: center; gap: 0.65rem; font-size: 0.85rem; color: var(--text); margin-bottom: 0.65rem; }
+.contact-item svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--blue); }
+.contact-item a { color: var(--blue); font-weight: 600; }
+.contact-item a:hover { text-decoration: underline; }
+.enquiry-direct { margin-top: 1.5rem; padding: 1.25rem; background: var(--bg-alt); border-radius: var(--radius); border: 1px solid var(--border); }
+.enquiry-direct p { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.75rem; }
+.enquiry-form-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media(max-width:540px){ .form-row { grid-template-columns: 1fr; } }
+.form-group { display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 0.9rem; }
+.form-group label { font-size: 0.78rem; font-weight: 600; color: var(--text); }
+.form-group input, .form-group textarea, .form-group select { padding: 0.65rem 0.85rem; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 0.875rem; color: var(--text); background: #fff; transition: border-color 0.2s; outline: none; resize: vertical; }
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(26,58,92,0.08); }
+.req { color: var(--green); }
+.form-submit-row { display: flex; justify-content: flex-end; margin-top: 0.5rem; }
+.form-success { display: none; align-items: center; gap: 0.75rem; padding: 1rem; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 9px; margin-top: 1rem; font-size: 0.85rem; color: #166534; }
+.form-success.show { display: flex; }
+.form-success svg { flex-shrink: 0; color: var(--green); }
+
+/* ── FOOTER ── */
+.footer { background: var(--blue); color: rgba(255,255,255,0.75); padding: 4rem 0 2rem; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+@media(max-width:860px){ .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+@media(max-width:520px){ .footer-top { grid-template-columns: 1fr; } }
+.footer-brand .nav-logo-text { color: #fff; }
+.footer-brand .logo-nex--white { color: #fff; }
+.footer-tagline { font-size: 0.83rem; line-height: 1.65; margin: 0.75rem 0 1.25rem; }
+.footer-legal-block p { font-size: 0.76rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
+.footer-legal-block .cin { font-family: monospace; font-size: 0.72rem; color: rgba(255,255,255,0.35); }
+.footer-loc { display: flex; align-items: center; gap: 0.4rem; font-size: 0.76rem; color: rgba(255,255,255,0.5); margin-top: 0.4rem; }
+.footer-loc svg { width: 13px; height: 13px; flex-shrink: 0; }
+.footer-col h4 { font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+.footer-col a { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.65); margin-bottom: 0.5rem; transition: color 0.2s; }
+.footer-col a:hover { color: #fff; }
+.footer-col span { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-top: 0.35rem; }
+hr.footer-hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 1.5rem; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.78rem; }
+.footer-bottom p { color: rgba(255,255,255,0.35); }
+.footer-legal-row { display: flex; gap: 1rem; }
+.footer-legal-btn { background: none; border: none; cursor: pointer; font-size: 0.78rem; color: rgba(255,255,255,0.4); font-family: inherit; transition: color 0.2s; }
+.footer-legal-btn:hover { color: rgba(255,255,255,0.8); }
+
+/* ── MODALS ── */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 1000; display: none; align-items: center; justify-content: center; padding: 1rem; }
+.modal-overlay.open { display: flex; }
+.modal-box { background: #fff; border-radius: 16px; width: 100%; max-width: 560px; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.25); }
+.modal-header { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: #fff; z-index: 1; }
+.modal-header h2 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--blue); }
+.modal-close { background: none; border: none; cursor: pointer; color: var(--muted); padding: 4px; border-radius: 6px; transition: color 0.2s; }
+.modal-close:hover { color: var(--text); }
+.modal-body { padding: 1.5rem; }
+.modal-body h3 { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--blue); margin: 1rem 0 0.35rem; }
+.modal-body h3:first-child { margin-top: 0; }
+.modal-body p { font-size: 0.84rem; color: var(--muted); line-height: 1.65; }
+.modal-body a { color: var(--blue); }
+.modal-date { font-size: 0.76rem; color: #94a3b8; margin-bottom: 1rem; }
+.modal-footer { padding: 1rem 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; }
+
+/* Scroll to top */
+.scroll-top { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 90; width: 40px; height: 40px; border-radius: 50%; background: var(--blue); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.scroll-top.show { opacity: 1; pointer-events: auto; }
+.scroll-top:hover { transform: translateY(-2px); }
+</style>
 </head>
 <body>
 
-<!-- ===================== NAVBAR ===================== -->
+<!-- ═══ NAVBAR ═══ -->
 <header class="navbar" id="navbar" role="banner">
   <div class="nav-container">
-
-    <!-- Logo: tries assets/logo/nexev-logo.png, falls back to text logo -->
     <a href="#home" class="nav-logo-wrap" aria-label="NexEV Home">
-      <img id="navLogoImg" src="assets/logo/nexev-logo.png" alt="NexEV"
-           class="nav-logo-img"
+      <img id="navLogoImg" src="assets/logo/nexev-logo.png" alt="NexEV" class="nav-logo-img"
            onerror="this.style.display='none';document.getElementById('navLogoText').style.display='flex';" />
       <span class="nav-logo-text" id="navLogoText" style="display:none;">
         <span class="logo-nex">nex</span><span class="logo-ev">EV</span>
-        <span class="logo-streak" aria-hidden="true"></span>
       </span>
     </a>
-
-    <!-- Desktop nav -->
-    <nav class="nav-links" role="navigation" aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#products">Products</a>
-      <a href="#technology">Technology</a>
-      <a href="#opportunities">Opportunities</a>
-      <a href="#enquiry" class="nav-cta">Enquire Now</a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links" role="list">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#aftermarket">EV Parts</a></li>
+        <li><a href="#opportunities">Opportunities</a></li>
+        <li><a href="#enquiry" class="nav-cta">Enquire Now</a></li>
+      </ul>
     </nav>
-
-    <!-- Hamburger -->
     <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
-
-  <!-- Mobile menu (inside header so it positions relative to nav bar) -->
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#products">Products</a>
-    <a href="#technology">Technology</a>
-    <a href="#opportunities">Opportunities</a>
-    <a href="#enquiry" class="mobile-cta">Enquire Now</a>
-  </div>
 </header>
 
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#products">Products</a>
+  <a href="#aftermarket">EV Parts</a>
+  <a href="#opportunities">Opportunities</a>
+  <a href="#enquiry" class="mobile-cta">Enquire Now</a>
+</div>
 
-<!-- ===================== HERO ===================== -->
-<section class="hero" id="home" aria-label="Hero section">
-  <div class="hero-container">
 
-    <div class="hero-content fade-in">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        Made in India · Electric Mobility
-      </div>
+<!-- ═══ HERO CAROUSEL ═══ -->
+<section id="home" aria-label="Hero section">
+<div id="nexev-hero">
 
-      <h1 class="hero-headline">
-        Engineering the<br/>
-        <span class="headline-highlight">Next Evolution</span><br/>
-        of Practical Mobility
-      </h1>
-
-      <p class="hero-sub">
-        NexEV builds engineered electric mobility solutions for real-world Indian conditions — starting with stand-on scooters and scaling toward a fully integrated EV ecosystem.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#products" class="btn btn-green">View Products</a>
-        <a href="/cdn-cgi/l/email-protection#c6a3a8b7b3afb4afa3b586a8a3bea3b0e8afa8f9b5b3a4aca3a5b2fb88a3be8390e3f4f683a8b7b3afb4bfe0a4a9a2bffb8ea3aaaaa9e3f4f688a3be8390e3f4f692a3a7abe3f485e3f687e3f6878fe3f4f6a7abe3f4f6afa8b2a3b4a3b5b2a3a2e3f4f6afa8e3f4f6aaa3a7b4a8afa8a1e3f4f6aba9b4a3e3f4f6a7a4a9b3b2e3f4f688a3be8390e8e3f687e3f68788a7aba3e3f587e3f4f6e3f68785a9abb6a7a8bfe3f587e3f4f6e3f68796aea9a8a3e3f587e3f4f6e3f68783a8b7b3afb4bfe3f4f692bfb6a3e3f587e3f4f6e3f6878ba3b5b5a7a1a3e3f587e3f4f6" class="btn btn-blue">Enquire Now</a>
-      </div>
-
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-num">250W</span>
-          <span class="stat-label">Flagship Motor</span>
+  <!-- Slide 1 — Product -->
+  <div class="nh-slide nh-active" id="nh-s0" style="background:#060d1a;">
+    <div class="nh-grad-lr"></div><div class="nh-grad-tb"></div>
+    <div class="nh-visual" id="nh-vis0">
+      <img src="assets/images/ebike.png" alt="NexEV 250W Stand-On Scooter" class="nh-product-img"
+           onerror="this.style.display='none';document.getElementById('nh-svg0').style.opacity='1';"
+           onload="document.getElementById('nh-svg0').style.opacity='0';" />
+      <svg id="nh-svg0" class="nh-svg-fallback" viewBox="0 0 480 360" fill="none" style="opacity:1;transition:opacity 0.3s;">
+        <rect x="110" y="210" width="260" height="22" rx="6" fill="#22c55e" fill-opacity=".18" stroke="#22c55e" stroke-width="1.5"/>
+        <rect x="145" y="158" width="190" height="58" rx="10" fill="#22c55e" fill-opacity=".12" stroke="#22c55e" stroke-width="1.5"/>
+        <rect x="193" y="72" width="14" height="95" rx="5" fill="#22c55e" fill-opacity=".35" stroke="#22c55e" stroke-width="1.2"/>
+        <rect x="155" y="66" width="90" height="13" rx="6" fill="#22c55e" fill-opacity=".45" stroke="#22c55e" stroke-width="1.5"/>
+        <rect x="148" y="62" width="16" height="20" rx="4" fill="#22c55e" fill-opacity=".3"/>
+        <rect x="236" y="62" width="16" height="20" rx="4" fill="#22c55e" fill-opacity=".3"/>
+        <circle cx="165" cy="268" r="46" stroke="#22c55e" stroke-width="2.5"/>
+        <circle cx="165" cy="268" r="16" fill="#22c55e" fill-opacity=".15" stroke="#22c55e" stroke-width="1.5"/>
+        <circle cx="330" cy="268" r="46" stroke="#22c55e" stroke-width="2.5"/>
+        <circle cx="330" cy="268" r="16" fill="#22c55e" fill-opacity=".15" stroke="#22c55e" stroke-width="1.5"/>
+        <rect x="268" y="168" width="72" height="32" rx="7" fill="#22c55e" fill-opacity=".2" stroke="#22c55e" stroke-width="1"/>
+        <text x="304" y="189" text-anchor="middle" font-size="12" fill="#22c55e" font-family="monospace" font-weight="bold">250W</text>
+        <line x1="58" y1="248" x2="110" y2="248" stroke="#f5c518" stroke-width="2.5" stroke-linecap="round" opacity=".7"/>
+        <line x1="40" y1="262" x2="106" y2="262" stroke="#f5c518" stroke-width="1.8" stroke-linecap="round" opacity=".45"/>
+        <line x1="68" y1="276" x2="108" y2="276" stroke="#f5c518" stroke-width="1.2" stroke-linecap="round" opacity=".3"/>
+        <rect x="135" y="120" width="54" height="22" rx="5" fill="#1a3a5c" fill-opacity=".9" stroke="#22c55e" stroke-width=".8"/>
+        <text x="162" y="135" text-anchor="middle" font-size="9.5" fill="#22c55e" font-family="monospace">IP67</text>
+      </svg>
+    </div>
+    <div class="nh-content">
+      <div class="nh-inner">
+        <div class="nh-badge" style="background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.35);color:#22c55e;">
+          <span class="nh-badge-dot" style="background:#22c55e;"></span>Phase 1 Live
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">Phase 1</span>
-          <span class="stat-label">Now Active</span>
+        <h1 class="nh-headline">Ride Smarter.<br/><span style="color:#22c55e;">Built in Karnataka.</span></h1>
+        <p class="nh-subtitle" style="color:rgba(34,197,94,.8);">250W Stand-On Scooter · Gen 1 · Assembled in India</p>
+        <p class="nh-desc">The NexEV 250W Stand-On Scooter — engineered for last-mile delivery, campus mobility, and warehouse logistics. No RTO. No licence. Pure efficiency.</p>
+        <div class="nh-specs">
+          <div class="nh-spec-chip"><span class="nh-spec-val">250W</span><span class="nh-spec-lbl">Motor</span></div>
+          <div class="nh-spec-chip"><span class="nh-spec-val">30km</span><span class="nh-spec-lbl">Range</span></div>
+          <div class="nh-spec-chip"><span class="nh-spec-val">25km/h</span><span class="nh-spec-lbl">Speed</span></div>
+          <div class="nh-spec-chip"><span class="nh-spec-val">120kg</span><span class="nh-spec-lbl">Load</span></div>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-num">India</span>
-          <span class="stat-label">Based &amp; Built</span>
+        <div class="nh-ctas">
+          <a href="#products" class="nh-cta-p" style="background:#22c55e;box-shadow:0 0 22px rgba(34,197,94,.35);">Explore Scooter <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#enquiry" class="nh-cta-s">Enquire Now</a>
         </div>
       </div>
     </div>
-
-    <!-- Hero product visual -->
-    <div class="hero-visual fade-in-delay">
-      <div class="hero-image-frame">
-        <div class="product-tag-float">Gen 1 · 2026</div>
-        <div class="product-visual-wrap img-fallback-wrap img-fallback--scooter">
-          <img src="assets/products/scooter-250w.png"
-               alt="NexEV 250W Stand-On Electric Scooter" class="product-real-img"
-               onerror="this.closest('.img-fallback-wrap').classList.add('img-error');" />
-          <div class="css-fallback" aria-hidden="true">
-            <div class="fallback-label">nex<strong>EV</strong> · 250W Stand-On</div>
-          </div>
-        </div>
-        <div class="frame-glow" aria-hidden="true"></div>
-      </div>
-      <p class="visual-caption">250W Stand-On Electric Scooter · Gen 1</p>
-    </div>
-
   </div>
-  <div class="hero-bottom-accent" aria-hidden="true"></div>
+
+  <!-- Slide 2 — Components/Aftermarket -->
+  <div class="nh-slide" id="nh-s1" style="background:#030a18;">
+    <div class="nh-grad-lr"></div><div class="nh-grad-tb"></div>
+    <div class="nh-visual">
+      <svg viewBox="0 0 480 360" fill="none" style="filter:drop-shadow(0 0 50px rgba(59,130,246,.22));">
+        <rect x="100" y="80" width="280" height="200" rx="14" fill="#0a1628" fill-opacity=".9" stroke="#3b82f6" stroke-width="1.5"/>
+        <path d="M130 130 h40 v30 h80 v-30 h40" stroke="#3b82f6" stroke-width="1" fill="none" stroke-opacity=".4"/>
+        <path d="M130 190 h60 v-20 h100 v20 h60" stroke="#3b82f6" stroke-width="1" fill="none" stroke-opacity=".4"/>
+        <rect x="195" y="138" width="90" height="64" rx="5" fill="#3b82f6" fill-opacity=".12" stroke="#3b82f6" stroke-width="1.5"/>
+        <text x="240" y="174" text-anchor="middle" font-size="10" fill="#3b82f6" font-family="monospace" font-weight="bold">BMS v2</text>
+        <line x1="175" y1="152" x2="195" y2="152" stroke="#3b82f6" stroke-width="1.5" stroke-opacity=".7"/>
+        <line x1="175" y1="163" x2="195" y2="163" stroke="#3b82f6" stroke-width="1.5" stroke-opacity=".7"/>
+        <line x1="175" y1="174" x2="195" y2="174" stroke="#3b82f6" stroke-width="1.5" stroke-opacity=".7"/>
+        <line x1="175" y1="185" x2="195" y2="185" stroke="#3b82f6" stroke-width="1.5" stroke-opacity=".7"/>
+        <line x1="285" y1="152" x2="305" y2="152" stroke="#3b82f6" stroke-width="1.5" stroke-opacity=".7"/>
+        <line x1="285" y1="163" x2="305" y2="163" stroke="#3b82f6" stroke-width="1.5" stroke-opacity=".7"/>
+        <line x1="285" y1="174" x2="305" y2="174" stroke="#3b82f6" stroke-width="1.5" stroke-opacity=".7"/>
+        <line x1="285" y1="185" x2="305" y2="185" stroke="#3b82f6" stroke-width="1.5" stroke-opacity=".7"/>
+        <rect x="128" y="98" width="18" height="28" rx="3" fill="#3b82f6" fill-opacity=".15" stroke="#3b82f6" stroke-width="1"/>
+        <rect x="155" y="98" width="18" height="28" rx="3" fill="#3b82f6" fill-opacity=".15" stroke="#3b82f6" stroke-width="1"/>
+        <rect x="330" y="148" width="36" height="44" rx="4" fill="#3b82f6" fill-opacity=".18" stroke="#3b82f6" stroke-width="1.2"/>
+        <line x1="336" y1="158" x2="360" y2="158" stroke="#3b82f6" stroke-width="1" stroke-opacity=".5"/>
+        <line x1="336" y1="168" x2="360" y2="168" stroke="#3b82f6" stroke-width="1" stroke-opacity=".5"/>
+        <line x1="336" y1="178" x2="360" y2="178" stroke="#3b82f6" stroke-width="1" stroke-opacity=".5"/>
+        <rect x="298" y="96" width="66" height="24" rx="6" fill="#1a3a5c" stroke="#3b82f6" stroke-width="1"/>
+        <text x="331" y="112" text-anchor="middle" font-size="9" fill="#3b82f6" font-family="monospace" font-weight="bold">BIS ✓</text>
+        <rect x="108" y="252" width="112" height="20" rx="4" fill="#3b82f6" fill-opacity=".1" stroke="#3b82f6" stroke-width=".8" stroke-opacity=".5"/>
+        <text x="164" y="265" text-anchor="middle" font-size="8.5" fill="#3b82f6" font-family="monospace" opacity=".7">Taiwan · BIS Certified</text>
+        <circle cx="240" cy="170" r="38" stroke="#3b82f6" stroke-width=".5" fill="none" stroke-opacity=".2" stroke-dasharray="4 4"/>
+      </svg>
+    </div>
+    <div class="nh-content">
+      <div class="nh-inner">
+        <div class="nh-badge" style="background:rgba(59,130,246,.1);border-color:rgba(59,130,246,.35);color:#3b82f6;">
+          <span class="nh-badge-dot" style="background:#3b82f6;"></span>BIS-Certified Components
+        </div>
+        <h1 class="nh-headline">EV Parts.<br/><span style="color:#3b82f6;">Certified at Source.</span></h1>
+        <p class="nh-subtitle" style="color:rgba(59,130,246,.8);">BMS · Chargers · Controllers · Motors · Wiring</p>
+        <p class="nh-desc">NexEV sources and distributes BIS-certified EV components — qualified directly with manufacturers in Taiwan before procurement. Available to dealers, workshops, and fleet operators across all EV makes.</p>
+        <div class="nh-specs">
+          <div class="nh-spec-chip"><span class="nh-spec-val">IS 16893</span><span class="nh-spec-lbl">BMS</span></div>
+          <div class="nh-spec-chip"><span class="nh-spec-val">IS 16170</span><span class="nh-spec-lbl">Charger</span></div>
+          <div class="nh-spec-chip"><span class="nh-spec-val">IP67</span><span class="nh-spec-lbl">Connectors</span></div>
+          <div class="nh-spec-chip"><span class="nh-spec-val">All EV</span><span class="nh-spec-lbl">Brands</span></div>
+        </div>
+        <div class="nh-ctas">
+          <a href="#aftermarket" class="nh-cta-p" style="background:#3b82f6;box-shadow:0 0 22px rgba(59,130,246,.35);">View Parts Catalogue <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#enquiry" class="nh-cta-s">Request Pricing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3 — Opportunities -->
+  <div class="nh-slide" id="nh-s2" style="background:#04080f;">
+    <div class="nh-grad-lr"></div><div class="nh-grad-tb"></div>
+    <div class="nh-visual">
+      <svg viewBox="0 0 480 360" fill="none" style="filter:drop-shadow(0 0 50px rgba(245,197,24,.18));">
+        <circle cx="240" cy="185" r="52" fill="#f5c518" fill-opacity=".1" stroke="#f5c518" stroke-width="2"/>
+        <circle cx="240" cy="185" r="34" fill="#f5c518" fill-opacity=".15"/>
+        <text x="240" y="181" text-anchor="middle" font-size="10" fill="#f5c518" font-family="monospace" font-weight="bold">nex</text>
+        <text x="240" y="195" text-anchor="middle" font-size="10" fill="#f5c518" font-family="monospace" font-weight="bold">EV</text>
+        <circle cx="120" cy="100" r="28" fill="#f5c518" fill-opacity=".08" stroke="#f5c518" stroke-width="1.2"/>
+        <text x="120" y="96" text-anchor="middle" font-size="8.5" fill="#f5c518" font-family="monospace">Dealer</text>
+        <text x="120" y="108" text-anchor="middle" font-size="8" fill="#f5c518" font-family="monospace" opacity=".6">Network</text>
+        <line x1="145" y1="118" x2="208" y2="155" stroke="#f5c518" stroke-width="1" stroke-opacity=".3" stroke-dasharray="4 3"/>
+        <circle cx="370" cy="100" r="28" fill="#f5c518" fill-opacity=".08" stroke="#f5c518" stroke-width="1.2"/>
+        <text x="370" y="96" text-anchor="middle" font-size="8.5" fill="#f5c518" font-family="monospace">Investor</text>
+        <text x="370" y="108" text-anchor="middle" font-size="8" fill="#f5c518" font-family="monospace" opacity=".6">Seed</text>
+        <line x1="345" y1="118" x2="272" y2="155" stroke="#f5c518" stroke-width="1" stroke-opacity=".3" stroke-dasharray="4 3"/>
+        <circle cx="120" cy="270" r="28" fill="#f5c518" fill-opacity=".08" stroke="#f5c518" stroke-width="1.2"/>
+        <text x="120" y="267" text-anchor="middle" font-size="8.5" fill="#f5c518" font-family="monospace">Parts</text>
+        <text x="120" y="279" text-anchor="middle" font-size="8" fill="#f5c518" font-family="monospace" opacity=".6">Distributor</text>
+        <line x1="145" y1="254" x2="208" y2="215" stroke="#f5c518" stroke-width="1" stroke-opacity=".3" stroke-dasharray="4 3"/>
+        <circle cx="370" cy="270" r="28" fill="#f5c518" fill-opacity=".08" stroke="#f5c518" stroke-width="1.2"/>
+        <text x="370" y="267" text-anchor="middle" font-size="8.5" fill="#f5c518" font-family="monospace">Fleet</text>
+        <text x="370" y="279" text-anchor="middle" font-size="8" fill="#f5c518" font-family="monospace" opacity=".6">Partner</text>
+        <line x1="345" y1="254" x2="272" y2="215" stroke="#f5c518" stroke-width="1" stroke-opacity=".3" stroke-dasharray="4 3"/>
+        <circle cx="240" cy="185" r="120" stroke="#f5c518" stroke-width=".5" fill="none" stroke-opacity=".15" stroke-dasharray="5 5"/>
+      </svg>
+    </div>
+    <div class="nh-content">
+      <div class="nh-inner">
+        <div class="nh-badge" style="background:rgba(245,197,24,.1);border-color:rgba(245,197,24,.35);color:#f5c518;">
+          <span class="nh-badge-dot" style="background:#f5c518;"></span>Opportunities Open
+        </div>
+        <h1 class="nh-headline">Partner With Us.<br/><span style="color:#f5c518;">Grow Together.</span></h1>
+        <p class="nh-subtitle" style="color:rgba(245,197,24,.8);">Dealers · Investors · Parts Distributors · Fleet Partners</p>
+        <p class="nh-desc">Join NexEV as an authorised dealer, parts distributor, or investor. We are selective and structured about who we grow with — built for long-term relationships, not quick transactions.</p>
+        <div class="nh-specs">
+          <div class="nh-spec-chip"><span class="nh-spec-val">Open</span><span class="nh-spec-lbl">Dealers</span></div>
+          <div class="nh-spec-chip"><span class="nh-spec-val">Seed</span><span class="nh-spec-lbl">Investors</span></div>
+          <div class="nh-spec-chip"><span class="nh-spec-val">RFQ</span><span class="nh-spec-lbl">Suppliers</span></div>
+          <div class="nh-spec-chip"><span class="nh-spec-val">Active</span><span class="nh-spec-lbl">Fleet</span></div>
+        </div>
+        <div class="nh-ctas">
+          <a href="#opportunities" class="nh-cta-p" style="background:#f5c518;color:#0a0a0a;box-shadow:0 0 22px rgba(245,197,24,.35);">View Opportunities <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#enquiry" class="nh-cta-s">Start a Conversation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="nh-controls" id="nh-dots">
+    <button class="nh-dot active" data-i="0" aria-label="Slide 1"><span class="nh-dot-inner" style="background:#22c55e;width:26px;"></span></button>
+    <button class="nh-dot" data-i="1" aria-label="Slide 2"><span class="nh-dot-inner"></span></button>
+    <button class="nh-dot" data-i="2" aria-label="Slide 3"><span class="nh-dot-inner"></span></button>
+  </div>
+  <div class="nh-counter"><em id="nh-cur">01</em><span>/</span><span>03</span></div>
+  <button class="nh-arrow nh-prev" id="nh-prev" aria-label="Previous"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+  <button class="nh-arrow nh-next" id="nh-next" aria-label="Next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+  <div class="nh-scroll-hint"><div class="nh-scroll-mouse"><div class="nh-scroll-wheel"></div></div><span class="nh-scroll-lbl">Scroll</span></div>
+</div>
 </section>
 
 
-<!-- ===================== ABOUT ===================== -->
-<section class="about section-pad" id="about">
+<!-- ═══ ABOUT ═══ -->
+<section class="about-section" id="about">
   <div class="container">
     <div class="section-header fade-in">
       <span class="section-eyebrow">Who We Are</span>
       <h2 class="section-title">Built on Engineering.<br/>Driven by Purpose.</h2>
+      <p class="section-sub">NexEV is a specialized electric mobility company solving India's EV reliability gap — sourcing BIS-certified components from trusted manufacturers in Taiwan, while building a rugged 250W stand-on scooter for real Indian conditions right here in Karnataka.</p>
     </div>
-    <div class="about-grid">
-      <div class="about-card fade-in">
-        <div class="card-icon card-icon--blue">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
-        <h3>Vision</h3>
-        <p>To become India's most trusted engineering-led electric mobility company — building practical, scalable EV solutions that work in real-world conditions across every tier of the market.</p>
+
+    <!-- Bridge grid -->
+    <div class="bridge-grid fade-in">
+      <div class="bridge-card bridge-card--tw">
+        <div class="bridge-flag">🇹🇼 Taiwan · Sourcing Office</div>
+        <h4>The Taiwan Advantage</h4>
+        <p>NexEV maintains a dedicated sourcing and technical operation in Taiwan — directly embedded within the global supply chain for EV components. Every BMS, charger, and controller is qualified at source for thermal stability, BIS compliance, and firmware integrity before procurement.</p>
+        <ul class="bridge-list">
+          <li>Direct access to Tier-1 BMS and charger manufacturers</li>
+          <li>Components validated at origin — not just on paper</li>
+          <li>First-look access to emerging battery cell technologies</li>
+        </ul>
       </div>
-      <div class="about-card fade-in">
-        <div class="card-icon card-icon--green">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <h3>Mission</h3>
-        <p>Design, assemble, and scale electric mobility products that prioritise performance-per-rupee, repairability, and local supply chain depth — starting from stand-on scooters and expanding systematically.</p>
+      <div class="bridge-card bridge-card--in">
+        <div class="bridge-flag">🇮🇳 India · Karnataka</div>
+        <h4>The India Execution</h4>
+        <p>NexEV assembles its Gen-1 250W Stand-On Scooter in Karnataka using CKD components. The focus is repairability and performance-per-rupee — built to survive 45°C heat and monsoon flooding, not just pass a lab test. Service-First distribution from day one.</p>
+        <ul class="bridge-list">
+          <li>CKD assembly in Bengaluru, Karnataka</li>
+          <li>IP67 connectors, all-terrain wheels, 120mm ground clearance</li>
+          <li>Local warranty and authorized service network</li>
+        </ul>
       </div>
-      <div class="about-card fade-in">
-        <div class="card-icon card-icon--yellow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        </div>
-        <h3>Engineering Approach</h3>
-        <p>Every NexEV product begins with a systems engineering brief. We validate components before assembling, source strategically, and build internal IP in battery management, motor control, and chassis integration — phase by phase.</p>
+    </div>
+
+    <!-- Three pillars -->
+    <div class="about-pillars fade-in">
+      <div class="pillar-card">
+        <div class="pillar-icon pillar-icon--blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+        <h3>Sourcing &amp; Validation</h3>
+        <p>We don't just buy parts — we qualify them. Working directly within Taiwan's component supply chain, every BIS-certified BMS and charger is vetted for thermal stability, firmware integrity, and long-term reliability.</p>
       </div>
+      <div class="pillar-card">
+        <div class="pillar-icon pillar-icon--green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>Service &amp; Distribution</h3>
+        <p>An authorized Service-First network in India — local warranty coverage and direct technical support. Dealers get territory rights, training, and a supply chain built for uptime, not just initial sale.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon pillar-icon--yellow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <h3>Engineered Products</h3>
+        <p>The 250W Stand-On Scooter is Phase 1 of a roadmap toward proprietary IP in motor control, BMS firmware, and robotics. Each phase generates revenue and deepens capability before the next begins.</p>
+      </div>
+    </div>
+
+    <!-- Status strip -->
+    <div class="status-strip fade-in">
+      <div class="status-chip"><span class="chip-dot chip-dot--white" style="background:#fff;"></span> NexEV Private Limited &nbsp;·&nbsp; CIN: U27103KA2026PTC215387</div>
+      <div class="status-chip"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg> Bengaluru, Karnataka</div>
+      <div class="status-chip"><span class="chip-dot chip-dot--green"></span> Phase 1 Live</div>
+      <div class="status-chip"><span class="chip-dot chip-dot--yellow"></span> Taiwan Sourcing Active</div>
     </div>
   </div>
 </section>
 
 
-<!-- ===================== PRODUCTS ===================== -->
-<section class="products section-pad section-alt" id="products">
+<!-- ═══ PRODUCTS ═══ -->
+<section class="section-pad section-alt" id="products">
   <div class="container">
     <div class="section-header fade-in">
       <span class="section-eyebrow">Product Line</span>
       <h2 class="section-title">Engineered for India.<br/>Designed to Scale.</h2>
-      <p class="section-sub">Every product in the NexEV line is validated for real-world Indian operating conditions — load, road surface, temperature, and serviceability.</p>
+      <p class="section-sub">Every NexEV product is validated for real-world Indian operating conditions — load, road surface, temperature, and serviceability.</p>
     </div>
 
-    <!-- Featured Product -->
-    <div class="product-featured fade-in">
-      <div class="product-featured-badge">Currently in Engineering & Prototype Development</div>
-      <div class="product-featured-layout">
+    <!-- Phase stepper -->
+    <div class="phase-stepper fade-in">
+      <div class="phase-track-line"><div class="phase-track-fill"></div></div>
+      <div class="ph-step done">
+        <div class="ph-dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="ph-label"><span class="ph-num">Phase 1</span><span class="ph-name">Stand-On Scooter</span><span class="ph-tag">Live</span></div>
+      </div>
+      <div class="ph-step active">
+        <div class="ph-dot"><span class="ph-pulse"></span></div>
+        <div class="ph-label"><span class="ph-num">Phase 2</span><span class="ph-name">Urban EV</span><span class="ph-tag">In Dev</span></div>
+      </div>
+      <div class="ph-step upcoming">
+        <div class="ph-dot"><span>3</span></div>
+        <div class="ph-label"><span class="ph-num">Phase 3</span><span class="ph-name">Smart Appliances</span><span class="ph-tag">2026–27</span></div>
+      </div>
+      <div class="ph-step upcoming">
+        <div class="ph-dot"><span>4</span></div>
+        <div class="ph-label"><span class="ph-num">Phase 4</span><span class="ph-name">Robotics</span><span class="ph-tag">2027+</span></div>
+      </div>
+    </div>
 
-        <div class="product-featured-visual">
-          <div class="product-3d-frame img-fallback-wrap img-fallback--scooter">
-            <img src="assets/products/scooter-250w.png"
-                 alt="NexEV 250W Stand-On Electric Scooter" class="product-real-img"
+    <!-- Featured product -->
+    <div class="product-featured fade-in">
+      <div class="product-badge">Available Now · Enquire to Order</div>
+      <div class="product-layout">
+        <div class="product-visual-panel">
+          <div class="product-img-wrap img-fallback-wrap img-fallback--scooter">
+            <img src="assets/images/ebike.png" alt="NexEV 250W Stand-On Electric Scooter" class="product-real-img"
                  onerror="this.closest('.img-fallback-wrap').classList.add('img-error');" />
             <div class="css-fallback" aria-hidden="true">
-              <div class="fallback-label">nex<strong>EV</strong> · 250W Stand-On</div>
+              <svg class="product-svg-fallback" viewBox="0 0 380 300" fill="none">
+                <rect x="80" y="165" width="220" height="18" rx="5" fill="#22c55e" fill-opacity=".2" stroke="#22c55e" stroke-width="1.5"/>
+                <rect x="110" y="118" width="160" height="52" rx="9" fill="#1a3a5c" fill-opacity=".1" stroke="#1a3a5c" stroke-width="1.5"/>
+                <rect x="152" y="58" width="12" height="68" rx="4" fill="#1a3a5c" fill-opacity=".35" stroke="#1a3a5c" stroke-width="1.2"/>
+                <rect x="122" y="52" width="76" height="12" rx="5" fill="#1a3a5c" fill-opacity=".4" stroke="#1a3a5c" stroke-width="1.4"/>
+                <circle cx="130" cy="213" r="38" stroke="#1a3a5c" stroke-width="2.5"/>
+                <circle cx="130" cy="213" r="13" fill="#1a3a5c" fill-opacity=".15" stroke="#1a3a5c" stroke-width="1.5"/>
+                <circle cx="258" cy="213" r="38" stroke="#1a3a5c" stroke-width="2.5"/>
+                <circle cx="258" cy="213" r="13" fill="#1a3a5c" fill-opacity=".15" stroke="#1a3a5c" stroke-width="1.5"/>
+                <rect x="210" y="126" width="60" height="28" rx="6" fill="#22c55e" fill-opacity=".2" stroke="#22c55e" stroke-width="1"/>
+                <text x="240" y="145" text-anchor="middle" font-size="11" fill="#22c55e" font-family="monospace" font-weight="bold">250W</text>
+                <line x1="38" y1="196" x2="78" y2="196" stroke="#f5c518" stroke-width="2.2" stroke-linecap="round" opacity=".7"/>
+                <line x1="28" y1="208" x2="76" y2="208" stroke="#f5c518" stroke-width="1.5" stroke-linecap="round" opacity=".45"/>
+              </svg>
+              <div class="fallback-label" style="text-align:center;font-size:.8rem;color:#94a3b8;margin-top:.5rem;">nex<strong style="color:#22c55e;">EV</strong> · 250W Stand-On</div>
             </div>
           </div>
-          <div class="product-tag-float">Gen 1 · 2026</div>
+          <div class="product-tag">Gen 1 · 2026</div>
         </div>
-
-        <div class="product-featured-info">
+        <div class="product-info">
+          <div class="product-series">NexEV Lite · Series 1</div>
           <h3 class="product-name">250W Stand-On Electric Scooter</h3>
-          <p class="product-tagline">The workhorse. Built for last-mile, campus, and warehouse mobility.</p>
+          <p class="product-tagline">The workhorse. Built for last-mile, campus, and warehouse mobility with zero RTO hassle.</p>
           <div class="spec-grid">
             <div class="spec-item"><span class="spec-label">Motor</span><span class="spec-val">250W BLDC Hub</span></div>
-            <div class="spec-item"><span class="spec-label">Battery</span><span class="spec-val">36V / 48V Li-Ion</span></div>
+            <div class="spec-item"><span class="spec-label">Battery</span><span class="spec-val">36V / 10Ah Li-Ion</span></div>
             <div class="spec-item"><span class="spec-label">Range</span><span class="spec-val">25–40 km / charge</span></div>
-            <div class="spec-item"><span class="spec-label">Top Speed</span><span class="spec-val">25 km/h (governed)</span></div>
+            <div class="spec-item"><span class="spec-label">Top Speed</span><span class="spec-val">25 km/h governed</span></div>
             <div class="spec-item"><span class="spec-label">Deck Load</span><span class="spec-val">120 kg rated</span></div>
-            <div class="spec-item"><span class="spec-label">Charge Time</span><span class="spec-val">4–6 hours</span></div>
+            <div class="spec-item"><span class="spec-label">Ground Clearance</span><span class="spec-val">120 mm</span></div>
             <div class="spec-item"><span class="spec-label">Brakes</span><span class="spec-val">Dual disc mechanical</span></div>
-            <div class="spec-item"><span class="spec-label">Assembly</span><span class="spec-val">India (local)</span></div>
+            <div class="spec-item"><span class="spec-label">Assembly</span><span class="spec-val">Karnataka, India</span></div>
           </div>
-          <div class="product-use-cases">
+          <div class="use-cases">
             <span class="use-case">Campus</span>
             <span class="use-case">Warehouse</span>
             <span class="use-case">Last-Mile</span>
             <span class="use-case">Hospitality</span>
           </div>
-          <a href="/cdn-cgi/l/email-protection#37525946425e455e52447759524f5241195e59084442555d5254430a67455853425443120507725946425e454e120507127205120f07120e041205070502076012050764435659531a785912050764545858435245115558534e0a7f525b5b5812050779524f72611205076352565a1205741207761207767e120507565a1205075e5943524552444352531205075e59120507435f521205070502076012050764435659531a7859120507725b525443455e54120507645458584352451912077612077679565a5212047612050712077674585a4756594e120476120507120776675f58595212047612050712077666425659435e434e120507655246425e455253120476120507120776745e434e1205717b585456435e58591204761205071207767a524444565052120476120507" class="btn btn-green btn-product">Enquire About This Product &rarr;</a>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Roadmap -->
-    <div class="products-coming fade-in">
-      <h3 class="coming-title">Roadmap Products</h3>
-      <div class="coming-grid">
-
-        <div class="coming-card">
-          <div class="coming-badge">Phase 2</div>
-          <!--<div class="coming-img-wrap img-fallback-wrap img-fallback--urban">
-            <img src="assets/products/scooter-urban.png" alt="Urban Electric Scooter"
-                 onerror="this.closest('.img-fallback-wrap').classList.add('img-error');" />
-            <div class="css-fallback" aria-hidden="true">
-              <div class="fallback-label">Urban EV · Phase 2</div>
+          <div class="ckd-badge">
+            <div class="ckd-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="ckd-text">
+              <strong>BIS-Certified Components · Assembled in Karnataka</strong>
+              <span>BMS &amp; charger sourced from BIS-registered manufacturers, validated at origin. IP67 connectors · Smart charger · Soft-start protection.</span>
             </div>
-          </div>-->
-          <h4>Small Urban Electric Scooters</h4>
-          <p>Seated 2-wheeler scooters optimised for Indian urban terrain — lightweight, practical, serviceable.</p>
-          <span class="coming-timeline">Target: 2026–27</span>
-          <ul class="product-status-list">
-            <li class="status-item status-engineering">
-              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Currently in Engineering &amp; Prototype Development
-            </li>
-            <li class="status-item status-dealers">
-              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Seeking Dealers &amp; Strategic Partners
-            </li>
-            <li class="status-item status-registration">
-              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Early Interest Registration Open
-            </li>
-          </ul>
+          </div>
+          <div class="product-cta-row">
+            <a href="#enquiry" class="btn btn-green">Enquire to Order →</a>
+            <a href="assets/docs/nexev-250w-spec.pdf" class="btn btn-outline" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Spec Sheet
+            </a>
+          </div>
         </div>
-
-        <div class="coming-card">
-          <div class="coming-badge">Phase 3</div>
-          <!--<div class="coming-img-wrap img-fallback-wrap img-fallback--appliance">
-            <img src="assets/products/appliance.png" alt="Smart Engineered Appliances"
-                 onerror="this.closest('.img-fallback-wrap').classList.add('img-error');" />
-            <div class="css-fallback" aria-hidden="true">
-              <div class="fallback-label">Smart Appliance · Phase 3</div>
-            </div>
-          </div>-->
-          <h4>Smart Engineered Appliances</h4>
-          <p>Intelligent cooking systems and robotic kitchen assistants — applying EV-grade electronics to home automation.</p>
-          <span class="coming-timeline">Target: 2027–28</span>
-          <ul class="product-status-list">
-            <li class="status-item status-engineering">
-              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Currently in Engineering &amp; Prototype Development
-            </li>
-            <li class="status-item status-dealers">
-              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Seeking Dealers &amp; Strategic Partners
-            </li>
-            <li class="status-item status-registration">
-              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Early Interest Registration Open
-            </li>
-          </ul>
-        </div>
-
-        <div class="coming-card">
-          <div class="coming-badge">Phase 4</div>
-          <!--<div class="coming-img-wrap img-fallback-wrap img-fallback--robotics">
-            <img src="assets/products/robotics.png" alt="Robotics Platform"
-                 onerror="this.closest('.img-fallback-wrap').classList.add('img-error');" />
-            <div class="css-fallback" aria-hidden="true">
-              <div class="fallback-label">Robotics · Phase 4</div>
-            </div>
-          </div> -->
-          <h4>Robotics &amp; Autonomous Systems</h4>
-          <p>Leveraging BMS and motor control IP to develop lightweight robotics for industrial and logistics applications.</p>
-          <span class="coming-timeline">Target: 2028+</span>
-          <ul class="product-status-list">
-            <li class="status-item status-engineering">
-              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Currently in Engineering &amp; Prototype Development
-            </li>
-            <li class="status-item status-dealers">
-              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Seeking Dealers &amp; Strategic Partners
-            </li>
-            <li class="status-item status-registration">
-              <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><polyline points="5,8 7,10 11,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Early Interest Registration Open
-            </li>
-          </ul>
-        </div>
-
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ===================== TECHNOLOGY ===================== -->
-<section class="technology section-pad" id="technology">
+<!-- ═══ AFTERMARKET ═══ -->
+<section class="section-pad" id="aftermarket">
   <div class="container">
     <div class="section-header fade-in">
-      <span class="section-eyebrow">Engineering Roadmap</span>
-      <h2 class="section-title">Phased. Deliberate.<br/>Built to Last.</h2>
-      <p class="section-sub">We don't try to build everything at once. Each phase generates revenue, reduces risk, and deepens technical capability before the next step.</p>
+      <span class="section-eyebrow">Aftermarket Distribution</span>
+      <h2 class="section-title">BIS-Certified EV Parts.<br/>For Every Vehicle on the Road.</h2>
+      <p class="section-sub">India's EV aftermarket is largely unserved with quality, certified components. NexEV's Taiwan sourcing position gives us direct access to BIS-compliant BMS, chargers, controllers, and wiring — available to dealers, service centres, and fleet operators across all EV makes and models.</p>
     </div>
-    <div class="roadmap fade-in">
 
-      <div class="roadmap-item roadmap-active">
-        <div class="roadmap-marker"><span class="roadmap-num">01</span><div class="roadmap-line"></div></div>
-        <div class="roadmap-body">
-          <div class="roadmap-phase-tag active-tag">Active · Phase 1</div>
-          <h3>Local Assembly &amp; Validation</h3>
-          <p>Sourcing validated components and assembling at our local facility. Focus: quality control, field-testing in real Indian conditions, and building dealer relationships.</p>
-          <div class="roadmap-metrics"><span>CKD assembly</span><span>QC process</span><span>Field validation</span><span>Dealer network</span></div>
-        </div>
-      </div>
-
-      <div class="roadmap-item">
-        <div class="roadmap-marker"><span class="roadmap-num">02</span><div class="roadmap-line"></div></div>
-        <div class="roadmap-body">
-          <div class="roadmap-phase-tag">Phase 2 · 2025</div>
-          <h3>In-House Battery Pack Development</h3>
-          <p>Design and assemble custom Li-Ion battery packs locally. Reduces BOM cost by 15–25%, improves warranty serviceability, and creates proprietary IP in pack geometry and thermal management.</p>
-          <div class="roadmap-metrics"><span>Custom BMS</span><span>Cell sourcing</span><span>Thermal design</span><span>Cost reduction</span></div>
-        </div>
-      </div>
-
-      <div class="roadmap-item">
-        <div class="roadmap-marker"><span class="roadmap-num">03</span><div class="roadmap-line"></div></div>
-        <div class="roadmap-body">
-          <div class="roadmap-phase-tag">Phase 3 · 2026</div>
-          <h3>BMS &amp; Motor Controller Integration</h3>
-          <p>Develop proprietary BMS firmware and integrate with motor controller for smart regen braking, SOC tracking, and over-the-air diagnostics.</p>
-          <div class="roadmap-metrics"><span>Proprietary firmware</span><span>Regen braking</span><span>OTA diagnostics</span><span>SOC management</span></div>
-        </div>
-      </div>
-
-      <div class="roadmap-item">
-        <div class="roadmap-marker"><span class="roadmap-num">04</span></div>
-        <div class="roadmap-body">
-          <div class="roadmap-phase-tag">Phase 4 · 2027+</div>
-          <h3>Vertical Integration &amp; Product Expansion</h3>
-          <p>In-house frame fabrication, motor winding R&amp;D, and expansion into seated scooters and robotics. NexEV operates as a full-stack EV engineering company with defensible IP.</p>
-          <div class="roadmap-metrics"><span>Frame fabrication</span><span>Motor R&amp;D</span><span>Product expansion</span><span>Export readiness</span></div>
-        </div>
-      </div>
-
+    <!-- Market context -->
+    <div class="am-context fade-in">
+      <div class="am-ctx-item"><span class="am-ctx-num">5M+</span><span class="am-ctx-label">EVs on Indian roads needing spares</span></div>
+      <div class="am-ctx-div"></div>
+      <div class="am-ctx-item"><span class="am-ctx-num">BIS</span><span class="am-ctx-label">Mandatory certification for EV components</span></div>
+      <div class="am-ctx-div"></div>
+      <div class="am-ctx-item"><span class="am-ctx-num">₹₹</span><span class="am-ctx-label">High-margin aftermarket vs. OEM supply</span></div>
+      <div class="am-ctx-div"></div>
+      <div class="am-ctx-item"><span class="am-ctx-num">TW</span><span class="am-ctx-label">Taiwan-sourced, validated at origin</span></div>
     </div>
+
+    <div class="am-grid fade-in">
+      <!-- BMS -->
+      <div class="am-card">
+        <div class="am-card-head">
+          <div class="am-icon am-icon--blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2"/><line x1="6" y1="11" x2="6" y2="13"/><line x1="10" y1="10" x2="10" y2="14"/><line x1="14" y1="11" x2="14" y2="13"/></svg></div>
+          <span class="am-bis">BIS IS 16893</span>
+        </div>
+        <h4>Smart BMS</h4>
+        <p class="am-desc">Battery Management Systems with active cell balancing, over-charge / over-discharge / thermal cutoff protection. Compatible with 24V–72V Li-Ion packs across all EV platforms.</p>
+        <ul class="am-specs">
+          <li><span>Voltage range</span><span>24V · 36V · 48V · 60V · 72V</span></li>
+          <li><span>Cell balancing</span><span>Active (mosfet-based)</span></li>
+          <li><span>Protection</span><span>OVP · UVP · OCP · OTP</span></li>
+          <li><span>Compatibility</span><span>All EV makes &amp; models</span></li>
+        </ul>
+        <div class="am-avail"><span class="avail-dot avail-dot--green"></span>Available for dealer order</div>
+      </div>
+      <!-- Chargers -->
+      <div class="am-card">
+        <div class="am-card-head">
+          <div class="am-icon am-icon--green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3a2 2 0 01-2-2V8a2 2 0 012-2h3.19M15 6h2a2 2 0 012 2v8a2 2 0 01-2 2h-3.19"/><line x1="23" y1="13" x2="23" y2="11"/><polyline points="11 6 7 12 13 12 9 18"/></svg></div>
+          <span class="am-bis">BIS IS 16170</span>
+        </div>
+        <h4>Smart Chargers</h4>
+        <p class="am-desc">36V–60V CC/CV chargers with soft-start, surge protection, and auto-cutoff. Validated for Indian grid fluctuation (180V–260V AC input tolerance).</p>
+        <ul class="am-specs">
+          <li><span>Output voltage</span><span>36V · 42V · 48V · 54V · 60V</span></li>
+          <li><span>Charge rate</span><span>2A · 5A · 10A options</span></li>
+          <li><span>Input</span><span>180–260V AC (Indian grid)</span></li>
+          <li><span>Protection</span><span>Soft-start · Surge · Auto-cutoff</span></li>
+        </ul>
+        <div class="am-avail"><span class="avail-dot avail-dot--green"></span>Available for dealer order</div>
+      </div>
+      <!-- Controllers -->
+      <div class="am-card">
+        <div class="am-card-head">
+          <div class="am-icon am-icon--yellow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg></div>
+          <span class="am-bis">BIS IS 17017</span>
+        </div>
+        <h4>Motor Controllers</h4>
+        <p class="am-desc">Sine-wave FOC controllers for BLDC hub motors — smooth torque, regen braking, thermal protection. Drop-in for most 250W–1500W EV platforms.</p>
+        <ul class="am-specs">
+          <li><span>Power range</span><span>250W · 500W · 750W · 1500W</span></li>
+          <li><span>Type</span><span>Sine-wave FOC (smooth torque)</span></li>
+          <li><span>Features</span><span>Regen braking · 3-speed · EBS</span></li>
+          <li><span>Thermal</span><span>Auto-cutoff on over-temp</span></li>
+        </ul>
+        <div class="am-avail"><span class="avail-dot avail-dot--yellow"></span>Available on request</div>
+      </div>
+      <!-- Motors -->
+      <div class="am-card">
+        <div class="am-card-head">
+          <div class="am-icon am-icon--blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/></svg></div>
+          <span class="am-bis">BIS IS 16171</span>
+        </div>
+        <h4>BLDC Hub Motors</h4>
+        <p class="am-desc">Rear-wheel brushless DC hub motors for stand-on scooters and urban EVs. Hall sensor equipped, direct-drive — zero chain maintenance, high efficiency at Indian load conditions.</p>
+        <ul class="am-specs">
+          <li><span>Rated power</span><span>250W · 350W · 500W</span></li>
+          <li><span>Voltage</span><span>36V · 48V</span></li>
+          <li><span>Hall sensors</span><span>Yes — 3-phase</span></li>
+          <li><span>IP rating</span><span>IP54 dust &amp; splash proof</span></li>
+        </ul>
+        <div class="am-avail"><span class="avail-dot avail-dot--yellow"></span>Available on request</div>
+      </div>
+      <!-- Connectors -->
+      <div class="am-card">
+        <div class="am-card-head">
+          <div class="am-icon am-icon--green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></div>
+          <span class="am-bis">IP67 Rated</span>
+        </div>
+        <h4>Connectors &amp; Wiring Harnesses</h4>
+        <p class="am-desc">IP67-rated power connectors and pre-assembled wiring harnesses for EV battery, motor, and controller circuits. Built to survive monsoon submersion and 45°C operating temperatures.</p>
+        <ul class="am-specs">
+          <li><span>Connector types</span><span>XT30 · XT60 · XT90 · Anderson</span></li>
+          <li><span>Ingress protection</span><span>IP67 — fully sealed</span></li>
+          <li><span>Cable rating</span><span>10AWG · 8AWG silicone wire</span></li>
+          <li><span>Temperature</span><span>–40°C to +200°C rated</span></li>
+        </ul>
+        <div class="am-avail"><span class="avail-dot avail-dot--green"></span>Available for dealer order</div>
+      </div>
+      <!-- CTA card -->
+      <div class="am-card am-card--cta">
+        <div class="am-cta-inner">
+          <div class="am-cta-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <h4>Become an Authorised Parts Distributor</h4>
+          <p class="am-desc">NexEV is building a network of authorised parts distributors across Karnataka and beyond. Get access to BIS-certified stock, technical documentation, and direct procurement pricing.</p>
+          <ul class="am-benefits">
+            <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>BIS-certified stock — validated at source</li>
+            <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Sell to all EV brands — not just NexEV</li>
+            <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Technical datasheets &amp; warranty docs</li>
+            <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Priority pricing for volume orders</li>
+          </ul>
+          <a href="#enquiry" class="am-cta-btn">Apply as Parts Distributor →</a>
+          <a href="#enquiry" class="am-cta-link">Request Parts Catalogue &amp; Pricing</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="am-footnote fade-in">All components supplied by NexEV are sourced from BIS-registered manufacturers. BIS certification numbers are provided on invoices. Applicable standards: IS 16893 (BMS) · IS 16170 (Chargers) · IS 17017 (Controllers) · IS 16171 (Motors).</p>
   </div>
 </section>
 
 
-<!-- ===================== OPPORTUNITIES ===================== -->
-<section class="opportunities section-pad section-alt" id="opportunities">
+<!-- ═══ OPPORTUNITIES ═══ -->
+<section class="section-pad section-alt" id="opportunities">
   <div class="container">
     <div class="section-header fade-in">
       <span class="section-eyebrow">Grow With NexEV</span>
@@ -381,84 +876,73 @@
       <p class="section-sub">NexEV is building its supply chain, distribution, and capital structure with long-term partners. We are selective, structured, and serious about who we grow with.</p>
     </div>
     <div class="opp-grid fade-in">
-
       <div class="opp-card">
         <div class="opp-num">01</div>
         <div class="opp-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="26" height="18" rx="3"/><path d="M21 10V7a5 5 0 0 0-10 0v3"/><line x1="16" y1="17" x2="16" y2="20"/></svg></div>
         <h3>Dealer Partner</h3>
-        <p>Authorised dealers get exclusive territory rights, product training, marketing support, and direct factory pricing.</p>
-        <ul class="opp-list"><li>Exclusive territory allocation</li><li>Demo unit support</li><li>Co-branded marketing</li><li>Direct supply chain</li></ul>
-        <a href="/cdn-cgi/l/email-protection#98fdf6e9edf1eaf1fdebd8f6fde0fdeeb6f1f6a7ebedfaf2fdfbeca5dcfdf9f4fdeabdaaa8c8f9eaecf6fdeaebf0f1e8bdaaa8ddf6e9edf1eae1bdaaa8bdddaabda0a8bda1abbdaaa8d6fde0ddcebefaf7fce1a5d0fdf4f4f7bdaaa8d6fde0ddcebdaaa8ccfdf9f5bdaadbbda8d9bda8d9d1bdaaa8f9f5bdaaa8f1f6ecfdeafdebecfdfcbdaaa8f1f6bdaaa8fafdfbf7f5f1f6ffbdaaa8f9f6bdaaa8f9edecf0f7eaf1ebfdfcbdaaa8fcfdf9f4fdeab6bda8d9bda8d9d6f9f5fdbdabd9bdaaa8bda8d9dbf7f5e8f9f6e1bdabd9bdaaa8bda8d9c8f0f7f6fdbdabd9bdaaa8bda8d9dbf1ece1bdaadecafdfff1f7f6bdabd9bdaaa8bda8d9dde0f1ebecf1f6ffbdaaa8daedebf1f6fdebebbdabd9bdaaa8bda8d9d5fdebebf9fffdbdabd9bdaaa8" class="opp-link">Apply as Dealer &rarr;</a>
+        <p>Authorised dealers get exclusive territory rights, product training, marketing support, and direct factory pricing for both scooters and EV parts.</p>
+        <ul class="opp-list"><li>Exclusive territory allocation</li><li>Demo unit support</li><li>Co-branded marketing</li><li>Direct supply chain access</li></ul>
+        <a href="#enquiry" class="opp-link">Apply as Dealer →</a>
       </div>
-
       <div class="opp-card opp-card--featured">
         <div class="opp-num">02</div>
         <div class="opp-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="13"/><path d="M16 8v8l5 3"/></svg></div>
         <h3>Investor</h3>
-        <p>We are raising a seed round to scale production, fund battery R&amp;D, and expand dealer network to Tier 1 and Tier 2 cities.</p>
+        <p>We are raising a seed round to scale EV parts distribution and fund engineering of our 250W scooter. Transparent unit economics, milestone-based tranches.</p>
         <ul class="opp-list"><li>Equity &amp; revenue share models</li><li>Milestone-based tranches</li><li>Transparent unit economics</li><li>Due diligence pack available</li></ul>
-        <a href="/cdn-cgi/l/email-protection#9bfef5eaeef2e9f2fee8dbf5fee3feedb5f2f5a4e8eef9f1fef8efa6d2f5edfee8eff4e9bea9abdef5eaeef2e9e2bea9abbedea9bea3abbea2a8bea9abd5fee3decdbdf9f4ffe2a6d3fef7f7f4bea9abd5fee3decdbea9abcffefaf6bea9d8beabdabeabdad2bea9abfaf6bea9abf2f5effee9fee8effeffbea9abf2f5bea9abf2f5edfee8eff6fef5efbea9abf4ebebf4e9efeef5f2eff2fee8bea9abecf2eff3bea9abd5fee3decdb5beabdabeabdad5faf6febea8dabea9abbeabdaddeef5ffbea9ddd4e9fcfaf5f2e8faeff2f4f5bea8dabea9abbeabdacbf3f4f5febea8dabea9abbeabdad2f5edfee8eff6fef5efbea9abc9faf5fcfebea8dabea9abbeabdad6fee8e8fafcfebea8dabea9ab" class="opp-link">Request Investor Brief &rarr;</a>
+        <a href="#enquiry" class="opp-link">Request Investor Brief →</a>
       </div>
-
       <div class="opp-card">
         <div class="opp-num">03</div>
         <div class="opp-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v14H4z"/><path d="M14 6h6v22h-6z"/><path d="M24 10h4v18h-4z"/></svg></div>
-        <h3>Component Supplier</h3>
-        <p>Building a robust local supply chain. If you supply motors, controllers, cells, frames, or electronics — we want to qualify you.</p>
-        <ul class="opp-list"><li>Long-term purchase agreements</li><li>Technical specification alignment</li><li>Quality audit process</li><li>Scalable order volumes</li></ul>
-        <a href="/cdn-cgi/l/email-protection#d9bcb7a8acb0abb0bcaa99b7bca1bcaff7b0b7e6aaacbbb3bcbaade48aaca9a9b5b0bcabfcebe98bbcbeb0aaadabb8adb0b6b7fcebe9fc9cebfce1e9fce0eafcebe997bca19c8fffbbb6bda0e491bcb5b5b6fcebe997bca19c8ffcebe98dbcb8b4fceb9afce998fce99890fcebe9aeb6acb5bdfcebe9b5b0b2bcfcebe9adb6fcebe9abbcbeb0aaadbcabfcebe9b8aafcebe9b8fcebe9bab6b4a9b6b7bcb7adfcebe9aaaca9a9b5b0bcabf7fce998fce99897b8b4bcfcea98fcebe9fce9989ab6b4a9b8b7a0fcea98fcebe9fce99889b1b6b7bcfcea98fcebe9fce9989ab6b4a9b6b7bcb7adaafcebe98aaca9a9b5b0bcbdfcea98fcebe9fce9989ab8a9b8bab0ada0fceb9f949688aafcea98fcebe9fce99894bcaaaab8bebcfcea98fcebe9" class="opp-link">Register as Supplier &rarr;</a>
+        <h3>Parts Distributor</h3>
+        <p>Building an authorised parts distribution network. Supply BIS-certified EV components to workshops and dealers across India — sell to all EV brands, not just NexEV.</p>
+        <ul class="opp-list"><li>BIS-certified stock access</li><li>Technical documentation</li><li>Volume pricing tiers</li><li>Long-term supply agreements</li></ul>
+        <a href="#enquiry" class="opp-link">Register as Distributor →</a>
       </div>
-
       <div class="opp-card">
         <div class="opp-num">04</div>
         <div class="opp-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="5"/><circle cx="22" cy="22" r="5"/><path d="M14.5 14.5l3 3"/></svg></div>
         <h3>Strategic Partner</h3>
-        <p>Companies in logistics, campus management, hospitality, or manufacturing seeking custom EV fleet or co-development arrangements.</p>
+        <p>Companies in logistics, campus management, hospitality, or manufacturing seeking custom EV fleet arrangements or co-development of electric mobility solutions.</p>
         <ul class="opp-list"><li>Fleet pricing &amp; SLA</li><li>Custom product development</li><li>White-label options</li><li>Joint go-to-market</li></ul>
-        <a href="/cdn-cgi/l/email-protection#c0a5aeb1b5a9b2a9a5b380aea5b8a5b6eea9aeffb3b5a2aaa5a3b4fd93b4b2a1b4a5a7a9a3e5f2f090a1b2b4aea5b2b3a8a9b0e5f2f085aeb1b5a9b2b9e5f2f0e585f2e5f8f0e5f9f3e5f2f08ea5b88596e6a2afa4b9fd88a5acacafe5f2f08ea5b88596e5f2f094a5a1ade5f283e5f081e5f08189e5f2f0a1ade5f2f0a9aeb4a5b2a5b3b4a5a4e5f2f0a9aee5f2f0a1e5f2f0b3b4b2a1b4a5a7a9a3e5f2f0b0a1b2b4aea5b2b3a8a9b0e5f2f0b7a9b4a8e5f2f08ea5b88596eee5f081e5f0818ea1ada5e5f381e5f2f0e5f08183afadb0a1aeb9e5f381e5f2f0e5f08190a8afaea5e5f381e5f2f0e5f08190a1b2b4aea5b2b3a8a9b0e5f2f094b9b0a5e5f381e5f2f0e5f0818da5b3b3a1a7a5e5f381e5f2f0" class="opp-link">Discuss Partnership &rarr;</a>
+        <a href="#enquiry" class="opp-link">Discuss Partnership →</a>
       </div>
-
     </div>
   </div>
 </section>
 
 
-<!-- ===================== ENQUIRY ===================== -->
-<section class="enquiry section-pad" id="enquiry">
+<!-- ═══ ENQUIRY ═══ -->
+<section class="section-pad" id="enquiry">
   <div class="container">
-    <div class="">
-
-      <div class="enquiry-info fade-in">
-        <span class="section-eyebrow">Get In Touch</span>
-        <h2 class="section-title enquiry-title">Let's Start a Real Conversation.</h2>
-        <p>Whether you are a dealer, investor, supplier, or interested in our products — fill in the form or email us directly. We respond within 48 business hours with information specific to your enquiry.</p>
-        <div class="enquiry-contact-items">
-          <div class="contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>India — Manufacturing &amp; Distribution</span>
-          </div>
-          <div class="contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <a href="/cdn-cgi/l/email-protection#e7828996928e958e8294a789829f8291c98e89" class="contact-email-link"><span class="__cf_email__" data-cfemail="ec89829d99859e85899fac828994899ac28582">[email&#160;protected]</span></a>
-          </div>
-          <div class="contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <span>Response within 48 business hours</span>
-          </div>
+    <div class="enquiry-layout">
+      <div class="fade-in">
+        <div class="enquiry-eyebrow">Get In Touch</div>
+        <h2 class="enquiry-title">Let's Start a<br/>Real Conversation.</h2>
+        <p class="enquiry-desc">Whether you are a dealer, investor, parts distributor, or interested in our scooter — fill in the form or email us directly. We respond within 48 business hours with information specific to your enquiry.</p>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Bengaluru, Karnataka — Manufacturing &amp; Distribution</span>
         </div>
-        <!-- Direct email button — opens platform email client (Gmail app / Mail / Outlook) -->
-        <div class="direct-email-box">
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:service@nexev.in">service@nexev.in</a>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <span>Response within 48 business hours</span>
+        </div>
+        <div class="enquiry-direct">
           <p>Prefer to email us directly?</p>
-          <a href="/cdn-cgi/l/email-protection#ea8f849b9f8398838f99aa848f928f9cc48384d5999f88808f899ed7ad8f848f988b86cfd8daaf849b9f839893cfd8dacfafd8cfd2dacfd3d9cfd8daa48f92afbccc88858e93d7a28f868685cfd8daa48f92afbccfd8dabe8f8b87cfd8a9cfdaabcfdaab" class="btn btn-blue direct-email-btn">
-            <svg viewBox="0 0 20 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="1" width="18" height="14" rx="2"/><polyline points="1,1 10,9 19,1"/></svg>
+          <a href="mailto:service@nexev.in?subject=NexEV%20Enquiry" class="btn btn-blue">
+            <svg width="16" height="16" viewBox="0 0 20 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="1" width="18" height="14" rx="2"/><polyline points="1,1 10,9 19,1"/></svg>
             Open Email App
           </a>
         </div>
       </div>
-
-	  <!--
-      <div class="enquiry-form-wrap fade-in-delay">
-        <form class="enquiry-form" id="enquiryForm" novalidate>
+      <div class="enquiry-form-card fade-in-delay">
+        <form id="enquiryForm" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label for="fname">Full Name <span class="req">*</span></label>
@@ -466,7 +950,7 @@
             </div>
             <div class="form-group">
               <label for="fcompany">Company / Organisation</label>
-              <input type="text" id="fcompany" name="company" placeholder="Company name (if applicable)" autocomplete="organization" />
+              <input type="text" id="fcompany" name="company" placeholder="Company name" autocomplete="organization" />
             </div>
           </div>
           <div class="form-row">
@@ -481,107 +965,82 @@
           </div>
           <div class="form-group">
             <label for="fenquiry">Enquiry Type <span class="req">*</span></label>
-            <div class="select-wrap">
-              <select id="fenquiry" name="enquiry_type" required>
-                <option value="" disabled selected>Select your enquiry type</option>
-                <option value="product">Product Information</option>
-                <option value="dealer">Dealer Partnership</option>
-                <option value="investor">Investment Enquiry</option>
-                <option value="supplier">Supplier Registration</option>
-                <option value="partner">Strategic Partnership</option>
-                <option value="fleet">Fleet / Bulk Order</option>
-                <option value="other">Other</option>
-              </select>
-              <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </div>
+            <select id="fenquiry" name="enquiry_type" required>
+              <option value="" disabled selected>Select enquiry type</option>
+              <option value="product">Scooter — Product Information</option>
+              <option value="parts">EV Parts — Dealer / Distributor</option>
+              <option value="dealer">Dealer Partnership</option>
+              <option value="investor">Investment Enquiry</option>
+              <option value="supplier">Component Supplier</option>
+              <option value="fleet">Fleet / Bulk Order</option>
+              <option value="other">Other</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="fmessage">Message <span class="req">*</span></label>
-            <textarea id="fmessage" name="message" rows="5" placeholder="Tell us about your requirements, scale, location, and timeline." required></textarea>
+            <textarea id="fmessage" name="message" rows="4" placeholder="Tell us about your requirements, scale, location, and timeline." required></textarea>
           </div>
-          <div class="form-footer-row">
-            <p class="form-note">
-              <span class="req">*</span> Required. By submitting you agree to our
-              <button type="button" class="terms-link" id="openTermsBtn">Terms &amp; Conditions</button>
-              and <button type="button" class="terms-link" id="openPrivacyBtn">Privacy Policy</button>.
-            </p>
-            <button type="submit" class="btn btn-blue btn-submit">
-              <span>Send Enquiry</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </button>
+          <div class="form-submit-row">
+            <button type="submit" class="btn btn-blue">Send Enquiry <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
           </div>
-		  
-          <div class="form-success" id="formSuccess" aria-live="polite">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div>
-              <strong>Enquiry Received!</strong>
-              <p>We will respond within 48 business hours with information specific to your enquiry type.</p>
-            </div>
+          <div class="form-success" id="formSuccess">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><strong>Enquiry Received!</strong> We will respond within 48 business hours.</div>
           </div>
-		  
         </form>
-      </div> -->
-
+      </div>
     </div>
   </div>
 </section>
 
 
-<!-- ===================== FOOTER ===================== -->
+<!-- ═══ FOOTER ═══ -->
 <footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-top">
-
       <div class="footer-brand">
-        <a href="#home" class="nav-logo-wrap footer-logo-wrap" aria-label="NexEV">
-          <img src="assets/logo/nexev-logo.png" alt="NexEV" class="nav-logo-img footer-logo-img"
+        <a href="#home" class="nav-logo-wrap" aria-label="NexEV" style="margin-bottom:.75rem;display:flex;">
+          <img src="assets/logo/nexev-logo.png" alt="NexEV" class="nav-logo-img"
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <span class="nav-logo-text footer-logo-text" style="display:none;">
-            <span class="logo-nex logo-nex--white">nex</span><span class="logo-ev">EV</span>
-            <span class="logo-streak" aria-hidden="true"></span>
+          <span class="nav-logo-text" style="display:none;color:#fff;">
+            <span style="color:#fff;">nex</span><span class="logo-ev">EV</span>
           </span>
         </a>
-        <p class="footer-tagline">Engineering the Next Evolution<br/>of Practical Mobility.</p>
-        
-        <div class="footer-legal-entity">
-          <p class="footer-company-name">NexEV Private Limited.</p>
-          <p class="footer-cin">CIN: U27103KA2026PTC215387</p>
-          
-		  <p class="footer-loc">
-          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
-          Registered in Karnataka, India
-         </p>
+        <p class="footer-tagline">Sourcing Validated Components in Taiwan.<br/>Building Rugged EV Solutions in India.</p>
+        <div class="footer-legal-block">
+          <p>NexEV Private Limited</p>
+          <p class="cin">CIN: U27103KA2026PTC215387</p>
+          <p class="footer-loc">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+            Registered in Karnataka, India
+          </p>
         </div>
       </div>
-
-      <div class="footer-links-col">
+      <div class="footer-col">
         <h4>Company</h4>
         <a href="#about">About NexEV</a>
-        <a href="#technology">Technology</a>
         <a href="#products">Products</a>
+        <a href="#aftermarket">EV Parts</a>
+        <a href="#opportunities">Opportunities</a>
       </div>
-
-      <div class="footer-links-col">
+      <div class="footer-col">
         <h4>Engage</h4>
         <a href="#opportunities">Dealer Programme</a>
         <a href="#opportunities">Investor Relations</a>
-        <a href="#opportunities">Supplier Network</a>
+        <a href="#aftermarket">Parts Distributor</a>
         <a href="#enquiry">Enquire Now</a>
       </div>
-
-      <div class="footer-links-col">
+      <div class="footer-col">
         <h4>Contact</h4>
-        <!-- mailto: opens platform default email client on desktop and mobile -->
-        <a href="/cdn-cgi/l/email-protection#2a4f445b5f4358434f596a444f524f5c044344"><span class="__cf_email__" data-cfemail="04616a75716d766d6177446a617c61722a6d6a">[email&#160;protected]</span></a>
-        <span class="footer-note">Response within 48 hrs</span>
-        <span class="footer-note">Made in India &#127470;&#127475;</span>
+        <a href="mailto:service@nexev.in">service@nexev.in</a>
+        <span>Response within 48 hrs</span>
+        <span>Made in India 🇮🇳</span>
       </div>
-
     </div>
-
+    <hr class="footer-hr" />
     <div class="footer-bottom">
       <p>&copy; 2026 NexEV. All rights reserved.</p>
-      <div class="footer-legal">
+      <div class="footer-legal-row">
         <button type="button" class="footer-legal-btn" id="openPrivacyBtn2">Privacy Policy</button>
         <button type="button" class="footer-legal-btn" id="openTermsBtn2">Terms &amp; Conditions</button>
       </div>
@@ -589,102 +1048,91 @@
   </div>
 </footer>
 
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
 
-<!-- ===================== TERMS MODAL ===================== -->
+
+<!-- ═══ TERMS MODAL ═══ -->
 <div class="modal-overlay" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsTitle" aria-hidden="true">
   <div class="modal-box">
     <div class="modal-header">
       <h2 id="termsTitle">Terms &amp; Conditions</h2>
-      <button class="modal-close" id="closeTermsBtn" aria-label="Close">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
+      <button class="modal-close" id="closeTermsBtn" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     </div>
     <div class="modal-body">
       <p class="modal-date">Effective: March 4, 2026</p>
-      <h3>1. Use of This Website</h3>
-      <p>This website is operated by NexEV. By accessing nexev.in, you agree to these Terms. If you do not agree, please do not use this site.</p>
-      <h3>2. Enquiry Submissions</h3>
-      <p>When you submit an enquiry, you consent to NexEV using your details to respond to your specific enquiry only. We do not use submitted data for marketing without explicit consent.</p>
-      <h3>3. Product Information</h3>
-      <p>All product specifications, timelines, and roadmap information are indicative and subject to change. Actual product details will be confirmed at the time of formal order or partnership agreement.</p>
-      <h3>4. Intellectual Property</h3>
-      <p>All content on this website — text, graphics, logos, SVG illustrations, and design — is the intellectual property of NexEV and may not be reproduced without prior written permission.</p>
-      <h3>5. Limitation of Liability</h3>
-      <p>NexEV shall not be liable for any direct, indirect, incidental, or consequential damages arising from use of this website or reliance on information herein. Nothing on this site constitutes a legally binding offer or contract.</p>
-      <h3>6. Partnership &amp; Investment Enquiries</h3>
-      <p>Enquiries regarding dealership, investment, or supplier registration are expressions of interest only and do not create any binding obligation on either party.</p>
-      <h3>7. Governing Law</h3>
-      <p>These Terms are governed by the laws of India. Disputes are subject to the exclusive jurisdiction of competent courts in India.</p>
-      <h3>8. Contact</h3>
-      <p>For questions: <a href="/cdn-cgi/l/email-protection#284d46595d415a414d5b68464d504d5e064146"><span class="__cf_email__" data-cfemail="88ede6f9fde1fae1edfbc8e6edf0edfea6e1e6">[email&#160;protected]</span></a></p>
+      <h3>1. Use of This Website</h3><p>This website is operated by NexEV Private Limited. By accessing nexev.in, you agree to these Terms.</p>
+      <h3>2. Enquiry Submissions</h3><p>When you submit an enquiry, you consent to NexEV using your details to respond to your specific enquiry only. We do not use submitted data for marketing without explicit consent.</p>
+      <h3>3. Product Information</h3><p>All product specifications, timelines, and roadmap information are indicative and subject to change. Actual product details will be confirmed at the time of formal order or partnership agreement.</p>
+      <h3>4. Intellectual Property</h3><p>All content on this website is the intellectual property of NexEV and may not be reproduced without prior written permission.</p>
+      <h3>5. Limitation of Liability</h3><p>NexEV shall not be liable for any direct, indirect, incidental, or consequential damages arising from use of this website. Nothing on this site constitutes a legally binding offer or contract.</p>
+      <h3>6. Partnership &amp; Investment Enquiries</h3><p>Enquiries regarding dealership, investment, or supplier registration are expressions of interest only and do not create any binding obligation on either party.</p>
+      <h3>7. Governing Law</h3><p>These Terms are governed by the laws of India. Disputes are subject to the exclusive jurisdiction of competent courts in Karnataka, India.</p>
+      <h3>8. Contact</h3><p>For questions: <a href="mailto:service@nexev.in">service@nexev.in</a></p>
     </div>
-    <div class="modal-footer">
-      <button class="btn btn-blue" id="closeTermsBtn2">I Understand</button>
-    </div>
+    <div class="modal-footer"><button class="btn btn-blue" id="closeTermsBtn2">I Understand</button></div>
   </div>
 </div>
 
-<!-- ===================== PRIVACY MODAL ===================== -->
+<!-- ═══ PRIVACY MODAL ═══ -->
 <div class="modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle" aria-hidden="true">
   <div class="modal-box">
     <div class="modal-header">
       <h2 id="privacyTitle">Privacy Policy</h2>
-      <button class="modal-close" id="closePrivacyBtn" aria-label="Close">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
+      <button class="modal-close" id="closePrivacyBtn" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     </div>
     <div class="modal-body">
       <p class="modal-date">Effective: March 4, 2026</p>
-      <h3>1. Information We Collect</h3>
-      <p>When you submit an enquiry, we collect: name, company, email address, phone number, and message content. We do not use tracking cookies or advertising analytics.</p>
-      <h3>2. How We Use Your Information</h3>
-      <p>Information submitted is used exclusively to respond to your specific enquiry. We will not add you to any marketing list or third-party database without your explicit written consent.</p>
-      <h3>3. Data Storage &amp; Security</h3>
-      <p>Enquiry data is stored securely and accessed only by authorised NexEV team members. We do not sell, rent, or share your personal data with any third party, except where required by law.</p>
-      <h3>4. Email Communications</h3>
-      <p>If you email us directly, your email and its contents are stored in our email system for correspondence purposes only.</p>
-      <h3>5. Your Rights</h3>
-      <p>You may request access to, correction of, or deletion of any personal data we hold. Contact: <a href="/cdn-cgi/l/email-protection#46232837332f342f23350628233e2330682f28"><span class="__cf_email__" data-cfemail="82e7ecf3f7ebf0ebe7f1c2ece7fae7f4acebec">[email&#160;protected]</span></a></p>
-      <h3>6. Data Retention</h3>
-      <p>We retain enquiry data for a maximum of 24 months, after which it is securely deleted unless a formal business relationship has been established.</p>
-      <h3>7. Governing Law</h3>
-      <p>This policy is governed by the Information Technology Act, 2000, and applicable data protection rules of India.</p>
+      <h3>1. Information We Collect</h3><p>When you submit an enquiry, we collect: name, company, email address, phone number, and message content. We do not use tracking cookies or advertising analytics.</p>
+      <h3>2. How We Use Your Information</h3><p>Information submitted is used exclusively to respond to your specific enquiry. We will not add you to any marketing list without your explicit written consent.</p>
+      <h3>3. Data Storage &amp; Security</h3><p>Enquiry data is stored securely and accessed only by authorised NexEV team members. We do not sell, rent, or share your personal data with any third party, except where required by law.</p>
+      <h3>4. Your Rights</h3><p>You may request access to, correction of, or deletion of any personal data we hold. Contact: <a href="mailto:service@nexev.in">service@nexev.in</a></p>
+      <h3>5. Data Retention</h3><p>We retain enquiry data for a maximum of 24 months, after which it is securely deleted unless a formal business relationship has been established.</p>
+      <h3>6. Governing Law</h3><p>This policy is governed by the Information Technology Act, 2000, and applicable data protection rules of India.</p>
     </div>
-    <div class="modal-footer">
-      <button class="btn btn-blue" id="closePrivacyBtn2">Got It</button>
-    </div>
+    <div class="modal-footer"><button class="btn btn-blue" id="closePrivacyBtn2">Got It</button></div>
   </div>
 </div>
 
 
-<!-- ===================== JS ===================== -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<!-- ═══ JAVASCRIPT ═══ -->
+<script>
 (function () {
   'use strict';
 
-  /* ---- Navbar scroll state ---- */
+  /* ── 1. Page loader (instant) ── */
+  var loader = document.getElementById('pageLoader');
+  if (loader) { loader.style.opacity = '0'; setTimeout(function(){loader.style.display='none';}, 400); }
+
+  /* ── 2. Navbar scroll ── */
   var navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function () {
     navbar.classList.toggle('scrolled', window.scrollY > 20);
+    var st = document.getElementById('scrollTop');
+    if (st) { st.classList.toggle('show', window.scrollY > 400); }
   }, { passive: true });
 
-  /* ---- Hamburger ---- */
+  /* ── 3. Hamburger ── */
   var hamburger = document.getElementById('hamburger');
   var mobileMenu = document.getElementById('mobileMenu');
   hamburger.addEventListener('click', function () {
     var open = mobileMenu.classList.toggle('open');
     hamburger.setAttribute('aria-expanded', String(open));
     mobileMenu.setAttribute('aria-hidden', String(!open));
+    document.body.style.overflow = open ? 'hidden' : '';
   });
-  mobileMenu.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
+  mobileMenu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
       mobileMenu.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
       mobileMenu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
     });
   });
 
-  /* ---- Smooth scroll with navbar offset ---- */
+  /* ── 4. Smooth scroll ── */
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener('click', function (e) {
       var href = this.getAttribute('href');
@@ -692,12 +1140,16 @@
       var target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - navbar.offsetHeight - 8, behavior: 'smooth' });
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 72, behavior: 'smooth' });
       }
     });
   });
 
-  /* ---- Fade-in on scroll ---- */
+  /* ── 5. Scroll to top ── */
+  var stBtn = document.getElementById('scrollTop');
+  if (stBtn) stBtn.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  /* ── 6. Fade-in on scroll ── */
   var fadeEls = document.querySelectorAll('.fade-in, .fade-in-delay');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
@@ -708,65 +1160,93 @@
     fadeEls.forEach(function (el) { el.classList.add('visible'); });
   }
 
-  /* ---- CSS fallback: trigger onerror on cached-broken images ---- */
+  /* ── 7. Image fallback fix ── */
   document.querySelectorAll('.img-fallback-wrap img').forEach(function (img) {
-    if (img.complete && img.naturalWidth === 0) {
-      img.closest('.img-fallback-wrap').classList.add('img-error');
-    }
+    if (img.complete && img.naturalWidth === 0) img.closest('.img-fallback-wrap').classList.add('img-error');
   });
 
-  /* ---- Enquiry form (wire to Formspree/backend in production) ---- */
+  /* ── 8. Hero carousel ── */
+  (function () {
+    var TOTAL = 3, INTERVAL = 6000, cur = 0, timer = null, paused = false;
+    var slides = document.querySelectorAll('.nh-slide');
+    var dots   = document.querySelectorAll('.nh-dot');
+    var curEl  = document.getElementById('nh-cur');
+    var hero   = document.getElementById('nexev-hero');
+    var bgs    = ['#060d1a', '#030a18', '#04080f'];
+    var colors = ['#22c55e', '#3b82f6', '#f5c518'];
+
+    function goTo(idx) {
+      slides[cur].classList.remove('nh-active');
+      dots[cur].classList.remove('active');
+      dots[cur].querySelector('.nh-dot-inner').style.width = '7px';
+      dots[cur].querySelector('.nh-dot-inner').style.background = 'rgba(255,255,255,0.3)';
+      cur = ((idx % TOTAL) + TOTAL) % TOTAL;
+      slides[cur].classList.add('nh-active');
+      dots[cur].classList.add('active');
+      dots[cur].querySelector('.nh-dot-inner').style.width = '26px';
+      dots[cur].querySelector('.nh-dot-inner').style.background = colors[cur];
+      if (curEl) curEl.textContent = String(cur + 1).padStart(2, '0');
+      hero.style.backgroundColor = bgs[cur];
+    }
+    function startTimer() {
+      clearInterval(timer);
+      timer = setInterval(function () { if (!paused) goTo(cur + 1); }, INTERVAL);
+    }
+    dots.forEach(function (d) {
+      d.addEventListener('click', function () { goTo(parseInt(d.dataset.i, 10)); startTimer(); });
+    });
+    var prev = document.getElementById('nh-prev');
+    var next = document.getElementById('nh-next');
+    if (prev) prev.addEventListener('click', function () { goTo(cur - 1); startTimer(); });
+    if (next) next.addEventListener('click', function () { goTo(cur + 1); startTimer(); });
+    if (hero) {
+      hero.addEventListener('mouseenter', function () { paused = true; });
+      hero.addEventListener('mouseleave', function () { paused = false; });
+      var tx = 0;
+      hero.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+      hero.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - tx;
+        if (Math.abs(dx) > 50) { goTo(dx < 0 ? cur + 1 : cur - 1); startTimer(); }
+      }, { passive: true });
+    }
+    startTimer();
+  })();
+
+  /* ── 9. Enquiry form ── */
   var form = document.getElementById('enquiryForm');
   var successBox = document.getElementById('formSuccess');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    /* PRODUCTION: Replace with fetch POST to your form endpoint */
-    successBox.classList.add('show');
-    form.reset();
-    setTimeout(function () { successBox.classList.remove('show'); }, 8000);
-  });
-
-  /* ---- Modal system ---- */
-  function openModal(id) {
-    var m = document.getElementById(id);
-    if (!m) return;
-    m.classList.add('open');
-    m.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    var focusable = m.querySelector('button, a, input');
-    if (focusable) setTimeout(function () { focusable.focus(); }, 50);
-  }
-  function closeModal(id) {
-    var m = document.getElementById(id);
-    if (!m) return;
-    m.classList.remove('open');
-    m.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      /* PRODUCTION: POST to your form endpoint (Formspree / backend) */
+      successBox.classList.add('show');
+      form.reset();
+      setTimeout(function () { successBox.classList.remove('show'); }, 7000);
+    });
   }
 
-  /* Terms */
-  document.getElementById('openTermsBtn').addEventListener('click',  function () { openModal('termsModal'); });
-  document.getElementById('openTermsBtn2').addEventListener('click', function () { openModal('termsModal'); });
-  document.getElementById('closeTermsBtn').addEventListener('click', function () { closeModal('termsModal'); });
-  document.getElementById('closeTermsBtn2').addEventListener('click',function () { closeModal('termsModal'); });
-
-  /* Privacy */
-  document.getElementById('openPrivacyBtn').addEventListener('click',  function () { openModal('privacyModal'); });
-  document.getElementById('openPrivacyBtn2').addEventListener('click', function () { openModal('privacyModal'); });
-  document.getElementById('closePrivacyBtn').addEventListener('click', function () { closeModal('privacyModal'); });
-  document.getElementById('closePrivacyBtn2').addEventListener('click',function () { closeModal('privacyModal'); });
-
-  /* Click outside to close */
-  document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
-    overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(overlay.id); });
+  /* ── 10. Modals ── */
+  function openModal(id)  { var m = document.getElementById(id); if (!m) return; m.classList.add('open'); m.setAttribute('aria-hidden','false'); document.body.style.overflow = 'hidden'; }
+  function closeModal(id) { var m = document.getElementById(id); if (!m) return; m.classList.remove('open'); m.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; }
+  [['openTermsBtn2','closeTermsBtn','closeTermsBtn2','termsModal'],
+   ['openPrivacyBtn2','closePrivacyBtn','closePrivacyBtn2','privacyModal']].forEach(function (cfg) {
+    var ob = document.getElementById(cfg[0]);
+    var cb1 = document.getElementById(cfg[1]);
+    var cb2 = document.getElementById(cfg[2]);
+    var mid = cfg[3];
+    if (ob)  ob.addEventListener('click',  function () { openModal(mid); });
+    if (cb1) cb1.addEventListener('click', function () { closeModal(mid); });
+    if (cb2) cb2.addEventListener('click', function () { closeModal(mid); });
   });
-
-  /* Escape key */
+  document.querySelectorAll('.modal-overlay').forEach(function (o) {
+    o.addEventListener('click', function (e) { if (e.target === o) closeModal(o.id); });
+  });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(function (m) { closeModal(m.id); });
   });
 
 })();
 </script>
+
 </body>
 </html>
