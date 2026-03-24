@@ -61,11 +61,6 @@ img{max-width:100%;display:block}
 .nav-c{max-width:1200px;margin:0 auto;padding:0 1.5rem;height:100%;display:flex;align-items:center;justify-content:space-between;gap:2rem}
 .logo{font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800}
 .logo-n{color:var(--blue)}.logo-e{color:var(--green)}
-.nav-logo-wrap { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
-.nav-logo-img { height: 32px; width: auto; }
-.nav-logo-text { display: flex; align-items: center; font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800; line-height: 1; }
-.logo-nex { color: var(--blue); }
-.logo-ev  { color: var(--green); }
 .nav-links{display:flex;align-items:center;gap:.2rem;list-style:none}
 .nav-links a{padding:.4rem .7rem;border-radius:7px;font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s,background .2s}
 .nav-links a:hover{color:var(--blue);background:#f1f5f9}
@@ -311,6 +306,26 @@ img{max-width:100%;display:block}
 .f-sub .btn{width:100%;justify-content:center}
 .f-ok{display:none;align-items:center;gap:.75rem;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.3);border-radius:8px;padding:.9rem 1rem;margin-top:1rem;font-size:.875rem;color:#166534}
 .f-ok.show{display:flex}
+/* validation */
+.fg input.err,.fg select.err,.fg textarea.err{border-color:#ef4444;background:rgba(239,68,68,.03)}
+.fg input.err:focus,.fg select.err:focus,.fg textarea.err:focus{border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,.1)}
+.err-msg{font-size:.75rem;color:#dc2626;margin-top:.25rem;display:none}
+.err-msg.show{display:block}
+/* email options modal */
+.email-modal{display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.6);align-items:flex-end;justify-content:center;padding:1rem}
+.email-modal.open{display:flex}
+@media(min-width:600px){.email-modal{align-items:center}}
+.email-modal-box{background:#fff;border-radius:16px 16px 16px 16px;width:100%;max-width:420px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.2)}
+.email-modal-hd{padding:1.25rem 1.5rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.email-modal-hd h3{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--blue)}
+.email-modal-cl{background:none;border:none;cursor:pointer;color:var(--muted);padding:4px}
+.email-modal-sub{padding:.6rem 1.5rem;font-size:.78rem;color:var(--muted);background:var(--bg-alt);border-bottom:1px solid var(--border)}
+.email-opt{display:flex;align-items:center;gap:.9rem;padding:1rem 1.5rem;cursor:pointer;transition:background .15s;border:none;background:transparent;width:100%;text-align:left;border-bottom:1px solid var(--border)}
+.email-opt:last-child{border-bottom:none}
+.email-opt:hover{background:var(--bg-alt)}
+.email-opt-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem}
+.email-opt-info strong{display:block;font-size:.875rem;font-weight:700;color:var(--text)}
+.email-opt-info span{font-size:.78rem;color:var(--muted)}
 @media(max-width:900px){.enq-layout{grid-template-columns:1fr}}
 @media(max-width:550px){.frow{grid-template-columns:1fr}}
 
@@ -353,13 +368,8 @@ img{max-width:100%;display:block}
 <!-- ═══ NAVBAR ═══ -->
 <nav class="navbar" id="navbar">
   <div class="nav-c">
-  
-	<a href="#home" class="nav-logo-wrap" aria-label ="NexEV">
-      <img id="navLogoImg" src="assets/logo/nexev-logo.png" alt="NexEV" class="nav-logo-img"
-           onerror="this.style.display='none';document.getElementById('navLogoText').style.display='flex';" />
-      <span class="nav-logo-text" id="navLogoText" style="display:none;">
-        <span class="logo-nex">NEX</span><span class="logo-ev">EV</span>
-      </span>
+    <a href="#home" aria-label="NexEV">
+      <span class="logo"><span class="logo-n">nex</span><span class="logo-e">EV</span></span>
     </a>
     <ul class="nav-links">
       <li><a href="#products">Products</a></li>
@@ -534,7 +544,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="tc">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      <span><strong>Taipei Cycle Show 2026</strong> · Taiwan Sourcing</span>
+      <span><strong>Taipei Cycle Show 2025</strong> · Taiwan Sourcing</span>
     </div>
   </div>
 </div>
@@ -550,11 +560,11 @@ img{max-width:100%;display:block}
     </div>
     <div class="bridge-grid fi">
       <div class="bc bc--tw">
-        <div class="bc-flag">🇹🇼 Taiwan · Taipei Cycle Show 2026 · Sourcing</div>
+        <div class="bc-flag">🇹🇼 Taiwan · Taipei Cycle Show 2025 · Sourcing</div>
         <h4>The Taiwan Connection</h4>
         <p>NexEV has established direct contact with Taiwan's EV component supply chain through the Taipei Cycle Show. We are actively seeking BMS manufacturers, 18650 cell suppliers, and e-bike OEMs who want a committed India distribution partner.</p>
         <ul class="bc-list">
-          <li>Direct supplier relationships — Taipei Cycle Show 2026</li>
+          <li>Direct supplier relationships — Taipei Cycle Show 2025</li>
           <li>Seeking BMS, cell, and e-bike component suppliers</li>
           <li>Looking for India-ready or BIS-pathway partners</li>
         </ul>
@@ -566,7 +576,7 @@ img{max-width:100%;display:block}
         <ul class="bc-list">
           <li>Active Amazon India presence — battery kits</li>
           <li>EV workshop customer network in Karnataka</li>
-          <li>Incorporated entity — GSTIN: 29AALCN2942C1ZF</li>
+          <li>Incorporated entity — CIN: U27103KA2026PTC215387</li>
         </ul>
       </div>
     </div>
@@ -590,7 +600,7 @@ img{max-width:100%;display:block}
     <div class="status-strip fi">
       <div class="st-chip"><span class="dot dot-g"></span> Distribution Active — Karnataka</div>
       <div class="st-chip"><span class="dot dot-g"></span> Amazon India — Battery Kits Live</div>
-      <div class="st-chip">NexEV Private Limited &nbsp;·&nbsp; GSTIN: 29AALCN2942C1ZF</div>
+      <div class="st-chip">NexEV Pvt Ltd &nbsp;·&nbsp; CIN: U27103KA2026PTC215387</div>
       <div class="st-chip"><span class="dot dot-y"></span> BMS Sourcing — In Progress</div>
     </div>
   </div>
@@ -827,7 +837,7 @@ img{max-width:100%;display:block}
           <li>Incorporated entity — legitimate import/distribution capability</li>
           <li>Existing customer base — workshops, hobbyists, assemblers</li>
           <li>Karnataka base — proximity to EV manufacturers</li>
-          <li>Taipei Cycle Show 2026 — direct Taiwan supplier contact</li>
+          <li>Taipei Cycle Show 2025 — direct Taiwan supplier contact</li>
           <li>Early stage = exclusive, long-term partnership possible</li>
           <li>BIS compliance navigation — we understand the local path</li>
         </ul>
@@ -878,7 +888,7 @@ img{max-width:100%;display:block}
         <h3>Taiwan Supply Partner</h3>
         <p>BMS manufacturers, cell suppliers, e-bike OEMs, and EV component makers who want a committed, incorporated Indian distribution partner.</p>
         <ul class="oc-list">
-          <li>Taipei Cycle Show 2026 contact established</li>
+          <li>Taipei Cycle Show 2025 contact established</li>
           <li>BIS compliance support provided</li>
           <li>Long-term distribution — not spot buying</li>
           <li>Karnataka distribution base — expanding</li>
@@ -904,7 +914,7 @@ img{max-width:100%;display:block}
         </div>
         <div class="ci">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <a href="mailto:contact@nexev.in">contact@nexev.in</a>
+          <a href="/cdn-cgi/l/email-protection#85ede0e9e9eac5ebe0fde0f3abeceb"><span class="__cf_email__" data-cfemail="b4dcd1d8d8dbf4dad1ccd1c29addda">[email&#160;protected]</span></a>
         </div>
         <div class="enq-note">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -914,16 +924,30 @@ img{max-width:100%;display:block}
       <div class="enq-card fi2">
         <form id="enqForm" novalidate>
           <div class="frow">
-            <div class="fg"><label for="fn">Full Name <span class="req">*</span></label><input type="text" id="fn" name="name" placeholder="Your name" required/></div>
-            <div class="fg"><label for="fc">Company</label><input type="text" id="fc" name="company" placeholder="Company name"/></div>
+            <div class="fg">
+              <label for="fn">Full Name <span class="req">*</span></label>
+              <input type="text" id="fn" name="name" placeholder="Your name" autocomplete="name"/>
+              <span class="err-msg" id="err-fn">Please enter your name.</span>
+            </div>
+            <div class="fg">
+              <label for="fc">Company</label>
+              <input type="text" id="fc" name="company" placeholder="Company name" autocomplete="organization"/>
+            </div>
           </div>
           <div class="frow">
-            <div class="fg"><label for="fe">Email <span class="req">*</span></label><input type="email" id="fe" name="email" placeholder="you@company.com" required/></div>
-            <div class="fg"><label for="fp">Phone / WhatsApp</label><input type="tel" id="fp" name="phone" placeholder="+91 or +886"/></div>
+            <div class="fg">
+              <label for="fe">Email <span class="req">*</span></label>
+              <input type="email" id="fe" name="email" placeholder="you@company.com" autocomplete="email"/>
+              <span class="err-msg" id="err-fe">Please enter a valid email address.</span>
+            </div>
+            <div class="fg">
+              <label for="fp">Phone / WhatsApp</label>
+              <input type="tel" id="fp" name="phone" placeholder="+91 or +886" autocomplete="tel"/>
+            </div>
           </div>
           <div class="fg">
             <label for="ft">Enquiry Type <span class="req">*</span></label>
-            <select id="ft" name="enquiry_type" required>
+            <select id="ft" name="enquiry_type">
               <option value="" disabled selected>Select enquiry type</option>
               <option value="taiwan">🇹🇼 Taiwan Partnership — BMS / Cell / E-Bike OEM</option>
               <option value="kit_bulk">Battery Kit — Bulk / Wholesale Order</option>
@@ -933,15 +957,22 @@ img{max-width:100%;display:block}
               <option value="ebike">E-Bike / Battery Pack — Register Interest</option>
               <option value="other">Other</option>
             </select>
+            <span class="err-msg" id="err-ft">Please select an enquiry type.</span>
           </div>
           <div class="fg">
             <label for="fm">Message <span class="req">*</span></label>
-            <textarea id="fm" name="message" rows="4" placeholder="Tell us about your company, what you supply or need, and what you are looking for from NexEV." required></textarea>
+            <textarea id="fm" name="message" rows="4" placeholder="Tell us about your company, what you supply or need, and what you are looking for from NexEV."></textarea>
+            <span class="err-msg" id="err-fm">Please enter a message (min 10 characters).</span>
           </div>
-          <div class="f-sub"><button type="submit" class="btn btn-blue">Send Enquiry <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button></div>
+          <div class="f-sub">
+            <button type="submit" class="btn btn-blue" id="enqSubmit">
+              Send Enquiry
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
           <div class="f-ok" id="f-ok">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <div><strong>Enquiry received.</strong> We will respond within 24 hours.</div>
+            <div><strong>Enquiry sent.</strong> We will respond within 24 hours.</div>
           </div>
         </form>
       </div>
@@ -959,7 +990,7 @@ img{max-width:100%;display:block}
         <p class="ft-tag">18650 Battery Assembly Kits for India.<br/>Building toward BMS distribution and own-brand EV batteries.</p>
         <div class="ft-legal">
           <p>NexEV Private Limited</p>
-          <p class="cin">GSTIN: 29AALCN2942C1ZF</p>
+          <p class="cin">CIN: U27103KA2026PTC215387</p>
           <p>Registered in Karnataka, India</p>
         </div>
       </div>
@@ -979,14 +1010,14 @@ img{max-width:100%;display:block}
       </div>
       <div class="fc">
         <h4>Contact</h4>
-        <a href="mailto:contact@nexev.in">contact@nexev.in</a>
+        <a href="/cdn-cgi/l/email-protection#b6ded3dadad9f6d8d3ced3c098dfd8"><span class="__cf_email__" data-cfemail="88e0ede4e4e7c8e6edf0edfea6e1e6">[email&#160;protected]</span></a>
         <span>Response within 24 hrs</span>
         <span style="margin-top:.5rem;">Made in India 🇮🇳</span>
       </div>
     </div>
     <hr class="fhr"/>
     <div class="fb">
-      <p>© 2026 NexEV Private Limited. All rights reserved.</p>
+      <p>© 2025 NexEV Private Limited. All rights reserved.</p>
       <div class="fl-row">
         <button class="fl-btn" id="btnPrivacy">Privacy Policy</button>
         <button class="fl-btn" id="btnTerms">Terms &amp; Conditions</button>
@@ -997,6 +1028,55 @@ img{max-width:100%;display:block}
 
 <button id="scrollTop" aria-label="Scroll to top"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
 
+<!-- Email App Picker Modal -->
+<div class="email-modal" id="emailModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Choose email app">
+  <div class="email-modal-box">
+    <div class="email-modal-hd">
+      <h3>Open with your email app</h3>
+      <button class="email-modal-cl" id="closeEmailModal" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="email-modal-sub" id="emailModalSub">Your enquiry will be pre-filled in the email.</div>
+    <button class="email-opt" id="optGmail">
+      <div class="email-opt-icon" style="background:#fef2f2;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2z" fill="#EA4335"/><path d="M2 6l10 7 10-7" stroke="#fff" stroke-width="1.5"/></svg>
+      </div>
+      <div class="email-opt-info">
+        <strong>Gmail</strong>
+        <span>Opens Gmail in browser or app</span>
+      </div>
+    </button>
+    <button class="email-opt" id="optOutlook">
+      <div class="email-opt-icon" style="background:#eff6ff;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="#0078D4"/><path d="M13 5h7v14h-7V5z" fill="#fff" fill-opacity=".3"/><path d="M4 7h9v10H4z" fill="#fff"/><text x="6.5" y="15" font-size="7" fill="#0078D4" font-family="Arial" font-weight="bold">Ot</text></svg>
+      </div>
+      <div class="email-opt-info">
+        <strong>Outlook / Hotmail</strong>
+        <span>Opens Outlook in browser or app</span>
+      </div>
+    </button>
+    <button class="email-opt" id="optYahoo">
+      <div class="email-opt-icon" style="background:#faf5ff;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="#6001D2"/><text x="5" y="17" font-size="11" fill="#fff" font-family="Arial" font-weight="bold">Y!</text></svg>
+      </div>
+      <div class="email-opt-info">
+        <strong>Yahoo Mail</strong>
+        <span>Opens Yahoo Mail in browser</span>
+      </div>
+    </button>
+    <button class="email-opt" id="optDefault">
+      <div class="email-opt-icon" style="background:var(--bg-alt);">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div class="email-opt-info">
+        <strong>Default Email App</strong>
+        <span>Mail, Apple Mail, Thunderbird, etc.</span>
+      </div>
+    </button>
+  </div>
+</div>
+
 <!-- Privacy Modal -->
 <div class="modal" id="modalPrivacy" aria-hidden="true">
   <div class="modal-box">
@@ -1005,7 +1085,7 @@ img{max-width:100%;display:block}
       <h3>1. Data Collected</h3><p>NexEV collects name, email, phone, and company information submitted via the enquiry form. Used solely for responding to your enquiry.</p>
       <h3>2. Data Sharing</h3><p>We do not sell or share your data with third parties outside of NexEV's directors handling your enquiry.</p>
       <h3>3. Data Retention</h3><p>Enquiry data is retained for up to 24 months unless a business relationship is established.</p>
-      <h3>4. Your Rights</h3><p>Request deletion at any time by emailing contact@nexev.in.</p>
+      <h3>4. Your Rights</h3><p>Request deletion at any time by emailing <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cba3aea7a7a48ba5aeb3aebde5a2a5">[email&#160;protected]</a>.</p>
       <h3>5. Governing Law</h3><p>Governed by the Information Technology Act, 2000 and applicable Indian data protection rules.</p>
     </div>
     <div class="modal-ft"><button class="btn btn-blue" id="closePrivacy2">Got It</button></div>
@@ -1131,17 +1211,156 @@ if('IntersectionObserver' in window){
   reset();
 })();
 
-/* Form */
-var form = document.getElementById('enqForm');
-var fok  = document.getElementById('f-ok');
-if(form){
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    if(fok){ fok.classList.add('show'); }
+/* ── Form validation + email dispatch ── */
+(function(){
+
+  var TO      = 'contact@nexev.in';
+  var SUBJECT = 'NexEV Enquiry';
+
+  /* field refs */
+  var fn = document.getElementById('fn');
+  var fe = document.getElementById('fe');
+  var ft = document.getElementById('ft');
+  var fm = document.getElementById('fm');
+  var fok = document.getElementById('f-ok');
+  var form = document.getElementById('enqForm');
+
+  /* pending mailto string — built on valid submit */
+  var pendingMailto = '';
+
+  /* ── helpers ── */
+  function setErr(field, errId, show){
+    var e = document.getElementById(errId);
+    if(show){ field.classList.add('err'); if(e) e.classList.add('show'); }
+    else     { field.classList.remove('err'); if(e) e.classList.remove('show'); }
+  }
+
+  function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
+
+  function clearField(field, errId){
+    field.addEventListener('input', function(){
+      if(field.value.trim()){ setErr(field, errId, false); }
+    },{once:false});
+  }
+
+  /* live-clear errors as user types */
+  if(fn) clearField(fn,'err-fn');
+  if(fe) clearField(fe,'err-fe');
+  if(ft) ft.addEventListener('change', function(){ if(ft.value) setErr(ft,'err-ft',false); });
+  if(fm) clearField(fm,'err-fm');
+
+  /* ── validate ── */
+  function validate(){
+    var ok = true;
+    if(!fn || !fn.value.trim()){ setErr(fn,'err-fn',true); ok=false; } else setErr(fn,'err-fn',false);
+    if(!fe || !isEmail(fe.value)){ setErr(fe,'err-fe',true); ok=false; } else setErr(fe,'err-fe',false);
+    if(!ft || !ft.value){ setErr(ft,'err-ft',true); ok=false; } else setErr(ft,'err-ft',false);
+    if(!fm || fm.value.trim().length < 10){ setErr(fm,'err-fm',true); ok=false; } else setErr(fm,'err-fm',false);
+    return ok;
+  }
+
+  /* ── build mailto string ── */
+  function buildMailto(app){
+    var name    = fn ? fn.value.trim() : '';
+    var email   = fe ? fe.value.trim() : '';
+    var company = document.getElementById('fc') ? document.getElementById('fc').value.trim() : '';
+    var phone   = document.getElementById('fp') ? document.getElementById('fp').value.trim() : '';
+    var type    = ft ? ft.options[ft.selectedIndex].text : '';
+    var message = fm ? fm.value.trim() : '';
+
+    var body =
+      'Name: ' + name + '\n' +
+      (company ? 'Company: ' + company + '\n' : '') +
+      'Email: ' + email + '\n' +
+      (phone ? 'Phone/WhatsApp: ' + phone + '\n' : '') +
+      'Enquiry Type: ' + type + '\n\n' +
+      'Message:\n' + message;
+
+    var subj = encodeURIComponent('[NexEV Enquiry] ' + type);
+    var bod  = encodeURIComponent(body);
+    var to   = encodeURIComponent(TO);
+
+    if(app === 'gmail'){
+      return 'https://mail.google.com/mail/?view=cm&fs=1&to=' + to + '&su=' + subj + '&body=' + bod;
+    }
+    if(app === 'outlook'){
+      return 'https://outlook.live.com/mail/0/deeplink/compose?to=' + to + '&subject=' + subj + '&body=' + encodeURIComponent(body.replace(/\n/g,'%0D%0A'));
+    }
+    if(app === 'yahoo'){
+      return 'https://compose.mail.yahoo.com/?to=' + to + '&subject=' + subj + '&body=' + bod;
+    }
+    /* default — mailto: for native mail app */
+    return 'mailto:' + TO + '?subject=' + subj + '&body=' + bod;
+  }
+
+  /* ── open email modal ── */
+  function openEmailModal(){
+    var modal = document.getElementById('emailModal');
+    if(!modal) return;
+    /* update sub-label with enquiry type */
+    var sub = document.getElementById('emailModalSub');
+    if(sub && ft && ft.value){
+      sub.textContent = 'Enquiry: ' + ft.options[ft.selectedIndex].text;
+    }
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeEmailModal(){
+    var modal = document.getElementById('emailModal');
+    if(!modal) return;
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  /* close button */
+  var closeBtn = document.getElementById('closeEmailModal');
+  if(closeBtn) closeBtn.addEventListener('click', closeEmailModal);
+
+  /* close on backdrop click */
+  var emailModal = document.getElementById('emailModal');
+  if(emailModal){
+    emailModal.addEventListener('click', function(e){
+      if(e.target === emailModal) closeEmailModal();
+    });
+  }
+
+  /* ── email option buttons ── */
+  function optClick(app){
+    var url = buildMailto(app);
+    closeEmailModal();
+    /* show success */
+    if(fok){ fok.classList.add('show'); setTimeout(function(){ fok.classList.remove('show'); }, 8000); }
     form.reset();
-    setTimeout(function(){ if(fok) fok.classList.remove('show'); }, 8000);
-  });
-}
+    /* open link */
+    if(app === 'default'){
+      window.location.href = url;
+    } else {
+      window.open(url, '_blank', 'noopener');
+    }
+  }
+
+  var og = document.getElementById('optGmail');
+  var oo = document.getElementById('optOutlook');
+  var oy = document.getElementById('optYahoo');
+  var od = document.getElementById('optDefault');
+  if(og) og.addEventListener('click', function(){ optClick('gmail'); });
+  if(oo) oo.addEventListener('click', function(){ optClick('outlook'); });
+  if(oy) oy.addEventListener('click', function(){ optClick('yahoo'); });
+  if(od) od.addEventListener('click', function(){ optClick('default'); });
+
+  /* ── form submit ── */
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!validate()) return;
+      openEmailModal();
+    });
+  }
+
+})();
 
 /* Modals */
 function openM(id){ var m=document.getElementById(id); if(!m) return; m.classList.add('open'); m.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
