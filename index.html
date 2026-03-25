@@ -3,15 +3,70 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>NexEV – Battery Kits & EV Components & E-Bike| Karnataka, India</title>
-<meta name="description" content="NexEV supplies 18650 DIY battery assembly kits to EV workshops and hobbyists across India. Building toward BMS distribution and own-brand EV batteries. Incorporated in Karnataka."/>
-<meta name="keywords" content="NexEV, 18650 battery kit India, DIY battery assembly, EV workshop parts, XT60 connector India, nickel strip battery, BMS India, EV components Karnataka"/>
-<meta name="robots" content="index,follow"/>
-<meta property="og:title" content="NexEV – Battery Kits & EV Components"/>
-<meta property="og:description" content="18650 battery assembly kits for EV workshops and hobbyists. Building toward BMS distribution and own-brand EV batteries in India."/>
+<title>NexEV | EV Battery Kits, Components &amp; Distribution | Karnataka, India</title>
+<meta name="description" content="NexEV supplies 18650 battery assembly kits, EV components, and BMS units to workshops and dealers across India. Manufacturing, trading, service &amp; distribution — incorporated in Karnataka."/>
+<meta name="keywords" content="NexEV, 18650 battery kit India, EV battery assembly Karnataka, EV components distributor India, BMS supplier India, XT60 connector wholesale, nickel strip battery pack, electric vehicle parts Karnataka, battery pack manufacturer India, EV component trading, DIY battery kit EV workshop, BMS distribution India, 18650 cell holder India, EV aftermarket parts Karnataka, battery assembly service India"/>
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"/>
+<meta name="author" content="NexEV Private Limited"/>
+<meta property="og:title" content="NexEV | EV Battery Kits, Components &amp; Distribution"/>
+<meta property="og:description" content="18650 battery assembly kits, EV components, and BMS units for workshops and dealers across India. Manufacturing, trading, service &amp; distribution — incorporated in Karnataka."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://nexev.in"/>
+<meta property="og:site_name" content="NexEV"/>
+<meta property="og:locale" content="en_IN"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="NexEV | EV Battery Kits, Components &amp; Distribution | India"/>
+<meta name="twitter:description" content="18650 battery assembly kits, EV components, and BMS units for workshops and dealers. Manufacturing, trading, service &amp; distribution — Karnataka, India."/>
 <link rel="canonical" href="https://nexev.in"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "NexEV Private Limited",
+  "alternateName": "NexEV",
+  "url": "https://nexev.in",
+  "logo": "https://nexev.in/assets/logo/nexev-logo.png",
+  "description": "NexEV is an incorporated Indian company supplying 18650 battery assembly kits, EV components, and BMS units to workshops and dealers across India. Activities include manufacturing, trading, service, and distribution of electric vehicle parts.",
+  "foundingDate": "2026",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bengaluru",
+    "addressRegion": "Karnataka",
+    "addressCountry": "IN"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91-99056-03640",
+      "contactType": "sales",
+      "availableLanguage": ["English", "Kannada", "Hindi"]
+    }
+  ],
+  "sameAs": [],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "EV Battery Kits & Components",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "18650 Battery Assembly Kit",
+          "description": "Complete 18650 Li-Ion battery pack assembly kit including nickel strips, 14 AWG wire, Kapton tape, insulation rings, XT60H connectors, and battery holders."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "EV Battery Management System (BMS)",
+          "description": "10S BMS for 36V battery packs — sourcing in progress for Indian EV workshops and assemblers."
+        }
+      }
+    ]
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
@@ -65,6 +120,7 @@ img{max-width:100%;display:block}
 .nav-logo-img{height:32px;width:auto;display:block}
 .nav-logo-text{display:flex;align-items:center;font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;line-height:1}
 .logo-nex{color:var(--blue)}.logo-ev{color:var(--green)}
+.nav-brand{display:flex;flex-direction:column;gap:.18rem;flex-shrink:0}
 .nav-links{display:flex;align-items:center;gap:.2rem;list-style:none}
 .nav-links a{padding:.4rem .7rem;border-radius:7px;font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s,background .2s}
 .nav-links a:hover{color:var(--blue);background:#f1f5f9}
@@ -81,13 +137,12 @@ img{max-width:100%;display:block}
 
 /* ═══ HERO ═══ */
 #hero{position:relative;height:100vh;min-height:600px;overflow:hidden;margin-top:var(--nav-h);background:#060e1c}
-.slide{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;align-items:center;opacity:0;transition:opacity .7s;pointer-events:none}
+.slide{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;align-items:center;justify-items:start;opacity:0;transition:opacity .7s;pointer-events:none}
 .slide.active{opacity:1;pointer-events:all}
-.slide-left{position:relative;z-index:2;padding:3rem 2rem 3rem 3rem}
-.slide-right{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;padding:2rem}
-/* gradient overlay on left */
-.slide::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.35) 50%,transparent 100%);z-index:1}
-.slide-left{z-index:2}
+.slide-left{position:relative;z-index:3;padding:2rem 2rem 2rem 4rem;display:flex;flex-direction:column;justify-content:center;width:100%;max-width:640px}
+.slide-right{position:relative;z-index:3;display:flex;align-items:center;justify-content:center;padding:2rem 3rem 2rem 1rem;height:100%}
+/* gradient: only covers left half — right stays visible */
+.slide::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 45%,rgba(0,0,0,.15) 70%,transparent 100%);z-index:1;pointer-events:none}
 /* badge */
 .h-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .9rem;border-radius:20px;border:1px solid;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1.2rem}
 .h-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
@@ -106,31 +161,40 @@ img{max-width:100%;display:block}
 .h-btn-p:hover{transform:translateY(-2px);filter:brightness(1.08)}
 .h-btn-s{display:inline-flex;align-items:center;padding:.72rem 1.35rem;border-radius:10px;font-weight:600;font-size:.875rem;color:rgba(255,255,255,.88);border:1.5px solid rgba(255,255,255,.28);background:transparent;transition:all .2s}
 .h-btn-s:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6)}
-/* slide visual area */
-.slide-vis{width:100%;max-width:420px;position:relative}
+/* slide visual panel */
+.slide-vis{width:100%;max-width:440px;min-height:260px;display:flex;align-items:center;justify-content:center;position:relative}
+.slide-vis svg{width:100%;height:auto;display:block}
 /* kit grid visual */
-.kit-vis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.kv-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:14px 8px;text-align:center}
-.kv-icon{font-size:1.35rem;margin-bottom:5px;line-height:1}
-.kv-name{font-size:.6rem;color:rgba(255,255,255,.65);font-weight:600;text-transform:uppercase;letter-spacing:.04em;line-height:1.3}
-.kv-item.kv-hi{background:rgba(34,197,94,.14);border-color:rgba(34,197,94,.35)}
-.kv-item.kv-hi .kv-name{color:rgba(34,197,94,.9)}
+.kit-vis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%}
+.kv-item{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 8px 10px;text-align:center;transition:background .2s,border-color .2s}
+.kv-item:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.3)}
+.kv-item svg{display:block;margin:0 auto 7px}
+.kv-name{font-size:.58rem;color:rgba(255,255,255,.72);font-weight:700;text-transform:uppercase;letter-spacing:.05em;line-height:1.3}
+.kv-item.kv-hi{background:rgba(34,197,94,.16);border-color:rgba(34,197,94,.45)}
+.kv-item.kv-hi .kv-name{color:rgba(34,197,94,.92)}
+/* slide entrance animation */
+@keyframes slideIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+.slide.active .slide-vis{animation:slideIn .6s ease .15s both}
 /* controls */
 .h-dots{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;gap:.5rem;align-items:center;z-index:10}
 .h-dot-btn{background:none;border:none;cursor:pointer;padding:4px}
 .h-dot-inner{display:block;height:4px;width:7px;border-radius:3px;background:rgba(255,255,255,.3);transition:all .4s}
 .h-dot-btn.on .h-dot-inner{width:26px}
 .h-arr{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
-.h-arr:hover{background:rgba(255,255,255,.2)}
+.h-arr:hover{background:rgba(255,255,255,.25)}
 #h-prev{left:1.5rem}
 #h-next{right:1.5rem}
 .h-count{position:absolute;bottom:2.4rem;right:2rem;z-index:10;font-family:'Syne',sans-serif;font-size:.8rem;color:rgba(255,255,255,.35)}
 .h-count em{color:rgba(255,255,255,.88);font-style:normal;font-weight:700}
+/* navbar slogan */
+.nav-slogan{font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.15rem;line-height:1}
+/* footer slogan */
+.footer-slogan{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.75rem;line-height:1}
 @media(max-width:900px){
   .slide{grid-template-columns:1fr}
   .slide-right{display:none}
-  .slide-left{padding:2.5rem 1.5rem}
-  #hero{min-height:580px}
+  .slide-left{padding:2rem 1.75rem;max-width:100%}
+  #hero{min-height:560px}
   #h-prev{left:.75rem}
   #h-next{right:.75rem}
 }
@@ -181,16 +245,17 @@ img{max-width:100%;display:block}
 .kit-visual-box{background:linear-gradient(135deg,#0f1e2e,#1a3a5c);border-radius:16px;padding:1.75rem;position:relative;overflow:hidden}
 .kit-visual-box::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(34,197,94,.15),transparent 70%)}
 .kit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;position:relative}
-.ki{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:12px 8px;text-align:center}
-.ki-icon{font-size:1.3rem;margin-bottom:5px;line-height:1}
-.ki-name{font-size:.6rem;color:rgba(255,255,255,.65);font-weight:600;text-transform:uppercase;letter-spacing:.04em;line-height:1.3}
-.ki.hi{background:rgba(34,197,94,.14);border-color:rgba(34,197,94,.35)}
+.ki{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:14px 8px 10px;text-align:center;transition:background .2s,border-color .2s}
+.ki:hover{background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.24)}
+.ki svg{display:block;margin:0 auto 7px}
+.ki-name{font-size:.58rem;color:rgba(255,255,255,.68);font-weight:700;text-transform:uppercase;letter-spacing:.05em;line-height:1.3}
+.ki.hi{background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.42)}
 .ki.hi .ki-name{color:rgba(34,197,94,.9)}
 /* component cards */
 .comp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
 .cc{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);padding:1.25rem;transition:border-color .2s,box-shadow .2s}
 .cc:hover{border-color:var(--green);box-shadow:0 4px 16px rgba(34,197,94,.1)}
-.cc-icon{width:32px;height:32px;border-radius:8px;background:rgba(34,197,94,.1);color:var(--green);display:flex;align-items:center;justify-content:center;margin-bottom:.75rem}
+.cc-icon{width:56px;height:56px;border-radius:12px;background:rgba(34,197,94,.08);border:1.5px solid rgba(34,197,94,.18);display:flex;align-items:center;justify-content:center;margin-bottom:.85rem}
 .cc h4{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;color:var(--blue);margin-bottom:.3rem}
 .cc p{font-size:.82rem;color:var(--muted);line-height:1.5}
 .cc-avail{display:inline-flex;align-items:center;gap:.35rem;font-size:.75rem;font-weight:600;margin-top:.6rem}
@@ -372,16 +437,19 @@ img{max-width:100%;display:block}
 <!-- ═══ NAVBAR ═══ -->
 <nav class="navbar" id="navbar">
   <div class="nav-c">
-    <a href="#home" class="nav-logo-wrap" aria-label="NexEV">
-      <img id="navLogoImg" src="assets/logo/nexev-logo.png" alt="NexEV" class="nav-logo-img"
-           onerror="this.style.display='none';document.getElementById('navLogoText').style.display='flex';"/>
-      <span class="nav-logo-text" id="navLogoText" style="display:none;">
-        <span class="logo-nex">NEX</span><span class="logo-ev">EV</span>
-      </span>
-    </a>
+    <div class="nav-brand">
+      <a href="#home" class="nav-logo-wrap" aria-label="NexEV">
+        <img id="navLogoImg" src="assets/logo/nexev-logo.png" alt="NexEV" class="nav-logo-img"
+             onerror="this.style.display='none';document.getElementById('navLogoText').style.display='flex';"/>
+        <span class="nav-logo-text" id="navLogoText" style="display:none;">
+          <span class="logo-nex">nex</span><span class="logo-ev">EV</span>
+        </span>
+      </a>
+      <span class="nav-slogan">Driven by Electric Future</span>
+    </div>
     <ul class="nav-links">
       <li><a href="#products">Products</a></li>
-      <li><a href="#taiwan">Taiwan</a></li>
+      <li><a href="#taiwan">Suppliers</a></li>
       <li><a href="#market">India Market</a></li>
       <li><a href="#opportunities">Partners</a></li>
       <li><a href="#enquiry" class="nav-cta">Contact Us</a></li>
@@ -393,7 +461,7 @@ img{max-width:100%;display:block}
 </nav>
 <div class="mob-menu" id="mobMenu" aria-hidden="true">
   <a href="#products">Products</a>
-  <a href="#taiwan">Taiwan Partnership</a>
+  <a href="#taiwan">Supplier Partnership</a>
   <a href="#market">India Market</a>
   <a href="#opportunities">Partners</a>
   <a href="#enquiry" class="mob-cta">Contact Us</a>
@@ -427,12 +495,85 @@ img{max-width:100%;display:block}
     <div class="slide-right">
       <div class="slide-vis">
         <div class="kit-vis-grid">
-          <div class="kv-item"><div class="kv-icon">⚡</div><div class="kv-name">18650 Holders</div></div>
-          <div class="kv-item"><div class="kv-icon">🔌</div><div class="kv-name">XT60H Connectors</div></div>
-          <div class="kv-item"><div class="kv-icon">〰️</div><div class="kv-name">Nickel Strip</div></div>
-          <div class="kv-item"><div class="kv-icon">🔴</div><div class="kv-name">14 AWG Wire</div></div>
-          <div class="kv-item"><div class="kv-icon">🟡</div><div class="kv-name">Kapton Tape</div></div>
-          <div class="kv-item kv-hi"><div class="kv-icon">📦</div><div class="kv-name">Ready to Ship</div></div>
+          <!-- 18650 Holders -->
+          <div class="kv-item">
+            <svg width="44" height="38" viewBox="0 0 44 38" fill="none">
+              <rect x="2" y="6" width="11" height="26" rx="3" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.5)" stroke-width="1"/>
+              <circle cx="7.5" cy="19" r="3.5" fill="none" stroke="#22c55e" stroke-width="1.2"/>
+              <rect x="16" y="6" width="11" height="26" rx="3" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.5)" stroke-width="1"/>
+              <circle cx="21.5" cy="19" r="3.5" fill="none" stroke="#22c55e" stroke-width="1.2"/>
+              <rect x="30" y="6" width="11" height="26" rx="3" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.5)" stroke-width="1"/>
+              <circle cx="35.5" cy="19" r="3.5" fill="none" stroke="#22c55e" stroke-width="1.2"/>
+              <rect x="2" y="2" width="11" height="5" rx="1.5" fill="rgba(255,255,255,.3)"/>
+              <rect x="16" y="2" width="11" height="5" rx="1.5" fill="rgba(255,255,255,.3)"/>
+              <rect x="30" y="2" width="11" height="5" rx="1.5" fill="rgba(255,255,255,.3)"/>
+            </svg>
+            <div class="kv-name">18650 Holders</div>
+          </div>
+          <!-- XT60H Connector -->
+          <div class="kv-item">
+            <svg width="44" height="38" viewBox="0 0 44 38" fill="none">
+              <rect x="4" y="10" width="16" height="18" rx="3" fill="rgba(245,197,24,.25)" stroke="#f5c518" stroke-width="1.2"/>
+              <rect x="7" y="15" width="4" height="8" rx="1" fill="#f5c518" opacity=".9"/>
+              <rect x="13" y="15" width="4" height="8" rx="1" fill="#f5c518" opacity=".9"/>
+              <line x1="20" y1="16" x2="24" y2="16" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+              <line x1="20" y1="22" x2="24" y2="22" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+              <rect x="24" y="10" width="16" height="18" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.45)" stroke-width="1.2"/>
+              <circle cx="29.5" cy="16.5" r="2" fill="none" stroke="#22c55e" stroke-width="1"/>
+              <circle cx="35.5" cy="16.5" r="2" fill="none" stroke="#22c55e" stroke-width="1"/>
+              <circle cx="29.5" cy="22.5" r="2" fill="none" stroke="#22c55e" stroke-width="1"/>
+              <circle cx="35.5" cy="22.5" r="2" fill="none" stroke="#22c55e" stroke-width="1"/>
+            </svg>
+            <div class="kv-name">XT60H Connectors</div>
+          </div>
+          <!-- Nickel Strip -->
+          <div class="kv-item">
+            <svg width="44" height="38" viewBox="0 0 44 38" fill="none">
+              <rect x="4" y="13" width="36" height="5" rx="1" fill="rgba(200,210,220,.35)" stroke="rgba(255,255,255,.55)" stroke-width=".8"/>
+              <rect x="4" y="20" width="36" height="5" rx="1" fill="rgba(200,210,220,.35)" stroke="rgba(255,255,255,.55)" stroke-width=".8"/>
+              <rect x="4" y="27" width="36" height="5" rx="1" fill="rgba(200,210,220,.35)" stroke="rgba(255,255,255,.55)" stroke-width=".8"/>
+              <line x1="10" y1="13" x2="10" y2="32" stroke="rgba(255,255,255,.2)" stroke-width=".5"/>
+              <line x1="18" y1="13" x2="18" y2="32" stroke="rgba(255,255,255,.2)" stroke-width=".5"/>
+              <line x1="26" y1="13" x2="26" y2="32" stroke="rgba(255,255,255,.2)" stroke-width=".5"/>
+              <line x1="34" y1="13" x2="34" y2="32" stroke="rgba(255,255,255,.2)" stroke-width=".5"/>
+              <text x="22" y="9" text-anchor="middle" font-size="6" fill="rgba(255,255,255,.5)" font-family="monospace">Ni STRIP</text>
+            </svg>
+            <div class="kv-name">Nickel Strip</div>
+          </div>
+          <!-- 14 AWG Wire -->
+          <div class="kv-item">
+            <svg width="44" height="38" viewBox="0 0 44 38" fill="none">
+              <path d="M4 14 Q10 8 16 14 Q22 20 28 14 Q34 8 40 14" stroke="#ef4444" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+              <path d="M4 14 Q10 8 16 14 Q22 20 28 14 Q34 8 40 14" stroke="rgba(255,100,100,.35)" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <path d="M4 24 Q10 18 16 24 Q22 30 28 24 Q34 18 40 24" stroke="#1e40af" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+              <path d="M4 24 Q10 18 16 24 Q22 30 28 24 Q34 18 40 24" stroke="rgba(100,150,255,.3)" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <text x="22" y="37" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.45)" font-family="monospace">14 AWG</text>
+            </svg>
+            <div class="kv-name">14 AWG Wire</div>
+          </div>
+          <!-- Kapton Tape -->
+          <div class="kv-item">
+            <svg width="44" height="38" viewBox="0 0 44 38" fill="none">
+              <ellipse cx="22" cy="22" rx="14" ry="9" fill="rgba(245,197,24,.22)" stroke="#f5c518" stroke-width="1.2"/>
+              <ellipse cx="22" cy="22" rx="14" ry="9" fill="none" stroke="#f5c518" stroke-width="1.2"/>
+              <ellipse cx="22" cy="19" rx="14" ry="9" fill="rgba(245,197,24,.3)" stroke="#f5c518" stroke-width="1.2"/>
+              <ellipse cx="22" cy="16" rx="14" ry="9" fill="rgba(245,197,24,.35)" stroke="#f5c518" stroke-width="1.2"/>
+              <ellipse cx="22" cy="16" rx="5" ry="3.5" fill="rgba(0,0,0,.25)" stroke="rgba(255,255,255,.25)" stroke-width=".8"/>
+              <text x="22" y="8" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.5)" font-family="monospace">25mm</text>
+            </svg>
+            <div class="kv-name">Kapton Tape</div>
+          </div>
+          <!-- Ready to Ship -->
+          <div class="kv-item kv-hi">
+            <svg width="44" height="38" viewBox="0 0 44 38" fill="none">
+              <rect x="6" y="10" width="32" height="22" rx="3" fill="rgba(34,197,94,.2)" stroke="#22c55e" stroke-width="1.3"/>
+              <line x1="6" y1="17" x2="38" y2="17" stroke="#22c55e" stroke-width="1" opacity=".6"/>
+              <path d="M15 10 L15 17" stroke="#22c55e" stroke-width="1" opacity=".5"/>
+              <path d="M29 10 L29 17" stroke="#22c55e" stroke-width="1" opacity=".5"/>
+              <polyline points="16,23 20,27 28,20" stroke="#22c55e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="kv-name">Ready to Ship</div>
+          </div>
         </div>
       </div>
     </div>
@@ -442,9 +583,9 @@ img{max-width:100%;display:block}
   <div class="slide" id="s1">
     <div class="slide-left">
       <div class="h-badge" style="background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.35);color:#4ade80;">
-        <span class="h-dot" style="background:#22c55e;"></span>Taiwan Sourcing · Active
+        <span class="h-dot" style="background:#22c55e;"></span>Supplier Sourcing · Active
       </div>
-      <h1 class="h-title">Seeking Taiwan<br/><span style="color:#22c55e;">Supply Partners.</span></h1>
+      <h1 class="h-title">Seeking Reliable<br/><span style="color:#22c55e;">Supply Partners.</span></h1>
       <p class="h-sub" style="color:rgba(34,197,94,.7);">BMS · 18650 Cells · E-Bike OEM · EV Components</p>
       <p class="h-desc">NexEV is an incorporated Indian EV startup actively building its supply chain. Seeking BMS manufacturers, cell suppliers, and e-bike OEMs for long-term India distribution partnership.</p>
       <div class="h-chips">
@@ -465,7 +606,7 @@ img{max-width:100%;display:block}
           <text x="110" y="186" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)" font-family="monospace">India</text>
           <text x="110" y="200" text-anchor="middle" font-size="7.5" fill="rgba(255,255,255,.5)" font-family="monospace">Karnataka</text>
           <ellipse cx="290" cy="120" rx="38" ry="46" fill="#0f2540" fill-opacity=".85" stroke="#22c55e" stroke-width="1.5"/>
-          <text x="290" y="116" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.85)" font-family="monospace">Taiwan</text>
+          <text x="290" y="116" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.85)" font-family="monospace">Suppliers</text>
           <text x="290" y="130" text-anchor="middle" font-size="7.5" fill="rgba(34,197,94,.85)" font-family="monospace">Taipei Cycle</text>
           <path d="M160 178 Q220 95 254 140" stroke="#22c55e" stroke-width="1.5" fill="none" stroke-dasharray="5 4" opacity=".75"/>
           <circle cx="160" cy="178" r="4" fill="#22c55e" opacity=".85"/>
@@ -552,7 +693,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="tc">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      <span><strong>Taipei Cycle Show 2026</strong> · Taiwan Sourcing</span>
+      <span><strong>Taipei Cycle Show 2026</strong> · Global Supplier Sourcing</span>
     </div>
   </div>
 </div>
@@ -568,13 +709,13 @@ img{max-width:100%;display:block}
     </div>
     <div class="bridge-grid fi">
       <div class="bc bc--tw">
-        <div class="bc-flag">🇹🇼 Taiwan · Taipei Cycle Show 2026 · Sourcing</div>
-        <h4>The Taiwan Connection</h4>
-        <p>NexEV has established direct contact with Taiwan's EV component supply chain through the Taipei Cycle Show. We are actively seeking BMS manufacturers, 18650 cell suppliers, and e-bike OEMs who want a committed India distribution partner.</p>
+        <div class="bc-flag">🌏 Global · Supplier Partnership · Sourcing</div>
+        <h4>Seeking Supply Partners</h4>
+        <p>NexEV is actively seeking reliable supply partners for BMS, 18650 cells, e-bike components, and EV parts. We are looking for manufacturers and distributors who want a committed, long-term India distribution partner.</p>
         <ul class="bc-list">
-          <li>Direct supplier relationships — Taipei Cycle Show 2026</li>
-          <li>Seeking BMS, cell, and e-bike component suppliers</li>
-          <li>Looking for India-ready or BIS-pathway partners</li>
+          <li>Seeking BMS, cell, and e-bike component manufacturers</li>
+          <li>Open to global suppliers — quality and reliability first</li>
+          <li>Looking for partners ready for the India BIS compliance pathway</li>
         </ul>
       </div>
       <div class="bc bc--in">
@@ -584,7 +725,7 @@ img{max-width:100%;display:block}
         <ul class="bc-list">
           <li>Active Amazon India presence — battery kits</li>
           <li>EV workshop customer network in Karnataka</li>
-          <li>Incorporated entity — CIN: U27103KA2026PTC215387</li>
+          <li>Incorporated entity — GSTIN: 29AALCN2942C1ZF</li>
         </ul>
       </div>
     </div>
@@ -597,7 +738,7 @@ img{max-width:100%;display:block}
       <div class="pillar">
         <div class="p-icon p-icon--b"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="15" height="13" rx="2"/><path d="M16 10l4-2v9l-4-2"/></svg></div>
         <h3>Next: BMS Distribution</h3>
-        <p>Sourcing BMS suppliers from Taiwan. Roadmap to import, brand, and distribute BIS-certified BMS units to Indian EV workshops and assemblers.</p>
+        <p>Sourcing reliable BMS suppliers. Roadmap to import, brand, and distribute BIS-certified BMS units to Indian EV workshops and assemblers.</p>
       </div>
       <div class="pillar">
         <div class="p-icon p-icon--y"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
@@ -608,7 +749,7 @@ img{max-width:100%;display:block}
     <div class="status-strip fi">
       <div class="st-chip"><span class="dot dot-g"></span> Distribution Active — Karnataka</div>
       <div class="st-chip"><span class="dot dot-g"></span> Amazon India — Battery Kits Live</div>
-      <div class="st-chip">NexEV Pvt Ltd &nbsp;·&nbsp; CIN: U27103KA2026PTC215387</div>
+      <div class="st-chip">NexEV Pvt Ltd &nbsp;·&nbsp; GSTIN: 29AALCN2942C1ZF</div>
       <div class="st-chip"><span class="dot dot-y"></span> BMS Sourcing — In Progress</div>
     </div>
   </div>
@@ -639,65 +780,248 @@ img{max-width:100%;display:block}
       </div>
       <div class="kit-visual-box">
         <div class="kit-grid">
-          <div class="ki"><div class="ki-icon">⚡</div><div class="ki-name">18650 Holders (80650)</div></div>
-          <div class="ki"><div class="ki-icon">🔌</div><div class="ki-name">Amass XT60H M+F</div></div>
-          <div class="ki"><div class="ki-icon">〰️</div><div class="ki-name">Nickel Strip</div></div>
-          <div class="ki"><div class="ki-icon">🔴</div><div class="ki-name">14 AWG Wire</div></div>
-          <div class="ki"><div class="ki-icon">🟦</div><div class="ki-name">PVC Heat Shrink 170mm</div></div>
-          <div class="ki"><div class="ki-icon">🟡</div><div class="ki-name">Kapton Tape 25mm</div></div>
-          <div class="ki"><div class="ki-icon">⭕</div><div class="ki-name">Insulation Rings</div></div>
-          <div class="ki"><div class="ki-icon">📋</div><div class="ki-name">Insulation Paper Roll</div></div>
-          <div class="ki hi"><div class="ki-icon">📦</div><div class="ki-name">Complete Kit</div></div>
+          <div class="ki">
+            <svg width="48" height="40" viewBox="0 0 48 40" fill="none">
+              <rect x="2" y="7" width="12" height="26" rx="3" fill="rgba(255,255,255,.15)" stroke="rgba(255,255,255,.5)" stroke-width="1"/>
+              <circle cx="8" cy="20" r="4" fill="none" stroke="#22c55e" stroke-width="1.2"/>
+              <rect x="17" y="7" width="12" height="26" rx="3" fill="rgba(255,255,255,.15)" stroke="rgba(255,255,255,.5)" stroke-width="1"/>
+              <circle cx="23" cy="20" r="4" fill="none" stroke="#22c55e" stroke-width="1.2"/>
+              <rect x="32" y="7" width="12" height="26" rx="3" fill="rgba(255,255,255,.15)" stroke="rgba(255,255,255,.5)" stroke-width="1"/>
+              <circle cx="38" cy="20" r="4" fill="none" stroke="#22c55e" stroke-width="1.2"/>
+              <rect x="2" y="2" width="12" height="6" rx="1.5" fill="rgba(255,255,255,.28)"/>
+              <rect x="17" y="2" width="12" height="6" rx="1.5" fill="rgba(255,255,255,.28)"/>
+              <rect x="32" y="2" width="12" height="6" rx="1.5" fill="rgba(255,255,255,.28)"/>
+            </svg>
+            <div class="ki-name">18650 Holders (80650)</div>
+          </div>
+          <div class="ki">
+            <svg width="48" height="40" viewBox="0 0 48 40" fill="none">
+              <rect x="3" y="11" width="18" height="18" rx="3" fill="rgba(245,197,24,.22)" stroke="#f5c518" stroke-width="1.2"/>
+              <rect x="7" y="16" width="4" height="8" rx="1" fill="#f5c518" opacity=".85"/>
+              <rect x="13" y="16" width="4" height="8" rx="1" fill="#f5c518" opacity=".85"/>
+              <line x1="21" y1="17" x2="26" y2="17" stroke="rgba(255,255,255,.35)" stroke-width=".9"/>
+              <line x1="21" y1="23" x2="26" y2="23" stroke="rgba(255,255,255,.35)" stroke-width=".9"/>
+              <rect x="26" y="11" width="18" height="18" rx="3" fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.42)" stroke-width="1.2"/>
+              <circle cx="31.5" cy="17.5" r="2.2" fill="none" stroke="#22c55e" stroke-width="1"/>
+              <circle cx="38.5" cy="17.5" r="2.2" fill="none" stroke="#22c55e" stroke-width="1"/>
+              <circle cx="31.5" cy="24.5" r="2.2" fill="none" stroke="#22c55e" stroke-width="1"/>
+              <circle cx="38.5" cy="24.5" r="2.2" fill="none" stroke="#22c55e" stroke-width="1"/>
+            </svg>
+            <div class="ki-name">Amass XT60H M+F</div>
+          </div>
+          <div class="ki">
+            <svg width="48" height="40" viewBox="0 0 48 40" fill="none">
+              <rect x="4" y="12" width="40" height="5" rx="1" fill="rgba(200,215,228,.3)" stroke="rgba(255,255,255,.52)" stroke-width=".8"/>
+              <rect x="4" y="19" width="40" height="5" rx="1" fill="rgba(200,215,228,.3)" stroke="rgba(255,255,255,.52)" stroke-width=".8"/>
+              <rect x="4" y="26" width="40" height="5" rx="1" fill="rgba(200,215,228,.3)" stroke="rgba(255,255,255,.52)" stroke-width=".8"/>
+              <line x1="12" y1="12" x2="12" y2="31" stroke="rgba(255,255,255,.18)" stroke-width=".5"/>
+              <line x1="22" y1="12" x2="22" y2="31" stroke="rgba(255,255,255,.18)" stroke-width=".5"/>
+              <line x1="32" y1="12" x2="32" y2="31" stroke="rgba(255,255,255,.18)" stroke-width=".5"/>
+              <line x1="42" y1="12" x2="42" y2="31" stroke="rgba(255,255,255,.18)" stroke-width=".5"/>
+              <text x="24" y="9" text-anchor="middle" font-size="6" fill="rgba(255,255,255,.45)" font-family="monospace">Ni STRIP</text>
+            </svg>
+            <div class="ki-name">Nickel Strip</div>
+          </div>
+          <div class="ki">
+            <svg width="48" height="40" viewBox="0 0 48 40" fill="none">
+              <path d="M3 13 Q9 7 15 13 Q21 19 27 13 Q33 7 39 13 Q42 16 45 13" stroke="#ef4444" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <path d="M3 13 Q9 7 15 13 Q21 19 27 13 Q33 7 39 13 Q42 16 45 13" stroke="rgba(255,120,120,.28)" stroke-width="7" fill="none" stroke-linecap="round"/>
+              <path d="M3 25 Q9 19 15 25 Q21 31 27 25 Q33 19 39 25 Q42 28 45 25" stroke="#3b82f6" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <path d="M3 25 Q9 19 15 25 Q21 31 27 25 Q33 19 39 25 Q42 28 45 25" stroke="rgba(100,150,255,.25)" stroke-width="7" fill="none" stroke-linecap="round"/>
+              <text x="24" y="38" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.4)" font-family="monospace">14 AWG</text>
+            </svg>
+            <div class="ki-name">14 AWG Wire</div>
+          </div>
+          <div class="ki">
+            <svg width="48" height="40" viewBox="0 0 48 40" fill="none">
+              <rect x="8" y="8" width="32" height="24" rx="4" fill="rgba(59,130,246,.18)" stroke="#3b82f6" stroke-width="1.2"/>
+              <rect x="12" y="12" width="24" height="16" rx="2" fill="rgba(59,130,246,.12)" stroke="#3b82f6" stroke-width=".7" stroke-dasharray="3 2"/>
+              <line x1="24" y1="8" x2="24" y2="32" stroke="rgba(59,130,246,.35)" stroke-width=".6"/>
+              <ellipse cx="8" cy="20" rx="3.5" ry="12" fill="rgba(59,130,246,.28)" stroke="#3b82f6" stroke-width="1"/>
+              <ellipse cx="40" cy="20" rx="3.5" ry="12" fill="rgba(59,130,246,.28)" stroke="#3b82f6" stroke-width="1"/>
+              <text x="24" y="38" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.42)" font-family="monospace">170mm</text>
+            </svg>
+            <div class="ki-name">PVC Heat Shrink 170mm</div>
+          </div>
+          <div class="ki">
+            <svg width="48" height="40" viewBox="0 0 48 40" fill="none">
+              <ellipse cx="24" cy="26" rx="16" ry="9" fill="rgba(245,197,24,.18)" stroke="#f5c518" stroke-width="1"/>
+              <ellipse cx="24" cy="23" rx="16" ry="9" fill="rgba(245,197,24,.25)" stroke="#f5c518" stroke-width="1"/>
+              <ellipse cx="24" cy="20" rx="16" ry="9" fill="rgba(245,197,24,.3)" stroke="#f5c518" stroke-width="1"/>
+              <ellipse cx="24" cy="20" rx="6" ry="4" fill="rgba(0,0,0,.28)" stroke="rgba(255,255,255,.2)" stroke-width=".7"/>
+              <text x="24" y="9" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.45)" font-family="monospace">25mm</text>
+            </svg>
+            <div class="ki-name">Kapton Tape 25mm</div>
+          </div>
+          <div class="ki">
+            <svg width="48" height="40" viewBox="0 0 48 40" fill="none">
+              <circle cx="12" cy="20" r="7" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="3.5"/>
+              <circle cx="12" cy="20" r="3.5" fill="rgba(34,197,94,.15)" stroke="#22c55e" stroke-width=".8"/>
+              <circle cx="24" cy="20" r="7" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="3.5"/>
+              <circle cx="24" cy="20" r="3.5" fill="rgba(34,197,94,.15)" stroke="#22c55e" stroke-width=".8"/>
+              <circle cx="36" cy="20" r="7" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="3.5"/>
+              <circle cx="36" cy="20" r="3.5" fill="rgba(34,197,94,.15)" stroke="#22c55e" stroke-width=".8"/>
+              <text x="24" y="36" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.38)" font-family="monospace">RINGS</text>
+            </svg>
+            <div class="ki-name">Insulation Rings</div>
+          </div>
+          <div class="ki">
+            <svg width="48" height="40" viewBox="0 0 48 40" fill="none">
+              <ellipse cx="24" cy="29" rx="18" ry="5" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.38)" stroke-width=".8"/>
+              <ellipse cx="24" cy="25" rx="18" ry="5" fill="rgba(255,255,255,.2)" stroke="rgba(255,255,255,.42)" stroke-width=".8"/>
+              <ellipse cx="24" cy="21" rx="18" ry="5" fill="rgba(255,255,255,.24)" stroke="rgba(255,255,255,.46)" stroke-width=".8"/>
+              <ellipse cx="24" cy="17" rx="18" ry="5" fill="rgba(255,255,255,.28)" stroke="rgba(255,255,255,.5)" stroke-width=".8"/>
+              <ellipse cx="24" cy="17" rx="7" ry="3.5" fill="rgba(0,0,0,.3)" stroke="rgba(255,255,255,.2)" stroke-width=".6"/>
+            </svg>
+            <div class="ki-name">Insulation Paper Roll</div>
+          </div>
+          <div class="ki hi">
+            <svg width="48" height="40" viewBox="0 0 48 40" fill="none">
+              <rect x="6" y="14" width="36" height="22" rx="4" fill="rgba(34,197,94,.18)" stroke="#22c55e" stroke-width="1.4"/>
+              <line x1="6" y1="21" x2="42" y2="21" stroke="#22c55e" stroke-width="1" opacity=".55"/>
+              <path d="M17 14 L17 21" stroke="#22c55e" stroke-width="1" opacity=".5"/>
+              <path d="M31 14 L31 21" stroke="#22c55e" stroke-width="1" opacity=".5"/>
+              <rect x="15" y="6" width="18" height="9" rx="3" fill="rgba(34,197,94,.22)" stroke="#22c55e" stroke-width="1"/>
+              <polyline points="18,28 22,32 30,25" stroke="#22c55e" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="ki-name">Complete Kit</div>
+          </div>
         </div>
       </div>
     </div>
     <div class="comp-grid fi">
       <div class="cc">
-        <div class="cc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg></div>
+        <div class="cc-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect x="2" y="8" width="10" height="22" rx="2.5" fill="rgba(34,197,94,.15)" stroke="#22c55e" stroke-width="1.2"/>
+            <circle cx="7" cy="19" r="3.5" fill="none" stroke="#22c55e" stroke-width="1.1"/>
+            <rect x="15" y="8" width="10" height="22" rx="2.5" fill="rgba(34,197,94,.15)" stroke="#22c55e" stroke-width="1.2"/>
+            <circle cx="20" cy="19" r="3.5" fill="none" stroke="#22c55e" stroke-width="1.1"/>
+            <rect x="28" y="8" width="10" height="22" rx="2.5" fill="rgba(34,197,94,.15)" stroke="#22c55e" stroke-width="1.2"/>
+            <circle cx="33" cy="19" r="3.5" fill="none" stroke="#22c55e" stroke-width="1.1"/>
+            <rect x="2" y="3" width="10" height="6" rx="1.5" fill="rgba(34,197,94,.25)"/>
+            <rect x="15" y="3" width="10" height="6" rx="1.5" fill="rgba(34,197,94,.25)"/>
+            <rect x="28" y="3" width="10" height="6" rx="1.5" fill="rgba(34,197,94,.25)"/>
+          </svg>
+        </div>
         <h4>Nickel Strip</h4>
         <p>High-purity nickel strip for cell-to-cell spot welding. Correct width and thickness for 18650 series/parallel connections.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
       </div>
       <div class="cc">
-        <div class="cc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></div>
+        <div class="cc-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect x="2" y="10" width="16" height="20" rx="3" fill="rgba(245,197,24,.18)" stroke="#f5c518" stroke-width="1.2"/>
+            <rect x="5.5" y="15" width="4" height="10" rx="1" fill="#f5c518" opacity=".8"/>
+            <rect x="11.5" y="15" width="4" height="10" rx="1" fill="#f5c518" opacity=".8"/>
+            <line x1="18" y1="17" x2="22" y2="17" stroke="var(--green)" stroke-width=".9" opacity=".6"/>
+            <line x1="18" y1="23" x2="22" y2="23" stroke="var(--green)" stroke-width=".9" opacity=".6"/>
+            <rect x="22" y="10" width="16" height="20" rx="3" fill="rgba(34,197,94,.12)" stroke="#22c55e" stroke-width="1.2"/>
+            <circle cx="27" cy="16.5" r="2.5" fill="none" stroke="#22c55e" stroke-width="1"/>
+            <circle cx="34" cy="16.5" r="2.5" fill="none" stroke="#22c55e" stroke-width="1"/>
+            <circle cx="27" cy="24.5" r="2.5" fill="none" stroke="#22c55e" stroke-width="1"/>
+            <circle cx="34" cy="24.5" r="2.5" fill="none" stroke="#22c55e" stroke-width="1"/>
+          </svg>
+        </div>
         <h4>Amass XT60H Connectors</h4>
         <p>Genuine Amass XT60H male and female connectors — high continuous current rating, gold-plated contacts, durable housing.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
       </div>
       <div class="cc">
-        <div class="cc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20"/></svg></div>
+        <div class="cc-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <path d="M2 12 Q7 6 12 12 Q17 18 22 12 Q27 6 32 12 Q35 15 38 12" stroke="#ef4444" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            <path d="M2 12 Q7 6 12 12 Q17 18 22 12 Q27 6 32 12 Q35 15 38 12" stroke="rgba(239,68,68,.22)" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <path d="M2 24 Q7 18 12 24 Q17 30 22 24 Q27 18 32 24 Q35 27 38 24" stroke="#3b82f6" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            <path d="M2 24 Q7 18 12 24 Q17 30 22 24 Q27 18 32 24 Q35 27 38 24" stroke="rgba(59,130,246,.2)" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <rect x="0" y="10" width="3" height="5" rx="1" fill="#ef4444" opacity=".7"/>
+            <rect x="0" y="22" width="3" height="5" rx="1" fill="#3b82f6" opacity=".7"/>
+            <rect x="37" y="10" width="3" height="5" rx="1" fill="#ef4444" opacity=".7"/>
+            <rect x="37" y="22" width="3" height="5" rx="1" fill="#3b82f6" opacity=".7"/>
+          </svg>
+        </div>
         <h4>14 AWG Silicone Wire</h4>
         <p>Flexible silicone-jacketed 14 AWG wire — heat-resistant, rated for battery pack current, suitable for tight routing.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
       </div>
       <div class="cc">
-        <div class="cc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2"/></svg></div>
+        <div class="cc-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect x="6" y="7" width="28" height="22" rx="4" fill="rgba(59,130,246,.14)" stroke="#3b82f6" stroke-width="1.2"/>
+            <rect x="10" y="11" width="20" height="14" rx="2" fill="rgba(59,130,246,.1)" stroke="#3b82f6" stroke-width=".7" stroke-dasharray="3 2"/>
+            <line x1="20" y1="7" x2="20" y2="29" stroke="rgba(59,130,246,.3)" stroke-width=".6"/>
+            <ellipse cx="6" cy="18" rx="3.5" ry="11" fill="rgba(59,130,246,.22)" stroke="#3b82f6" stroke-width="1"/>
+            <ellipse cx="34" cy="18" rx="3.5" ry="11" fill="rgba(59,130,246,.22)" stroke="#3b82f6" stroke-width="1"/>
+            <text x="20" y="37" text-anchor="middle" font-size="6" fill="#3b82f6" font-family="monospace" opacity=".7">170mm</text>
+          </svg>
+        </div>
         <h4>PVC Heat Shrink (170mm)</h4>
         <p>Blue PVC heat shrink tube, 170mm flat width — wraps a completed 18650 pack for insulation and professional finish.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
       </div>
       <div class="cc">
-        <div class="cc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="cc-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <ellipse cx="20" cy="28" rx="14" ry="8" fill="rgba(245,197,24,.15)" stroke="#f5c518" stroke-width="1"/>
+            <ellipse cx="20" cy="24" rx="14" ry="8" fill="rgba(245,197,24,.22)" stroke="#f5c518" stroke-width="1"/>
+            <ellipse cx="20" cy="20" rx="14" ry="8" fill="rgba(245,197,24,.28)" stroke="#f5c518" stroke-width="1"/>
+            <ellipse cx="20" cy="16" rx="14" ry="8" fill="rgba(245,197,24,.32)" stroke="#f5c518" stroke-width="1.1"/>
+            <ellipse cx="20" cy="16" rx="5" ry="3.5" fill="rgba(0,0,0,.2)" stroke="rgba(245,197,24,.4)" stroke-width=".8"/>
+            <text x="20" y="7" text-anchor="middle" font-size="6" fill="#f5c518" font-family="monospace" opacity=".7">25mm</text>
+          </svg>
+        </div>
         <h4>Kapton Tape (25mm)</h4>
         <p>High-temperature polyimide tape, 25mm width, 200/roll — cell insulation, tab coverage, thermal protection.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
       </div>
       <div class="cc">
-        <div class="cc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="cc-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <circle cx="10" cy="20" r="7" fill="none" stroke="rgba(34,197,94,.6)" stroke-width="4"/>
+            <circle cx="10" cy="20" r="3" fill="rgba(34,197,94,.2)" stroke="#22c55e" stroke-width=".8"/>
+            <circle cx="20" cy="20" r="7" fill="none" stroke="rgba(34,197,94,.6)" stroke-width="4"/>
+            <circle cx="20" cy="20" r="3" fill="rgba(34,197,94,.2)" stroke="#22c55e" stroke-width=".8"/>
+            <circle cx="30" cy="20" r="7" fill="none" stroke="rgba(34,197,94,.6)" stroke-width="4"/>
+            <circle cx="30" cy="20" r="3" fill="rgba(34,197,94,.2)" stroke="#22c55e" stroke-width=".8"/>
+            <text x="20" y="34" text-anchor="middle" font-size="6" fill="#22c55e" font-family="monospace" opacity=".6">INSUL</text>
+          </svg>
+        </div>
         <h4>18650 Insulation Rings + Paper</h4>
         <p>Cell-end insulation rings and insulation paper roll — prevents short circuits on positive terminals and between cell groups.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
       </div>
       <div class="cc">
-        <div class="cc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
+        <div class="cc-icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect x="2" y="7" width="11" height="26" rx="2.5" fill="rgba(34,197,94,.12)" stroke="#22c55e" stroke-width="1.1"/>
+            <circle cx="7.5" cy="20" r="4" fill="none" stroke="#22c55e" stroke-width="1"/>
+            <rect x="15" y="7" width="11" height="26" rx="2.5" fill="rgba(34,197,94,.12)" stroke="#22c55e" stroke-width="1.1"/>
+            <circle cx="20.5" cy="20" r="4" fill="none" stroke="#22c55e" stroke-width="1"/>
+            <rect x="28" y="7" width="11" height="26" rx="2.5" fill="rgba(34,197,94,.12)" stroke="#22c55e" stroke-width="1.1"/>
+            <circle cx="33.5" cy="20" r="4" fill="none" stroke="#22c55e" stroke-width="1"/>
+            <rect x="2" y="2" width="11" height="6" rx="1.5" fill="rgba(34,197,94,.22)"/>
+            <rect x="15" y="2" width="11" height="6" rx="1.5" fill="rgba(34,197,94,.22)"/>
+            <rect x="28" y="2" width="11" height="6" rx="1.5" fill="rgba(34,197,94,.22)"/>
+          </svg>
+        </div>
         <h4>80650 Battery Holders</h4>
         <p>Plastic 18650 cell holders — keeps cells aligned for spot welding. Available in series/parallel configurations.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
       </div>
       <div class="cc" style="background:rgba(26,58,92,.03);border-color:rgba(26,58,92,.2);">
-        <div class="cc-icon" style="background:rgba(26,58,92,.1);color:var(--blue);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2"/></svg></div>
+        <div class="cc-icon" style="background:rgba(26,58,92,.08);border-color:rgba(26,58,92,.18);">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <rect x="4" y="10" width="32" height="20" rx="4" fill="rgba(26,58,92,.15)" stroke="#1a3a5c" stroke-width="1.2"/>
+            <rect x="10" y="14" width="8" height="12" rx="2" fill="rgba(26,58,92,.2)" stroke="#1a3a5c" stroke-width=".8"/>
+            <rect x="22" y="14" width="8" height="12" rx="2" fill="rgba(26,58,92,.2)" stroke="#1a3a5c" stroke-width=".8"/>
+            <line x1="18" y1="18" x2="22" y2="18" stroke="rgba(26,58,92,.5)" stroke-width=".8"/>
+            <line x1="18" y1="22" x2="22" y2="22" stroke="rgba(26,58,92,.5)" stroke-width=".8"/>
+            <rect x="17" y="7" width="6" height="4" rx="1" fill="rgba(26,58,92,.3)" stroke="#1a3a5c" stroke-width=".8"/>
+            <text x="20" y="36" text-anchor="middle" font-size="6" fill="#1a3a5c" font-family="monospace" opacity=".6">BMS 10S</text>
+          </svg>
+        </div>
         <h4>BMS — Coming Soon</h4>
-        <p>10S BMS for 36V packs currently being sourced from Taiwan. Register interest for priority access when available.</p>
+        <p>10S BMS for 36V packs currently being sourced. Register interest for priority access when available.</p>
         <div class="cc-avail" style="color:var(--muted);"><span class="avail-dot" style="background:var(--yellow);"></span>In sourcing</div>
       </div>
     </div>
@@ -723,7 +1047,7 @@ img{max-width:100%;display:block}
       <div class="rm rm--s">
         <div class="rm-label">Phase 2 · Next</div>
         <h3>BMS + EV Component Distribution</h3>
-        <p>Import and distribute BIS-certified BMS units and EV components to Indian workshops and dealers. Requires securing Taiwan supply partners and BIS compliance.</p>
+        <p>Import and distribute BIS-certified BMS units and EV components to Indian workshops and dealers. Requires securing reliable supply partners and navigating BIS compliance.</p>
         <div class="rm-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Sourcing in Progress</div>
       </div>
       <div class="rm rm--p">
@@ -745,9 +1069,9 @@ img{max-width:100%;display:block}
 <section class="tw-sec" id="taiwan">
   <div class="container" style="position:relative;z-index:1;">
     <div class="tw-hd sec-hd fi">
-      <span class="eyebrow">Taiwan Sourcing &amp; Partnership</span>
-      <h2 class="sec-title">Seeking Taiwan<br/><span style="color:var(--green);">Supply Partners.</span></h2>
-      <p class="sec-sub">NexEV is an incorporated Indian startup with active sales — looking for BMS manufacturers, 18650 cell suppliers, and e-bike OEMs who want a long-term India distribution partner.</p>
+      <span class="eyebrow">Supply &amp; Manufacturing Partnership</span>
+      <h2 class="sec-title">Seeking Reliable<br/><span style="color:var(--green);">Supply Partners.</span></h2>
+      <p class="sec-sub">NexEV is an incorporated Indian startup with active sales — looking for BMS manufacturers, 18650 cell suppliers, and e-bike OEMs who want a long-term India distribution partner. Quality, reliability, and commitment over short-term transactions.</p>
     </div>
     <div class="tw-grid fi">
       <div class="tw-card">
@@ -798,7 +1122,7 @@ img{max-width:100%;display:block}
     <div class="tw-offer-box fi">
       <h4>What NexEV Brings to the Partnership</h4>
       <div class="tw-offer-grid">
-        <div class="tw-offer-item"><span class="ov">Pvt Ltd</span><span class="ol">Incorporated · CIN Active</span></div>
+        <div class="tw-offer-item"><span class="ov">Pvt Ltd</span><span class="ol">Incorporated · GSTIN Active</span></div>
         <div class="tw-offer-item"><span class="ov">Live</span><span class="ol">Active Sales · Amazon India</span></div>
         <div class="tw-offer-item"><span class="ov">KA</span><span class="ol">Karnataka Distribution Base</span></div>
         <div class="tw-offer-item"><span class="ov">BIS</span><span class="ol">Compliance Navigation · India</span></div>
@@ -820,7 +1144,7 @@ img{max-width:100%;display:block}
     <div class="sec-hd fi">
       <span class="eyebrow">India Market Context</span>
       <h2 class="sec-title">Why the India EV<br/><mark>Market Matters.</mark></h2>
-      <p class="sec-sub">For Taiwan manufacturers evaluating India as a distribution market — the numbers and the compliance landscape at a glance.</p>
+      <p class="sec-sub">For global manufacturers evaluating India as a distribution market — the numbers and the compliance landscape at a glance.</p>
     </div>
     <div class="mkt-stats fi">
       <div class="ms"><span class="ms-val">5M+</span><span class="ms-lbl">EV units sold annually · India</span></div>
@@ -845,7 +1169,7 @@ img{max-width:100%;display:block}
           <li>Incorporated entity — legitimate import/distribution capability</li>
           <li>Existing customer base — workshops, hobbyists, assemblers</li>
           <li>Karnataka base — proximity to EV manufacturers</li>
-          <li>Taipei Cycle Show 2026 — direct Taiwan supplier contact</li>
+          <li>Taipei Cycle Show 2026 — active global supplier outreach</li>
           <li>Early stage = exclusive, long-term partnership possible</li>
           <li>BIS compliance navigation — we understand the local path</li>
         </ul>
@@ -884,7 +1208,7 @@ img{max-width:100%;display:block}
         <p>Early-stage startup with active sales and a clear roadmap. Looking for investors who understand hardware, EV, and India — and want to build something real.</p>
         <ul class="oc-list">
           <li>Active revenue — Amazon + direct sales</li>
-          <li>Incorporated entity — CIN active</li>
+          <li>Incorporated entity — GSTIN active</li>
           <li>Clear use of funds: BIS certification + BMS import</li>
           <li>Honest unit economics — no inflated projections</li>
         </ul>
@@ -893,10 +1217,10 @@ img{max-width:100%;display:block}
       <div class="oc">
         <div class="oc-num">03</div>
         <div class="oc-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l6-6 4 4 8-8 6 6"/></svg></div>
-        <h3>Taiwan Supply Partner</h3>
-        <p>BMS manufacturers, cell suppliers, e-bike OEMs, and EV component makers who want a committed, incorporated Indian distribution partner.</p>
+        <h3>Supply Partner</h3>
+        <p>BMS manufacturers, cell suppliers, e-bike OEMs, and EV component makers who want a committed, incorporated Indian distribution partner for the long term.</p>
         <ul class="oc-list">
-          <li>Taipei Cycle Show 2026 contact established</li>
+          <li>Active supplier sourcing — global outreach</li>
           <li>BIS compliance support provided</li>
           <li>Long-term distribution — not spot buying</li>
           <li>Karnataka distribution base — expanding</li>
@@ -915,14 +1239,14 @@ img{max-width:100%;display:block}
       <div class="fi">
         <div class="enq-eyebrow">Get In Touch</div>
         <h2 class="enq-title">Let's Have a<br/>Real Conversation.</h2>
-        <p class="enq-desc">Whether you are a Taiwan manufacturer, investor, workshop partner, or customer — fill in the form. We respond with information specific to your enquiry, not a template.</p>
+        <p class="enq-desc">Whether you are a global supplier, investor, workshop partner, or customer — fill in the form. We respond with information specific to your enquiry, not a template.</p>
         <div class="ci">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span>Bengaluru, Karnataka, India</span>
         </div>
         <div class="ci">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <a href="mailto:contact@nexev.in">contact@nexev.in</a>
+          <a href="/cdn-cgi/l/email-protection#80e3efeef4e1e3f4c0eee5f8e5f6aee9ee"><span class="__cf_email__" data-cfemail="20434f4e54414354604e455845560e494e">[email&#160;protected]</span></a>
         </div>
         <div class="ci">
           <svg viewBox="0 0 24 24" fill="none" style="flex-shrink:0;width:18px;height:18px;">
@@ -933,7 +1257,7 @@ img{max-width:100%;display:block}
         </div>
         <div class="enq-note">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <p><strong>Taiwan supplier?</strong> Select "Taiwan Partnership" below — we will respond directly and promptly.</p>
+          <p><strong>Global supplier?</strong> Select "Supply Partnership" below — we will respond directly and promptly.</p>
         </div>
       </div>
       <div class="enq-card fi2">
@@ -964,7 +1288,7 @@ img{max-width:100%;display:block}
             <label for="ft">Enquiry Type <span class="req">*</span></label>
             <select id="ft" name="enquiry_type">
               <option value="" disabled selected>Select enquiry type</option>
-              <option value="taiwan">🇹🇼 Taiwan Partnership — BMS / Cell / E-Bike OEM</option>
+              <option value="taiwan">🌏 Supply Partnership — BMS / Cell / E-Bike OEM</option>
               <option value="kit_bulk">Battery Kit — Bulk / Wholesale Order</option>
               <option value="workshop">Workshop / Dealer Partnership</option>
               <option value="investor">Investment Enquiry</option>
@@ -1001,17 +1325,18 @@ img{max-width:100%;display:block}
   <div class="container">
     <div class="ft">
       <div>
-        <a href="#home" class="nav-logo-wrap" aria-label="NexEV" style="display:inline-flex;margin-bottom:.75rem;text-decoration:none;">
+        <a href="#home" class="nav-logo-wrap" aria-label="NexEV" style="display:inline-flex;margin-bottom:.35rem;text-decoration:none;">
           <img id="footerLogoImg" src="assets/logo/nexev-logo.png" alt="NexEV" class="nav-logo-img"
                onerror="this.style.display='none';document.getElementById('footerLogoText').style.display='flex';"/>
           <span class="nav-logo-text" id="footerLogoText" style="display:none;color:#fff;">
             <span class="logo-nex" style="color:#fff;">nex</span><span class="logo-ev">EV</span>
           </span>
         </a>
+        <div class="footer-slogan">Driven by Electric Future</div>
         <p class="ft-tag">18650 Battery Assembly Kits for India.<br/>Building toward BMS distribution and own-brand EV batteries.</p>
         <div class="ft-legal">
           <p>NexEV Private Limited</p>
-          <p class="cin">CIN: U27103KA2026PTC215387</p>
+          <p class="cin">GSTIN: 29AALCN2942C1ZF</p>
           <p>Registered in Karnataka, India</p>
         </div>
       </div>
@@ -1024,14 +1349,14 @@ img{max-width:100%;display:block}
       </div>
       <div class="fc">
         <h4>Partnership</h4>
-        <a href="#taiwan">Taiwan Sourcing</a>
+        <a href="#taiwan">Supply Partners</a>
         <a href="#opportunities">Investors</a>
         <a href="#opportunities">Workshop Partners</a>
         <a href="#enquiry">Contact</a>
       </div>
       <div class="fc">
         <h4>Contact</h4>
-        <a href="mailto:contact@nexev.in">contact@nexev.in</a>
+        <a href="/cdn-cgi/l/email-protection#2d4e4243594c4e596d434855485b034443"><span class="__cf_email__" data-cfemail="73101c1d07121007331d160b16055d1a1d">[email&#160;protected]</span></a>
         <a href="https://wa.me/919905603640" target="_blank" rel="noopener" style="color:rgba(34,197,94,.8);">WhatsApp: +91 99056 03640</a>
         <span>Response within 24 hrs</span>
         <span style="margin-top:.5rem;">Made in India 🇮🇳</span>
@@ -1119,7 +1444,7 @@ img{max-width:100%;display:block}
       <h3>1. Data Collected</h3><p>NexEV collects name, email, phone, and company information submitted via the enquiry form. Used solely for responding to your enquiry.</p>
       <h3>2. Data Sharing</h3><p>We do not sell or share your data with third parties outside of NexEV's directors handling your enquiry.</p>
       <h3>3. Data Retention</h3><p>Enquiry data is retained for up to 24 months unless a business relationship is established.</p>
-      <h3>4. Your Rights</h3><p>Request deletion at any time by emailing <a href="mailto:contact@nexev.in">contact@nexev.in</a>.</p>
+      <h3>4. Your Rights</h3><p>Request deletion at any time by emailing <a href="/cdn-cgi/l/email-protection#54373b3a20353720143a312c31227a3d3a"><span class="__cf_email__" data-cfemail="9af9f5f4eefbf9eedaf4ffe2ffecb4f3f4">[email&#160;protected]</span></a>.</p>
       <h3>5. Governing Law</h3><p>Governed by the Information Technology Act, 2000 and applicable Indian data protection rules.</p>
     </div>
     <div class="modal-ft"><button class="btn btn-blue" id="closePrivacy2">Got It</button></div>
@@ -1142,7 +1467,7 @@ img{max-width:100%;display:block}
 </div>
 
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
 'use strict';
 
