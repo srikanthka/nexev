@@ -361,6 +361,45 @@ img{max-width:100%;display:block}
 @media(max-width:900px){.opp-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:550px){.opp-grid{grid-template-columns:1fr}}
 
+/* ── BIS / AIR SERVICES ── */
+.bis-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; margin-bottom: 3.5rem; padding: 2.25rem 2.5rem; background: var(--blue); border-radius: 16px; }
+@media(max-width:860px){ .bis-intro { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.75rem; } }
+.bis-intro-text h3 { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.6rem; }
+.bis-intro-text p  { font-size: 0.85rem; color: rgba(255,255,255,0.68); line-height: 1.7; }
+.bis-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+@media(max-width:480px){ .bis-stats { grid-template-columns: 1fr 1fr; } }
+.bis-stat { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 1rem 0.85rem; display: flex; flex-direction: column; gap: 0.2rem; }
+.bis-stat-val { font-family: 'Syne', sans-serif; font-size: 1.45rem; font-weight: 800; color: var(--green); line-height: 1; }
+.bis-stat-lbl { font-size: 0.68rem; color: rgba(255,255,255,0.5); line-height: 1.4; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.bis-pillars { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 2rem; }
+@media(max-width:860px){ .bis-pillars { grid-template-columns: 1fr; } }
+
+.bis-pillar { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: box-shadow 0.2s, border-color 0.2s; display: flex; flex-direction: column; }
+.bis-pillar:hover { box-shadow: 0 6px 24px rgba(26,58,92,0.1); border-color: #bfdbfe; }
+
+.bis-pillar-head { display: flex; align-items: center; gap: 0.9rem; padding: 1.4rem 1.5rem 1rem; }
+.bis-pillar-num { font-family: 'Syne', sans-serif; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; color: rgba(255,255,255,0.9); background: var(--blue); padding: 0.25rem 0.55rem; border-radius: 5px; flex-shrink: 0; }
+.bis-pillar-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.bis-pillar-icon--blue   { background: #eff6ff; color: var(--blue); }
+.bis-pillar-icon--green  { background: #f0fdf4; color: #16a34a; }
+.bis-pillar-icon--amber  { background: #fffbeb; color: #b45309; }
+.bis-pillar-icon--violet { background: #f5f3ff; color: #6d28d9; }
+.bis-pillar-head-text h3 { font-family: 'Syne', sans-serif; font-size: 0.97rem; font-weight: 700; color: var(--blue); line-height: 1.25; }
+.bis-pillar-head-text span { font-size: 0.72rem; color: var(--muted); }
+
+.bis-pillar-body { padding: 0 1.5rem 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; flex: 1; }
+.bis-service-item { display: flex; flex-direction: column; gap: 0.25rem; padding: 0.75rem; background: var(--bg-alt); border-radius: 8px; border: 1px solid var(--border); }
+.bis-service-item-head { display: flex; align-items: center; gap: 0.5rem; }
+.bis-service-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+.bis-service-label { font-size: 0.8rem; font-weight: 700; color: var(--blue); }
+.bis-service-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.6; padding-left: 1.1rem; }
+
+.bis-cta-bar { background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%); border: 1px solid #bbf7d0; border-radius: 12px; padding: 1.75rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.bis-cta-bar-text h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--blue); margin-bottom: 0.25rem; }
+.bis-cta-bar-text p  { font-size: 0.83rem; color: var(--muted); }
+.bis-cta-bar-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+
 /* ═══ ENQUIRY ═══ */
 .enq-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:3.5rem;align-items:start}
 .enq-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.5rem}
@@ -460,6 +499,7 @@ img{max-width:100%;display:block}
       <li><a href="#taiwan">Suppliers</a></li>
       <li><a href="#market">India Market</a></li>
       <li><a href="#opportunities">Partners</a></li>
+	  <li><a href="#bis-services">BIS Services</a></li>
       <li><a href="#enquiry" class="nav-cta">Contact Us</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
@@ -472,6 +512,7 @@ img{max-width:100%;display:block}
   <a href="#taiwan">Supplier Partnership</a>
   <a href="#market">India Market</a>
   <a href="#opportunities">Partners</a>
+   <a href="#bis-services">BIS Services</a>
   <a href="#enquiry" class="mob-cta">Contact Us</a>
 </div>
 
@@ -1239,6 +1280,218 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
+<!-- ═══ BIS / AIR SERVICES ═══ -->
+<section class="section-pad" id="bis-services">
+  <div class="container">
+
+    <div class="section-header fade-in">
+      <span class="section-eyebrow">Regulatory Services</span>
+      <h2 class="section-title">India Market Entry.<br/><mark>Done Right.</mark></h2>
+      <p class="section-sub">NexEV operates as an Authorised Indian Representative (AIR) under the BIS Act 2016 — managing end-to-end certification, customs logistics, and post-market compliance for foreign manufacturers entering the Indian market.</p>
+    </div>
+
+    <!-- Intro bar with stats -->
+    <div class="bis-intro fade-in">
+      <div class="bis-intro-text">
+        <h3>Why Foreign Manufacturers Need an AIR</h3>
+        <p>The Bureau of Indian Standards mandates that every foreign manufacturer seeking BIS Certification must appoint a resident Indian company as their Authorised Indian Representative. The AIR bears full legal responsibility for certification compliance, product recalls, and market surveillance obligations — making selection of the right AIR a critical strategic decision, not a formality.</p>
+      </div>
+      <div class="bis-stats">
+        <div class="bis-stat">
+          <span class="bis-stat-val">BIS Act</span>
+          <span class="bis-stat-lbl">2016 — Governing Legislation</span>
+        </div>
+        <div class="bis-stat">
+          <span class="bis-stat-val">IS 16+</span>
+          <span class="bis-stat-lbl">Standards Managed (EV &amp; Electronics)</span>
+        </div>
+        <div class="bis-stat">
+          <span class="bis-stat-val">QCO</span>
+          <span class="bis-stat-lbl">Quality Control Order Monitoring</span>
+        </div>
+        <div class="bis-stat">
+          <span class="bis-stat-val">R-No.</span>
+          <span class="bis-stat-lbl">BIS Registration Number Output</span>
+        </div>
+        <div class="bis-stat">
+          <span class="bis-stat-val">TÜV · UL</span>
+          <span class="bis-stat-lbl">Recognised Lab Network</span>
+        </div>
+        <div class="bis-stat">
+          <span class="bis-stat-val">24/7</span>
+          <span class="bis-stat-lbl">Real-Time Dashboard Access</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Four service pillars -->
+    <div class="bis-pillars fade-in">
+
+      <!-- Pillar 1 — AIR Services -->
+      <div class="bis-pillar">
+        <div class="bis-pillar-head">
+          <span class="bis-pillar-num">01</span>
+          <div class="bis-pillar-icon bis-pillar-icon--blue">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="bis-pillar-head-text">
+            <h3>Authorised Indian Representative (AIR) Services</h3>
+            <span>Legal entity &amp; liability management</span>
+          </div>
+        </div>
+        <div class="bis-pillar-body">
+          <div class="bis-service-item">
+            <div class="bis-service-item-head">
+              <span class="bis-service-dot"></span>
+              <span class="bis-service-label">Legal Compliance</span>
+            </div>
+            <p class="bis-service-desc">As per the BIS Act 2016, we act as the officially nominated resident representative for foreign manufacturers. We take full legal responsibility for your compliance in India.</p>
+          </div>
+          <div class="bis-service-item">
+            <div class="bis-service-item-head">
+              <span class="bis-service-dot"></span>
+              <span class="bis-service-label">IP Protection &amp; Security</span>
+            </div>
+            <p class="bis-service-desc">We provide robust NDAs to protect your proprietary circuit designs, technical drawings, and Critical Component Lists (CCL) throughout the certification process.</p>
+          </div>
+          <div class="bis-service-item">
+            <div class="bis-service-item-head">
+              <span class="bis-service-dot"></span>
+              <span class="bis-service-label">Document Custodianship</span>
+            </div>
+            <p class="bis-service-desc">Management and notarization of all mandatory legal documents, including the Affidavit cum Undertaking and Power of Attorney required by BIS.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 2 — BIS Project Management -->
+      <div class="bis-pillar">
+        <div class="bis-pillar-head">
+          <span class="bis-pillar-num">02</span>
+          <div class="bis-pillar-icon bis-pillar-icon--green">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div class="bis-pillar-head-text">
+            <h3>End-to-End BIS Project Management</h3>
+            <span>Sample logistics to R-Number generation</span>
+          </div>
+        </div>
+        <div class="bis-pillar-body">
+          <div class="bis-service-item">
+            <div class="bis-service-item-head">
+              <span class="bis-service-dot"></span>
+              <span class="bis-service-label">Product Standard Mapping</span>
+            </div>
+            <p class="bis-service-desc">Expert identification of applicable Indian Standards (IS) for electronics, IT hardware, solar, or automotive components — e.g. IS 16103, IS 16046, IS 13252, IS 16893, IS 16170.</p>
+          </div>
+          <div class="bis-service-item">
+            <div class="bis-service-item-head">
+              <span class="bis-service-dot"></span>
+              <span class="bis-service-label">Sample Logistics &amp; Customs</span>
+            </div>
+            <p class="bis-service-desc">We manage door-to-lab logistics for Golden Samples, including specialised customs clearance and duty-exemption certificates for test units entering India.</p>
+          </div>
+          <div class="bis-service-item">
+            <div class="bis-service-item-head">
+              <span class="bis-service-dot"></span>
+              <span class="bis-service-label">BIS Lab Coordination</span>
+            </div>
+            <p class="bis-service-desc">Direct liaison with BIS-Recognised Laboratories — TÜV, UL, Intertek — to ensure accurate testing and timely upload of Test Reports to the Manakonline portal.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 3 — Global-to-India Gateway -->
+      <div class="bis-pillar">
+        <div class="bis-pillar-head">
+          <span class="bis-pillar-num">03</span>
+          <div class="bis-pillar-icon bis-pillar-icon--amber">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="bis-pillar-head-text">
+            <h3>The "Global-to-India" Gateway</h3>
+            <span>On-site verification &amp; multilingual coordination</span>
+          </div>
+        </div>
+        <div class="bis-pillar-body">
+          <div class="bis-service-item">
+            <div class="bis-service-item-head">
+              <span class="bis-service-dot"></span>
+              <span class="bis-service-label">On-Site Coordination</span>
+            </div>
+            <p class="bis-service-desc">With team members stationed in key global manufacturing hubs, we provide on-site technical verification of documentation before it is dispatched to Indian regulators.</p>
+          </div>
+          <div class="bis-service-item">
+            <div class="bis-service-item-head">
+              <span class="bis-service-dot"></span>
+              <span class="bis-service-label">Multilingual Support</span>
+            </div>
+            <p class="bis-service-desc">Eliminating language barriers by translating technical specifications and manuals into English-standard formats required by Indian regulators — Mandarin, Japanese, Korean covered.</p>
+          </div>
+          <div class="bis-service-item">
+            <div class="bis-service-item-head">
+              <span class="bis-service-dot"></span>
+              <span class="bis-service-label">Real-Time Tracking Dashboard</span>
+            </div>
+            <p class="bis-service-desc">24/7 transparency. Our digital tracking system lets you monitor your application status from Sample Received through to R-Number Generation — no chasing required.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar 4 — Market Entry Advisory -->
+      <div class="bis-pillar">
+        <div class="bis-pillar-head">
+          <span class="bis-pillar-num">04</span>
+          <div class="bis-pillar-icon bis-pillar-icon--violet">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <div class="bis-pillar-head-text">
+            <h3>Market Entry &amp; Strategic Advisory</h3>
+            <span>Beyond certification — commercial acceleration</span>
+          </div>
+        </div>
+        <div class="bis-pillar-body">
+          <div class="bis-service-item">
+            <div class="bis-service-item-head">
+              <span class="bis-service-dot"></span>
+              <span class="bis-service-label">OEM Matchmaking</span>
+            </div>
+            <p class="bis-service-desc">Beyond certification, we leverage our local network to introduce your products to Tier-1 Indian manufacturers and major pan-India distributors seeking validated components.</p>
+          </div>
+          <div class="bis-service-item">
+            <div class="bis-service-item-head">
+              <span class="bis-service-dot"></span>
+              <span class="bis-service-label">Regulatory Intelligence</span>
+            </div>
+            <p class="bis-service-desc">Stay ahead of Quality Control Orders (QCOs), changes in Basic Customs Duty (BCD), and Production Linked Incentive (PLI) scheme benefits applicable to your product category.</p>
+          </div>
+          <div class="bis-service-item">
+            <div class="bis-service-item-head">
+              <span class="bis-service-dot"></span>
+              <span class="bis-service-label">Post-Market Compliance</span>
+            </div>
+            <p class="bis-service-desc">Handling Market Surveillance requirements including random sample collection and re-testing as mandated by BIS — ensuring ongoing compliance after your R-Number is issued.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.bis-pillars -->
+
+    <!-- CTA bar -->
+    <div class="bis-cta-bar fade-in">
+      <div class="bis-cta-bar-text">
+        <h3>Ready to certify your products for the Indian market?</h3>
+        <p>Submit an enquiry — we respond within 48 business hours with a scoping assessment specific to your product category and target IS standard.</p>
+      </div>
+      <div class="bis-cta-bar-actions">
+        <a href="#enquiry" class="btn btn-blue">Start BIS Certification →</a>
+        <a href="mailto:contact@nexev.in?subject=BIS%20AIR%20Services%20Enquiry" class="btn btn-outline">Email Us Directly</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- ═══ ENQUIRY ═══ -->
 <section class="section-pad section-alt" id="enquiry">
@@ -1360,6 +1613,7 @@ img{max-width:100%;display:block}
         <a href="#taiwan">Supply Partners</a>
         <a href="#opportunities">Investors</a>
         <a href="#opportunities">Workshop Partners</a>
+		 <a href="#bis-services">BIS Services</a>
         <a href="#enquiry">Contact</a>
       </div>
       <div class="fc">
