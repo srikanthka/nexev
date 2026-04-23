@@ -501,9 +501,9 @@ window.NEXEV_PRODUCTS = {
     },
 
     {
-      "id": "kapton-tape-25mm",
-      "name": "Kapton / Polyimide Tape \u2014 25mm",
-      "tagline": "Self-adhesive polyimide, 200m per roll",
+      "id": "kapton-tape-20mm",
+      "name": "Kapton / Polyimide Tape \u2014 20mm (Pack of 1 Roll)",
+      "tagline": "Self-adhesive polyimide, 33m per roll",
       "category": "insulation",
       "status": "active",
       "featured": false,
@@ -512,22 +512,24 @@ window.NEXEV_PRODUCTS = {
       "unit": "roll",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 3,  "price": 179, "label": "3+ rolls" },
-        { "qty": 10, "price": 159, "label": "10+ rolls" }
+        { "qty": 5,  "price": 190, "label": "3+ rolls" },
+        { "qty": 10, "price": 185, "label": "10+ rolls" },
+        { "qty": 20, "price": 180, "label": "10+ rolls" }
+        { "qty": 50+, "price": 175, "label": "10+ rolls" }
       ],
       "stock": "in_stock",
-      "sku": "NE-KT-001",
+      "sku": "NEX-KT-001",
       "hsn_code": "3919",
       "gst_rate": 18,
-      "images": ["assets/products/kapton-tape.jpg","assets/products/kapton-tape-2.jpg","assets/products/kapton-tape-3.jpg"],
+      "images": ["assets/products/kaptonTape1.jpg","assets/products/kaptonTape2.jpg","assets/products/kaptonTape3.jpg"],
       "image_fallback": "kapton",
       "tags": ["kapton","polyimide","tape","insulation","thermal","3919"],
-      "short_description": "High-temperature Kapton polyimide tape, 25mm width, 200m roll. Cell insulation, tab coverage, thermal protection.",
+      "short_description": "High-temperature Kapton polyimide tape, 20mm width, 200m roll. Cell insulation, tab coverage, thermal protection.",
       "description": "Genuine polyimide tape for battery pack insulation. Used on positive cell terminals, between cell groups, and anywhere electrical isolation is needed near heat.",
       "specs": {
         "Material":    "Polyimide (Kapton-type)",
-        "Width":       "25mm",
-        "Length":      "200 metres per roll",
+        "Width":       "20mm",
+        "Length":      "33 metres per roll",
         "Adhesive":    "Silicone-based (self-adhesive)",
         "Temperature": "Up to 260\u00b0C continuous",
         "HSN code":    "3919",
@@ -536,8 +538,8 @@ window.NEXEV_PRODUCTS = {
       "shipping": { "weight_grams": 120, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
       "amazon_url": "",
       "meta": {
-        "title": "Kapton Polyimide Tape 25mm 200m \u2014 Battery Pack | NexEV",
-        "description": "High-temperature Kapton / polyimide self-adhesive tape, 25mm, 200m roll. HSN 3919. Ships from Karnataka."
+        "title": "Kapton Polyimide Tape 20mm 33m \u2014 Battery Pack | NexEV",
+        "description": "High-temperature Kapton / polyimide self-adhesive tape, 20mm, 33m roll. HSN 3919. Ships from Karnataka.(Fare excluding Shipping Charges)"
       }
     },
 
