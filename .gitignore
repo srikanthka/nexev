@@ -1,0 +1,19 @@
+# Environment / secrets — never commit
+.dev.vars
+.env
+.env.*
+*.env
+
+# Cloudflare build output
+.wrangler/
+.cache/
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+*.swo
+.claude

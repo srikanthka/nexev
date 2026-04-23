@@ -1,0 +1,395 @@
+{
+  "version": "1.0.0",
+  "currency": "INR",
+  "updated": "2026-03-25",
+  "categories": [
+    { "id": "kit",        "label": "Complete Kits"        },
+    { "id": "conductor",  "label": "Conductors & Wire"    },
+    { "id": "insulation", "label": "Insulation Materials" },
+    { "id": "connector",  "label": "Connectors"           },
+    { "id": "holder",     "label": "Cell Holders"         },
+    { "id": "bms",        "label": "BMS"                  }
+  ],
+  "products": [
+    {
+      "id": "kit-18650-complete",
+      "name": "18650 Battery Assembly Kit",
+      "tagline": "Everything to build a quality 18650 pack",
+      "category": "kit",
+      "status": "active",
+      "featured": true,
+      "price": 899,
+      "compare_price": 1099,
+      "unit": "kit",
+      "min_qty": 1,
+      "bulk_tiers": [
+        { "qty": 5,  "price": 849, "label": "5+ kits" },
+        { "qty": 10, "price": 799, "label": "10+ kits" },
+        { "qty": 25, "price": 749, "label": "25+ kits (wholesale)" }
+      ],
+      "stock": "in_stock",
+      "sku": "NE-KIT-001",
+      "images": ["assets/products/kit-complete-1.jpg","assets/products/kit-complete-2.jpg"],
+      "image_fallback": "kit",
+      "tags": ["battery","18650","DIY","workshop","complete"],
+      "short_description": "Complete 18650 Li-Ion battery pack assembly kit for EV workshops and hobbyists.",
+      "description": "NexEV's 18650 Battery Assembly Kit contains every component you need to build a quality lithium-ion battery pack. Workshop-grade materials, sourced for consistency — no piecemeal purchasing. Suitable for e-bike builds, power tool packs, solar storage, and EV conversions.",
+      "contents": [
+        "Nickel strip (high-purity, spot-weld grade)",
+        "14 AWG silicone wire — red and black",
+        "PVC heat shrink tube — blue, 170mm flat width",
+        "Kapton polyimide tape — 25mm / 200 per roll",
+        "18650 cell insulation rings",
+        "Insulation paper roll",
+        "Amass XT60H connectors — male + female pair",
+        "80650 plastic battery cell holders"
+      ],
+      "specs": {
+        "Cell format":  "18650 cylindrical",
+        "Wire gauge":   "14 AWG silicone insulated",
+        "Connector":    "Amass XT60H gold-plated",
+        "Heat shrink":  "PVC blue 170mm flat width",
+        "Tape":         "Kapton polyimide 25mm",
+        "Holder":       "80650 plastic cell holder",
+        "Use case":     "E-bike, power tools, solar, EV conversion"
+      },
+      "shipping": {
+        "weight_grams": 350,
+        "fulfillment": "Ships within 2 business days from Bengaluru, Karnataka",
+        "courier": "Speed Post / Delhivery / Shiprocket"
+      },
+      "amazon_url": "",
+      "meta": {
+        "title": "18650 Battery Assembly Kit | NexEV | EV Workshop Supply",
+        "description": "Complete 18650 Li-Ion battery pack assembly kit — nickel strips, 14 AWG wire, XT60H connectors, Kapton tape, heat shrink, insulation. Ships from Karnataka."
+      }
+    },
+    {
+      "id": "nickel-strip-1m",
+      "name": "Nickel Strip — 1 Metre Roll",
+      "tagline": "High-purity, spot-weld grade",
+      "category": "conductor",
+      "status": "active",
+      "featured": false,
+      "price": 129,
+      "compare_price": null,
+      "unit": "roll",
+      "min_qty": 1,
+      "bulk_tiers": [
+        { "qty": 5,  "price": 115, "label": "5+ rolls" },
+        { "qty": 10, "price": 99,  "label": "10+ rolls" }
+      ],
+      "stock": "in_stock",
+      "sku": "NE-NS-001",
+      "images": ["assets/products/nickel-strip.jpg"],
+      "image_fallback": "nickel-strip",
+      "tags": ["nickel","strip","spot-weld","conductor"],
+      "short_description": "High-purity nickel strip for cell-to-cell spot welding. Correct width and thickness for 18650 series/parallel connections.",
+      "description": "Pure nickel strip for battery pack assembly. Correct formulation for low-resistance, high-current cell interconnects. Compatible with standard spot welders used in 18650 pack building.",
+      "specs": {
+        "Material":   "Pure nickel (99%+)",
+        "Width":      "8mm",
+        "Thickness":  "0.15mm",
+        "Length":     "1 metre per roll",
+        "Use":        "18650 / 21700 cell interconnects"
+      },
+      "shipping": { "weight_grams": 60, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
+      "amazon_url": "",
+      "meta": {
+        "title": "Nickel Strip 1M — Battery Pack Spot Welding | NexEV",
+        "description": "High-purity 8mm nickel strip for 18650 battery pack spot welding. 1 metre roll. Ships from Karnataka."
+      }
+    },
+    {
+      "id": "wire-14awg-1m-pair",
+      "name": "14 AWG Silicone Wire — 1m Pair",
+      "tagline": "Red + black, heat-resistant, flexible",
+      "category": "conductor",
+      "status": "active",
+      "featured": false,
+      "price": 149,
+      "compare_price": null,
+      "unit": "pair",
+      "min_qty": 1,
+      "bulk_tiers": [
+        { "qty": 5,  "price": 129, "label": "5+ pairs" },
+        { "qty": 10, "price": 109, "label": "10+ pairs" }
+      ],
+      "stock": "in_stock",
+      "sku": "NE-WR-001",
+      "images": ["assets/products/wire-14awg.jpg"],
+      "image_fallback": "wire",
+      "tags": ["wire","14awg","silicone","cable"],
+      "short_description": "Flexible silicone-jacketed 14 AWG wire — rated for battery pack current, heat-resistant. Red + black, 1m each.",
+      "description": "High-strand-count flexible silicone wire for battery pack lead wires and interconnects. Silicone jacket resists heat, cold, and flex fatigue — far superior to PVC for battery applications.",
+      "specs": {
+        "Gauge":          "14 AWG",
+        "Jacket":         "Silicone (heat-resistant)",
+        "Colour":         "Red and black (1m each)",
+        "Current rating": "~15A continuous",
+        "Temperature":    "-60°C to +200°C",
+        "Strands":        "High-strand-count flexible"
+      },
+      "shipping": { "weight_grams": 90, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
+      "amazon_url": "",
+      "meta": {
+        "title": "14 AWG Silicone Wire 1m Pair — Battery Pack | NexEV",
+        "description": "Flexible 14 AWG silicone wire, red and black, 1m each. Heat-resistant. Ships from Karnataka."
+      }
+    },
+    {
+      "id": "pvc-heat-shrink-170mm",
+      "name": "PVC Heat Shrink Tube — 170mm",
+      "tagline": "Blue PVC, battery pack wrap, 1 metre",
+      "category": "insulation",
+      "status": "active",
+      "featured": false,
+      "price": 89,
+      "compare_price": null,
+      "unit": "metre",
+      "min_qty": 1,
+      "bulk_tiers": [
+        { "qty": 5,  "price": 75, "label": "5+ metres" },
+        { "qty": 10, "price": 65, "label": "10+ metres" }
+      ],
+      "stock": "in_stock",
+      "sku": "NE-HS-001",
+      "images": ["assets/products/pvc-heat-shrink.jpg"],
+      "image_fallback": "heat-shrink",
+      "tags": ["heat-shrink","PVC","insulation","pack-wrap"],
+      "short_description": "Blue PVC heat shrink tube, 170mm flat width. Wraps a completed 18650 battery pack for insulation and clean finish.",
+      "description": "Large-diameter PVC heat shrink tubing for wrapping completed battery packs. 170mm flat width. Shrinks evenly with a heat gun at ~80°C.",
+      "specs": {
+        "Material":     "PVC",
+        "Colour":       "Blue",
+        "Flat width":   "170mm",
+        "Length":       "1 metre",
+        "Shrink ratio": "2:1",
+        "Temperature":  "Shrinks at ~80°C"
+      },
+      "shipping": { "weight_grams": 80, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
+      "amazon_url": "",
+      "meta": {
+        "title": "PVC Heat Shrink 170mm — Battery Pack Wrap | NexEV",
+        "description": "Blue PVC heat shrink tube 170mm flat width, 1 metre. For 18650 battery pack finishing. Ships from Karnataka."
+      }
+    },
+    {
+      "id": "kapton-tape-25mm",
+      "name": "Kapton Tape — 25mm / 200m Roll",
+      "tagline": "Polyimide, high-temperature, 200m per roll",
+      "category": "insulation",
+      "status": "active",
+      "featured": false,
+      "price": 199,
+      "compare_price": null,
+      "unit": "roll",
+      "min_qty": 1,
+      "bulk_tiers": [
+        { "qty": 3,  "price": 179, "label": "3+ rolls" },
+        { "qty": 10, "price": 159, "label": "10+ rolls" }
+      ],
+      "stock": "in_stock",
+      "sku": "NE-KT-001",
+      "images": ["assets/products/kapton-tape.jpg"],
+      "image_fallback": "kapton",
+      "tags": ["kapton","polyimide","tape","insulation","thermal"],
+      "short_description": "High-temperature Kapton polyimide tape, 25mm width, 200m roll. Cell insulation, tab coverage, thermal protection.",
+      "description": "Genuine polyimide tape for battery pack insulation. Used on positive cell terminals, between cell groups, and anywhere electrical isolation is needed near heat.",
+      "specs": {
+        "Material":    "Polyimide (Kapton-type)",
+        "Width":       "25mm",
+        "Length":      "200 metres per roll",
+        "Adhesive":    "Silicone-based",
+        "Temperature": "Up to 260°C continuous",
+        "Colour":      "Amber/yellow"
+      },
+      "shipping": { "weight_grams": 120, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
+      "amazon_url": "",
+      "meta": {
+        "title": "Kapton Polyimide Tape 25mm 200m — Battery Pack | NexEV",
+        "description": "High-temperature Kapton tape, 25mm wide, 200m roll. For 18650 battery pack cell insulation. Ships from Karnataka."
+      }
+    },
+    {
+      "id": "insulation-rings-100pk",
+      "name": "18650 Insulation Rings — 100 Pack",
+      "tagline": "Cell-end positive terminal insulation",
+      "category": "insulation",
+      "status": "active",
+      "featured": false,
+      "price": 79,
+      "compare_price": null,
+      "unit": "pack",
+      "min_qty": 1,
+      "bulk_tiers": [
+        { "qty": 5,  "price": 65, "label": "5+ packs" },
+        { "qty": 10, "price": 55, "label": "10+ packs" }
+      ],
+      "stock": "in_stock",
+      "sku": "NE-IR-001",
+      "images": ["assets/products/insulation-rings.jpg"],
+      "image_fallback": "insulation-rings",
+      "tags": ["insulation","rings","18650","gasket","cell"],
+      "short_description": "18650 cell-end insulation rings. Prevents short circuits at weld points. 100 per pack.",
+      "description": "Mika/barley paper insulation rings for 18650 cells. Placed on the positive terminal before spot welding to prevent shorts between the nickel strip and the cell casing.",
+      "specs": {
+        "Material":      "Mika / barley paper",
+        "Compatibility": "18650 cells",
+        "Position":      "Positive terminal (top)",
+        "Quantity":      "100 per pack",
+        "Colour":        "White / off-white"
+      },
+      "shipping": { "weight_grams": 30, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
+      "amazon_url": "",
+      "meta": {
+        "title": "18650 Insulation Rings 100 Pack — Battery Assembly | NexEV",
+        "description": "Mika insulation rings for 18650 positive terminals. 100 per pack. Ships from Karnataka."
+      }
+    },
+    {
+      "id": "insulation-paper-roll",
+      "name": "Insulation Paper Roll",
+      "tagline": "Between-cell group barrier paper",
+      "category": "insulation",
+      "status": "active",
+      "featured": false,
+      "price": 99,
+      "compare_price": null,
+      "unit": "roll",
+      "min_qty": 1,
+      "bulk_tiers": [
+        { "qty": 5,  "price": 85, "label": "5+ rolls" }
+      ],
+      "stock": "in_stock",
+      "sku": "NE-IP-001",
+      "images": ["assets/products/insulation-paper.jpg"],
+      "image_fallback": "insulation-paper",
+      "tags": ["insulation","paper","barrier","cell-group"],
+      "short_description": "Insulation paper roll for between-cell group separation. Prevents shorts between parallel groups. 10m roll.",
+      "description": "Electrical insulation paper for use between cell groups and between the pack and casing. Flexible, tearable to size. 10m per roll.",
+      "specs": {
+        "Material":     "Electrical insulation paper",
+        "Thickness":    "0.2mm",
+        "Width":        "100mm",
+        "Length":       "10 metres per roll",
+        "Application":  "Between cell groups, pack lining"
+      },
+      "shipping": { "weight_grams": 70, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
+      "amazon_url": "",
+      "meta": {
+        "title": "Insulation Paper Roll — Battery Pack Assembly | NexEV",
+        "description": "Electrical insulation paper for 18650 battery pack. 10m roll. Ships from Karnataka."
+      }
+    },
+    {
+      "id": "xt60h-connector-pair",
+      "name": "Amass XT60H Connectors — Pair",
+      "tagline": "Genuine Amass, gold-plated, male + female",
+      "category": "connector",
+      "status": "active",
+      "featured": false,
+      "price": 119,
+      "compare_price": null,
+      "unit": "pair",
+      "min_qty": 1,
+      "bulk_tiers": [
+        { "qty": 5,  "price": 99,  "label": "5+ pairs" },
+        { "qty": 10, "price": 85,  "label": "10+ pairs" },
+        { "qty": 25, "price": 75,  "label": "25+ pairs (workshop)" }
+      ],
+      "stock": "in_stock",
+      "sku": "NE-XT-001",
+      "images": ["assets/products/xt60h-connector.jpg"],
+      "image_fallback": "xt60h",
+      "tags": ["connector","XT60H","amass","gold-plated"],
+      "short_description": "Genuine Amass XT60H male + female connector pair. Gold-plated, 60A rated. Standard for e-bike battery packs.",
+      "description": "Genuine Amass XT60H connectors — upgraded XT60 with housing tabs. Gold-plated bullet contacts for low resistance. Industry standard for battery pack discharge leads.",
+      "specs": {
+        "Brand":      "Amass (genuine)",
+        "Type":       "XT60H",
+        "Contents":   "1x male + 1x female",
+        "Contact":    "Gold-plated copper",
+        "Rating":     "60A continuous, 90A burst",
+        "Housing":    "High-temp nylon",
+        "Wire gauge": "12-16 AWG compatible"
+      },
+      "shipping": { "weight_grams": 25, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
+      "amazon_url": "",
+      "meta": {
+        "title": "Amass XT60H Connector Pair — Battery Pack | NexEV",
+        "description": "Genuine Amass XT60H gold-plated connector pair (male + female). 60A rated. Ships from Karnataka."
+      }
+    },
+    {
+      "id": "battery-holder-80650",
+      "name": "80650 Battery Holders — 10 Pack",
+      "tagline": "Plastic cell holders for spot-weld alignment",
+      "category": "holder",
+      "status": "active",
+      "featured": false,
+      "price": 149,
+      "compare_price": null,
+      "unit": "pack",
+      "min_qty": 1,
+      "bulk_tiers": [
+        { "qty": 3,  "price": 135, "label": "3+ packs" },
+        { "qty": 10, "price": 119, "label": "10+ packs" }
+      ],
+      "stock": "in_stock",
+      "sku": "NE-BH-001",
+      "images": ["assets/products/battery-holder.jpg"],
+      "image_fallback": "holder",
+      "tags": ["holder","cell-holder","80650","18650","alignment"],
+      "short_description": "Plastic 80650 holders for 18650 cells. Keeps cells aligned during spot welding. 10 per pack.",
+      "description": "Rigid plastic cell holders sized for 18650 cells. Keeps cells in precise series/parallel alignment during spot welding. 10 per pack.",
+      "specs": {
+        "Cell size": "18650 compatible",
+        "Material":  "ABS plastic",
+        "Quantity":  "10 per pack",
+        "Type":      "Single cell (combine for S/P configs)",
+        "Colour":    "Black"
+      },
+      "shipping": { "weight_grams": 80, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
+      "amazon_url": "",
+      "meta": {
+        "title": "80650 Battery Holders 10 Pack — 18650 Cell Alignment | NexEV",
+        "description": "Plastic 80650 holders for 18650 cells. 10 per pack. Ships from Karnataka."
+      }
+    },
+    {
+      "id": "bms-10s-36v",
+      "name": "10S BMS — 36V Battery Pack",
+      "tagline": "Battery Management System — coming soon",
+      "category": "bms",
+      "status": "coming_soon",
+      "featured": false,
+      "price": null,
+      "compare_price": null,
+      "unit": "unit",
+      "min_qty": 1,
+      "bulk_tiers": [],
+      "stock": "pre_order",
+      "sku": "NE-BMS-001",
+      "images": ["assets/products/bms-10s.jpg"],
+      "image_fallback": "bms",
+      "tags": ["BMS","10S","36V","protection","balance"],
+      "short_description": "10S BMS for 36V lithium-ion battery packs. Sourcing in progress. Register interest for priority access.",
+      "description": "NexEV is sourcing a reliable 10S BMS for 36V battery packs. Target: 30A continuous, cell balancing, over-charge, over-discharge, over-current, and short-circuit protection. BIS IS 16893 compliance pathway in progress.",
+      "specs": {
+        "Configuration": "10S (36V nominal)",
+        "Continuous":    "30A (target)",
+        "Protection":    "Over-charge, over-discharge, over-current, short-circuit",
+        "Balancing":     "Passive balance",
+        "Compliance":    "BIS IS 16893 pathway",
+        "Status":        "Sourcing in progress"
+      },
+      "shipping": { "weight_grams": null, "fulfillment": "TBD", "courier": "TBD" },
+      "amazon_url": "",
+      "meta": {
+        "title": "10S BMS 36V — Coming Soon | NexEV",
+        "description": "10S BMS for 36V e-bike battery packs. Register interest for priority access. NexEV Karnataka."
+      }
+    }
+  ]
+}

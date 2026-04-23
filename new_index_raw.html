@@ -37,7 +37,7 @@
   "contactPoint": [
     {
       "@type": "ContactPoint",
-      "telephone": "+91-9901560364",
+      "telephone": "+91-99056-03640",
       "contactType": "sales",
       "availableLanguage": ["English", "Kannada", "Hindi"]
     }
@@ -144,93 +144,67 @@ img{max-width:100%;display:block}
 @media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
 
 /* ═══ HERO ═══ */
-/* ── HERO ── */
-#hero{position:relative;height:100vh;min-height:640px;overflow:hidden;margin-top:var(--nav-h);background:#0c0801;transition:background 1.1s ease}
-/* Background: grid overlay + glow blob */
-.h-grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:52px 52px;pointer-events:none;z-index:0}
-.h-glow-blob{position:absolute;right:-8%;top:5%;width:70%;height:85%;border-radius:50%;filter:blur(110px);opacity:.2;transition:background 1.1s ease,opacity .8s ease;pointer-events:none;z-index:0}
-/* Slides */
-.slide{position:absolute;inset:0;display:grid;grid-template-columns:54% 46%;align-items:center;opacity:0;transition:opacity .7s ease;pointer-events:none;z-index:2}
+#hero{position:relative;height:100vh;min-height:600px;overflow:hidden;margin-top:var(--nav-h);background:#060e1c}
+.slide{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;align-items:center;justify-items:start;opacity:0;transition:opacity .7s;pointer-events:none}
 .slide.active{opacity:1;pointer-events:all}
-.slide::before{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 40%,rgba(0,0,0,.18) 65%,transparent 100%);z-index:1;pointer-events:none}
-/* Hero slide photo — displayed in .slide-right panel, same as SVG illustration */
-.slide-vis img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;border-radius:12px;filter:drop-shadow(0 8px 40px rgba(0,0,0,.45))}
-/* Hide fallback SVG/grid when a real photo is present in the same panel */
-.slide-vis img ~ svg,.slide-vis img ~ .kit-vis-grid{display:none}
-.slide-left{position:relative;z-index:3;padding:2rem 2rem 5rem 5rem;display:flex;flex-direction:column;justify-content:center;width:100%}
-.slide-right{position:relative;z-index:3;display:flex;align-items:center;justify-content:center;padding:2rem 3.5rem 2rem 0;height:100%}
-/* Badge */
-.h-badge{display:inline-flex;align-items:center;gap:.55rem;padding:.42rem 1.05rem;border-radius:50px;border:1px solid;font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:1.4rem;width:fit-content;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.h-badge-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;animation:hpulse 1.9s ease infinite}
-@keyframes hpulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.6)}}
-/* Eyebrow label above title */
-.h-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.55rem}
-/* Title */
-.h-title{font-family:'Syne',sans-serif;font-size:clamp(2.5rem,5vw,4.1rem);font-weight:800;color:#fff;line-height:1.05;margin-bottom:.8rem;letter-spacing:-.015em}
-.h-title-line{display:block}
-/* Subtitle */
-.h-sub{font-size:.76rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:1rem}
-/* Description */
-.h-desc{color:rgba(255,255,255,.72);font-size:.92rem;line-height:1.8;margin-bottom:1.6rem;max-width:42ch}
-/* Spec chips */
-.h-chips{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:1.65rem}
-.h-chip{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:.45rem .85rem;display:flex;flex-direction:column;align-items:center;gap:.12rem;min-width:64px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .2s,border-color .2s,transform .2s}
-.h-chip:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25);transform:translateY(-2px)}
-.h-chip-v{font-family:'Syne',sans-serif;font-size:.82rem;font-weight:800;color:#fff;line-height:1}
-.h-chip-l{font-size:.62rem;color:rgba(255,255,255,.42);text-transform:uppercase;letter-spacing:.07em}
-/* CTAs */
-.h-ctas{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
-.h-btn-p{display:inline-flex;align-items:center;gap:.45rem;padding:.82rem 1.6rem;border-radius:12px;font-weight:700;font-size:.88rem;color:#fff;transition:all .22s;border:none;cursor:pointer;letter-spacing:.01em}
-.h-btn-p:hover{transform:translateY(-3px);filter:brightness(1.12);box-shadow:0 8px 28px rgba(0,0,0,.3)}
-.h-btn-s{display:inline-flex;align-items:center;gap:.4rem;padding:.82rem 1.6rem;border-radius:12px;font-weight:600;font-size:.88rem;color:rgba(255,255,255,.82);border:1.5px solid rgba(255,255,255,.2);background:rgba(255,255,255,.04);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:all .22s}
-.h-btn-s:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.5);color:#fff;transform:translateY(-2px)}
-/* Visual panel */
-.slide-vis{width:100%;max-width:470px;min-height:290px;display:flex;align-items:center;justify-content:center;position:relative}
-.slide-vis svg{width:100%;height:auto;display:block;filter:drop-shadow(0 4px 32px rgba(0,0,0,.35))}
-/* Kit grid visual */
-.kit-vis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;width:100%;max-width:410px}
-.kv-item{background:rgba(255,255,255,.065);border:1px solid rgba(255,255,255,.11);border-radius:12px;padding:14px 8px 11px;text-align:center;transition:all .22s;cursor:default}
-.kv-item:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.28);transform:translateY(-3px)}
-.kv-item svg{display:block;margin:0 auto 8px}
-.kv-name{font-size:.58rem;color:rgba(255,255,255,.68);font-weight:700;text-transform:uppercase;letter-spacing:.05em;line-height:1.3}
-.kv-item.kv-hi{background:rgba(34,197,94,.14);border-color:rgba(34,197,94,.42)}
+.slide-left{position:relative;z-index:3;padding:2rem 2rem 2rem 4rem;display:flex;flex-direction:column;justify-content:center;width:100%;max-width:640px}
+.slide-right{position:relative;z-index:3;display:flex;align-items:center;justify-content:center;padding:2rem 3rem 2rem 1rem;height:100%}
+/* gradient: only covers left half — right stays visible */
+.slide::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.45) 45%,rgba(0,0,0,.15) 70%,transparent 100%);z-index:1;pointer-events:none}
+/* badge */
+.h-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .9rem;border-radius:20px;border:1px solid;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1.2rem}
+.h-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+/* headline */
+.h-title{font-family:'Syne',sans-serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;color:#fff;line-height:1.1;margin-bottom:.6rem}
+.h-sub{font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.9rem}
+.h-desc{color:rgba(255,255,255,.8);font-size:.93rem;line-height:1.7;margin-bottom:1.4rem;max-width:46ch}
+/* spec chips */
+.h-chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.h-chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:8px;padding:.4rem .7rem;display:flex;flex-direction:column;align-items:center;gap:.1rem;min-width:60px}
+.h-chip-v{font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:#fff;line-height:1}
+.h-chip-l{font-size:.65rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.05em}
+/* ctas */
+.h-ctas{display:flex;gap:.75rem;flex-wrap:wrap}
+.h-btn-p{display:inline-flex;align-items:center;gap:.4rem;padding:.72rem 1.35rem;border-radius:10px;font-weight:700;font-size:.875rem;color:#fff;transition:all .2s;border:none;cursor:pointer}
+.h-btn-p:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.h-btn-s{display:inline-flex;align-items:center;padding:.72rem 1.35rem;border-radius:10px;font-weight:600;font-size:.875rem;color:rgba(255,255,255,.88);border:1.5px solid rgba(255,255,255,.28);background:transparent;transition:all .2s}
+.h-btn-s:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6)}
+/* slide visual panel */
+.slide-vis{width:100%;max-width:440px;min-height:260px;display:flex;align-items:center;justify-content:center;position:relative}
+.slide-vis svg{width:100%;height:auto;display:block}
+/* kit grid visual */
+.kit-vis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%}
+.kv-item{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 8px 10px;text-align:center;transition:background .2s,border-color .2s}
+.kv-item:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.3)}
+.kv-item svg{display:block;margin:0 auto 7px}
+.kv-name{font-size:.58rem;color:rgba(255,255,255,.72);font-weight:700;text-transform:uppercase;letter-spacing:.05em;line-height:1.3}
+.kv-item.kv-hi{background:rgba(34,197,94,.16);border-color:rgba(34,197,94,.45)}
 .kv-item.kv-hi .kv-name{color:rgba(34,197,94,.92)}
-/* Slide entrance animations */
-@keyframes slideIn{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:none}}
-@keyframes slideInLeft{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:none}}
-.slide.active .slide-vis{animation:slideIn .65s cubic-bezier(.22,1,.36,1) .12s both}
-.slide.active .slide-left{animation:slideInLeft .55s cubic-bezier(.22,1,.36,1) .06s both}
-/* Progress bar */
-.h-progress{position:absolute;bottom:0;left:0;right:0;height:3px;background:rgba(255,255,255,.06);z-index:20}
-.h-progress-fill{height:100%;width:0%;border-radius:0 2px 2px 0}
-/* Slide indicators with labels */
-.h-dots{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;gap:1.4rem;align-items:flex-end;z-index:10}
-.h-dot-btn{background:none;border:none;cursor:pointer;padding:4px 0;display:flex;flex-direction:column;align-items:center;gap:.42rem;opacity:.5;transition:opacity .35s}
-.h-dot-btn.on{opacity:1}
-.h-dot-inner{display:block;height:3px;width:22px;border-radius:2px;background:rgba(255,255,255,.28);transition:all .45s ease}
-.h-dot-btn.on .h-dot-inner{width:46px}
-.h-dot-label{font-size:.57rem;color:rgba(255,255,255,.55);font-weight:700;letter-spacing:.07em;text-transform:uppercase;line-height:1}
-/* Navigation arrows */
-.h-arr{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#fff;width:50px;height:50px;border-radius:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .22s}
-.h-arr:hover{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.42);transform:translateY(-50%) scale(1.08)}
-#h-prev{left:1.75rem}
-#h-next{right:1.75rem}
-/* Slide counter — top right */
-.h-count{position:absolute;top:1.5rem;right:2rem;z-index:10;font-family:'Syne',sans-serif;font-size:.78rem;color:rgba(255,255,255,.28);letter-spacing:.05em;line-height:1}
-.h-count em{color:rgba(255,255,255,.9);font-style:normal;font-weight:800;font-size:1.05rem;display:block;margin-bottom:.1rem}
-/* Navbar + footer slogans */
+/* slide entrance animation */
+@keyframes slideIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+.slide.active .slide-vis{animation:slideIn .6s ease .15s both}
+/* controls */
+.h-dots{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;gap:.5rem;align-items:center;z-index:10}
+.h-dot-btn{background:none;border:none;cursor:pointer;padding:4px}
+.h-dot-inner{display:block;height:4px;width:7px;border-radius:3px;background:rgba(255,255,255,.3);transition:all .4s}
+.h-dot-btn.on .h-dot-inner{width:26px}
+.h-arr{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.h-arr:hover{background:rgba(255,255,255,.25)}
+#h-prev{left:1.5rem}
+#h-next{right:1.5rem}
+.h-count{position:absolute;bottom:2.4rem;right:2rem;z-index:10;font-family:'Syne',sans-serif;font-size:.8rem;color:rgba(255,255,255,.35)}
+.h-count em{color:rgba(255,255,255,.88);font-style:normal;font-weight:700}
+/* navbar slogan */
 .nav-slogan{font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.15rem;line-height:1}
+/* footer slogan */
 .footer-slogan{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.75rem;line-height:1}
 @media(max-width:900px){
   .slide{grid-template-columns:1fr}
   .slide-right{display:none}
-  .slide-left{padding:2rem 1.75rem 5rem;max-width:100%}
-  #hero{min-height:580px}
-  #h-prev{left:.85rem}
-  #h-next{right:.85rem}
-  .h-title{font-size:clamp(2.1rem,8vw,3.2rem)}
-  .h-dots{gap:.9rem}
-  .h-dot-label{display:none}
+  .slide-left{padding:2rem 1.75rem;max-width:100%}
+  #hero{min-height:560px}
+  #h-prev{left:.75rem}
+  #h-next{right:.75rem}
 }
 
 /* ═══ TRUST BAR ═══ */
@@ -302,28 +276,21 @@ img{max-width:100%;display:block}
 .rm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 .rm{border-radius:var(--radius);padding:1.75rem;border:1.5px solid var(--border)}
 .rm--a{background:var(--blue);border-color:var(--blue)}
-.rm--b{background:#431407;border-color:#9a3412}
-.rm--s{background:#fff;border-style:dashed;border-color:rgba(96,165,250,.35)}
+.rm--s{background:#fff}
+.rm--p{background:#fff;border-style:dashed}
 .rm-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
 .rm--a .rm-label{color:rgba(255,255,255,.55)}
-.rm--b .rm-label{color:rgba(251,146,60,.65)}
-.rm--s .rm-label{color:var(--muted)}
+.rm--s .rm-label,.rm--p .rm-label{color:var(--green)}
 .rm h3{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;margin-bottom:.6rem}
 .rm--a h3{color:#fff}
-.rm--b h3{color:#fed7aa}
-.rm--s h3{color:var(--blue)}
+.rm--s h3,.rm--p h3{color:var(--blue)}
 .rm p{font-size:.875rem;line-height:1.65}
 .rm--a p{color:rgba(255,255,255,.72)}
-.rm--b p{color:rgba(253,186,116,.8)}
-.rm--s p{color:var(--muted)}
+.rm--s p,.rm--p p{color:var(--muted)}
 .rm-tag{display:inline-flex;align-items:center;gap:.35rem;margin-top:1rem;padding:.3rem .7rem;border-radius:20px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
 .rm--a .rm-tag{background:rgba(34,197,94,.2);color:#4ade80}
-.rm--b .rm-tag{background:rgba(249,115,22,.2);color:#fb923c}
-.rm--s .rm-tag{background:rgba(96,165,250,.1);border:1px dashed rgba(96,165,250,.4);color:#3b82f6}
-.rm-active-bar{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
-.rm-active-chip{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .8rem;border-radius:20px;font-size:.72rem;font-weight:700}
-.rm-active-chip.green{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:#16a34a}
-.rm-active-chip.orange{background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.3);color:#ea580c}
+.rm--s .rm-tag{background:rgba(245,197,24,.1);color:#92400e}
+.rm--p .rm-tag{background:rgba(245,197,24,.1);border:1px dashed rgba(245,197,24,.5);color:#92400e}
 .proto-note{background:rgba(245,197,24,.07);border:1.5px dashed rgba(245,197,24,.4);border-radius:var(--radius);padding:1rem 1.25rem;margin-top:1.5rem;display:flex;gap:.75rem;align-items:flex-start}
 .proto-note svg{flex-shrink:0;color:#b45309;margin-top:2px}
 .proto-note p{font-size:.875rem;color:#92400e;line-height:1.6}
@@ -500,112 +467,6 @@ img{max-width:100%;display:block}
 #scrollTop.show{display:flex}
 #scrollTop:hover{background:var(--blue-d);transform:translateY(-2px)}
 
-/* ── BMS DESIGN SECTION ── */
-.bms-status-banner{display:flex;align-items:center;gap:.75rem;background:rgba(249,115,22,.07);border:1.5px solid rgba(249,115,22,.3);border-radius:var(--radius);padding:.85rem 1.25rem;margin-bottom:2.5rem}
-.bms-status-banner svg{color:#f97316;flex-shrink:0}
-.bms-status-banner p{font-size:.85rem;color:#9a3412;line-height:1.5}
-.bms-layout{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-bottom:2.5rem;align-items:start}
-.bms-arch{background:#060e1c;border-radius:16px;padding:1.5rem 1.75rem;font-family:monospace;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.07);overflow-x:auto}
-.bms-arch-title{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#f97316;margin-bottom:.9rem}
-.bms-arch pre{margin:0;white-space:pre;font-size:.68rem;line-height:1.75;color:rgba(255,255,255,.6)}
-.hl-hv{color:#fb923c}.hl-lv{color:#4ade80}.hl-comm{color:#93c5fd}
-.bms-specs{display:flex;flex-direction:column;gap:1rem}
-.bms-sg{background:#fff;border:1.5px solid var(--border);border-radius:12px;overflow:hidden}
-.bms-sg-hd{display:flex;align-items:center;gap:.55rem;padding:.65rem 1rem;background:var(--bg-alt);border-bottom:1px solid var(--border)}
-.bms-sg-hd span{font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--blue)}
-.bms-sr{display:flex;justify-content:space-between;align-items:baseline;gap:.75rem;padding:.45rem 1rem;border-bottom:1px solid var(--border);font-size:.8rem}
-.bms-sr:last-child{border:none}
-.bms-sr .bk{color:var(--muted);white-space:nowrap}
-.bms-sr .bv{color:var(--text);font-weight:600;text-align:right;font-family:monospace;font-size:.75rem}
-.bms-fw{background:#060e1c;border-radius:16px;padding:1.5rem 1.75rem;border:1px solid rgba(255,255,255,.07);margin-bottom:2.5rem}
-.bms-fw-title{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#4ade80;margin-bottom:1.1rem}
-.bms-fw-layers{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
-.bms-layer{padding:.9rem;border-radius:10px;border:1px solid rgba(255,255,255,.08)}
-.bms-layer-l{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem}
-.bms-layer ul{list-style:none;padding:0;margin:0}
-.bms-layer li{font-family:monospace;font-size:.65rem;color:rgba(255,255,255,.5);margin-bottom:.2rem;padding-left:.65rem;position:relative}
-.bms-layer li::before{content:'▸';position:absolute;left:0;color:rgba(255,255,255,.22);font-size:.6rem}
-.layer-app{background:rgba(249,115,22,.07);border-color:rgba(249,115,22,.22)}.layer-app .bms-layer-l{color:#fb923c}
-.layer-logic{background:rgba(34,197,94,.06);border-color:rgba(34,197,94,.18)}.layer-logic .bms-layer-l{color:#4ade80}
-.layer-driver{background:rgba(96,165,250,.06);border-color:rgba(96,165,250,.18)}.layer-driver .bms-layer-l{color:#93c5fd}
-.layer-hal{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08)}.layer-hal .bms-layer-l{color:rgba(255,255,255,.45)}
-.bms-sm-sub{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:1rem}
-.bms-sm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1rem;margin-bottom:2rem}
-.bms-state{border-radius:12px;padding:1rem;border-width:1.5px;border-style:solid;position:relative}
-.bms-state-n{font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:var(--blue);margin-bottom:.25rem}
-.bms-state-d{font-size:.75rem;color:var(--muted);line-height:1.45}
-.bms-state-dot{position:absolute;top:.9rem;right:.9rem;width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.bms-can-wrap{overflow-x:auto;border-radius:12px;border:1.5px solid var(--border);margin-bottom:2rem}
-.bms-can-table{width:100%;border-collapse:collapse;font-size:.8rem;min-width:560px}
-.bms-can-table th{text-align:left;padding:.55rem .85rem;font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);border-bottom:1.5px solid var(--border);background:var(--bg-alt);white-space:nowrap}
-.bms-can-table td{padding:.5rem .85rem;border-bottom:1px solid var(--border);vertical-align:top;font-size:.79rem}
-.bms-can-table td:first-child{font-family:monospace;color:var(--blue);font-weight:700;white-space:nowrap}
-.bms-can-table td:nth-child(3){white-space:nowrap}
-.bms-can-table tr:last-child td{border:none}
-.bms-cta-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
-@media(max-width:900px){.bms-layout{grid-template-columns:1fr}.bms-fw-layers{grid-template-columns:1fr 1fr}}
-@media(max-width:580px){.bms-fw-layers{grid-template-columns:1fr}.bms-sm-grid{grid-template-columns:1fr 1fr}}
-
-/* ── BMS product page ── */
-.bms-ph{text-align:center;padding:1rem 0 2.5rem}
-.bms-ph .eyebrow{color:#f97316}
-.bms-ph-kicker{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#f97316;margin-bottom:.6rem}
-.bms-ph-title{font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:800;line-height:1.1;color:var(--blue);margin:.4rem 0 1rem}
-.bms-ph-title span{color:#f97316}
-.bms-ph-tagline{font-size:1.05rem;color:var(--muted);max-width:640px;margin:0 auto 1.6rem}
-.bms-ph-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(251,146,60,.1);border:1.5px solid rgba(251,146,60,.35);color:#f97316;font-size:.75rem;font-weight:700;padding:.4rem 1rem;border-radius:50px;letter-spacing:.06em;text-transform:uppercase}
-.bms-ph-badge span{display:inline-block;width:7px;height:7px;border-radius:50%;background:#f97316;animation:pulse-o 1.6s infinite}
-@keyframes pulse-o{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
-.bms-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:#060e1c;border-radius:16px;border:1.5px solid rgba(255,255,255,.07);overflow:hidden;margin-bottom:3rem}
-.bms-strip-stat{padding:1.4rem 1rem;text-align:center;border-right:1px solid rgba(255,255,255,.07)}
-.bms-strip-stat:last-child{border-right:none}
-.bms-strip-v{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:#f97316;display:block;margin-bottom:.2rem}
-.bms-strip-l{font-size:.68rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.08em}
-.bms-quote{background:linear-gradient(135deg,#0a0f18 0%,#0f1a0a 100%);border-left:4px solid #f97316;border-radius:0 12px 12px 0;padding:1.8rem 2rem;margin-bottom:3rem;position:relative;overflow:hidden}
-.bms-quote::before{content:'"';position:absolute;top:-1rem;left:1rem;font-size:8rem;color:rgba(249,115,22,.07);font-family:Georgia,serif;line-height:1;pointer-events:none}
-.bms-quote-text{font-family:'Syne',sans-serif;font-size:clamp(1.05rem,2.5vw,1.35rem);font-weight:700;color:#fff;line-height:1.45;margin:0 0 .5rem;position:relative}
-.bms-quote-attr{font-size:.78rem;color:rgba(255,255,255,.4);margin:0;letter-spacing:.05em}
-.bms-feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-bottom:3rem}
-.bms-feat{background:var(--bg-alt);border:1.5px solid var(--border);border-radius:16px;padding:1.6rem;transition:border-color .25s,transform .2s}
-.bms-feat:hover{border-color:rgba(249,115,22,.4);transform:translateY(-3px)}
-.bms-feat-icon{width:44px;height:44px;border-radius:12px;background:rgba(249,115,22,.1);border:1.5px solid rgba(249,115,22,.25);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:#f97316}
-.bms-feat-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--blue);margin:0 0 .5rem}
-.bms-feat-desc{font-size:.85rem;color:var(--muted);line-height:1.6;margin:0}
-.bms-feat-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem}
-.bms-feat-chip{font-size:.67rem;font-weight:700;padding:.25rem .6rem;border-radius:50px;background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.2);color:#f97316;letter-spacing:.04em;text-transform:uppercase}
-.bms-iface-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-bottom:3rem}
-.bms-iface-card{background:#060e1c;border:1.5px solid rgba(255,255,255,.08);border-radius:16px;padding:1.5rem}
-.bms-iface-title{font-family:'Syne',sans-serif;font-size:.92rem;font-weight:700;color:#f97316;margin:0 0 1rem;display:flex;align-items:center;gap:.5rem}
-.bms-iface-row{display:flex;justify-content:space-between;align-items:flex-start;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.82rem;gap:1rem}
-.bms-iface-row:last-child{border:none}
-.bms-iface-key{color:rgba(255,255,255,.45);flex-shrink:0}
-.bms-iface-val{color:#fff;text-align:right;font-weight:500}
-.bms-comp-wrap{overflow-x:auto;border-radius:16px;border:1.5px solid var(--border);margin-bottom:3rem}
-.bms-comp-table{width:100%;border-collapse:collapse;min-width:520px}
-.bms-comp-table th{padding:.75rem 1.1rem;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1.5px solid var(--border);text-align:left;background:var(--bg-alt)}
-.bms-comp-table th.nexev-col{background:#060e1c;color:#f97316}
-.bms-comp-table td{padding:.65rem 1.1rem;border-bottom:1px solid var(--border);font-size:.82rem;vertical-align:middle}
-.bms-comp-table td.nexev-col{background:rgba(6,14,28,.6);color:#fff;font-weight:600}
-.bms-comp-table td.generic-col{color:var(--muted)}
-.bms-comp-table tr:last-child td{border:none}
-.bms-comp-table .chk{color:#22c55e;font-size:1.1rem}
-.bms-comp-table .crs{color:#ef4444;font-size:1.1rem}
-.bms-comp-table .neu{color:var(--muted)}
-.bms-apps-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-bottom:2rem}
-.bms-app{background:var(--bg-alt);border:1.5px solid var(--border);border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:.6rem;transition:border-color .25s}
-.bms-app:hover{border-color:rgba(249,115,22,.35)}
-.bms-app-icon{font-size:2rem;line-height:1}
-.bms-app-title{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--blue)}
-.bms-app-desc{font-size:.82rem;color:var(--muted);line-height:1.55}
-.bms-app-hook{background:linear-gradient(135deg,#0a0f18,#18120a);border-radius:16px;padding:2rem;text-align:center;margin-bottom:2.5rem;border:1.5px solid rgba(249,115,22,.15)}
-.bms-app-hook p{font-family:'Syne',sans-serif;font-size:clamp(.95rem,2vw,1.15rem);font-weight:700;color:#fff;margin:0 0 .4rem}
-.bms-app-hook span{font-size:.82rem;color:rgba(255,255,255,.4)}
-.bms-sec-hd{margin-bottom:1.5rem}
-.bms-sec-hd h3{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;color:var(--blue);margin:0 0 .3rem}
-.bms-sec-hd p{font-size:.85rem;color:var(--muted);margin:0}
-@media(max-width:860px){.bms-strip{grid-template-columns:repeat(3,1fr)}.bms-strip-stat:nth-child(3){border-right:none}.bms-strip-stat:nth-child(4){border-right:1px solid rgba(255,255,255,.07)}}
-@media(max-width:620px){.bms-strip{grid-template-columns:repeat(2,1fr)}.bms-strip-stat:nth-child(2){border-right:none}.bms-strip-stat:nth-child(3){border-right:1px solid rgba(255,255,255,.07)}.bms-feat-grid,.bms-iface-grid,.bms-apps-grid{grid-template-columns:1fr}.bms-quote{padding:1.4rem 1.2rem}}
-
 /* modal */
 .modal{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.55);align-items:center;justify-content:center;padding:1rem}
 .modal.open{display:flex}
@@ -635,12 +496,10 @@ img{max-width:100%;display:block}
     </div>
     <ul class="nav-links">
       <li><a href="#products">Products</a></li>
-      <li><a href="#bms-design">BMS</a></li>
       <li><a href="#taiwan">Suppliers</a></li>
       <li><a href="#market">India Market</a></li>
       <li><a href="#opportunities">Partners</a></li>
 	  <li><a href="#bis-services">BIS Services</a></li>
-      <li><a href="shop.html">Shop</a></li>
       <li><a href="#enquiry" class="nav-cta">Contact Us</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
@@ -653,9 +512,7 @@ img{max-width:100%;display:block}
   <a href="#taiwan">Supplier Partnership</a>
   <a href="#market">India Market</a>
   <a href="#opportunities">Partners</a>
-  <a href="#bms-design">BMS</a>
    <a href="#bis-services">BIS Services</a>
-  <a href="shop.html">Shop</a>
   <a href="#enquiry" class="mob-cta">Contact Us</a>
 </div>
 
@@ -664,306 +521,15 @@ img{max-width:100%;display:block}
 <section id="home">
 <div id="hero">
 
-  <!-- Background decorations -->
-  <div class="h-grid-overlay" aria-hidden="true"></div>
-  <div class="h-glow-blob" id="h-blob" aria-hidden="true"></div>
-
-  <!-- ══ SLIDE 1 · Gen-1 BMS Board (orange) ══ -->
+  <!-- SLIDE 1 · Battery Kit -->
   <div class="slide active" id="s0">
     <div class="slide-left">
-      <div class="h-badge" style="background:rgba(249,115,22,.1);border-color:rgba(249,115,22,.35);color:#fb923c;">
-        <span class="h-badge-dot" style="background:#f97316;"></span>Under Design &nbsp;·&nbsp; Golden Sample Stage
+      <div class="h-badge" style="background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.35);color:#4ade80;">
+        <span class="h-dot" style="background:#22c55e;"></span>Available Now · Amazon India
       </div>
-      <p class="h-eyebrow">NEXEV Gen-1</p>
-      <h1 class="h-title">
-        <span class="h-title-line">16S 67.2V</span>
-        <span class="h-title-line" style="color:#f97316;">Smart BMS Board.</span>
-      </h1>
-      <p class="h-sub">STM32F407 · BQ76952 AFE · Rust Firmware · AIS-156 Roadmap</p>
-      <p class="h-desc">A proprietary Battery Management System built for Indian EV demands. Own-design PCB, dual-layer fault protection, CAN bus telemetry, and Rust/Embassy firmware. Not off a shelf — engineered from scratch.</p>
-      <div class="h-chips">
-        <div class="h-chip"><span class="h-chip-v">16S</span><span class="h-chip-l">Config</span></div>
-        <div class="h-chip"><span class="h-chip-v">67.2V</span><span class="h-chip-l">Max</span></div>
-        <div class="h-chip"><span class="h-chip-v">60A</span><span class="h-chip-l">Continuous</span></div>
-        <div class="h-chip"><span class="h-chip-v">STM32F4</span><span class="h-chip-l">MCU</span></div>
-        <div class="h-chip"><span class="h-chip-v">BIS</span><span class="h-chip-l">Roadmap</span></div>
-      </div>
-      <div class="h-ctas">
-        <a href="#enquiry" class="h-btn-p" style="background:#f97316;box-shadow:0 0 28px rgba(249,115,22,.32);">Register Interest <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a href="#bms-design" class="h-btn-s">Technical Specs <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-    </div>
-    <div class="slide-right">
-      <div class="slide-vis">
-        <img src="assets/hero/bms.png" alt="Gen-1 16S 67.2V Smart BMS Board" />
-        <!-- Gen-1 BMS PCB — enhanced top-down view (fallback SVG kept below, hidden) -->
-        <svg viewBox="0 0 420 310" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- PCB substrate (deep green-tinted dark, classic PCB colour) -->
-          <rect x="28" y="22" width="364" height="266" rx="9" fill="rgba(12,32,18,.75)" stroke="rgba(249,115,22,.55)" stroke-width="1.6"/>
-          <!-- PCB silk-screen grid (faint traces) -->
-          <line x1="28" y1="90" x2="392" y2="90" stroke="rgba(249,115,22,.06)" stroke-width=".8"/>
-          <line x1="28" y1="158" x2="392" y2="158" stroke="rgba(249,115,22,.06)" stroke-width=".8"/>
-          <line x1="28" y1="222" x2="392" y2="222" stroke="rgba(249,115,22,.06)" stroke-width=".8"/>
-          <line x1="120" y1="22" x2="120" y2="288" stroke="rgba(249,115,22,.06)" stroke-width=".8"/>
-          <line x1="220" y1="22" x2="220" y2="288" stroke="rgba(249,115,22,.06)" stroke-width=".8"/>
-          <line x1="320" y1="22" x2="320" y2="288" stroke="rgba(249,115,22,.06)" stroke-width=".8"/>
-          <!-- Mounting holes -->
-          <circle cx="46" cy="40" r="5.5" fill="none" stroke="rgba(249,115,22,.4)" stroke-width="1.2"/>
-          <circle cx="374" cy="40" r="5.5" fill="none" stroke="rgba(249,115,22,.4)" stroke-width="1.2"/>
-          <circle cx="46" cy="270" r="5.5" fill="none" stroke="rgba(249,115,22,.4)" stroke-width="1.2"/>
-          <circle cx="374" cy="270" r="5.5" fill="none" stroke="rgba(249,115,22,.4)" stroke-width="1.2"/>
-
-          <!-- ── POWER CONNECTORS — LEFT EDGE ── -->
-          <rect x="28" y="52" width="22" height="13" rx="2" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.6)" stroke-width="1"/>
-          <text x="39" y="61.5" text-anchor="middle" font-size="6" fill="#fb923c" font-family="monospace" font-weight="bold">B+</text>
-          <rect x="28" y="68" width="22" height="13" rx="2" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.6)" stroke-width="1"/>
-          <text x="39" y="77.5" text-anchor="middle" font-size="6" fill="#fb923c" font-family="monospace" font-weight="bold">B−</text>
-          <!-- ── LOAD CONNECTORS — RIGHT EDGE ── -->
-          <rect x="370" y="52" width="22" height="13" rx="2" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.6)" stroke-width="1"/>
-          <text x="381" y="61.5" text-anchor="middle" font-size="6" fill="#fb923c" font-family="monospace" font-weight="bold">P+</text>
-          <rect x="370" y="68" width="22" height="13" rx="2" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.6)" stroke-width="1"/>
-          <text x="381" y="77.5" text-anchor="middle" font-size="6" fill="#fb923c" font-family="monospace" font-weight="bold">P−</text>
-          <rect x="370" y="84" width="22" height="13" rx="2" fill="rgba(249,115,22,.12)" stroke="rgba(249,115,22,.4)" stroke-width="1"/>
-          <text x="381" y="93.5" text-anchor="middle" font-size="6" fill="rgba(251,146,60,.7)" font-family="monospace">C±</text>
-
-          <!-- ── HEAVY POWER TRACES ── -->
-          <path d="M50 58 L66 58" stroke="rgba(249,115,22,.6)" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M50 74 L66 74" stroke="rgba(249,115,22,.5)" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M370 58 L354 58" stroke="rgba(249,115,22,.6)" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M370 74 L354 74" stroke="rgba(249,115,22,.5)" stroke-width="2.5" stroke-linecap="round"/>
-
-          <!-- ── DSG / CHG MOSFET BLOCKS ── -->
-          <rect x="54" y="96" width="54" height="30" rx="3" fill="rgba(15,15,15,.85)" stroke="rgba(249,115,22,.6)" stroke-width="1.1"/>
-          <text x="81" y="114" text-anchor="middle" font-size="6.5" fill="#fb923c" font-family="monospace" font-weight="bold">DSG FET</text>
-          <rect x="54" y="132" width="54" height="30" rx="3" fill="rgba(15,15,15,.85)" stroke="rgba(249,115,22,.55)" stroke-width="1.1"/>
-          <text x="81" y="150" text-anchor="middle" font-size="6.5" fill="rgba(251,146,60,.85)" font-family="monospace" font-weight="bold">CHG FET</text>
-          <!-- FET pins -->
-          <line x1="58" y1="104" x2="54" y2="104" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="58" y1="111" x2="54" y2="111" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="58" y1="118" x2="54" y2="118" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="108" y1="104" x2="112" y2="104" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="108" y1="111" x2="112" y2="111" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="108" y1="118" x2="112" y2="118" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="58" y1="140" x2="54" y2="140" stroke="rgba(249,115,22,.35)" stroke-width=".9"/>
-          <line x1="58" y1="147" x2="54" y2="147" stroke="rgba(249,115,22,.35)" stroke-width=".9"/>
-          <line x1="108" y1="140" x2="112" y2="140" stroke="rgba(249,115,22,.35)" stroke-width=".9"/>
-          <line x1="108" y1="147" x2="112" y2="147" stroke="rgba(249,115,22,.35)" stroke-width=".9"/>
-
-          <!-- ── STM32F407 MCU (centre-left) ── -->
-          <rect x="140" y="96" width="90" height="90" rx="4" fill="rgba(10,10,10,.9)" stroke="rgba(249,115,22,.85)" stroke-width="1.3"/>
-          <!-- MCU pin stubs all four sides -->
-          <line x1="155" y1="96" x2="155" y2="88" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="167" y1="96" x2="167" y2="88" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="179" y1="96" x2="179" y2="88" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="191" y1="96" x2="191" y2="88" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="203" y1="96" x2="203" y2="88" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="215" y1="96" x2="215" y2="88" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="155" y1="186" x2="155" y2="194" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="167" y1="186" x2="167" y2="194" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="179" y1="186" x2="179" y2="194" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="191" y1="186" x2="191" y2="194" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="203" y1="186" x2="203" y2="194" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="140" y1="110" x2="132" y2="110" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="140" y1="122" x2="132" y2="122" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="140" y1="134" x2="132" y2="134" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="140" y1="146" x2="132" y2="146" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="140" y1="158" x2="132" y2="158" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="140" y1="170" x2="132" y2="170" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="230" y1="110" x2="238" y2="110" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="230" y1="122" x2="238" y2="122" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="230" y1="134" x2="238" y2="134" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="230" y1="146" x2="238" y2="146" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="230" y1="158" x2="238" y2="158" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <line x1="230" y1="170" x2="238" y2="170" stroke="rgba(249,115,22,.45)" stroke-width=".9"/>
-          <!-- MCU label -->
-          <text x="185" y="135" text-anchor="middle" font-size="8" fill="#f97316" font-family="monospace" font-weight="bold">STM32</text>
-          <text x="185" y="147" text-anchor="middle" font-size="7.5" fill="#fb923c" font-family="monospace" font-weight="bold">F407VGT6</text>
-          <text x="185" y="160" text-anchor="middle" font-size="6" fill="rgba(251,146,60,.55)" font-family="monospace">168MHz · 1MB</text>
-          <!-- MCU pin 1 marker -->
-          <circle cx="144" cy="100" r="2.5" fill="rgba(249,115,22,.5)"/>
-
-          <!-- ── BQ76952 AFE (right of MCU) ── -->
-          <rect x="262" y="96" width="70" height="70" rx="4" fill="rgba(10,10,10,.9)" stroke="rgba(249,115,22,.65)" stroke-width="1.1"/>
-          <line x1="270" y1="96" x2="270" y2="88" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="280" y1="96" x2="280" y2="88" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="290" y1="96" x2="290" y2="88" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="300" y1="96" x2="300" y2="88" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="310" y1="96" x2="310" y2="88" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="270" y1="166" x2="270" y2="174" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="282" y1="166" x2="282" y2="174" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="294" y1="166" x2="294" y2="174" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="306" y1="166" x2="306" y2="174" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="262" y1="108" x2="254" y2="108" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="262" y1="120" x2="254" y2="120" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="262" y1="132" x2="254" y2="132" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="332" y1="108" x2="340" y2="108" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="332" y1="120" x2="340" y2="120" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="332" y1="132" x2="340" y2="132" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <text x="297" y="128" text-anchor="middle" font-size="7.5" fill="#fb923c" font-family="monospace" font-weight="bold">BQ76952</text>
-          <text x="297" y="140" text-anchor="middle" font-size="6" fill="rgba(251,146,60,.55)" font-family="monospace">AFE · SPI</text>
-          <circle cx="266" cy="100" r="2" fill="rgba(249,115,22,.5)"/>
-
-          <!-- ── SPI TRACES: MCU ↔ AFE ── -->
-          <path d="M238 118 L254 112" stroke="rgba(249,115,22,.38)" stroke-width="1.1" stroke-dasharray="5 3" fill="none"/>
-          <path d="M238 128 L254 122" stroke="rgba(249,115,22,.38)" stroke-width="1.1" stroke-dasharray="5 3" fill="none"/>
-          <path d="M238 138 L254 132" stroke="rgba(249,115,22,.38)" stroke-width="1.1" stroke-dasharray="5 3" fill="none"/>
-
-          <!-- ── SN65HVD230 CAN TRANSCEIVER ── -->
-          <rect x="262" y="180" width="60" height="32" rx="3" fill="rgba(10,10,10,.85)" stroke="rgba(249,115,22,.5)" stroke-width="1"/>
-          <text x="292" y="194" text-anchor="middle" font-size="6" fill="rgba(251,146,60,.85)" font-family="monospace" font-weight="bold">SN65HVD230</text>
-          <text x="292" y="204" text-anchor="middle" font-size="5.5" fill="rgba(251,146,60,.5)" font-family="monospace">CAN 2.0B</text>
-          <line x1="292" y1="180" x2="292" y2="172" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <line x1="302" y1="180" x2="302" y2="172" stroke="rgba(249,115,22,.4)" stroke-width=".9"/>
-          <!-- CAN bus lines -->
-          <path d="M238 154 Q250 154 262 190" stroke="rgba(249,115,22,.35)" stroke-width="1" fill="none"/>
-
-          <!-- ── CP2102 USB-UART ── -->
-          <rect x="56" y="182" width="52" height="28" rx="3" fill="rgba(10,10,10,.85)" stroke="rgba(249,115,22,.45)" stroke-width="1"/>
-          <text x="82" y="197" text-anchor="middle" font-size="6" fill="rgba(251,146,60,.8)" font-family="monospace" font-weight="bold">CP2102</text>
-          <text x="82" y="207" text-anchor="middle" font-size="5.5" fill="rgba(251,146,60,.5)" font-family="monospace">USB-UART</text>
-
-          <!-- ── SMD DECOUPLING CAPS (scattered) ── -->
-          <rect x="135" y="200" width="8" height="14" rx="1" fill="rgba(249,115,22,.15)" stroke="rgba(249,115,22,.35)" stroke-width=".7"/>
-          <rect x="148" y="200" width="8" height="14" rx="1" fill="rgba(249,115,22,.15)" stroke="rgba(249,115,22,.35)" stroke-width=".7"/>
-          <rect x="245" y="200" width="8" height="14" rx="1" fill="rgba(249,115,22,.15)" stroke="rgba(249,115,22,.35)" stroke-width=".7"/>
-          <rect x="258" y="200" width="8" height="14" rx="1" fill="rgba(249,115,22,.15)" stroke="rgba(249,115,22,.35)" stroke-width=".7"/>
-
-          <!-- ── 16× BALANCE TAP RESISTORS (bottom row) ── -->
-          <rect x="44"  y="236" width="7" height="12" rx="1" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.4)" stroke-width=".7"/>
-          <rect x="55"  y="236" width="7" height="12" rx="1" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.4)" stroke-width=".7"/>
-          <rect x="66"  y="236" width="7" height="12" rx="1" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.4)" stroke-width=".7"/>
-          <rect x="77"  y="236" width="7" height="12" rx="1" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.4)" stroke-width=".7"/>
-          <rect x="88"  y="236" width="7" height="12" rx="1" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.4)" stroke-width=".7"/>
-          <rect x="99"  y="236" width="7" height="12" rx="1" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.4)" stroke-width=".7"/>
-          <rect x="110" y="236" width="7" height="12" rx="1" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.4)" stroke-width=".7"/>
-          <rect x="121" y="236" width="7" height="12" rx="1" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.4)" stroke-width=".7"/>
-          <rect x="132" y="236" width="7" height="12" rx="1" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.4)" stroke-width=".7"/>
-          <rect x="143" y="236" width="7" height="12" rx="1" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.4)" stroke-width=".7"/>
-          <rect x="154" y="236" width="7" height="12" rx="1" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.4)" stroke-width=".7"/>
-          <rect x="165" y="236" width="7" height="12" rx="1" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.4)" stroke-width=".7"/>
-          <rect x="176" y="236" width="7" height="12" rx="1" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.4)" stroke-width=".7"/>
-          <rect x="187" y="236" width="7" height="12" rx="1" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.4)" stroke-width=".7"/>
-          <rect x="198" y="236" width="7" height="12" rx="1" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.4)" stroke-width=".7"/>
-          <rect x="209" y="236" width="7" height="12" rx="1" fill="rgba(249,115,22,.18)" stroke="rgba(249,115,22,.4)" stroke-width=".7"/>
-          <text x="130" y="260" text-anchor="middle" font-size="5.5" fill="rgba(251,146,60,.38)" font-family="monospace">16× CELL TAP RESISTORS  VC0 – VC16</text>
-
-          <!-- ── STATUS LABEL (dashed box top) ── -->
-          <rect x="115" y="30" width="190" height="16" rx="4" fill="none" stroke="rgba(249,115,22,.42)" stroke-width="1" stroke-dasharray="5 3"/>
-          <text x="210" y="41.5" text-anchor="middle" font-size="7" fill="rgba(251,146,60,.68)" font-family="monospace" font-weight="bold">GOLDEN SAMPLE → BIS CERTIFICATION</text>
-        </svg>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ SLIDE 2 · 36V E-Bike Battery Pack (yellow) ══ -->
-  <div class="slide" id="s1">
-    <div class="slide-left">
-      <div class="h-badge" style="background:rgba(245,197,24,.1);border-color:rgba(245,197,24,.35);color:#fbbf24;">
-        <span class="h-badge-dot" style="background:#f5c518;"></span>In Development &nbsp;·&nbsp; BIS IS 16046 Roadmap
-      </div>
-      <p class="h-eyebrow">NexEV Own-Brand</p>
-      <h1 class="h-title">
-        <span class="h-title-line">36V E-Bike</span>
-        <span class="h-title-line" style="color:#f5c518;">Battery Pack.</span>
-      </h1>
-      <p class="h-sub">Own-Brand · 10S2P · 18650 Format · ~180Wh</p>
-      <p class="h-desc">NexEV is developing a 36V 10S2P own-brand battery pack for Indian e-bikes — currently in component sourcing and prototype stage. BIS IS 16046 certification required before commercial launch.</p>
-      <div class="h-chips">
-        <div class="h-chip"><span class="h-chip-v">36V</span><span class="h-chip-l">Nominal</span></div>
-        <div class="h-chip"><span class="h-chip-v">10S2P</span><span class="h-chip-l">Config</span></div>
-        <div class="h-chip"><span class="h-chip-v">~180Wh</span><span class="h-chip-l">Capacity</span></div>
-        <div class="h-chip"><span class="h-chip-v">18650</span><span class="h-chip-l">Format</span></div>
-        <div class="h-chip"><span class="h-chip-v">BIS</span><span class="h-chip-l">Roadmap</span></div>
-      </div>
-      <div class="h-ctas">
-        <a href="#roadmap" class="h-btn-p" style="background:#f5c518;color:#0a0a0a;box-shadow:0 0 28px rgba(245,197,24,.28);">See Roadmap <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a href="#enquiry" class="h-btn-s">Register Interest</a>
-      </div>
-    </div>
-    <div class="slide-right">
-      <div class="slide-vis">
-        <img src="assets/hero/scooter.png" alt="36V E-Bike Battery Pack" />
-        <!-- E-Bike / Scooter side-profile illustration (fallback SVG) -->
-        <svg viewBox="0 0 400 290" fill="none" xmlns="http://www.w3.org/2000/svg" opacity=".9">
-          <!-- Rear wheel -->
-          <circle cx="108" cy="210" r="56" stroke="rgba(245,197,24,.45)" stroke-width="2.2" fill="rgba(245,197,24,.03)"/>
-          <circle cx="108" cy="210" r="40" stroke="rgba(245,197,24,.18)" stroke-width="1" fill="none"/>
-          <circle cx="108" cy="210" r="10" fill="rgba(245,197,24,.25)" stroke="rgba(245,197,24,.7)" stroke-width="1.6"/>
-          <!-- Rear spokes (6) -->
-          <line x1="108" y1="154" x2="108" y2="201" stroke="rgba(245,197,24,.35)" stroke-width=".9"/>
-          <line x1="108" y1="219" x2="108" y2="266" stroke="rgba(245,197,24,.35)" stroke-width=".9"/>
-          <line x1="52"  y1="210" x2="99"  y2="210" stroke="rgba(245,197,24,.35)" stroke-width=".9"/>
-          <line x1="117" y1="210" x2="164" y2="210" stroke="rgba(245,197,24,.35)" stroke-width=".9"/>
-          <line x1="68"  y1="168" x2="101" y2="201" stroke="rgba(245,197,24,.35)" stroke-width=".9"/>
-          <line x1="148" y1="168" x2="115" y2="201" stroke="rgba(245,197,24,.35)" stroke-width=".9"/>
-          <line x1="68"  y1="252" x2="101" y2="219" stroke="rgba(245,197,24,.3)" stroke-width=".9"/>
-          <line x1="148" y1="252" x2="115" y2="219" stroke="rgba(245,197,24,.3)" stroke-width=".9"/>
-
-          <!-- Frame — rear swing arm -->
-          <path d="M108 210 L162 162" stroke="rgba(245,197,24,.45)" stroke-width="3" fill="none" stroke-linecap="round"/>
-          <!-- Main frame tube (rear to head) -->
-          <path d="M162 162 L260 150" stroke="rgba(245,197,24,.5)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-          <!-- Down tube -->
-          <path d="M260 150 L290 210" stroke="rgba(245,197,24,.45)" stroke-width="3" fill="none" stroke-linecap="round"/>
-          <!-- Seat tube -->
-          <path d="M200 148 L200 210" stroke="rgba(245,197,24,.35)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          <!-- Chain stay -->
-          <path d="M108 210 L200 210" stroke="rgba(245,197,24,.35)" stroke-width="2" fill="none" stroke-linecap="round"/>
-
-          <!-- ── BATTERY PACK in step/frame (highlighted) ── -->
-          <rect x="118" y="155" width="116" height="52" rx="8" fill="rgba(245,197,24,.15)" stroke="rgba(245,197,24,.75)" stroke-width="1.7"/>
-          <rect x="126" y="163" width="100" height="36" rx="5" fill="rgba(245,197,24,.08)" stroke="rgba(245,197,24,.4)" stroke-width="1"/>
-          <text x="176" y="178" text-anchor="middle" font-size="8.5" fill="#f5c518" font-family="monospace" font-weight="bold">36V · 10S2P</text>
-          <text x="176" y="191" text-anchor="middle" font-size="6.5" fill="rgba(245,197,24,.65)" font-family="monospace">~7.8Ah  ·  ~180Wh</text>
-          <!-- Battery glow -->
-          <ellipse cx="176" cy="181" rx="60" ry="22" fill="rgba(245,197,24,.06)"/>
-
-          <!-- Seat post + seat -->
-          <line x1="200" y1="148" x2="200" y2="126" stroke="rgba(245,197,24,.45)" stroke-width="2.5" stroke-linecap="round"/>
-          <rect x="174" y="116" width="56" height="13" rx="6.5" fill="rgba(245,197,24,.22)" stroke="rgba(245,197,24,.55)" stroke-width="1.2"/>
-
-          <!-- Fork -->
-          <path d="M260 150 L292 154 L290 210" stroke="rgba(245,197,24,.5)" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
-
-          <!-- Handlebar stem + bar -->
-          <line x1="260" y1="150" x2="258" y2="120" stroke="rgba(245,197,24,.5)" stroke-width="2.5" stroke-linecap="round"/>
-          <line x1="240" y1="118" x2="278" y2="122" stroke="rgba(245,197,24,.7)" stroke-width="3.5" stroke-linecap="round"/>
-          <!-- Brake lever -->
-          <line x1="278" y1="122" x2="284" y2="130" stroke="rgba(245,197,24,.55)" stroke-width="1.5" stroke-linecap="round"/>
-
-          <!-- Front wheel -->
-          <circle cx="290" cy="210" r="56" stroke="rgba(245,197,24,.45)" stroke-width="2.2" fill="rgba(245,197,24,.03)"/>
-          <circle cx="290" cy="210" r="40" stroke="rgba(245,197,24,.18)" stroke-width="1" fill="none"/>
-          <circle cx="290" cy="210" r="10" fill="rgba(245,197,24,.25)" stroke="rgba(245,197,24,.7)" stroke-width="1.6"/>
-          <!-- Front spokes (6) -->
-          <line x1="290" y1="154" x2="290" y2="201" stroke="rgba(245,197,24,.35)" stroke-width=".9"/>
-          <line x1="290" y1="219" x2="290" y2="266" stroke="rgba(245,197,24,.35)" stroke-width=".9"/>
-          <line x1="234" y1="210" x2="281" y2="210" stroke="rgba(245,197,24,.35)" stroke-width=".9"/>
-          <line x1="299" y1="210" x2="346" y2="210" stroke="rgba(245,197,24,.35)" stroke-width=".9"/>
-          <line x1="250" y1="168" x2="283" y2="201" stroke="rgba(245,197,24,.35)" stroke-width=".9"/>
-          <line x1="330" y1="168" x2="297" y2="201" stroke="rgba(245,197,24,.35)" stroke-width=".9"/>
-
-          <!-- Status label -->
-          <rect x="108" y="32" width="184" height="18" rx="4" fill="none" stroke="rgba(245,197,24,.38)" stroke-width="1" stroke-dasharray="5 3"/>
-          <text x="200" y="44.5" text-anchor="middle" font-size="7.5" fill="rgba(245,197,24,.65)" font-family="monospace">PROTOTYPE · BIS IS 16046 ROADMAP</text>
-        </svg>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ SLIDE 3 · Battery Assembly Kits (green) ══ -->
-  <div class="slide" id="s2">
-    <div class="slide-left">
-      <div class="h-badge" style="background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.38);color:#4ade80;">
-        <span class="h-badge-dot" style="background:#22c55e;"></span>Available Now &nbsp;·&nbsp; Amazon India
-      </div>
-      <p class="h-eyebrow">18650 DIY Components</p>
-      <h1 class="h-title">
-        <span class="h-title-line">Battery</span>
-        <span class="h-title-line" style="color:#22c55e;">Assembly Kits.</span>
-      </h1>
-      <p class="h-sub">For EV Workshops · Hobbyists · Battery Assemblers</p>
-      <p class="h-desc">Complete 18650 battery pack assembly components — nickel strips, wire, insulation, connectors, and cell holders. Sourced for quality, priced for workshop economics. Dispatched from Bengaluru.</p>
+      <h1 class="h-title">Battery<br/><span style="color:#22c55e;">Assembly Kits.</span></h1>
+      <p class="h-sub" style="color:rgba(34,197,94,.7);">For EV Workshops · Hobbyists · Battery Assemblers</p>
+      <p class="h-desc">Complete battery pack assembly kits — nickel strips, wire, insulation, connectors, and holders. Sourced for quality, priced for workshop economics.</p>
       <div class="h-chips">
         <div class="h-chip"><span class="h-chip-v">18650</span><span class="h-chip-l">Format</span></div>
         <div class="h-chip"><span class="h-chip-v">XT60H</span><span class="h-chip-l">Connectors</span></div>
@@ -971,88 +537,89 @@ img{max-width:100%;display:block}
         <div class="h-chip"><span class="h-chip-v">IP Rated</span><span class="h-chip-l">Heat Shrink</span></div>
       </div>
       <div class="h-ctas">
-        <a href="https://www.amazon.in/s?me=A3AFIE9FQK6QM6&_encoding=UTF8&content-id=amzn1.sym.b72bd100-ee36-45d4-9484-be15891619a9&pd_rd_r=821bc2f3-77d8-4ba1-b594-fb10028fa453&pd_rd_w=fjI3n&pd_rd_wg=4aqgV&pf_rd_p=b72bd100-ee36-45d4-9484-be15891619a9&pf_rd_r=VX91KH7M9SMCKMW6DXDQ&ref=lscx_w_ssf_ac" target="_blank" rel="noopener noreferrer" class="h-btn-p" style="background:#22c55e;box-shadow:0 0 28px rgba(34,197,94,.32);">Shop on Amazon India <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-        <a href="#products" class="h-btn-s">View Kit Contents</a>
+        <a href="#products" class="h-btn-p" style="background:#22c55e;box-shadow:0 0 22px rgba(34,197,94,.35);">View Kit Contents <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#enquiry" class="h-btn-s">Bulk Order Enquiry</a>
       </div>
     </div>
     <div class="slide-right">
       <div class="slide-vis">
-        <img src="assets/hero/batteries.png" alt="18650 Battery Assembly Kit" />
         <div class="kit-vis-grid">
           <!-- 18650 Holders -->
           <div class="kv-item">
-            <svg width="48" height="40" viewBox="0 0 48 40" fill="none">
-              <rect x="2" y="6" width="12" height="28" rx="3" fill="rgba(34,197,94,.15)" stroke="rgba(34,197,94,.55)" stroke-width="1.1"/>
-              <circle cx="8" cy="20" r="4" fill="none" stroke="#22c55e" stroke-width="1.2"/>
-              <rect x="18" y="6" width="12" height="28" rx="3" fill="rgba(34,197,94,.15)" stroke="rgba(34,197,94,.55)" stroke-width="1.1"/>
-              <circle cx="24" cy="20" r="4" fill="none" stroke="#22c55e" stroke-width="1.2"/>
-              <rect x="34" y="6" width="12" height="28" rx="3" fill="rgba(34,197,94,.15)" stroke="rgba(34,197,94,.55)" stroke-width="1.1"/>
-              <circle cx="40" cy="20" r="4" fill="none" stroke="#22c55e" stroke-width="1.2"/>
-              <rect x="2" y="2" width="12" height="5" rx="1.5" fill="rgba(34,197,94,.3)"/>
-              <rect x="18" y="2" width="12" height="5" rx="1.5" fill="rgba(34,197,94,.3)"/>
-              <rect x="34" y="2" width="12" height="5" rx="1.5" fill="rgba(34,197,94,.3)"/>
+            <svg width="44" height="38" viewBox="0 0 44 38" fill="none">
+              <rect x="2" y="6" width="11" height="26" rx="3" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.5)" stroke-width="1"/>
+              <circle cx="7.5" cy="19" r="3.5" fill="none" stroke="#22c55e" stroke-width="1.2"/>
+              <rect x="16" y="6" width="11" height="26" rx="3" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.5)" stroke-width="1"/>
+              <circle cx="21.5" cy="19" r="3.5" fill="none" stroke="#22c55e" stroke-width="1.2"/>
+              <rect x="30" y="6" width="11" height="26" rx="3" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.5)" stroke-width="1"/>
+              <circle cx="35.5" cy="19" r="3.5" fill="none" stroke="#22c55e" stroke-width="1.2"/>
+              <rect x="2" y="2" width="11" height="5" rx="1.5" fill="rgba(255,255,255,.3)"/>
+              <rect x="16" y="2" width="11" height="5" rx="1.5" fill="rgba(255,255,255,.3)"/>
+              <rect x="30" y="2" width="11" height="5" rx="1.5" fill="rgba(255,255,255,.3)"/>
             </svg>
             <div class="kv-name">18650 Holders</div>
           </div>
           <!-- XT60H Connector -->
           <div class="kv-item">
-            <svg width="48" height="40" viewBox="0 0 48 40" fill="none">
-              <rect x="3" y="10" width="18" height="20" rx="3.5" fill="rgba(245,197,24,.22)" stroke="#f5c518" stroke-width="1.2"/>
-              <rect x="7" y="15" width="4.5" height="10" rx="1" fill="#f5c518" opacity=".85"/>
-              <rect x="14" y="15" width="4.5" height="10" rx="1" fill="#f5c518" opacity=".85"/>
-              <line x1="21" y1="17" x2="27" y2="17" stroke="rgba(255,255,255,.35)" stroke-width=".9"/>
-              <line x1="21" y1="23" x2="27" y2="23" stroke="rgba(255,255,255,.35)" stroke-width=".9"/>
-              <rect x="27" y="10" width="18" height="20" rx="3.5" fill="rgba(255,255,255,.09)" stroke="rgba(255,255,255,.4)" stroke-width="1.2"/>
-              <circle cx="33" cy="17" r="2.5" fill="none" stroke="#22c55e" stroke-width="1.1"/>
-              <circle cx="39" cy="17" r="2.5" fill="none" stroke="#22c55e" stroke-width="1.1"/>
-              <circle cx="33" cy="24" r="2.5" fill="none" stroke="#22c55e" stroke-width="1.1"/>
-              <circle cx="39" cy="24" r="2.5" fill="none" stroke="#22c55e" stroke-width="1.1"/>
+            <svg width="44" height="38" viewBox="0 0 44 38" fill="none">
+              <rect x="4" y="10" width="16" height="18" rx="3" fill="rgba(245,197,24,.25)" stroke="#f5c518" stroke-width="1.2"/>
+              <rect x="7" y="15" width="4" height="8" rx="1" fill="#f5c518" opacity=".9"/>
+              <rect x="13" y="15" width="4" height="8" rx="1" fill="#f5c518" opacity=".9"/>
+              <line x1="20" y1="16" x2="24" y2="16" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+              <line x1="20" y1="22" x2="24" y2="22" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+              <rect x="24" y="10" width="16" height="18" rx="3" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.45)" stroke-width="1.2"/>
+              <circle cx="29.5" cy="16.5" r="2" fill="none" stroke="#22c55e" stroke-width="1"/>
+              <circle cx="35.5" cy="16.5" r="2" fill="none" stroke="#22c55e" stroke-width="1"/>
+              <circle cx="29.5" cy="22.5" r="2" fill="none" stroke="#22c55e" stroke-width="1"/>
+              <circle cx="35.5" cy="22.5" r="2" fill="none" stroke="#22c55e" stroke-width="1"/>
             </svg>
             <div class="kv-name">XT60H Connectors</div>
           </div>
           <!-- Nickel Strip -->
           <div class="kv-item">
-            <svg width="48" height="40" viewBox="0 0 48 40" fill="none">
-              <rect x="4" y="11" width="40" height="5.5" rx="1.2" fill="rgba(200,215,225,.3)" stroke="rgba(255,255,255,.5)" stroke-width=".8"/>
-              <rect x="4" y="19" width="40" height="5.5" rx="1.2" fill="rgba(200,215,225,.3)" stroke="rgba(255,255,255,.5)" stroke-width=".8"/>
-              <rect x="4" y="27" width="40" height="5.5" rx="1.2" fill="rgba(200,215,225,.3)" stroke="rgba(255,255,255,.5)" stroke-width=".8"/>
-              <line x1="12" y1="11" x2="12" y2="32.5" stroke="rgba(255,255,255,.18)" stroke-width=".6"/>
-              <line x1="22" y1="11" x2="22" y2="32.5" stroke="rgba(255,255,255,.18)" stroke-width=".6"/>
-              <line x1="32" y1="11" x2="32" y2="32.5" stroke="rgba(255,255,255,.18)" stroke-width=".6"/>
-              <text x="24" y="8" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.48)" font-family="monospace">Ni 0.15mm</text>
+            <svg width="44" height="38" viewBox="0 0 44 38" fill="none">
+              <rect x="4" y="13" width="36" height="5" rx="1" fill="rgba(200,210,220,.35)" stroke="rgba(255,255,255,.55)" stroke-width=".8"/>
+              <rect x="4" y="20" width="36" height="5" rx="1" fill="rgba(200,210,220,.35)" stroke="rgba(255,255,255,.55)" stroke-width=".8"/>
+              <rect x="4" y="27" width="36" height="5" rx="1" fill="rgba(200,210,220,.35)" stroke="rgba(255,255,255,.55)" stroke-width=".8"/>
+              <line x1="10" y1="13" x2="10" y2="32" stroke="rgba(255,255,255,.2)" stroke-width=".5"/>
+              <line x1="18" y1="13" x2="18" y2="32" stroke="rgba(255,255,255,.2)" stroke-width=".5"/>
+              <line x1="26" y1="13" x2="26" y2="32" stroke="rgba(255,255,255,.2)" stroke-width=".5"/>
+              <line x1="34" y1="13" x2="34" y2="32" stroke="rgba(255,255,255,.2)" stroke-width=".5"/>
+              <text x="22" y="9" text-anchor="middle" font-size="6" fill="rgba(255,255,255,.5)" font-family="monospace">Ni STRIP</text>
             </svg>
             <div class="kv-name">Nickel Strip</div>
           </div>
           <!-- 14 AWG Wire -->
           <div class="kv-item">
-            <svg width="48" height="40" viewBox="0 0 48 40" fill="none">
-              <path d="M4 13 Q11 6 18 13 Q25 20 32 13 Q39 6 44 13" stroke="#ef4444" stroke-width="4" fill="none" stroke-linecap="round"/>
-              <path d="M4 13 Q11 6 18 13 Q25 20 32 13 Q39 6 44 13" stroke="rgba(255,80,80,.3)" stroke-width="6" fill="none" stroke-linecap="round"/>
-              <path d="M4 25 Q11 18 18 25 Q25 32 32 25 Q39 18 44 25" stroke="#3b82f6" stroke-width="4" fill="none" stroke-linecap="round"/>
-              <path d="M4 25 Q11 18 18 25 Q25 32 32 25 Q39 18 44 25" stroke="rgba(80,130,255,.3)" stroke-width="6" fill="none" stroke-linecap="round"/>
-              <text x="24" y="38" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.45)" font-family="monospace">14 AWG</text>
+            <svg width="44" height="38" viewBox="0 0 44 38" fill="none">
+              <path d="M4 14 Q10 8 16 14 Q22 20 28 14 Q34 8 40 14" stroke="#ef4444" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+              <path d="M4 14 Q10 8 16 14 Q22 20 28 14 Q34 8 40 14" stroke="rgba(255,100,100,.35)" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <path d="M4 24 Q10 18 16 24 Q22 30 28 24 Q34 18 40 24" stroke="#1e40af" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+              <path d="M4 24 Q10 18 16 24 Q22 30 28 24 Q34 18 40 24" stroke="rgba(100,150,255,.3)" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <text x="22" y="37" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.45)" font-family="monospace">14 AWG</text>
             </svg>
             <div class="kv-name">14 AWG Wire</div>
           </div>
           <!-- Kapton Tape -->
           <div class="kv-item">
-            <svg width="48" height="40" viewBox="0 0 48 40" fill="none">
-              <ellipse cx="24" cy="26" rx="15" ry="9.5" fill="rgba(245,197,24,.2)" stroke="#f5c518" stroke-width="1.2"/>
-              <ellipse cx="24" cy="23" rx="15" ry="9.5" fill="rgba(245,197,24,.25)" stroke="#f5c518" stroke-width="1.2"/>
-              <ellipse cx="24" cy="20" rx="15" ry="9.5" fill="rgba(245,197,24,.3)" stroke="#f5c518" stroke-width="1.2"/>
-              <ellipse cx="24" cy="20" rx="5.5" ry="4" fill="rgba(0,0,0,.28)" stroke="rgba(255,255,255,.2)" stroke-width=".8"/>
-              <text x="24" y="7" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.48)" font-family="monospace">20mm</text>
+            <svg width="44" height="38" viewBox="0 0 44 38" fill="none">
+              <ellipse cx="22" cy="22" rx="14" ry="9" fill="rgba(245,197,24,.22)" stroke="#f5c518" stroke-width="1.2"/>
+              <ellipse cx="22" cy="22" rx="14" ry="9" fill="none" stroke="#f5c518" stroke-width="1.2"/>
+              <ellipse cx="22" cy="19" rx="14" ry="9" fill="rgba(245,197,24,.3)" stroke="#f5c518" stroke-width="1.2"/>
+              <ellipse cx="22" cy="16" rx="14" ry="9" fill="rgba(245,197,24,.35)" stroke="#f5c518" stroke-width="1.2"/>
+              <ellipse cx="22" cy="16" rx="5" ry="3.5" fill="rgba(0,0,0,.25)" stroke="rgba(255,255,255,.25)" stroke-width=".8"/>
+              <text x="22" y="6" text-anchor="middle" font-size="5.5" fill="rgba(255,255,255,.5)" font-family="monospace">20mm</text>
             </svg>
             <div class="kv-name">Kapton Tape</div>
           </div>
           <!-- Ready to Ship -->
           <div class="kv-item kv-hi">
-            <svg width="48" height="40" viewBox="0 0 48 40" fill="none">
-              <rect x="6" y="8" width="36" height="26" rx="4" fill="rgba(34,197,94,.18)" stroke="#22c55e" stroke-width="1.4"/>
-              <line x1="6" y1="17" x2="42" y2="17" stroke="#22c55e" stroke-width="1" opacity=".55"/>
-              <path d="M16" y1="8" x2="L16 17" stroke="#22c55e" stroke-width=".9" opacity=".4"/>
-              <path d="M32 8 L32 17" stroke="#22c55e" stroke-width=".9" opacity=".4"/>
-              <polyline points="16,23 21,29 32,20" stroke="#22c55e" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg width="44" height="38" viewBox="0 0 44 38" fill="none">
+              <rect x="6" y="10" width="32" height="22" rx="3" fill="rgba(34,197,94,.2)" stroke="#22c55e" stroke-width="1.3"/>
+              <line x1="6" y1="17" x2="38" y2="17" stroke="#22c55e" stroke-width="1" opacity=".6"/>
+              <path d="M15 10 L15 17" stroke="#22c55e" stroke-width="1" opacity=".5"/>
+              <path d="M29 10 L29 17" stroke="#22c55e" stroke-width="1" opacity=".5"/>
+              <polyline points="16,23 20,27 28,20" stroke="#22c55e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <div class="kv-name">Ready to Ship</div>
           </div>
@@ -1061,38 +628,99 @@ img{max-width:100%;display:block}
     </div>
   </div>
 
-  <!-- Progress bar -->
-  <div class="h-progress" aria-hidden="true">
-    <div class="h-progress-fill" id="h-prog"></div>
+  <!-- SLIDE 2 · Taiwan Partnership -->
+  <div class="slide" id="s1">
+    <div class="slide-left">
+      <div class="h-badge" style="background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.35);color:#4ade80;">
+        <span class="h-dot" style="background:#22c55e;"></span>Supplier Sourcing · Active
+      </div>
+      <h1 class="h-title">Seeking Reliable<br/><span style="color:#22c55e;">Supply Partners.</span></h1>
+      <p class="h-sub" style="color:rgba(34,197,94,.7);">BMS · 18650 Cells · E-Bike OEM · EV Components</p>
+      <p class="h-desc">NexEV is an incorporated Indian EV startup actively building its supply chain. Seeking BMS manufacturers, cell suppliers, and e-bike OEMs for long-term India distribution partnership.</p>
+      <div class="h-chips">
+        <div class="h-chip"><span class="h-chip-v">BMS</span><span class="h-chip-l">Priority</span></div>
+        <div class="h-chip"><span class="h-chip-v">18650</span><span class="h-chip-l">Cells</span></div>
+        <div class="h-chip"><span class="h-chip-v">E-Bike</span><span class="h-chip-l">OEM</span></div>
+        <div class="h-chip"><span class="h-chip-v">India</span><span class="h-chip-l">Market</span></div>
+      </div>
+      <div class="h-ctas">
+        <a href="#taiwan" class="h-btn-p" style="background:#22c55e;box-shadow:0 0 22px rgba(34,197,94,.35);">Partnership Details <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#enquiry" class="h-btn-s">Contact Us</a>
+      </div>
+    </div>
+    <div class="slide-right">
+      <div class="slide-vis">
+        <svg viewBox="0 0 380 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="110" cy="190" rx="50" ry="64" fill="#1a3a5c" fill-opacity=".7" stroke="#1a3a5c" stroke-width="1.5"/>
+          <text x="110" y="186" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.8)" font-family="monospace">India</text>
+          <text x="110" y="200" text-anchor="middle" font-size="7.5" fill="rgba(255,255,255,.5)" font-family="monospace">Karnataka</text>
+          <ellipse cx="290" cy="120" rx="38" ry="46" fill="#0f2540" fill-opacity=".85" stroke="#22c55e" stroke-width="1.5"/>
+          <text x="290" y="116" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.85)" font-family="monospace">Suppliers</text>
+          <text x="290" y="130" text-anchor="middle" font-size="7.5" fill="rgba(34,197,94,.85)" font-family="monospace">Taipei Cycle</text>
+          <path d="M160 178 Q220 95 254 140" stroke="#22c55e" stroke-width="1.5" fill="none" stroke-dasharray="5 4" opacity=".75"/>
+          <circle cx="160" cy="178" r="4" fill="#22c55e" opacity=".85"/>
+          <circle cx="254" cy="140" r="4" fill="#22c55e"/>
+          <circle cx="200" cy="128" r="2.5" fill="#f5c518" opacity=".7"/>
+          <circle cx="222" cy="112" r="2" fill="#f5c518" opacity=".45"/>
+          <circle cx="240" cy="107" r="2" fill="#f5c518" opacity=".3"/>
+          <rect x="62" y="268" width="96" height="18" rx="4" fill="#22c55e" fill-opacity=".1" stroke="#22c55e" stroke-width=".8"/>
+          <text x="110" y="280" text-anchor="middle" font-size="7.5" fill="#22c55e" font-family="monospace">Distribution</text>
+          <rect x="242" y="55" width="96" height="18" rx="4" fill="#22c55e" fill-opacity=".1" stroke="#22c55e" stroke-width=".8"/>
+          <text x="290" y="67" text-anchor="middle" font-size="7.5" fill="#22c55e" font-family="monospace">Sourcing · OEM</text>
+        </svg>
+      </div>
+    </div>
   </div>
 
-  <!-- Slide indicators with labels -->
+  <!-- SLIDE 3 · E-Bike Prototype -->
+  <div class="slide" id="s2">
+    <div class="slide-left">
+      <div class="h-badge" style="background:rgba(245,197,24,.1);border-color:rgba(245,197,24,.35);color:#fbbf24;">
+        <span class="h-dot" style="background:#f5c518;"></span>Development Stage · Not Yet Available
+      </div>
+      <h1 class="h-title">36V E-Bike<br/><span style="color:#f5c518;">Battery Pack.</span></h1>
+      <p class="h-sub" style="color:rgba(245,197,24,.7);">Own-Brand · 10S2P · 18650 Format</p>
+      <p class="h-desc">NexEV is designing a 36V 10S2P own-brand battery pack for e-bikes — currently in component sourcing and prototype stage. BIS IS 16046 certification required before commercial launch.</p>
+      <div class="h-chips">
+        <div class="h-chip"><span class="h-chip-v">36V</span><span class="h-chip-l">Nominal</span></div>
+        <div class="h-chip"><span class="h-chip-v">10S2P</span><span class="h-chip-l">Config</span></div>
+        <div class="h-chip"><span class="h-chip-v">~180Wh</span><span class="h-chip-l">Capacity</span></div>
+        <div class="h-chip"><span class="h-chip-v">BIS</span><span class="h-chip-l">Roadmap</span></div>
+      </div>
+      <div class="h-ctas">
+        <a href="#roadmap" class="h-btn-p" style="background:#f5c518;color:#0a0a0a;box-shadow:0 0 22px rgba(245,197,24,.3);">See Roadmap <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#enquiry" class="h-btn-s">Register Interest</a>
+      </div>
+    </div>
+    <div class="slide-right">
+      <div class="slide-vis">
+        <svg viewBox="0 0 380 300" fill="none" xmlns="http://www.w3.org/2000/svg" opacity=".8">
+          <circle cx="120" cy="220" r="50" stroke="#f5c518" stroke-width="2" fill="none" stroke-opacity=".5"/>
+          <circle cx="120" cy="220" r="17" fill="#f5c518" fill-opacity=".1" stroke="#f5c518" stroke-width="1.5" stroke-opacity=".5"/>
+          <circle cx="268" cy="220" r="50" stroke="#f5c518" stroke-width="2" fill="none" stroke-opacity=".5"/>
+          <circle cx="268" cy="220" r="17" fill="#f5c518" fill-opacity=".1" stroke="#f5c518" stroke-width="1.5" stroke-opacity=".5"/>
+          <path d="M120 220 L194 138 L268 220" stroke="#f5c518" stroke-width="2" fill="none" stroke-opacity=".6"/>
+          <line x1="194" y1="138" x2="194" y2="90" stroke="#f5c518" stroke-width="1.5" stroke-opacity=".5"/>
+          <line x1="178" y1="90" x2="210" y2="90" stroke="#f5c518" stroke-width="2" stroke-opacity=".6" stroke-linecap="round"/>
+          <rect x="148" y="164" width="92" height="34" rx="6" fill="#f5c518" fill-opacity=".1" stroke="#f5c518" stroke-width="1" stroke-opacity=".5"/>
+          <text x="194" y="183" text-anchor="middle" font-size="9" fill="#f5c518" font-family="monospace" font-weight="bold" opacity=".85">36V 10S2P</text>
+          <text x="194" y="194" text-anchor="middle" font-size="7.5" fill="#f5c518" font-family="monospace" opacity=".55">NexEV Battery</text>
+          <rect x="130" y="44" width="128" height="24" rx="5" fill="none" stroke="#f5c518" stroke-width="1" stroke-dasharray="4 3" stroke-opacity=".5"/>
+          <text x="194" y="60" text-anchor="middle" font-size="8.5" fill="#f5c518" font-family="monospace" opacity=".7">PROTOTYPE STAGE</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dots -->
   <div class="h-dots" id="h-dots">
-    <button class="h-dot-btn on" data-i="0" aria-label="Gen-1 BMS slide">
-      <span class="h-dot-inner" style="background:#f97316;width:46px;"></span>
-      <span class="h-dot-label">Gen-1 BMS</span>
-    </button>
-    <button class="h-dot-btn" data-i="1" aria-label="E-Bike Battery Pack slide">
-      <span class="h-dot-inner"></span>
-      <span class="h-dot-label">E-Bike Pack</span>
-    </button>
-    <button class="h-dot-btn" data-i="2" aria-label="Battery Assembly Kits slide">
-      <span class="h-dot-inner"></span>
-      <span class="h-dot-label">Battery Kits</span>
-    </button>
+    <button class="h-dot-btn on" data-i="0" aria-label="Slide 1"><span class="h-dot-inner" style="background:#22c55e;width:26px;"></span></button>
+    <button class="h-dot-btn" data-i="1" aria-label="Slide 2"><span class="h-dot-inner"></span></button>
+    <button class="h-dot-btn" data-i="2" aria-label="Slide 3"><span class="h-dot-inner"></span></button>
   </div>
-
-  <!-- Slide counter top-right -->
-  <div class="h-count"><em id="h-cur">01</em>/ 03</div>
-
-  <!-- Navigation arrows -->
-  <button class="h-arr" id="h-prev" aria-label="Previous slide">
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-  </button>
-  <button class="h-arr" id="h-next" aria-label="Next slide">
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-  </button>
-
+  <div class="h-count"><em id="h-cur">01</em>/03</div>
+  <button class="h-arr" id="h-prev" aria-label="Previous"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+  <button class="h-arr" id="h-next" aria-label="Next"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
 </div>
 </section>
 
@@ -1104,13 +732,13 @@ img{max-width:100%;display:block}
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
       <span><strong>Incorporated</strong> · Karnataka, India</span>
     </div>
-    <a class="tc" href="https://www.amazon.in/s?me=A3AFIE9FQK6QM6&_encoding=UTF8&content-id=amzn1.sym.b72bd100-ee36-45d4-9484-be15891619a9&pd_rd_r=821bc2f3-77d8-4ba1-b594-fb10028fa453&pd_rd_w=fjI3n&pd_rd_wg=4aqgV&pf_rd_p=b72bd100-ee36-45d4-9484-be15891619a9&pf_rd_r=VX91KH7M9SMCKMW6DXDQ&ref=lscx_w_ssf_ac" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit" title="Browse NexEV store on Amazon India">
+    <div class="tc">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-      <span><strong>Battery Kits</strong> · Amazon India ↗</span>
-    </a>
+      <span><strong>Battery Kits</strong> · Amazon India</span>
+    </div>
     <div class="tc">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      <span><strong>BMS</strong> · 16S 67.2V · Under Design</span>
+      <span><strong>BMS Sourcing</strong> · In Progress</span>
     </div>
     <div class="tc">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -1144,7 +772,7 @@ img{max-width:100%;display:block}
         <h4>The India Opportunity</h4>
         <p>NexEV is currently selling 18650 DIY battery assembly kits on Amazon India and to local EV workshops. This gives us direct market contact — real customers, real demand signals, and a growing network of workshops.</p>
         <ul class="bc-list">
-          <li><a href="https://www.amazon.in/s?me=A3AFIE9FQK6QM6&_encoding=UTF8&content-id=amzn1.sym.b72bd100-ee36-45d4-9484-be15891619a9&pd_rd_r=821bc2f3-77d8-4ba1-b594-fb10028fa453&pd_rd_w=fjI3n&pd_rd_wg=4aqgV&pf_rd_p=b72bd100-ee36-45d4-9484-be15891619a9&pf_rd_r=VX91KH7M9SMCKMW6DXDQ&ref=lscx_w_ssf_ac" target="_blank" rel="noopener noreferrer" style="color:inherit">Active Amazon India presence — battery kits ↗</a></li>
+          <li>Active Amazon India presence — battery kits</li>
           <li>EV workshop customer network in Karnataka</li>
           <li>Incorporated entity — GSTIN: 29AALCN2942C1ZF</li>
         </ul>
@@ -1169,7 +797,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="status-strip fi">
       <div class="st-chip"><span class="dot dot-g"></span> Distribution Active — Karnataka</div>
-      <a class="st-chip" href="https://www.amazon.in/s?me=A3AFIE9FQK6QM6&_encoding=UTF8&content-id=amzn1.sym.b72bd100-ee36-45d4-9484-be15891619a9&pd_rd_r=821bc2f3-77d8-4ba1-b594-fb10028fa453&pd_rd_w=fjI3n&pd_rd_wg=4aqgV&pf_rd_p=b72bd100-ee36-45d4-9484-be15891619a9&pf_rd_r=VX91KH7M9SMCKMW6DXDQ&ref=lscx_w_ssf_ac" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit" title="View NexEV store on Amazon India"><span class="dot dot-g"></span> Amazon India — Battery Kits Live ↗</a>
+      <div class="st-chip"><span class="dot dot-g"></span> Amazon India — Battery Kits Live</div>
       <div class="st-chip">NexEV Pvt Ltd &nbsp;·&nbsp; GSTIN: 29AALCN2942C1ZF</div>
       <div class="st-chip"><span class="dot dot-y"></span> BMS Sourcing — In Progress</div>
     </div>
@@ -1195,7 +823,7 @@ img{max-width:100%;display:block}
         <p class="kit-desc">NexEV kits are assembled with workshop-grade components — properly rated wire, quality nickel strip, correct insulation, and reliable connectors. Designed for assemblers who want a consistent, sourced-for-quality bill of materials.</p>
         <p class="kit-desc">Suitable for: e-bike battery builds, power tool packs, solar storage, EV conversion projects.</p>
         <div class="kit-ctas">
-          <a href="https://www.amazon.in/s?me=A3AFIE9FQK6QM6&_encoding=UTF8&content-id=amzn1.sym.b72bd100-ee36-45d4-9484-be15891619a9&pd_rd_r=821bc2f3-77d8-4ba1-b594-fb10028fa453&pd_rd_w=fjI3n&pd_rd_wg=4aqgV&pf_rd_p=b72bd100-ee36-45d4-9484-be15891619a9&pf_rd_r=VX91KH7M9SMCKMW6DXDQ&ref=lscx_w_ssf_ac" target="_blank" rel="noopener noreferrer" class="btn btn-green">View on Amazon India <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          <a href="https://www.amazon.in" target="_blank" rel="noopener" class="btn btn-green">View on Amazon India <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
           <a href="#enquiry" class="btn btn-out">Bulk / Wholesale Enquiry</a>
         </div>
       </div>
@@ -1450,318 +1078,38 @@ img{max-width:100%;display:block}
 </section>
 
 
-<!-- ═══ BMS DESIGN ═══ -->
-<section class="section-pad section-alt" id="bms-design">
-  <div class="container">
-  <!-- PRODUCT HERO -->
-  <div class="bms-ph fi">
-    <div class="bms-ph-badge"><span></span>Under Design &nbsp;·&nbsp; Golden Sample → BIS Certification</div>
-    <p class="bms-ph-kicker" style="margin-top:1.2rem">NEXEV DIVEE BMS</p>
-    <h2 class="bms-ph-title">Professional 10S–16S<br/><span>Smart BMS.</span></h2>
-    <p class="bms-ph-tagline">A proprietary Battery Management System built for Indian EV demands — not a module off a shelf, but an engineered product designed around safety, intelligence, and scale.</p>
-  </div>
-
-  <!-- 5-STAT STRIP -->
-  <div class="bms-strip fi">
-    <div class="bms-strip-stat">
-      <span class="bms-strip-v">10S–16S</span>
-      <span class="bms-strip-l">Cell Config</span>
-    </div>
-    <div class="bms-strip-stat">
-      <span class="bms-strip-v">50A / 100A</span>
-      <span class="bms-strip-l">Cont. / Peak</span>
-    </div>
-    <div class="bms-strip-stat">
-      <span class="bms-strip-v">STM32F4</span>
-      <span class="bms-strip-l">MCU Core</span>
-    </div>
-    <div class="bms-strip-stat">
-      <span class="bms-strip-v">Rust</span>
-      <span class="bms-strip-l">Firmware</span>
-    </div>
-    <div class="bms-strip-stat">
-      <span class="bms-strip-v">AIS-156</span>
-      <span class="bms-strip-l">Roadmap</span>
-    </div>
-  </div>
-
-  <!-- MARKETING QUOTE -->
-  <div class="bms-quote fi">
-    <p class="bms-quote-text">Stop building batteries that just work.<br/>Build batteries that <em style="color:#f97316;font-style:normal">think.</em></p>
-    <p class="bms-quote-attr">— NEXEV DIVEE BMS Design Philosophy</p>
-  </div>
-
-  <!-- WHY CHOOSE — 4 FEATURE CARDS -->
-  <div class="bms-sec-hd fi">
-    <h3>Why the BMS?</h3>
-    <p>Four engineering pillars that separate this from any off-the-shelf module.</p>
-  </div>
-  <div class="bms-feat-grid fi">
-
-    <div class="bms-feat">
-      <div class="bms-feat-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <div class="bms-feat-title">Automotive-Grade Safety</div>
-      <p class="bms-feat-desc">Dual-layer protection — TI BQ76952 hardware faults trip in under 400µs before firmware even runs. A software SafetyEngine polls every 100ms as a second independent watchdog. Both must agree for the pack to operate.</p>
-      <div class="bms-feat-chips">
-        <span class="bms-feat-chip">OVP / UVP</span>
-        <span class="bms-feat-chip">SCD &lt; 400µs</span>
-        <span class="bms-feat-chip">OCD</span>
-        <span class="bms-feat-chip">OTP / UTP</span>
-        <span class="bms-feat-chip">Pre-charge</span>
-      </div>
-    </div>
-
-    <div class="bms-feat">
-      <div class="bms-feat-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-      </div>
-      <div class="bms-feat-title">Black Box Logging</div>
-      <p class="bms-feat-desc">Every fault, every spike, every anomaly — timestamped and written to flash. No more guessing why a pack failed in the field. Pull the log, replay the event, trace the root cause. Field diagnostics without a lab.</p>
-      <div class="bms-feat-chips">
-        <span class="bms-feat-chip">Fault Logs</span>
-        <span class="bms-feat-chip">Flash Storage</span>
-        <span class="bms-feat-chip">Timestamped</span>
-        <span class="bms-feat-chip">Field Diagnostics</span>
-      </div>
-    </div>
-
-    <div class="bms-feat">
-      <div class="bms-feat-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
-      </div>
-      <div class="bms-feat-title">Smart Connectivity</div>
-      <p class="bms-feat-desc">CAN bus with 29-bit extended IDs — 8 live telemetry frames covering pack voltage, per-cell voltages, temperatures, SoC, current, and fault status. Built for integration with motor controllers, vehicle ECUs, and IoT gateways.</p>
-      <div class="bms-feat-chips">
-        <span class="bms-feat-chip">CAN 2.0B</span>
-        <span class="bms-feat-chip">8 PGNs</span>
-        <span class="bms-feat-chip">UART Debug</span>
-        <span class="bms-feat-chip">SPI / I²C</span>
-      </div>
-    </div>
-
-    <div class="bms-feat">
-      <div class="bms-feat-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>
-      </div>
-      <div class="bms-feat-title">One Board, Endless Applications</div>
-      <p class="bms-feat-desc">From micro-mobility to industrial robotics — the Gen-1 is designed as a platform, not a product. 10S–16S configuration, 140mm × 60mm compact footprint, firmware-selectable cell chemistry. One BMS, many vehicles.</p>
-      <div class="bms-feat-chips">
-        <span class="bms-feat-chip">10S–16S</span>
-        <span class="bms-feat-chip">NMC / LFP</span>
-        <span class="bms-feat-chip">140 × 60 mm</span>
-        <span class="bms-feat-chip">OEM Ready</span>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- TECHNICAL INTERFACES -->
-  <div class="bms-sec-hd fi">
-    <h3>Technical Interfaces</h3>
-    <p>What plugs in, what comes out, and what the hardware actually handles.</p>
-  </div>
-  <div class="bms-iface-grid fi">
-
-    <div class="bms-iface-card">
-      <div class="bms-iface-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-        Power &amp; Connectors
-      </div>
-      <div class="bms-iface-row"><span class="bms-iface-key">Cell Config</span><span class="bms-iface-val">10S – 16S Li-ion / LFP</span></div>
-      <div class="bms-iface-row"><span class="bms-iface-key">Max Pack Voltage</span><span class="bms-iface-val">67.2V (16S × 4.2V)</span></div>
-      <div class="bms-iface-row"><span class="bms-iface-key">Continuous Current</span><span class="bms-iface-val">50A</span></div>
-      <div class="bms-iface-row"><span class="bms-iface-key">Peak Current</span><span class="bms-iface-val">100A (≤ 10s burst)</span></div>
-      <div class="bms-iface-row"><span class="bms-iface-key">Current Sensing</span><span class="bms-iface-val">1mΩ shunt + BQ76952</span></div>
-      <div class="bms-iface-row"><span class="bms-iface-key">FET Stage</span><span class="bms-iface-val">2× N-ch MOSFETs ≥ 100V, 3mΩ</span></div>
-      <div class="bms-iface-row"><span class="bms-iface-key">Balance Taps</span><span class="bms-iface-key">VC0 – VC16 (17 taps)</span></div>
-      <div class="bms-iface-row"><span class="bms-iface-key">PCB Size</span><span class="bms-iface-val">140 × 60 mm · 4-layer</span></div>
-    </div>
-
-    <div class="bms-iface-card">
-      <div class="bms-iface-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Safety &amp; Sensors
-      </div>
-      <div class="bms-iface-row"><span class="bms-iface-key">AFE IC</span><span class="bms-iface-val">TI BQ76952 (SPI mode)</span></div>
-      <div class="bms-iface-row"><span class="bms-iface-key">Gate Driver</span><span class="bms-iface-val">TI BQ76200</span></div>
-      <div class="bms-iface-row"><span class="bms-iface-key">MCU</span><span class="bms-iface-val">STM32F407VGT6 · 168 MHz</span></div>
-      <div class="bms-iface-row"><span class="bms-iface-key">Temperature</span><span class="bms-iface-val">NTC thermistors (× 4)</span></div>
-      <div class="bms-iface-row"><span class="bms-iface-key">SCD Response</span><span class="bms-iface-val">&lt; 400µs hardware trip</span></div>
-      <div class="bms-iface-row"><span class="bms-iface-key">CAN Transceiver</span><span class="bms-iface-val">SN65HVD230</span></div>
-      <div class="bms-iface-row"><span class="bms-iface-key">USB Debug</span><span class="bms-iface-val">CP2102 (UART bridge)</span></div>
-      <div class="bms-iface-row"><span class="bms-iface-key">Operating Temp</span><span class="bms-iface-val">−20°C to +70°C</span></div>
-    </div>
-
-  </div>
-
-  <!-- COMPARISON TABLE -->
-  <div class="bms-sec-hd fi">
-    <h3>NEXEV DIVEE BMS vs. Generic BMS</h3>
-    <p>What you actually get when engineering is the product, not just the price.</p>
-  </div>
-  <div class="bms-comp-wrap fi">
-    <table class="bms-comp-table">
-      <thead>
-        <tr>
-          <th>Feature</th>
-          <th class="nexev-col">NEXEV DIVEE BMS</th>
-          <th>Generic Module</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>MCU Architecture</td>
-          <td class="nexev-col"><span class="chk">✓</span> STM32F407 · 168 MHz · 1MB Flash</td>
-          <td class="generic-col"><span class="neu">—</span> Fixed-function IC, no firmware</td>
-        </tr>
-        <tr>
-          <td>Firmware Language</td>
-          <td class="nexev-col"><span class="chk">✓</span> Rust + Embassy (memory-safe async)</td>
-          <td class="generic-col"><span class="crs">✗</span> No firmware access / closed source</td>
-        </tr>
-        <tr>
-          <td>Short-Circuit Response</td>
-          <td class="nexev-col"><span class="chk">✓</span> &lt; 400µs HW trip + 100ms SW watchdog</td>
-          <td class="generic-col"><span class="neu">~</span> Single-layer, trip time unspecified</td>
-        </tr>
-        <tr>
-          <td>CAN Bus Telemetry</td>
-          <td class="nexev-col"><span class="chk">✓</span> 8 PGNs · 29-bit IDs · live streaming</td>
-          <td class="generic-col"><span class="crs">✗</span> Not available</td>
-        </tr>
-        <tr>
-          <td>Fault Black Box</td>
-          <td class="nexev-col"><span class="chk">✓</span> Flash-logged · timestamped</td>
-          <td class="generic-col"><span class="crs">✗</span> No logging</td>
-        </tr>
-        <tr>
-          <td>Cell Configuration</td>
-          <td class="nexev-col"><span class="chk">✓</span> 10S–16S firmware-selectable</td>
-          <td class="generic-col"><span class="neu">~</span> Fixed at manufacture</td>
-        </tr>
-        <tr>
-          <td>Certification Roadmap</td>
-          <td class="nexev-col"><span class="chk">✓</span> AIS-156 Phase 2 target</td>
-          <td class="generic-col"><span class="crs">✗</span> No Indian standard compliance</td>
-        </tr>
-        <tr>
-          <td>Design Origin</td>
-          <td class="nexev-col"><span class="chk">✓</span> India-designed, India-targeted</td>
-          <td class="generic-col"><span class="neu">—</span> Overseas sourced, generic market</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- APPLICATIONS -->
-  <div class="bms-sec-hd fi">
-    <h3>Built for Real Applications</h3>
-    <p>One BMS platform. Firmware adapts. Applications scale.</p>
-  </div>
-  <div class="bms-apps-grid fi">
-
-    <div class="bms-app">
-      <div class="bms-app-icon">🛵</div>
-      <div class="bms-app-title">Micro-mobility</div>
-      <p class="bms-app-desc">E-scooters, e-bikes, LEV conversions. The Gen-1's 10S–16S range covers 36V to 67.2V packs — the exact voltage range of Indian urban EVs. CAN telemetry integrates directly with BLDC motor controllers.</p>
-    </div>
-
-    <div class="bms-app">
-      <div class="bms-app-icon">🤖</div>
-      <div class="bms-app-title">Industrial Robotics</div>
-      <p class="bms-app-desc">AGVs, warehouse robots, autonomous platforms. CAN bus communication and deterministic Rust firmware make the Gen-1 a natural fit for systems that demand real-time pack state visibility and fail-safe behaviour.</p>
-    </div>
-
-    <div class="bms-app">
-      <div class="bms-app-icon">☀️</div>
-      <div class="bms-app-title">Green Energy Storage</div>
-      <p class="bms-app-desc">Off-grid solar, backup BESS, rural micro-grids. Configurable cell chemistry (NMC/LFP), deep telemetry logging, and OTA-upgradeable firmware means the BMS evolves with your storage system — not against it.</p>
-    </div>
-
-    <div class="bms-app">
-      <div class="bms-app-icon">🔬</div>
-      <div class="bms-app-title">DIY / Research</div>
-      <p class="bms-app-desc">University labs, EV hobbyists, battery researchers. Open firmware architecture, USB debug interface, and documented CAN protocol mean the Gen-1 is a development platform as much as a product.</p>
-    </div>
-
-  </div>
-
-  <!-- APPLICATION HOOK -->
-  <div class="bms-app-hook fi">
-    <p>If your application moves electrons, the Gen-1 wants to manage them.</p>
-    <span>Register interest below — we will reach out when samples are ready for evaluation.</span>
-  </div>
-
-  <!-- HIDDEN CTAs (purchase/download — hidden until launch) -->
-  <div style="display:none" aria-hidden="true">
-    <a href="#" class="btn btn-green">Buy Sample</a>
-    <a href="#" class="btn btn-out">Inquire OEM / Volume</a>
-    <a href="#" class="btn btn-out">Download CAN Protocol PDF</a>
-    <a href="#" class="btn btn-out">Download Pinout Diagram</a>
-    <a href="#" class="btn btn-out">Rust Crates (GitHub)</a>
-    <a href="#" class="btn btn-out">NEXEV App</a>
-  </div>
-
-  <!-- STATUS DISCLOSURE -->
-  <div class="proto-note fi">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-    <p><strong>Not available commercially.</strong> </p>
-  </div>
-
-  <!-- VISIBLE CTAs -->
-  <div class="bms-cta-row fi">
-    <a href="#enquiry" class="btn btn-green">Register Interest <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    <a href="#enquiry" class="btn btn-out">Technical Enquiry</a>
-  </div>
-
-  </div><!-- /container -->
-</section>
-
-
 <!-- ═══ ROADMAP ═══ -->
 <section class="section-pad section-alt" id="roadmap">
   <div class="container">
     <div class="sec-hd fi">
       <span class="eyebrow">Product Roadmap</span>
-      <h2 class="sec-title">Two Phases<br/>Running <mark>Now.</mark></h2>
-      <p class="sec-sub">NexEV is executing two active phases simultaneously — generating revenue from kit sales while designing a proprietary BMS board in parallel. No phase is claimed as complete until it is complete.</p>
-    </div>
-    <div class="rm-active-bar fi">
-      <span class="rm-active-chip green">
-        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-        Phase 1 Active — Kit Sales
-      </span>
-      <span class="rm-active-chip orange">
-        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-        Phase 2 Active — BMS Design
-      </span>
+      <h2 class="sec-title">Where We Are.<br/>Where We're <mark>Going.</mark></h2>
+      <p class="sec-sub">NexEV is building in phases. Each phase is funded by the previous. No phase is claimed as complete until it is complete.</p>
     </div>
     <div class="rm-grid fi">
       <div class="rm rm--a">
-        <div class="rm-label">Phase 1 · Active Now</div>
+        <div class="rm-label">Phase 1 · Now</div>
         <h3>18650 DIY Battery Kits</h3>
-        <p>Supplying battery pack assembly components — nickel strip, wire, connectors, tape, holders — to EV workshops, hobbyists, and assemblers via Amazon India and direct bulk orders. Revenue-generating, customer network growing.</p>
-        <a class="rm-tag" href="https://www.amazon.in/s?me=A3AFIE9FQK6QM6&_encoding=UTF8&content-id=amzn1.sym.b72bd100-ee36-45d4-9484-be15891619a9&pd_rd_r=821bc2f3-77d8-4ba1-b594-fb10028fa453&pd_rd_w=fjI3n&pd_rd_wg=4aqgV&pf_rd_p=b72bd100-ee36-45d4-9484-be15891619a9&pf_rd_r=VX91KH7M9SMCKMW6DXDQ&ref=lscx_w_ssf_ac" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit" title="View NexEV on Amazon India"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Active · Amazon India ↗</a>
-      </div>
-      <div class="rm rm--b">
-        <div class="rm-label">Phase 2 · Active Now</div>
-        <h3>BMS Design &amp; Development</h3>
-        <p>Designing a proprietary 16S 67.2V 60A BMS board in parallel with kit sales. STM32F407VGT6 + TI BQ76952 AFE, Rust/Embassy firmware. HRD v1.0 &amp; HLD v1.0 complete — golden samples being prepared for BIS certification.</p>
-        <div class="rm-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Active · Golden Sample Stage</div>
+        <p>Supplying battery pack assembly components to EV workshops, hobbyists, and assemblers via Amazon India and direct orders. Generating revenue, building workshop relationships.</p>
+        <div class="rm-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Active</div>
       </div>
       <div class="rm rm--s">
-        <div class="rm-label">Phase 3 · Next</div>
-        <h3>BIS Certification &amp; Distribution</h3>
-        <p>Submit BMS golden samples for BIS certification. On approval, launch commercial distribution to Indian EV workshops, assemblers, and OEM partners. Own-brand battery pack and e-bike assembly to follow.</p>
-        <div class="rm-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Pending BIS Approval</div>
+        <div class="rm-label">Phase 2 · Next</div>
+        <h3>BMS + EV Component Distribution</h3>
+        <p>Import and distribute BIS-certified BMS units and EV components to Indian workshops and dealers. Requires securing reliable supply partners and navigating BIS compliance.</p>
+        <div class="rm-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Sourcing in Progress</div>
+      </div>
+      <div class="rm rm--p">
+        <div class="rm-label">Phase 3 · Prototype Stage</div>
+        <h3>Own-Brand Battery + E-Bike Assembly</h3>
+        <p>Design and launch a 36V 10S2P NexEV-branded battery pack. Explore CKD e-bike assembly once Phase 2 supply chain is established. BIS IS 16046 certification required before commercial sale.</p>
+        <div class="rm-tag">Prototype · Not Available</div>
       </div>
     </div>
-    <!--<div class="proto-note fi">
+    <div class="proto-note fi">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      <p><strong>Design disclosure:</strong> The BMS PCB is in active hardware design — not commercially available. Golden samples are being prepared. BIS certification submission and commercial launch are subject to successful validation. No commercial BMS product exists yet.</p>
-    </div>-->
+      <p><strong>Prototype disclosure:</strong> The e-bike and own-brand battery pack are in early design/prototype stage. No commercial product exists yet. Target commercial availability is subject to securing the right supply chain and completing BIS IS 16046 certification.</p>
+    </div>
   </div>
 </section>
 
@@ -2166,7 +1514,7 @@ img{max-width:100%;display:block}
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="#25D366"/>
             <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.406A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fill="none" stroke="#25D366" stroke-width="1.8"/>
           </svg>
-          <a href="https://wa.me/919901560364" target="_blank" rel="noopener" style="color:#16a34a;font-weight:600;">WhatsApp: +91 99015 60364</a>
+          <a href="https://wa.me/919905603640" target="_blank" rel="noopener" style="color:#16a34a;font-weight:600;">WhatsApp: +91 99056 03640</a>
         </div>
         <div class="enq-note">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -2271,7 +1619,7 @@ img{max-width:100%;display:block}
       <div class="fc">
         <h4>Contact</h4>
         <a href="/cdn-cgi/l/email-protection#2d4e4243594c4e596d434855485b034443"><span class="__cf_email__" data-cfemail="73101c1d07121007331d160b16055d1a1d">[email&#160;protected]</span></a>
-        <a href="https://wa.me/919901560364" target="_blank" rel="noopener" style="color:rgba(34,197,94,.8);">WhatsApp: +91 99015 60364</a>
+        <a href="https://wa.me/919905603640" target="_blank" rel="noopener" style="color:rgba(34,197,94,.8);">WhatsApp: +91 99056 03640</a>
         <span>Response within 24 hrs</span>
         <span style="margin-top:.5rem;">Made in India 🇮🇳</span>
       </div>
@@ -2440,85 +1788,47 @@ if('IntersectionObserver' in window){
 
 /* Hero carousel */
 (function(){
-  var TOTAL    = 3;
-  var INTERVAL = 7000;
-  var cur      = 0;
-  var timer    = null;
-  var paused   = false;
-
+  var TOTAL=3, INTERVAL=7000, cur=0, timer=null, paused=false;
   var slides = document.querySelectorAll('#hero .slide');
   var dots   = document.querySelectorAll('.h-dot-btn');
   var curEl  = document.getElementById('h-cur');
   var heroBg = document.getElementById('hero');
-  var blob   = document.getElementById('h-blob');
-  var prog   = document.getElementById('h-prog');
-
-  /* Slide 0=BMS(orange) · Slide 1=Scooter(yellow) · Slide 2=Kits(green) */
-  var bgs    = ['#0c0801', '#08080f', '#030f07'];
-  var colors = ['#f97316', '#f5c518', '#22c55e'];
-  var blobs  = ['rgba(249,115,22,.7)', 'rgba(245,197,24,.65)', 'rgba(34,197,94,.65)'];
-
-  function startProgress(){
-    if(!prog) return;
-    prog.style.transition = 'none';
-    prog.style.width = '0%';
-    prog.style.background = colors[cur];
-    void prog.offsetWidth; /* force reflow */
-    prog.style.transition = 'width ' + INTERVAL + 'ms linear';
-    prog.style.width = '100%';
-  }
+  var bgs    = ['#060e1c','#030a18','#0a0f18'];
+  var colors = ['#22c55e','#22c55e','#f5c518'];
 
   function goTo(idx){
     slides[cur].classList.remove('active');
     dots[cur].classList.remove('on');
-    dots[cur].querySelector('.h-dot-inner').style.width = '22px';
-    dots[cur].querySelector('.h-dot-inner').style.background = 'rgba(255,255,255,0.28)';
+    dots[cur].querySelector('.h-dot-inner').style.width = '7px';
+    dots[cur].querySelector('.h-dot-inner').style.background = 'rgba(255,255,255,0.3)';
     cur = ((idx % TOTAL) + TOTAL) % TOTAL;
     slides[cur].classList.add('active');
     dots[cur].classList.add('on');
-    dots[cur].querySelector('.h-dot-inner').style.width = '46px';
+    dots[cur].querySelector('.h-dot-inner').style.width = '26px';
     dots[cur].querySelector('.h-dot-inner').style.background = colors[cur];
-    if(curEl)  curEl.textContent = String(cur + 1).padStart(2, '0');
+    if(curEl) curEl.textContent = String(cur+1).padStart(2,'0');
     if(heroBg) heroBg.style.background = bgs[cur];
-    if(blob)   blob.style.background   = blobs[cur];
-    startProgress();
   }
-
-  function tick(){ if(!paused) goTo(cur + 1); }
-  function reset(){ clearInterval(timer); timer = setInterval(tick, INTERVAL); startProgress(); }
+  function tick(){ if(!paused) goTo(cur+1); }
+  function reset(){ clearInterval(timer); timer=setInterval(tick, INTERVAL); }
 
   dots.forEach(function(d){
-    d.addEventListener('click', function(){ goTo(parseInt(d.dataset.i, 10)); reset(); });
+    d.addEventListener('click', function(){ goTo(parseInt(d.dataset.i,10)); reset(); });
   });
   var prev = document.getElementById('h-prev');
   var next = document.getElementById('h-next');
-  if(prev) prev.addEventListener('click', function(){ goTo(cur - 1); reset(); });
-  if(next) next.addEventListener('click', function(){ goTo(cur + 1); reset(); });
-
+  if(prev) prev.addEventListener('click', function(){ goTo(cur-1); reset(); });
+  if(next) next.addEventListener('click', function(){ goTo(cur+1); reset(); });
   if(heroBg){
-    heroBg.addEventListener('mouseenter', function(){
-      paused = true;
-      if(prog){ /* Freeze progress bar at current position */
-        var pct = (prog.getBoundingClientRect().width / prog.parentElement.getBoundingClientRect().width * 100).toFixed(2);
-        prog.style.transition = 'none';
-        prog.style.width = pct + '%';
-      }
-    });
-    heroBg.addEventListener('mouseleave', function(){
-      paused = false;
-      startProgress(); /* Resume from full width (reset cleanly) */
-    });
-    var tx = 0;
-    heroBg.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; }, {passive:true});
+    heroBg.addEventListener('mouseenter', function(){ paused=true; });
+    heroBg.addEventListener('mouseleave', function(){ paused=false; });
+    var tx=0;
+    heroBg.addEventListener('touchstart', function(e){ tx=e.touches[0].clientX; },{passive:true});
     heroBg.addEventListener('touchend', function(e){
-      var dx = e.changedTouches[0].clientX - tx;
-      if(Math.abs(dx) > 50){ goTo(dx < 0 ? cur + 1 : cur - 1); reset(); }
-    }, {passive:true});
+      var dx=e.changedTouches[0].clientX-tx;
+      if(Math.abs(dx)>50){ goTo(dx<0?cur+1:cur-1); reset(); }
+    },{passive:true});
   }
-
-  /* Initialise */
-  if(heroBg) heroBg.style.background = bgs[0];
-  if(blob)   blob.style.background   = blobs[0];
   reset();
 })();
 
