@@ -90,17 +90,18 @@ function getUnitPrice(productId, qty) {
    SHIPPING — mirrors assets/data/shipping-rates.json
    Must stay in sync with the frontend JSON.
 ═══════════════════════════════════════════════════ */
+/* ── Rates in paise — must exactly mirror shop.html inline shippingRates ── */
 const SHIPPING_ZONES = {
   local: {
     label: 'Karnataka',
     delivery: '2–3 business days',
-    freeAbove: 150000, /* ₹1500 in paise */
+    freeAbove: 150000, /* ₹1500 */
     tiers: [
-      { maxGrams: 500,  price: 5000  },
-      { maxGrams: 1000, price: 7500  },
-      { maxGrams: 2000, price: 11000 },
-      { maxGrams: 5000, price: 16000 },
-      { maxGrams: 99999,price: 22000 },
+      { maxGrams: 500,   price: 11100 }, /* ₹111 */
+      { maxGrams: 1000,  price: 17000 }, /* ₹170 */
+      { maxGrams: 2000,  price: 21000 }, /* ₹210 */
+      { maxGrams: 5000,  price: 26000 }, /* ₹260 */
+      { maxGrams: 99999, price: 22000 }, /* ₹220 */
     ],
     prefixes: [
       '560','561','562','563','564','565','566','567','568','569',
@@ -114,11 +115,11 @@ const SHIPPING_ZONES = {
     delivery: '3–5 business days',
     freeAbove: 200000, /* ₹2000 */
     tiers: [
-      { maxGrams: 500,  price: 8000  },
-      { maxGrams: 1000, price: 11500 },
-      { maxGrams: 2000, price: 16000 },
-      { maxGrams: 5000, price: 24000 },
-      { maxGrams: 99999,price: 32000 },
+      { maxGrams: 500,   price: 13000 }, /* ₹130 */
+      { maxGrams: 1000,  price: 11500 }, /* ₹115 */
+      { maxGrams: 2000,  price: 16000 }, /* ₹160 */
+      { maxGrams: 5000,  price: 24000 }, /* ₹240 */
+      { maxGrams: 99999, price: 32000 }, /* ₹320 */
     ],
     prefixes: [
       '110','111','112','113','114','115','116','117','118','119',
@@ -135,13 +136,13 @@ const SHIPPING_ZONES = {
   remote: {
     label: 'Northeast & Islands',
     delivery: '8–12 business days',
-    freeAbove: 9999999,
+    freeAbove: 999999900, /* never free */
     tiers: [
-      { maxGrams: 500,  price: 16000 },
-      { maxGrams: 1000, price: 22000 },
-      { maxGrams: 2000, price: 31000 },
-      { maxGrams: 5000, price: 45000 },
-      { maxGrams: 99999,price: 60000 },
+      { maxGrams: 500,   price: 16000 }, /* ₹160 */
+      { maxGrams: 1000,  price: 22000 }, /* ₹220 */
+      { maxGrams: 2000,  price: 31000 }, /* ₹310 */
+      { maxGrams: 5000,  price: 45000 }, /* ₹450 */
+      { maxGrams: 99999, price: 60000 }, /* ₹600 */
     ],
     prefixes: [
       '682','737','744',
@@ -151,17 +152,17 @@ const SHIPPING_ZONES = {
   },
 };
 
-/* regional = fallback if none of the above match */
+/* regional = fallback (Rest of India) */
 const SHIPPING_REGIONAL = {
   label: 'Rest of India',
   delivery: '5–7 business days',
   freeAbove: 250000, /* ₹2500 */
   tiers: [
-    { maxGrams: 500,  price: 10000 },
-    { maxGrams: 1000, price: 14500 },
-    { maxGrams: 2000, price: 20000 },
-    { maxGrams: 5000, price: 29000 },
-    { maxGrams: 99999,price: 40000 },
+    { maxGrams: 500,   price: 10000 }, /* ₹100 */
+    { maxGrams: 1000,  price: 14500 }, /* ₹145 */
+    { maxGrams: 2000,  price: 20000 }, /* ₹200 */
+    { maxGrams: 5000,  price: 29000 }, /* ₹290 */
+    { maxGrams: 99999, price: 40000 }, /* ₹400 */
   ],
 };
 
@@ -268,6 +269,15 @@ export async function onRequestPost({ request, env }) {
       validatedItems.push({ id: item.id, name: product.name, qty, unitPaise });
     }
 
+    /* ── Guard: env vars must be set in Cloudflare Dashboard ── */
+    if (!env.RAZORPAY_KEY_ID || !env.RAZORPAY_KEY_SECRET) {
+      console.error('Missing env vars: RAZORPAY_KEY_ID or RAZORPAY_KEY_SECRET not set in Cloudflare Pages');
+      return new Response(
+        JSON.stringify({ error: 'Payment gateway not configured. Please contact us on WhatsApp.' }),
+        { status: 500, headers }
+      );
+    }
+
     /* ── Calculate shipping ── */
     const { shippingPaise, zone, isFree, error: zoneError } = calcShippingPaise(
       customer.pincode,
@@ -310,11 +320,12 @@ export async function onRequestPost({ request, env }) {
 
     if (!rzpResponse.ok) {
       const errText = await rzpResponse.text();
-      console.error('Razorpay API error:', errText);
-      return new Response(
-        JSON.stringify({ error: 'Payment gateway error. Please try again.' }),
-        { status: 502, headers }
-      );
+      console.error(`Razorpay API error [HTTP ${rzpResponse.status}]:`, errText);
+      /* 401 = wrong/missing API key  403 = key not authorised  4xx = bad payload */
+      const msg = rzpResponse.status === 401 || rzpResponse.status === 403
+        ? 'Payment gateway authentication failed — check API keys in Cloudflare Dashboard.'
+        : 'Payment gateway error. Please try again.';
+      return new Response(JSON.stringify({ error: msg }), { status: 502, headers });
     }
 
     const rzpOrder = await rzpResponse.json();
