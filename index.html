@@ -134,6 +134,8 @@ img{max-width:100%;display:block}
 .nav-links a:hover{color:var(--blue);background:#f1f5f9}
 .nav-cta{background:var(--blue)!important;color:#fff!important;padding:.45rem 1rem!important}
 .nav-cta:hover{background:var(--blue-d)!important}
+.nav-shop{display:inline-flex!important;align-items:center;gap:.35rem;background:var(--green)!important;color:#fff!important;padding:.42rem 1rem!important;border-radius:20px!important;font-weight:700!important;font-size:.825rem!important;box-shadow:0 2px 10px rgba(34,197,94,.3);transition:background .2s,transform .2s,box-shadow .2s!important}
+.nav-shop:hover{background:#16a34a!important;transform:translateY(-1px);box-shadow:0 4px 16px rgba(34,197,94,.4)!important}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:var(--blue);border-radius:2px;transition:all .3s}
 .mob-menu{display:none;flex-direction:column;gap:.5rem;position:fixed;top:var(--nav-h);left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem 1.5rem 1.5rem;z-index:99;box-shadow:0 8px 24px rgba(0,0,0,.08)}
@@ -141,6 +143,7 @@ img{max-width:100%;display:block}
 .mob-menu a{padding:.6rem .75rem;border-radius:8px;font-weight:500;color:var(--text)}
 .mob-menu a:hover{background:var(--bg-alt)}
 .mob-cta{background:var(--blue)!important;color:#fff!important;text-align:center;margin-top:.5rem}
+.mob-shop{background:var(--green)!important;color:#fff!important;font-weight:700!important;border-radius:10px!important;text-align:center}
 @media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
 
 /* ═══ HERO ═══ */
@@ -640,7 +643,12 @@ img{max-width:100%;display:block}
       <li><a href="#market">India Market</a></li>
       <li><a href="#opportunities">Partners</a></li>
 	  <li><a href="#bis-services">BIS Services</a></li>
-      <li><a href="shop.html">Shop</a></li>
+      <li>
+        <a href="shop.html" class="nav-shop">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
+          Shop
+        </a>
+      </li>
       <li><a href="#enquiry" class="nav-cta">Contact Us</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
@@ -655,7 +663,10 @@ img{max-width:100%;display:block}
   <a href="#opportunities">Partners</a>
   <a href="#bms-design">BMS</a>
    <a href="#bis-services">BIS Services</a>
-  <a href="shop.html">Shop</a>
+  <a href="shop.html" class="mob-shop">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:.3rem"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
+    Shop — NexEV Store
+  </a>
   <a href="#enquiry" class="mob-cta">Contact Us</a>
 </div>
 
@@ -861,13 +872,13 @@ img{max-width:100%;display:block}
       <div class="h-badge" style="background:rgba(245,197,24,.1);border-color:rgba(245,197,24,.35);color:#fbbf24;">
         <span class="h-badge-dot" style="background:#f5c518;"></span>In Development &nbsp;·&nbsp; BIS IS 16046 Roadmap
       </div>
-      <p class="h-eyebrow">NexEV Own-Brand</p>
+      <p class="h-eyebrow">NexEV DIVEE</p>
       <h1 class="h-title">
         <span class="h-title-line">36V E-Bike</span>
         <span class="h-title-line" style="color:#f5c518;">Battery Pack.</span>
       </h1>
-      <p class="h-sub">Own-Brand · 10S2P · 18650 Format · ~180Wh</p>
-      <p class="h-desc">NexEV is developing a 36V 10S2P own-brand battery pack for Indian e-bikes — currently in component sourcing and prototype stage. BIS IS 16046 certification required before commercial launch.</p>
+      <p class="h-sub">DIVEE · 10S2P · 18650 Format · ~180Wh</p>
+      <p class="h-desc">NexEV is developing a 36V 10S2P DIVEE battery pack for Indian e-bikes — currently in component sourcing and prototype stage. BIS IS 16046 certification required before commercial launch.</p>
       <div class="h-chips">
         <div class="h-chip"><span class="h-chip-v">36V</span><span class="h-chip-l">Nominal</span></div>
         <div class="h-chip"><span class="h-chip-v">10S2P</span><span class="h-chip-l">Config</span></div>
@@ -1163,7 +1174,7 @@ img{max-width:100%;display:block}
       </div>
       <div class="pillar">
         <div class="p-icon p-icon--y"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-        <h3>Roadmap: Own-Brand EV</h3>
+        <h3>Roadmap: Own-Brand "DIVEE" EV</h3>
         <p>Designing a 36V 10S2P own-brand battery and exploring e-bike assembly. Prototype stage — dependent on securing the right supply and manufacturing partners.</p>
       </div>
     </div>
@@ -1196,7 +1207,8 @@ img{max-width:100%;display:block}
         <p class="kit-desc">Suitable for: e-bike battery builds, power tool packs, solar storage, EV conversion projects.</p>
         <div class="kit-ctas">
           <a href="https://www.amazon.in/s?me=A3AFIE9FQK6QM6&_encoding=UTF8&content-id=amzn1.sym.b72bd100-ee36-45d4-9484-be15891619a9&pd_rd_r=821bc2f3-77d8-4ba1-b594-fb10028fa453&pd_rd_w=fjI3n&pd_rd_wg=4aqgV&pf_rd_p=b72bd100-ee36-45d4-9484-be15891619a9&pf_rd_r=VX91KH7M9SMCKMW6DXDQ&ref=lscx_w_ssf_ac" target="_blank" rel="noopener noreferrer" class="btn btn-green">View on Amazon India <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-          <a href="#enquiry" class="btn btn-out">Bulk / Wholesale Enquiry</a>
+          
+		  <a href="shop.html" class="btn btn-green">Buy Now</a>
         </div>
       </div>
       <div class="kit-visual-box">
@@ -1213,7 +1225,7 @@ img{max-width:100%;display:block}
               <rect x="17" y="2" width="12" height="6" rx="1.5" fill="rgba(255,255,255,.28)"/>
               <rect x="32" y="2" width="12" height="6" rx="1.5" fill="rgba(255,255,255,.28)"/>
             </svg>
-            <div class="ki-name">18650 Holders (80650)</div>
+            <div class="ki-name">18650 Holders (18650)</div>
           </div>
           <div class="ki">
             <svg width="48" height="40" viewBox="0 0 48 40" fill="none">
@@ -1328,6 +1340,9 @@ img{max-width:100%;display:block}
         <h4>Nickel Strip</h4>
         <p>High-purity nickel strip for cell-to-cell spot welding. Correct width and thickness for 18650 series/parallel connections.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
+		<div class="kit-ctas">
+		<a href="shop.html" class="btn btn-green">Buy Now</a>
+		</div>
       </div>
       <div class="cc">
         <div class="cc-icon">
@@ -1347,6 +1362,9 @@ img{max-width:100%;display:block}
         <h4>Amass XT60H Connectors</h4>
         <p>Genuine Amass XT60H male and female connectors — high continuous current rating, gold-plated contacts, durable housing.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
+		<div class="kit-ctas">
+		<a href="shop.html" class="btn btn-green">Buy Now</a>
+		</div>
       </div>
       <div class="cc">
         <div class="cc-icon">
@@ -1364,6 +1382,9 @@ img{max-width:100%;display:block}
         <h4>14 AWG Silicone Wire</h4>
         <p>Flexible silicone-jacketed 14 AWG wire — heat-resistant, rated for battery pack current, suitable for tight routing.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
+		<div class="kit-ctas">
+		<a href="shop.html" class="btn btn-green">Buy Now</a>
+		</div>
       </div>
       <div class="cc">
         <div class="cc-icon">
@@ -1379,6 +1400,9 @@ img{max-width:100%;display:block}
         <h4>PVC Heat Shrink (170mm)</h4>
         <p>Blue PVC heat shrink tube, 170mm flat width — wraps a completed 18650 pack for insulation and professional finish.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
+		<div class="kit-ctas">
+		<a href="shop.html" class="btn btn-green">Buy Now</a>
+		</div>
       </div>
       <div class="cc">
         <div class="cc-icon">
@@ -1394,6 +1418,9 @@ img{max-width:100%;display:block}
         <h4>Kapton Tape (20mm)</h4>
         <p>High-temperature polyimide tape, 20mm width, 200/roll — cell insulation, tab coverage, thermal protection.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
+		<div class="kit-ctas">
+		<a href="shop.html" class="btn btn-green">Buy Now</a>
+		</div>
       </div>
       <div class="cc">
         <div class="cc-icon">
@@ -1410,6 +1437,9 @@ img{max-width:100%;display:block}
         <h4>18650 Insulation Rings + Paper</h4>
         <p>Cell-end insulation rings and insulation paper roll — prevents short circuits on positive terminals and between cell groups.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
+		<div class="kit-ctas">
+		<a href="shop.html" class="btn btn-green">Buy Now</a>
+		</div>
       </div>
       <div class="cc">
         <div class="cc-icon">
@@ -1425,9 +1455,12 @@ img{max-width:100%;display:block}
             <rect x="28" y="2" width="11" height="6" rx="1.5" fill="rgba(34,197,94,.22)"/>
           </svg>
         </div>
-        <h4>80650 Battery Holders</h4>
+        <h4>18650 Battery Holders</h4>
         <p>Plastic 18650 cell holders — keeps cells aligned for spot welding. Available in series/parallel configurations.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
+		<div class="kit-ctas">
+		<a href="shop.html" class="btn btn-green">Buy Now</a>
+		</div>
       </div>
       <div class="cc" style="background:rgba(26,58,92,.03);border-color:rgba(26,58,92,.2);">
         <div class="cc-icon" style="background:rgba(26,58,92,.08);border-color:rgba(26,58,92,.18);">
@@ -1441,9 +1474,12 @@ img{max-width:100%;display:block}
             <text x="20" y="36" text-anchor="middle" font-size="6" fill="#1a3a5c" font-family="monospace" opacity=".6">BMS 10S</text>
           </svg>
         </div>
-        <h4>BMS — Coming Soon</h4>
-        <p>10S BMS for 36V packs currently being sourced. Register interest for priority access when available.</p>
-        <div class="cc-avail" style="color:var(--muted);"><span class="avail-dot" style="background:var(--yellow);"></span>In sourcing</div>
+        <h4>BMS </h4>
+        <p>6S BMS for 24V packs currently being sourced. Register interest for priority access when available.</p>
+        <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
+		<div class="kit-ctas">
+		<a href="shop.html" class="btn btn-green">Buy Now</a>
+		</div>
       </div>
     </div>
   </div>
@@ -1754,7 +1790,7 @@ img{max-width:100%;display:block}
       <div class="rm rm--s">
         <div class="rm-label">Phase 3 · Next</div>
         <h3>BIS Certification &amp; Distribution</h3>
-        <p>Submit BMS golden samples for BIS certification. On approval, launch commercial distribution to Indian EV workshops, assemblers, and OEM partners. Own-brand battery pack and e-bike assembly to follow.</p>
+        <p>Submit BMS golden samples for BIS certification. On approval, launch commercial distribution to Indian EV workshops, assemblers, and OEM partners. Own-brand DIVEE battery pack and e-bike assembly to follow.</p>
         <div class="rm-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Pending BIS Approval</div>
       </div>
     </div>
@@ -1778,7 +1814,7 @@ img{max-width:100%;display:block}
       <div class="tw-card">
         <div class="tw-num">01</div>
         <h4>BMS Manufacturer</h4>
-        <p>Priority #1. We need a reliable 10S BMS supplier for our own-brand 36V battery pack and for workshop distribution.</p>
+        <p>Priority #1. We need a reliable 10S BMS supplier for our own-brand DIVEE 36V battery pack and for workshop distribution.</p>
         <ul>
           <li>10S configuration (36V nominal)</li>
           <li>30A continuous minimum</li>
@@ -1789,7 +1825,7 @@ img{max-width:100%;display:block}
       <div class="tw-card">
         <div class="tw-num">02</div>
         <h4>18650 Cell Supplier</h4>
-        <p>Grade A 18650 cells for DIY kit upgrade and own-brand battery pack production.</p>
+        <p>Grade A 18650 cells for DIY kit upgrade and DIVEE battery pack production.</p>
         <ul>
           <li>Grade A — Samsung, LG, Molicel or equiv.</li>
           <li>UN38.3 certified for freight</li>
@@ -2246,7 +2282,7 @@ img{max-width:100%;display:block}
           </span>
         </a>
         <div class="footer-slogan">Driven by Electric Future</div>
-        <p class="ft-tag">Battery Assembly Kits for India.<br/>Building toward BMS distribution and own-brand EV batteries and EBike and EScooters.</p>
+        <p class="ft-tag">Battery Assembly Kits for India.<br/>Building toward BMS distribution and own-brand DIVEE EV batteries and EBike and EScooters.</p>
         <div class="ft-legal">
           <p>NexEV Private Limited</p>
           <p class="cin">GSTIN: 29AALCN2942C1ZF</p>

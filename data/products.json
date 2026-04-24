@@ -38,7 +38,7 @@
         "Nickel strip (high-purity, spot-weld grade)",
         "14 AWG silicone wire — red and black",
         "PVC heat shrink tube — blue, 170mm flat width",
-        "Kapton polyimide tape — 25mm / 200 per roll",
+        "Kapton polyimide tape — 20mm / 200 per roll",
         "18650 cell insulation rings",
         "Insulation paper roll",
         "Amass XT60H connectors — male + female pair",
@@ -49,7 +49,7 @@
         "Wire gauge":   "14 AWG silicone insulated",
         "Connector":    "Amass XT60H gold-plated",
         "Heat shrink":  "PVC blue 170mm flat width",
-        "Tape":         "Kapton polyimide 25mm",
+        "Tape":         "Kapton polyimide 20mm",
         "Holder":       "80650 plastic cell holder",
         "Use case":     "E-bike, power tools, solar, EV conversion"
       },
@@ -175,9 +175,9 @@
       }
     },
     {
-      "id": "kapton-tape-25mm",
-      "name": "Kapton Tape — 25mm / 200m Roll",
-      "tagline": "Polyimide, high-temperature, 200m per roll",
+      "id": "kapton-tape-20mm",
+      "name": "Kapton Tape — 20mm / 33m Roll",
+      "tagline": "Polyimide, high-temperature, 33m per roll",
       "category": "insulation",
       "status": "active",
       "featured": false,
@@ -191,15 +191,15 @@
       ],
       "stock": "in_stock",
       "sku": "NE-KT-001",
-      "images": ["assets/products/kapton-tape.jpg"],
+      "images": ["assets/products/KeptonTape3.png"],
       "image_fallback": "kapton",
       "tags": ["kapton","polyimide","tape","insulation","thermal"],
-      "short_description": "High-temperature Kapton polyimide tape, 25mm width, 200m roll. Cell insulation, tab coverage, thermal protection.",
+      "short_description": "High-temperature Kapton polyimide tape, 20mm width, 33m roll. Cell insulation, tab coverage, thermal protection.",
       "description": "Genuine polyimide tape for battery pack insulation. Used on positive cell terminals, between cell groups, and anywhere electrical isolation is needed near heat.",
       "specs": {
         "Material":    "Polyimide (Kapton-type)",
-        "Width":       "25mm",
-        "Length":      "200 metres per roll",
+        "Width":       "20mm",
+        "Length":      "33 metres per roll",
         "Adhesive":    "Silicone-based",
         "Temperature": "Up to 260°C continuous",
         "Colour":      "Amber/yellow"
@@ -207,8 +207,8 @@
       "shipping": { "weight_grams": 120, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
       "amazon_url": "",
       "meta": {
-        "title": "Kapton Polyimide Tape 25mm 200m — Battery Pack | NexEV",
-        "description": "High-temperature Kapton tape, 25mm wide, 200m roll. For 18650 battery pack cell insulation. Ships from Karnataka."
+        "title": "Kapton Polyimide Tape 20mm 33m — Battery Pack | NexEV",
+        "description": "High-temperature Kapton tape, 20mm wide, 33m roll. For 18650 battery pack cell insulation. Ships from Karnataka."
       }
     },
     {

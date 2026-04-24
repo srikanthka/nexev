@@ -2,7 +2,7 @@ assets/products/kit-complete-1.jpg
 assets/products/nickel-strip.jpg
 assets/products/wire-14awg.jpg
 assets/products/pvc-heat-shrink.jpg
-assets/products/kapton-tape.jpg
+assets/products/KeptonTape3.png
 assets/products/insulation-rings.jpg
 assets/products/insulation-paper.jpg
 assets/products/xt60h-connector.jpg

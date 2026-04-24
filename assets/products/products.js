@@ -9,7 +9,8 @@ window.NEXEV_PRODUCTS = {
     { "id": "conductor",  "label": "Conductors & Wire"    },
     { "id": "insulation", "label": "Insulation Materials" },
     { "id": "connector",  "label": "Connectors"           },
-    { "id": "holder",     "label": "Cell Holders"         }
+    { "id": "holder",     "label": "Cell Holders"         },
+	{ "id": "charger",     "label": "Battery Charge Module"         }
   ],
   "products": [
 
@@ -338,9 +339,50 @@ window.NEXEV_PRODUCTS = {
     },
 
     {
-      "id": "bms-pcm-1s-3s",
-      "name": "BMS / PCM Board (1S\u20133S)",
-      "tagline": "Protection circuit modules for 1S, 2S, and 3S Li-Ion packs",
+      "id": "bms-pcm-1s-3a",
+      "name": "BMS / PCM Board (1S)",
+      "tagline": "Protection circuit modules for 1S Li-Ion packs",
+      "category": "bms",
+      "status": "active",
+      "featured": false,
+      "price": 129,
+      "compare_price": null,
+      "unit": "unit",
+      "min_qty": 1,
+      "bulk_tiers": [
+        { "qty": 5,  "price": 125, "label": "5+ units" },
+        { "qty": 10, "price": 120, "label": "10+ units" },
+        { "qty": 25, "price": 100,  "label": "25+ units (workshop)" }
+      ],
+      "stock": "in_stock",
+      "sku": "NE-BMS-1S3S-001",
+      "hsn_code": "8542",
+      "gst_rate": 18,
+      "images": ["assets/products/1S.png","assets/products/bms-pcm-1s-3s-2.jpg","assets/products/bms-pcm-1s-3s-3.jpg"],
+      "image_fallback": "bms",
+      "tags": ["BMS","PCM","1S","2S","3S","protection","Li-Ion"],
+      "short_description": "BMS / PCM protection boards for 1S Li-Ion configurations. Select variant at checkout.",
+      "description": "Electronic integrated circuit protection boards for small Li-Ion packs. Available in 1S (3.7V) configurations. Provides over-charge, over-discharge, over-current, and short-circuit protection.",
+      "specs": {
+        "Variants":       "1S (specify in order notes)",
+        "Chemistry":      "Li-Ion / LiPo",
+        "Protection":     "Over-charge, over-discharge, over-current, short-circuit",
+        "Typical rating": "3A",
+        "Form factor":    "Compact PCB module",
+        "HSN code":       "8542"
+      },
+      "shipping": { "weight_grams": 15, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
+      "amazon_url": "",
+      "meta": {
+        "title": "BMS / PCM Board 1S Li-Ion Protection | NexEV",
+        "description": "Li-Ion protection PCM / BMS boards for 1S packs. Over-charge, over-discharge, short-circuit protection. Ships from Karnataka."
+      }
+    },
+	
+	{
+      "id": "bms-pcm-2s-8a",
+      "name": "BMS / PCM Board (1S)",
+      "tagline": "Protection circuit modules for 2S 7.4V Li-Ion packs",
       "category": "bms",
       "status": "active",
       "featured": false,
@@ -349,64 +391,105 @@ window.NEXEV_PRODUCTS = {
       "unit": "unit",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 5,  "price": 129, "label": "5+ units" },
-        { "qty": 10, "price": 109, "label": "10+ units" },
-        { "qty": 25, "price": 89,  "label": "25+ units (workshop)" }
+        { "qty": 5,  "price": 145, "label": "5+ units" },
+        { "qty": 10, "price": 140, "label": "10+ units" },
+        { "qty": 25, "price": 130,  "label": "25+ units (workshop)" }
       ],
       "stock": "in_stock",
-      "sku": "NE-BMS-1S3S-001",
+      "sku": "NE-BMS-1S3S-002",
       "hsn_code": "8542",
       "gst_rate": 18,
-      "images": ["assets/products/bms-pcm-1s-3s.jpg","assets/products/bms-pcm-1s-3s-2.jpg","assets/products/bms-pcm-1s-3s-3.jpg"],
+      "images": ["assets/products/2S7_4_1.png","assets/products/2S7_4_2.png","assets/products/bms-pcm-1s-3s-3.jpg"],
       "image_fallback": "bms",
       "tags": ["BMS","PCM","1S","2S","3S","protection","Li-Ion"],
-      "short_description": "BMS / PCM protection boards for 1S, 2S, and 3S Li-Ion configurations. Select variant at checkout.",
-      "description": "Electronic integrated circuit protection boards for small Li-Ion packs. Available in 1S (3.7V), 2S (7.4V), and 3S (11.1V) configurations. Provides over-charge, over-discharge, over-current, and short-circuit protection.",
+      "short_description": "BMS / PCM protection boards for 1S Li-Ion configurations. Select variant at checkout.",
+      "description": "Electronic integrated circuit protection boards for small Li-Ion packs. Available in 1S (7.4V) configurations. Provides over-charge, over-discharge, over-current, and short-circuit protection.",
       "specs": {
-        "Variants":       "1S / 2S / 3S (specify in order notes)",
+        "Variants":       "2S (specify in order notes)",
         "Chemistry":      "Li-Ion / LiPo",
         "Protection":     "Over-charge, over-discharge, over-current, short-circuit",
-        "Typical rating": "3A\u201310A depending on variant",
+        "Typical rating": "8A",
         "Form factor":    "Compact PCB module",
         "HSN code":       "8542"
       },
       "shipping": { "weight_grams": 15, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
       "amazon_url": "",
       "meta": {
-        "title": "BMS / PCM Board 1S\u20133S Li-Ion Protection | NexEV",
-        "description": "Li-Ion protection PCM / BMS boards for 1S, 2S, 3S packs. Over-charge, over-discharge, short-circuit protection. Ships from Karnataka."
+        "title": "BMS / PCM Board 2S Li-Ion Protection | NexEV",
+        "description": "Li-Ion protection PCM / BMS boards for 2S packs. Over-charge, over-discharge, short-circuit protection. Ships from Karnataka."
       }
     },
-
-    {
-      "id": "bms-7s-10s",
-      "name": "BMS Board (7S / 10S)",
-      "tagline": "Electric control boards for 24V and 36V Li-Ion packs",
+	
+	{
+      "id": "bms-pcm-3s-10a",
+      "name": "BMS / PCM Board (1S)",
+      "tagline": "Protection circuit modules for 2S 12V Li-Ion packs",
       "category": "bms",
       "status": "active",
       "featured": false,
-      "price": 599,
+      "price": 199,
       "compare_price": null,
       "unit": "unit",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 3,  "price": 549, "label": "3+ units" },
-        { "qty": 5,  "price": 499, "label": "5+ units" },
-        { "qty": 10, "price": 449, "label": "10+ units (workshop)" }
+        { "qty": 5,  "price": 190, "label": "5+ units" },
+        { "qty": 10, "price": 185, "label": "10+ units" },
+        { "qty": 25, "price": 180,  "label": "25+ units (workshop)" }
+      ],
+      "stock": "in_stock",
+      "sku": "NE-BMS-1S3S-002",
+      "hsn_code": "8542",
+      "gst_rate": 18,
+      "images": ["assets/products/3S_10A_12V_1.png","assets/products/3S_10A_12V_2.png","assets/products/bms-pcm-1s-3s-3.jpg"],
+      "image_fallback": "bms",
+      "tags": ["BMS","PCM","1S","2S","3S","protection","Li-Ion"],
+      "short_description": "BMS / PCM protection boards for 1S Li-Ion configurations. Select variant at checkout.",
+      "description": "Electronic integrated circuit protection boards for small Li-Ion packs. Available in 3S (12V) configurations. Provides over-charge, over-discharge, over-current, and short-circuit protection.",
+      "specs": {
+        "Variants":       "3S (specify in order notes)",
+        "Chemistry":      "Li-Ion / LiPo",
+        "Protection":     "Over-charge, over-discharge, over-current, short-circuit",
+        "Typical rating": "10A",
+        "Form factor":    "Compact PCB module",
+        "HSN code":       "8542"
+      },
+      "shipping": { "weight_grams": 15, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
+      "amazon_url": "",
+      "meta": {
+        "title": "BMS / PCM Board 2S Li-Ion Protection | NexEV",
+        "description": "Li-Ion protection PCM / BMS boards for 2S packs. Over-charge, over-discharge, short-circuit protection. Ships from Karnataka."
+      }
+    },
+
+    {
+      "id": "bms-6s",
+      "name": "BMS Board (6S)",
+      "tagline": "Electric control boards for 24V Li-Ion packs",
+      "category": "bms",
+      "status": "active",
+      "featured": false,
+      "price": 399,
+      "compare_price": null,
+      "unit": "unit",
+      "min_qty": 1,
+      "bulk_tiers": [
+        { "qty": 5,  "price": 389, "label": "3+ units" },
+        { "qty": 10,  "price": 379, "label": "5+ units" },
+        { "qty": 50, "price": 349, "label": "10+ units (workshop)" }
       ],
       "stock": "in_stock",
       "sku": "NE-BMS-7S10S-001",
       "hsn_code": "8537",
       "gst_rate": 18,
-      "images": ["assets/products/bms-7s-10s.jpg","assets/products/bms-7s-10s-2.jpg","assets/products/bms-7s-10s-3.jpg"],
+      "images": ["assets/products/6s_15A_24V_PCB_BMS_1.png","assets/products/6s_15A_24V_PCB_BMS_2.png","assets/products/bms-7s-10s-3.jpg"],
       "image_fallback": "bms",
       "tags": ["BMS","7S","10S","24V","36V","EV","e-bike","electric-control"],
       "short_description": "High-current BMS boards for 7S (24V) and 10S (36V) Li-Ion packs. Specify variant when ordering.",
-      "description": "Electric control boards for medium-voltage Li-Ion battery packs. 7S variant for 24V solar and light-EV applications; 10S variant for 36V e-bikes and robotics. Both feature passive balancing and full protection suite.",
+      "description": "Electric control boards for medium-voltage Li-Ion battery packs. 6S variant for 24V solar and light-EV applications; 10S variant for 36V e-bikes and robotics. Both feature passive balancing and full protection suite.",
       "specs": {
-        "Variants":       "7S (25.9V) / 10S (37V) \u2014 specify in order",
-        "Max voltage":    "\u22641000V rail (board rated per variant)",
-        "Continuous":     "20A\u201330A depending on variant",
+        "Variants":       "6S (24V)",
+        "Max voltage":    "24V",
+        "Continuous":     "15A",
         "Protection":     "Over-charge, over-discharge, over-current, short-circuit, passive balance",
         "Chemistry":      "Li-Ion 18650",
         "HSN code":       "8537"
@@ -415,7 +498,136 @@ window.NEXEV_PRODUCTS = {
       "amazon_url": "",
       "meta": {
         "title": "BMS Board 7S / 10S \u2014 24V 36V Li-Ion | NexEV",
-        "description": "7S and 10S BMS boards for 24V and 36V Li-Ion battery packs. EV and solar grade. Ships from Karnataka."
+        "description": "6S BMS boards for 24V  Li-Ion battery packs. EV and solar grade. Ships from Karnataka."
+      }
+    },
+
+    {
+      "id": "charger-tp4057-1s-typec",
+      "name": "TP4057 1A Li-Ion Charging Board — Type-C",
+      "tagline": "Single-cell 1S charge module with Type-C input & built-in protection",
+      "category": "bms",
+      "status": "active",
+      "featured": false,
+      "price": 79,
+      "compare_price": null,
+      "unit": "unit",
+      "min_qty": 1,
+      "bulk_tiers": [
+        { "qty": 5,  "price": 70, "label": "5+ units" },
+        { "qty": 10, "price": 65, "label": "10+ units" },
+        { "qty": 25, "price": 59, "label": "25+ units (workshop)" }
+      ],
+      "stock": "in_stock",
+      "sku": "NE-CHG-1S-001",
+      "hsn_code": "8504",
+      "gst_rate": 18,
+      "images": ["assets/products/TP4057_1A_1.png","assets/products/TP4057_1A_2.png"],
+      "image_fallback": "bms",
+      "tags": ["TP4057","charger","1S","3.7V","Type-C","Li-Ion","LiPo","protection","charging-board"],
+      "short_description": "Compact TP4057-based 1S Li-Ion / LiPo charging board with Type-C input and onboard over-charge & over-discharge protection.",
+      "description": "A miniature single-cell lithium charge management module built around the TP4057 IC. Features a USB Type-C input port for modern charging convenience, onboard protection against over-charge, over-discharge, and short-circuit. Ideal for powering DIY gadgets, IoT sensors, and small Li-Ion or LiPo pouch cell projects.",
+      "specs": {
+        "Charge IC":        "TP4057",
+        "Input port":       "USB Type-C",
+        "Input voltage":    "4.5V – 5.5V (USB 5V)",
+        "Charge voltage":   "4.2V (Li-Ion / LiPo)",
+        "Charge current":   "Up to 1A",
+        "Protection":       "Over-charge, over-discharge, short-circuit",
+        "Configuration":    "1S (3.7V nominal)",
+        "Form factor":      "Compact PCB module"
+      },
+      "shipping": { "weight_grams": 8, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
+      "amazon_url": "",
+      "meta": {
+        "title": "TP4057 1A Li-Ion Charging Board Type-C — 1S | NexEV",
+        "description": "TP4057-based single-cell Li-Ion charger with USB Type-C input and protection. Ships from Karnataka."
+      }
+    },
+
+    {
+      "id": "charger-2s-typec-8.4v",
+      "name": "Multi-Core 2S Type-C Booster Charger — 8.4V",
+      "tagline": "Boost Li-Ion charger for 2S 7.4V packs, Type-C input, multiple current versions",
+      "category": "bms",
+      "status": "active",
+      "featured": false,
+      "price": 149,
+      "compare_price": null,
+      "unit": "unit",
+      "min_qty": 1,
+      "bulk_tiers": [
+        { "qty": 3,  "price": 139, "label": "3+ units" },
+        { "qty": 5,  "price": 129, "label": "5+ units" },
+        { "qty": 10, "price": 119, "label": "10+ units (workshop)" }
+      ],
+      "stock": "in_stock",
+      "sku": "NE-CHG-2S-001",
+      "hsn_code": "8504",
+      "gst_rate": 18,
+      "images": ["assets/products/Multi_Core_2S_4A_1.png","assets/products/Multi_Core_2S_4A_2.png"],
+      "image_fallback": "bms",
+      "tags": ["charger","2S","8.4V","7.4V","Type-C","booster","Li-Ion","multi-core","boost-charger"],
+      "short_description": "Multi-core boost charger for 2S 7.4V Li-Ion packs. Type-C input (DC 3–6V), charges to 8.4V. Available in 1A, 2A and 4A input current versions.",
+      "description": "A step-up boost charging module designed for 2S (7.4V nominal) Li-Ion battery packs. Accepts a low-voltage DC input via Type-C connector and boosts it to the precise 8.4V full-charge voltage. Available in three input current ratings — 1A, 2A, and 4A — allowing you to match the charger output to your cell capacity. Ideal for 2S Li-Ion tool batteries, RC packs, and portable power banks.",
+      "specs": {
+        "Configuration":     "2S (7.4V nominal → 8.4V full charge)",
+        "Input port":        "USB Type-C",
+        "Input voltage":     "DC 3–6V (recommended 3.7V or 5V)",
+        "Input current":     "1A / 2A / 4A (version dependent)",
+        "Charging voltage":  "8.4V",
+        "Charging current":  "0.55A (1A ver.) · 1.1A (2A ver.) · 2.2A (4A ver.)",
+        "Topology":          "Boost (step-up) converter",
+        "Form factor":       "Compact PCB module"
+      },
+      "shipping": { "weight_grams": 25, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
+      "amazon_url": "",
+      "meta": {
+        "title": "2S 8.4V Type-C Boost Charger — Multi-Core Li-Ion | NexEV",
+        "description": "Type-C boost charger for 2S 7.4V Li-Ion packs. Charges to 8.4V. 1A/2A/4A versions. Ships from Karnataka."
+      }
+    },
+
+    {
+      "id": "charger-3s-typec-126v",
+      "name": "Multi-Core 3S Type-C Booster Charger — 12.6V",
+      "tagline": "Boost Li-Ion charger for 3S 11.1V packs, Type-C input, multiple current versions",
+      "category": "bms",
+      "status": "active",
+      "featured": false,
+      "price": 159,
+      "compare_price": null,
+      "unit": "unit",
+      "min_qty": 1,
+      "bulk_tiers": [
+        { "qty": 3,  "price": 149, "label": "3+ units" },
+        { "qty": 5,  "price": 139, "label": "5+ units" },
+        { "qty": 10, "price": 129, "label": "10+ units (workshop)" }
+      ],
+      "stock": "in_stock",
+      "sku": "NE-CHG-3S-001",
+      "hsn_code": "8504",
+      "gst_rate": 18,
+      "images": ["assets/products/Multi_Core_2S_4A_1.png","assets/products/Multi_Core_2S_4A_2.png"],
+      "image_fallback": "bms",
+      "tags": ["charger","3S","12.6V","11.1V","Type-C","booster","Li-Ion","multi-core","boost-charger"],
+      "short_description": "Multi-core boost charger for 3S 11.1V Li-Ion packs. Type-C input (DC 3–6V), charges to 12.6V. Available in 1A, 2A and 4A input current versions.",
+      "description": "A step-up boost charging module for 3S (11.1V nominal) Li-Ion battery packs. Takes a low-voltage DC input via Type-C and boosts it to the precise 12.6V full-charge voltage for 3-cell series Li-Ion packs. Three input current ratings available — 1A, 2A, and 4A. Well-suited for 3S drill packs, e-bike auxiliaries, and 12V Li-Ion backup systems.",
+      "specs": {
+        "Configuration":     "3S (11.1V nominal → 12.6V full charge)",
+        "Input port":        "USB Type-C",
+        "Input voltage":     "DC 3–6V (recommended 3.7V or 5V)",
+        "Input current":     "1A / 2A / 4A (version dependent)",
+        "Charging voltage":  "12.6V",
+        "Charging current":  "0.37A (1A ver.) · 0.74A (2A ver.) · 1.48A (4A ver.)",
+        "Topology":          "Boost (step-up) converter",
+        "Form factor":       "Compact PCB module"
+      },
+      "shipping": { "weight_grams": 30, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
+      "amazon_url": "",
+      "meta": {
+        "title": "3S 12.6V Type-C Boost Charger — Multi-Core Li-Ion | NexEV",
+        "description": "Type-C boost charger for 3S 11.1V Li-Ion packs. Charges to 12.6V. 1A/2A/4A versions. Ships from Karnataka."
       }
     },
 
@@ -438,7 +650,7 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-NS-001",
       "hsn_code": "7506",
       "gst_rate": 18,
-      "images": ["assets/products/nickel-strip.jpg","assets/products/nickel-strip-2.jpg","assets/products/nickel-strip-3.jpg"],
+      "images": ["assets/products/NikkleStrip4.png","assets/products/NikkleStrip3.png","assets/products/NikkleStrip1.png"],
       "image_fallback": "nickel-strip",
       "tags": ["nickel","strip","spot-weld","conductor","7506"],
       "short_description": "High-purity nickel strip for cell-to-cell spot welding. Correct width and thickness for 18650 series/parallel connections.",
@@ -478,7 +690,7 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-WR-001",
       "hsn_code": "8544",
       "gst_rate": 28,
-      "images": ["assets/products/wire-14awg.jpg","assets/products/wire-14awg-2.jpg","assets/products/wire-14awg-3.jpg"],
+      "images": ["assets/products/14awg_black_1.png","assets/products/14awg_red_1.png","assets/products/wire-14awg-3.jpg"],
       "image_fallback": "wire",
       "tags": ["wire","14awg","silicone","cable","8544"],
       "short_description": "Flexible silicone-jacketed 14 AWG wire \u2014 rated for battery pack current, heat-resistant. Red + black, 1m each.",
@@ -501,9 +713,9 @@ window.NEXEV_PRODUCTS = {
     },
 
     {
-      "id": "kapton-tape-25mm",
-      "name": "Kapton / Polyimide Tape \u2014 25mm",
-      "tagline": "Self-adhesive polyimide, 200m per roll",
+      "id": "kapton-tape-20mm",
+      "name": "Kapton / Polyimide Tape \u2014 20mm",
+      "tagline": "Self-adhesive polyimide, 33m per roll",
       "category": "insulation",
       "status": "active",
       "featured": false,
@@ -512,22 +724,22 @@ window.NEXEV_PRODUCTS = {
       "unit": "roll",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 3,  "price": 179, "label": "3+ rolls" },
-        { "qty": 10, "price": 159, "label": "10+ rolls" }
+        { "qty": 10,  "price": 195, "label": "10+ rolls" },
+        { "qty": 50, "price": 185, "label": "50+ rolls" }
       ],
       "stock": "in_stock",
       "sku": "NE-KT-001",
       "hsn_code": "3919",
       "gst_rate": 18,
-      "images": ["assets/products/kapton-tape.jpg","assets/products/kapton-tape-2.jpg","assets/products/kapton-tape-3.jpg"],
+      "images": ["assets/products/KeptonTape4.png","assets/products/KeptonTape3.png","assets/products/KeptonTape2.png"],
       "image_fallback": "kapton",
       "tags": ["kapton","polyimide","tape","insulation","thermal","3919"],
-      "short_description": "High-temperature Kapton polyimide tape, 25mm width, 200m roll. Cell insulation, tab coverage, thermal protection.",
+      "short_description": "High-temperature Kapton polyimide tape, 20mm width, 33m roll. Cell insulation, tab coverage, thermal protection.",
       "description": "Genuine polyimide tape for battery pack insulation. Used on positive cell terminals, between cell groups, and anywhere electrical isolation is needed near heat.",
       "specs": {
         "Material":    "Polyimide (Kapton-type)",
-        "Width":       "25mm",
-        "Length":      "200 metres per roll",
+        "Width":       "20mm",
+        "Length":      "33 metres per roll",
         "Adhesive":    "Silicone-based (self-adhesive)",
         "Temperature": "Up to 260\u00b0C continuous",
         "HSN code":    "3919",
@@ -536,8 +748,8 @@ window.NEXEV_PRODUCTS = {
       "shipping": { "weight_grams": 120, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
       "amazon_url": "",
       "meta": {
-        "title": "Kapton Polyimide Tape 25mm 200m \u2014 Battery Pack | NexEV",
-        "description": "High-temperature Kapton / polyimide self-adhesive tape, 25mm, 200m roll. HSN 3919. Ships from Karnataka."
+        "title": "Kapton Polyimide Tape 20mm 33m \u2014 Battery Pack | NexEV",
+        "description": "High-temperature Kapton / polyimide self-adhesive tape, 20mm, 33m roll. HSN 3919. Ships from Karnataka."
       }
     },
 
@@ -560,7 +772,7 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-HS-001",
       "hsn_code": "3917",
       "gst_rate": 18,
-      "images": ["assets/products/pvc-heat-shrink.jpg","assets/products/pvc-heat-shrink-2.jpg","assets/products/pvc-heat-shrink-3.jpg"],
+      "images": ["assets/products/heatshrinksleeve1.png","assets/products/heatshrinksleeve.png","assets/products/heatshrinksleeve3.png"],
       "image_fallback": "heat-shrink",
       "tags": ["heat-shrink","PVC","insulation","pack-wrap","3917"],
       "short_description": "Blue PVC heat shrink tube, 170mm flat width. Wraps a completed 18650 battery pack for insulation and clean finish.",
@@ -601,7 +813,7 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-INS-001",
       "hsn_code": "4823",
       "gst_rate": 12,
-      "images": ["assets/products/insulation-paper-rings.jpg","assets/products/insulation-paper-rings-2.jpg","assets/products/insulation-paper-rings-3.jpg"],
+      "images": ["assets/products/18650 2P Insulation Stcikers2.png","assets/products/18650 2P Insulation Stcikers1.png","assets/products/18650 2P Insulation Stcikers3.png"],
       "image_fallback": "insulation-paper",
       "tags": ["insulation","paper","barley","rings","4823","cell"],
       "short_description": "Combo pack: 18650 barley/mika insulation rings (100 pcs) + electrical insulation paper roll (10m). Essential for any pack build.",
@@ -628,9 +840,9 @@ window.NEXEV_PRODUCTS = {
     },
 
     {
-      "id": "xt60h-jst-connector",
-      "name": "XT60H / JST Connectors",
-      "tagline": "Genuine Amass XT60H and JST pairs \u2014 gold-plated",
+      "id": "xt60h-connector",
+      "name": "XT60H Connectors",
+      "tagline": "Genuine Amass XT60H \u2014 gold-plated",
       "category": "connector",
       "status": "active",
       "featured": false,
@@ -647,13 +859,13 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-XT-001",
       "hsn_code": "8536",
       "gst_rate": 18,
-      "images": ["assets/products/xt60h-connector.jpg","assets/products/xt60h-connector-2.jpg","assets/products/xt60h-connector-3.jpg"],
+      "images": ["assets/products/xt60_1.png","assets/products/xt60_3.png","assets/products/xt60_4.png"],
       "image_fallback": "xt60h",
       "tags": ["connector","XT60H","JST","amass","gold-plated","8536"],
-      "short_description": "Genuine Amass XT60H male + female pair. Also available: JST-XH and JST-SM variants. Specify type at checkout.",
-      "description": "Gold-plated electrical connectors for battery pack applications. XT60H (industry standard for e-bikes and RC) and JST variants available. All connectors are rated \u22641000V and handle high continuous currents.",
+      "short_description": "Genuine Amass XT60H male + female pair. ",
+      "description": "Gold-plated electrical connectors for battery pack applications. XT60H (industry standard for e-bikes and RC). All connectors are rated \u22641000V and handle high continuous currents.",
       "specs": {
-        "Variants":     "XT60H / JST-XH / JST-SM (specify in order)",
+        "Variants":     "XT60H (specify in order)",
         "XT60H rating": "60A continuous, 90A burst",
         "Contact":      "Gold-plated copper",
         "Housing":      "High-temp nylon",
@@ -663,8 +875,8 @@ window.NEXEV_PRODUCTS = {
       "shipping": { "weight_grams": 25, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
       "amazon_url": "",
       "meta": {
-        "title": "XT60H / JST Connector Pair \u2014 Battery Pack | NexEV",
-        "description": "Amass XT60H and JST gold-plated connector pairs. HSN 8536. Ships from Karnataka."
+        "title": "XT60H Pair \u2014 Battery Pack | NexEV",
+        "description": "Amass XT60H connector pairs. HSN 8536. Ships from Karnataka."
       }
     },
 
@@ -675,24 +887,26 @@ window.NEXEV_PRODUCTS = {
       "category": "holder",
       "status": "active",
       "featured": false,
-      "price": 149,
+      "price": 100,
       "compare_price": null,
-      "unit": "pack",
+      "unit": "holder",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 3,  "price": 135, "label": "3+ packs" },
-        { "qty": 10, "price": 119, "label": "10+ packs" }
+        { "qty": 3,  "price": 90, "label": "3+ packs" },
+        { "qty": 10, "price": 80, "label": "10+ packs" },
+		{ "qty": 20, "price": 75, "label": "20+ packs" }
       ],
       "stock": "in_stock",
       "sku": "NE-BH-001",
       "hsn_code": "3926",
       "gst_rate": 18,
-      "images": ["assets/products/battery-holder.jpg","assets/products/battery-holder-2.jpg","assets/products/battery-holder-3.jpg"],
+      "images": ["assets/products/18650 2S Cell Holders1.png","assets/products/18650 3x5 Cell Holders1.png","assets/products/18650 3x5 Cell Holders2.png"],
       "image_fallback": "holder",
       "tags": ["holder","cell-holder","18650","ABS","alignment","3926"],
       "short_description": "ABS plastic 18650 cell holders. Keeps cells in precise series/parallel alignment during spot welding. 10 per pack.",
       "description": "Rigid ABS plastic cell holders sized for 18650 cells. Keeps cells in precise series/parallel alignment during spot welding. Essential for neat, consistent pack builds. 10 per pack.",
       "specs": {
+		"Variants":   "1x2,3x5,4x5 (specify in order notes)",
         "Cell size":  "18650 compatible",
         "Material":   "ABS plastic",
         "Quantity":   "10 per pack",

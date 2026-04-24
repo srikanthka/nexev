@@ -518,7 +518,7 @@
       "sku": "NE-KT-001",
       "hsn_code": "3919",
       "gst_rate": 18,
-      "images": ["assets/products/kaptonTape1.png","assets/products/kaptonTape2.png","assets/products/kaptonTape2.png"],
+      "images": ["assets/products/KeptonTape1.png","assets/products/KeptonTape2.png","assets/products/KeptonTape2.png"],
       "image_fallback": "kapton",
       "tags": ["kapton","polyimide","tape","insulation","thermal","3919"],
       "short_description": "High-temperature Kapton polyimide tape, 20mm width, 33m roll. Cell insulation, tab coverage, thermal protection.",
@@ -526,7 +526,7 @@
       "specs": {
         "Material":    "Polyimide (Kapton-type)",
         "Width":       "20mm",
-        "Length":      "200 metres per roll",
+        "Length":      "33 metres per roll",
         "Adhesive":    "Silicone-based (self-adhesive)",
         "Temperature": "Up to 260°C continuous",
         "HSN code":    "3919",
