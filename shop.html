@@ -27,29 +27,33 @@ img{max-width:100%;display:block}
 .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
 
 /* ── NAVBAR ── */
-.navbar{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
 .navbar.scrolled{border-color:var(--border);box-shadow:0 2px 20px rgba(0,0,0,.07)}
-.nav-container{max-width:1200px;margin:0 auto;padding:0 1.5rem;height:100%;display:flex;align-items:center;justify-content:space-between;gap:2rem}
-.nav-logo-wrap{display:flex;align-items:center;gap:.5rem;flex-shrink:0;text-decoration:none}
+.nav-c{max-width:1200px;margin:0 auto;padding:0 1.5rem;height:100%;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nav-brand{display:flex;flex-direction:column;gap:.18rem;flex-shrink:0}
+.nav-logo-wrap{display:flex;align-items:center;gap:.5rem;text-decoration:none}
 .nav-logo-img{height:32px;width:auto;display:block}
 .nav-logo-text{display:flex;align-items:center;font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;line-height:1}
 .logo-nex{color:var(--blue)}.logo-ev{color:var(--green)}
-.nav-links{display:flex;align-items:center;gap:.25rem;list-style:none}
-.nav-links a{padding:.4rem .75rem;border-radius:7px;font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s,background .2s}
-.nav-links a:hover,.nav-links a.active{color:var(--blue);background:#f1f5f9}
-.nav-links .nav-cta{background:var(--blue);color:#fff;padding:.45rem 1rem}
-.nav-links .nav-cta:hover{background:#0f2540}
-.nav-cart{display:flex;align-items:center;gap:.4rem;padding:.45rem .9rem;border-radius:7px;background:var(--green);color:#fff;font-size:.875rem;font-weight:700;transition:all .2s;cursor:pointer;border:none;position:relative}
-.nav-cart:hover{background:#16a34a;transform:translateY(-1px)}
-.cart-count{background:#fff;color:var(--green);width:18px;height:18px;border-radius:50%;font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;line-height:1}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.nav-hamburger span{display:block;width:22px;height:2px;background:var(--blue);border-radius:2px;transition:all .3s}
-@media(max-width:860px){.nav-links{display:none}.nav-hamburger{display:flex}}
-.mobile-menu{display:none;flex-direction:column;gap:.25rem;position:fixed;top:var(--nav-h);left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem 1.5rem 1.5rem;z-index:99;box-shadow:0 8px 24px rgba(0,0,0,.1)}
-.mobile-menu.open{display:flex}
-.mobile-menu a{padding:.65rem .75rem;border-radius:8px;font-weight:500;color:var(--text);transition:background .15s}
-.mobile-menu a:hover{background:var(--bg-alt)}
-.mobile-menu .mob-cart-btn{background:var(--green)!important;color:#fff!important;text-align:center;margin-top:.25rem;font-weight:700;border-radius:10px;padding:.75rem}
+.nav-slogan{font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.15rem;line-height:1}
+.nav-links{display:flex;align-items:center;gap:.2rem;list-style:none}
+.nav-links a{padding:.4rem .7rem;border-radius:7px;font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--blue);background:#f1f5f9}
+/* Shop link — highlighted pill so users immediately know this is the store */
+.nav-links .nav-shop{display:inline-flex;align-items:center;gap:.35rem;background:var(--green);color:#fff!important;padding:.42rem 1rem!important;border-radius:20px;font-weight:700;font-size:.825rem;box-shadow:0 2px 10px rgba(34,197,94,.3);transition:background .2s,transform .2s,box-shadow .2s!important}
+.nav-links .nav-shop:hover{background:#16a34a!important;transform:translateY(-1px);box-shadow:0 4px 16px rgba(34,197,94,.4)}
+.nav-cart{display:flex;align-items:center;gap:.4rem;padding:.45rem .9rem;border-radius:7px;background:var(--blue);color:#fff;font-size:.875rem;font-weight:700;transition:all .2s;cursor:pointer;border:none;position:relative}
+.nav-cart:hover{background:var(--blue-d);transform:translateY(-1px)}
+.cart-count{background:var(--green);color:#fff;width:18px;height:18px;border-radius:50%;font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;line-height:1}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--blue);border-radius:2px;transition:all .3s}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+.mob-menu{display:none;flex-direction:column;gap:.5rem;position:fixed;top:var(--nav-h);left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem 1.5rem 1.5rem;z-index:99;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mob-menu.open{display:flex}
+.mob-menu a{padding:.6rem .75rem;border-radius:8px;font-weight:500;color:var(--text);transition:background .15s}
+.mob-menu a:hover{background:var(--bg-alt)}
+.mob-menu .mob-shop{background:var(--green)!important;color:#fff!important;font-weight:700;border-radius:10px;text-align:center}
+.mob-menu .mob-cart-btn{background:var(--blue)!important;color:#fff!important;text-align:center;margin-top:.25rem;font-weight:700;border-radius:10px;padding:.75rem}
 
 /* ── PAGE HEADER ── */
 .shop-header{margin-top:var(--nav-h);background:linear-gradient(135deg,var(--blue),#0f2540);padding:3rem 0 2.5rem}
@@ -273,6 +277,39 @@ hr.footer-hr{border:none;border-top:1px solid rgba(255,255,255,.1);margin-bottom
 .pc-gallery-dot.active{background:#fff;transform:scale(1.3)}
 .pc-gallery-img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .2s}
 
+/* ── SHIPPING ZONE CHIP (pincode lookup result) ── */
+.pin-zone-wrap{margin-top:.4rem;min-height:1.1rem}
+.pin-zone-chip{display:inline-flex;align-items:center;gap:.35rem;font-size:.72rem;font-weight:700;padding:.28rem .7rem;border-radius:20px;line-height:1;transition:all .2s}
+.pin-zone-chip.detecting{background:rgba(100,116,139,.08);color:var(--muted);border:1px solid var(--border)}
+.pin-zone-chip.ok{background:rgba(34,197,94,.1);color:#166534;border:1px solid rgba(34,197,94,.35)}
+.pin-zone-chip.free{background:rgba(34,197,94,.18);color:#14532d;border:1px solid rgba(34,197,94,.55)}
+.pin-zone-chip.err{background:rgba(239,68,68,.08);color:#dc2626;border:1px solid rgba(239,68,68,.3)}
+.pin-zone-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+/* Shipping row styles inside order summary */
+.os-row.os-shipping{color:#15803d;font-weight:600}
+.os-row.os-shipping-free{color:#15803d;font-weight:700}
+.os-row.os-gst{color:var(--muted);font-size:.76rem}
+.ship-tag{display:inline-block;font-size:.65rem;background:rgba(34,197,94,.12);color:#166534;border-radius:6px;padding:.08rem .4rem;margin-left:.3rem;font-weight:700;vertical-align:middle}
+/* Cart summary GST note row */
+.cs-gst{font-size:.75rem;color:var(--muted);display:flex;justify-content:space-between;padding-left:.15rem;margin-top:-.2rem}
+/* Free shipping progress bar (cart) */
+.free-ship-bar-wrap{margin:.5rem 0;background:var(--bg-alt);border-radius:20px;height:5px;overflow:hidden}
+.free-ship-bar{height:100%;border-radius:20px;background:var(--green);transition:width .4s ease}
+.free-ship-msg{font-size:.72rem;color:var(--muted);margin-bottom:.6rem;text-align:center}
+.free-ship-msg strong{color:#16a34a}
+/* Cart pincode input row */
+.cart-pin-row{background:var(--bg-alt);border-radius:10px;padding:.65rem .85rem;margin-bottom:.75rem;border:1.5px solid var(--border)}
+.cart-pin-label{font-size:.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.35rem;display:flex;align-items:center;gap:.3rem}
+.cart-pin-label svg{color:var(--blue)}
+.cart-pin-input-row{display:flex;align-items:center;gap:.5rem}
+.cart-pin-input-row input{flex:1;padding:.45rem .65rem;border:1.5px solid var(--border);border-radius:8px;font-family:inherit;font-size:.85rem;color:var(--text);background:#fff;outline:none;transition:border-color .2s;min-width:0}
+.cart-pin-input-row input:focus{border-color:var(--blue)}
+.cart-pin-input-row input::placeholder{color:var(--muted)}
+#cart-pin-zone{margin-top:.4rem}
+/* Pincode group in checkout form */
+.pincode-group{position:relative}
+.pincode-group input{padding-right:2rem}
+
 /* ── TOAST ── */
 .toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(20px);background:#1e293b;color:#fff;padding:.75rem 1.25rem;border-radius:10px;font-size:.875rem;font-weight:500;z-index:500;opacity:0;transition:opacity .3s,transform .3s;pointer-events:none;max-width:90vw;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.3)}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
@@ -291,45 +328,52 @@ hr.footer-hr{border:none;border-top:1px solid rgba(255,255,255,.1);margin-bottom
 <body>
 
 <!-- ═══ NAVBAR ═══ -->
-<header class="navbar" id="navbar" role="banner">
-  <div class="nav-container">
-    <a href="index.html" class="nav-logo-wrap" aria-label="NexEV Home">
-      <img id="navLogoImg" src="assets/logo/nexev-logo.png" alt="NexEV" class="nav-logo-img"
-           onerror="this.style.display='none';document.getElementById('navLogoText').style.display='flex';"/>
-      <span class="nav-logo-text" id="navLogoText" style="display:none;">
-        <span class="logo-nex">nex</span><span class="logo-ev">EV</span>
-      </span>
-    </a>
-    <nav aria-label="Main navigation">
-      <ul class="nav-links" role="list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#products">Products</a></li>
-        <li><a href="index.html#aftermarket">EV Parts</a></li>
-        <li><a href="index.html#opportunities">Opportunities</a></li>
-        <li><a href="index.html#bis-services">BIS Services</a></li>
-        <li><a href="shop.html" class="active">Shop</a></li>
-        <li>
-          <button class="nav-cart" id="navCartBtn" aria-label="Open cart">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
-            Cart <span class="cart-count" id="cartCount">0</span>
-          </button>
-        </li>
-      </ul>
-    </nav>
-    <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+<nav class="navbar" id="navbar" aria-label="Main navigation">
+  <div class="nav-c">
+    <div class="nav-brand">
+      <a href="index.html" class="nav-logo-wrap" aria-label="NexEV Home">
+        <img id="navLogoImg" src="assets/logo/nexev-logo.png" alt="NexEV" class="nav-logo-img"
+             onerror="this.style.display='none';document.getElementById('navLogoText').style.display='flex';"/>
+        <span class="nav-logo-text" id="navLogoText" style="display:none;">
+          <span class="logo-nex">nex</span><span class="logo-ev">EV</span>
+        </span>
+      </a>
+      <span class="nav-slogan">Driven by Electric Future</span>
+    </div>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#products">Products</a></li>
+      <li><a href="index.html#aftermarket">EV Parts</a></li>
+      <li><a href="index.html#opportunities">Partners</a></li>
+      <li><a href="index.html#bis-services">BIS Services</a></li>
+      <li>
+        <a href="shop.html" class="nav-shop" aria-current="page">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
+          Shop
+        </a>
+      </li>
+      <li>
+        <button class="nav-cart" id="navCartBtn" aria-label="Open cart">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
+          Cart <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
-</header>
-<div class="mobile-menu" id="mobMenu" aria-hidden="true">
+</nav>
+<div class="mob-menu" id="mobMenu" aria-hidden="true">
   <a href="index.html">Home</a>
-  <a href="index.html#about">About</a>
   <a href="index.html#products">Products</a>
   <a href="index.html#aftermarket">EV Parts</a>
-  <a href="index.html#opportunities">Opportunities</a>
+  <a href="index.html#opportunities">Partners</a>
   <a href="index.html#bis-services">BIS Services</a>
-  <a href="shop.html" style="font-weight:700;color:var(--blue);">Shop</a>
+  <a href="shop.html" class="mob-shop">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:.3rem"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
+    Shop — NexEV Store
+  </a>
   <a href="#" class="mob-cart-btn" id="mobCartBtn">🛒 View Cart (<span id="mobCartCount">0</span>)</a>
 </div>
 
@@ -410,6 +454,17 @@ hr.footer-hr{border:none;border-top:1px solid rgba(255,255,255,.1);margin-bottom
   </div>
   <div class="cart-items" id="cartItems"></div>
   <div class="cart-ft" id="cartFt" style="display:none">
+    <!-- Pincode input — shows shipping estimate in cart before checkout -->
+    <div class="cart-pin-row">
+      <div class="cart-pin-label">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Shipping Estimate
+      </div>
+      <div class="cart-pin-input-row">
+        <input type="tel" id="cart-pincode" placeholder="Enter 6-digit delivery pincode" maxlength="6" inputmode="numeric" autocomplete="postal-code"/>
+      </div>
+      <div id="cart-pin-zone" class="pin-zone-wrap"></div>
+    </div>
     <div class="cart-summary" id="cartSummary"></div>
     <button class="btn-checkout" id="btnCheckout">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
@@ -430,16 +485,30 @@ hr.footer-hr{border:none;border-top:1px solid rgba(255,255,255,.1);margin-bottom
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <h3>Place Your Order</h3>
-    <p class="modal-sub">Fill in your details to proceed to secure Razorpay checkout. UPI, Cards, Netbanking &amp; Wallets accepted.</p>
-
-    <div class="order-summary-box" id="orderSummaryBox"></div>
-
-    <div class="razorpay-notice-box" style="background:rgba(34,197,94,.07);border-color:rgba(34,197,94,.35)">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      <p style="color:#166534"><strong>Secure Razorpay checkout.</strong> Your payment is protected by 256-bit SSL encryption. UPI, Credit/Debit Cards, Netbanking, and Wallets are supported.</p>
-    </div>
+    <p class="modal-sub">UPI · Cards · Netbanking · Wallets — secured by Razorpay.</p>
 
     <form id="checkoutForm" novalidate>
+
+      <!-- ① Pincode FIRST — order summary updates live below it -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="co-pincode">Delivery Pincode *</label>
+          <div class="pincode-group">
+            <input type="tel" id="co-pincode" placeholder="6-digit pincode" maxlength="6" autocomplete="postal-code" inputmode="numeric"/>
+          </div>
+          <div class="pin-zone-wrap" id="pinZoneWrap"></div>
+          <span class="err-msg" id="err-pincode">Please enter a valid 6-digit pincode.</span>
+        </div>
+        <div class="form-group">
+          <label for="co-state">State</label>
+          <input type="text" id="co-state" placeholder="Auto-detected" readonly style="background:var(--bg-alt);color:var(--muted);cursor:default"/>
+        </div>
+      </div>
+
+      <!-- ② Order summary — updates as pincode changes -->
+      <div class="order-summary-box" id="orderSummaryBox"></div>
+
+      <!-- ③ Personal details -->
       <div class="form-row">
         <div class="form-group">
           <label for="co-name">Full Name *</label>
@@ -459,12 +528,17 @@ hr.footer-hr{border:none;border-top:1px solid rgba(255,255,255,.1);margin-bottom
       </div>
       <div class="form-group">
         <label for="co-address">Delivery Address *</label>
-        <input type="text" id="co-address" placeholder="Full delivery address with pincode" autocomplete="street-address"/>
-        <span class="err-msg" id="err-addr">Please enter your delivery address.</span>
+        <input type="text" id="co-address" placeholder="House / Flat no., Street, Area, City" autocomplete="street-address"/>
+        <span class="err-msg" id="err-addr">Please enter your full delivery address (min 10 chars).</span>
       </div>
       <div class="form-group">
-        <label for="co-notes">Order Notes (optional)</label>
-        <input type="text" id="co-notes" placeholder="Bulk qty, special requests, etc."/>
+        <label for="co-notes">Order Notes <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+        <input type="text" id="co-notes" placeholder="BMS variant (7S/10S), bulk qty, special requests…"/>
+      </div>
+
+      <div class="razorpay-notice-box" style="background:rgba(34,197,94,.07);border-color:rgba(34,197,94,.35);margin-bottom:1rem">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <p style="color:#166534;font-size:.78rem"><strong>Secure Razorpay checkout.</strong> 256-bit SSL · PCI-DSS compliant · UPI, Cards, Netbanking &amp; Wallets accepted.</p>
       </div>
 
       <button type="submit" class="btn-pay" id="btnPay">
@@ -637,6 +711,232 @@ var CAT_LABELS = {
 function fmt(n){ return '₹' + n.toLocaleString('en-IN'); }
 function esc(s){ return String(s).replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];}); }
 
+/* ── SHIPPING RATES (inline — no network fetch needed) ── */
+var shippingRates = {
+  zones: {
+    local: {
+      label: 'Karnataka', delivery: '2–3 business days',
+      pincodePrefix: [
+        '560','561','562','563','564','565','566','567','568','569',
+        '570','571','572','573','574','575','576','577','578','579',
+        '580','581','582','583','584','585','586','587','588','589',
+        '590','591','592','593','594','595','596','597','598','599'
+      ]
+    },
+    metro: {
+      label: 'Metro Cities', delivery: '3–5 business days',
+      pincodePrefix: [
+        '110','111','112','113','114','115','116','117','118','119',
+        '120','121','122','123','124','125','126','127','128','129',
+        '201','202','203',
+        '380','381','382',
+        '400','401','402','403','404','405','406','407','408','409',
+        '410','411','412','413','414','415',
+        '500','501','502','503','504','505','506','507','508','509',
+        '600','601','602','603','604','605','606','607',
+        '700','701','702','703','704','705','706','707','708'
+      ]
+    },
+    remote: {
+      label: 'Northeast & Islands', delivery: '8–12 business days',
+      pincodePrefix: [
+        '682','737','744',
+        '781','782','783','784','785','786','787','788',
+        '791','792','793','794','795','796','797','798','799'
+      ]
+    }
+  },
+  rates: {
+    local:    { freeAbove: 1500,    tiers: [{maxGrams:500,price:111},{maxGrams:1000,price:170},{maxGrams:2000,price:210},{maxGrams:5000,price:260},{maxGrams:99999,price:220}] },
+    metro:    { freeAbove: 2000,    tiers: [{maxGrams:500,price:130},{maxGrams:1000,price:115},{maxGrams:2000,price:160},{maxGrams:5000,price:240},{maxGrams:99999,price:320}] },
+    regional: { freeAbove: 2500,    tiers: [{maxGrams:500,price:100},{maxGrams:1000,price:145},{maxGrams:2000,price:200},{maxGrams:5000,price:290},{maxGrams:99999,price:400}] },
+    remote:   { freeAbove: 9999999, tiers: [{maxGrams:500,price:160},{maxGrams:1000,price:220},{maxGrams:2000,price:310},{maxGrams:5000,price:450},{maxGrams:99999,price:600}] }
+  }
+};
+
+var currentShipping = { amount: 0, zone: null, zoneKey: null, zoneLabel: '', delivery: '', isFree: false, pincode: '' };
+var cartShipping    = null;
+
+/* ── PINCODE → STATE NAME (India) ── */
+function pincodeToState(pin) {
+  if (!pin || pin.length < 3) return '';
+  var p = parseInt(pin.substring(0, 3), 10);
+  if (p >= 110 && p <= 119) return 'Delhi';
+  if (p >= 120 && p <= 135) return 'Haryana';
+  if (p >= 136 && p <= 139) return 'Chandigarh';
+  if (p >= 140 && p <= 169) return 'Punjab';
+  if (p >= 170 && p <= 179) return 'Himachal Pradesh';
+  if (p >= 180 && p <= 194) return 'J&K / Ladakh';
+  if ((p >= 201 && p <= 203) || (p >= 204 && p <= 285)) return 'Uttar Pradesh';
+  if (p >= 246 && p <= 249) return 'Uttarakhand';
+  if (p >= 263 && p <= 269) return 'Uttarakhand';
+  if (p >= 301 && p <= 345) return 'Rajasthan';
+  if (p >= 360 && p <= 396) return 'Gujarat';
+  if (p === 403)             return 'Goa';
+  if (p >= 400 && p <= 445) return 'Maharashtra';
+  if (p >= 450 && p <= 489) return 'Madhya Pradesh';
+  if (p >= 490 && p <= 497) return 'Chhattisgarh';
+  if (p >= 500 && p <= 514) return 'Telangana';
+  if (p >= 515 && p <= 535) return 'Andhra Pradesh';
+  if (p >= 560 && p <= 599) return 'Karnataka';
+  if (p >= 600 && p <= 643) return 'Tamil Nadu';
+  if (p >= 670 && p <= 695) return 'Kerala';
+  if (p >= 700 && p <= 736) return 'West Bengal';
+  if (p === 737)             return 'Sikkim';
+  if (p >= 740 && p <= 743) return 'West Bengal';
+  if (p === 744)             return 'Andaman & Nicobar';
+  if (p >= 750 && p <= 779) return 'Odisha';
+  if (p >= 781 && p <= 788) return 'Assam';
+  if (p >= 791 && p <= 792) return 'Arunachal Pradesh';
+  if (p >= 793 && p <= 794) return 'Meghalaya';
+  if (p === 795)             return 'Manipur';
+  if (p === 796)             return 'Mizoram';
+  if (p === 797)             return 'Nagaland';
+  if (p === 799)             return 'Tripura';
+  if (p >= 800 && p <= 824) return 'Bihar';
+  if (p >= 825 && p <= 835) return 'Jharkhand';
+  if (p >= 841 && p <= 857) return 'Bihar';
+  return '';
+}
+
+function getCartWeight() {
+  return cart.reduce(function(sum, item) {
+    var w = (item.product.shipping && item.product.shipping.weight_grams) || 100;
+    return sum + w * item.qty;
+  }, 0);
+}
+
+function getCartGST() {
+  /* GST is included in product prices — back-calculate the GST component */
+  return cart.reduce(function(sum, item) {
+    var price   = getItemPrice(item);
+    var rate    = ((item.product.gst_rate || 18) / 100);
+    /* price = base * (1 + rate) → gst = price * rate / (1 + rate) */
+    return sum + (price * item.qty) * rate / (1 + rate);
+  }, 0);
+}
+
+function detectShippingZone(pincode) {
+  if (!shippingRates || !pincode || pincode.length !== 6) return null;
+  var p3 = pincode.substring(0, 3);
+  var zones = shippingRates.zones;
+  if (zones.local.pincodePrefix.indexOf(p3)   !== -1) return 'local';
+  if (zones.metro.pincodePrefix.indexOf(p3)   !== -1) return 'metro';
+  if (zones.remote.pincodePrefix.indexOf(p3)  !== -1) return 'remote';
+  return 'regional';
+}
+
+function calcShipping(pincode) {
+  if (!shippingRates || !pincode || pincode.length !== 6) return null;
+  var zoneKey    = detectShippingZone(pincode);
+  var zoneConfig = shippingRates.zones[zoneKey] || { label: 'Rest of India', delivery: '5–7 business days' };
+  var rateConfig = shippingRates.rates[zoneKey] || shippingRates.rates.regional;
+  var weightG    = getCartWeight();
+  var subtotal   = getCartTotal();
+  var isFree     = subtotal >= rateConfig.freeAbove;
+  var price      = 0;
+  if (!isFree) {
+    for (var i = 0; i < rateConfig.tiers.length; i++) {
+      if (weightG <= rateConfig.tiers[i].maxGrams) { price = rateConfig.tiers[i].price; break; }
+    }
+    if (!price) price = rateConfig.tiers[rateConfig.tiers.length - 1].price; /* heaviest tier */
+  }
+  return {
+    amount:    isFree ? 0 : price,
+    zone:      zoneKey,
+    zoneLabel: zoneConfig.label,
+    delivery:  zoneConfig.delivery,
+    isFree:    isFree,
+    freeAbove: rateConfig.freeAbove,
+    weightG:   weightG,
+    pincode:   pincode,
+  };
+}
+
+/* ── Shared chip builder ── */
+function buildZoneChip(s, subtotal) {
+  if (!s) return '';
+  var chipCls  = s.isFree ? 'free' : 'ok';
+  var dotColor = s.isFree ? '#16a34a' : '#22c55e';
+  var priceStr = s.isFree ? '🎉 FREE' : fmt(s.amount);
+  var html = '<span class="pin-zone-chip ' + chipCls + '">';
+  html += '<span class="pin-zone-dot" style="background:' + dotColor + '"></span>';
+  html += esc(s.zoneLabel) + ' · ' + priceStr + ' · ' + esc(s.delivery);
+  html += '</span>';
+  if (!s.isFree && s.freeAbove < 9999999) {
+    var needed = s.freeAbove - (subtotal || getCartTotal());
+    if (needed > 0) {
+      html += '<br><span style="font-size:.68rem;color:var(--muted);display:inline-block;margin-top:.2rem">Add ' + fmt(needed) + ' more for FREE shipping</span>';
+    }
+  }
+  return html;
+}
+
+/* ── Checkout modal pincode (live lookup, updates order summary below it) ── */
+var _pinTimer = null;
+function onPincodeInput(val) {
+  clearTimeout(_pinTimer);
+  var wrap  = document.getElementById('pinZoneWrap');
+  var state = document.getElementById('co-state');
+  if (!wrap) return;
+  val = val.replace(/\D/g, '').substring(0, 6);
+  if (val.length < 6) {
+    wrap.innerHTML = '';
+    currentShipping = { amount: 0, zone: null, zoneKey: null, zoneLabel: '', delivery: '', isFree: false, pincode: '' };
+    if (state) state.value = '';
+    updateCheckoutOrderSummary();
+    return;
+  }
+  wrap.innerHTML = '<span class="pin-zone-chip detecting">Checking…</span>';
+  _pinTimer = setTimeout(function() {
+    if (!shippingRates) {
+      wrap.innerHTML = '<span class="pin-zone-chip err">Rate file loading — try again in a moment</span>';
+      return;
+    }
+    var s = calcShipping(val);
+    if (!s) {
+      wrap.innerHTML = '<span class="pin-zone-chip err">Enter a valid 6-digit pincode</span>';
+      return;
+    }
+    currentShipping = s;
+    /* Use proper state name, not zone label */
+    var stateName = pincodeToState(val);
+    if (state) state.value = stateName || s.zoneLabel;
+    wrap.innerHTML = buildZoneChip(s);
+    updateCheckoutOrderSummary();
+  }, 380);
+}
+
+/* ── Cart drawer pincode (live lookup, updates cart summary) ── */
+var _cartPinTimer = null;
+function onCartPincodeInput(val) {
+  clearTimeout(_cartPinTimer);
+  var wrap = document.getElementById('cart-pin-zone');
+  if (!wrap) return;
+  val = val.replace(/\D/g, '').substring(0, 6);
+  if (val.length < 6) {
+    wrap.innerHTML = '';
+    cartShipping = null;
+    renderCart();
+    return;
+  }
+  wrap.innerHTML = '<span class="pin-zone-chip detecting">Checking…</span>';
+  _cartPinTimer = setTimeout(function() {
+    if (!shippingRates) {
+      wrap.innerHTML = '<span class="pin-zone-chip err">Rate file loading — try again in a moment</span>';
+      return;
+    }
+    var s = calcShipping(val);
+    if (!s) {
+      wrap.innerHTML = '<span class="pin-zone-chip err">Enter a valid 6-digit pincode</span>';
+      return;
+    }
+    cartShipping = s;
+    wrap.innerHTML = buildZoneChip(s);
+    renderCart(); /* re-render summary with actual shipping row */
+  }, 380);
+}
+
 /* ── CART PERSISTENCE ── */
 function saveCart(){ localStorage.setItem('nexev_cart', JSON.stringify(cart)); }
 function getCartTotal(){
@@ -718,7 +1018,33 @@ function renderCart(){
   });
   el.innerHTML = html;
   var subtotal = getCartTotal();
-  sum.innerHTML = '<div class="cart-summary-row"><span>Subtotal ('+cart.length+' item'+(cart.length>1?'s':'')+')</span><span class="val">'+fmt(subtotal)+'</span></div><div class="cart-summary-row"><span>Shipping</span><span class="val" style="color:var(--green)">Calculated at confirmation</span></div><div class="cart-summary-row total"><span>Total</span><span class="val">'+fmt(subtotal)+'</span></div>';
+  var gst      = getCartGST();
+  var weightG  = getCartWeight();
+  /* Free-shipping progress for local zone (Karnataka — most common for our customers) */
+  var freeThresh = shippingRates ? (shippingRates.rates.local.freeAbove || 1500) : 1500;
+  var pct        = Math.min(100, Math.round(subtotal / freeThresh * 100));
+  var freeMsg    = subtotal >= freeThresh
+    ? '<span class="free-ship-msg"><strong>🎉 Free shipping unlocked</strong> for Karnataka orders!</span>'
+    : '<span class="free-ship-msg">Add <strong>'+fmt(freeThresh - subtotal)+'</strong> more for free shipping (Karnataka)</span>';
+
+  var gstPct  = subtotal > 0 ? Math.round(gst / subtotal * 100) : 18;
+  var sumHtml = '';
+  sumHtml += freeMsg;
+  sumHtml += '<div class="free-ship-bar-wrap"><div class="free-ship-bar" style="width:'+pct+'%"></div></div>';
+  sumHtml += '<div class="cart-summary-row"><span>Subtotal — '+cart.length+' item'+(cart.length>1?'s':'')+' · '+Math.round(weightG)+'g</span><span class="val">'+fmt(subtotal)+'</span></div>';
+  sumHtml += '<div class="cs-gst"><span>GST included (~'+gstPct+'%)</span><span>~'+fmt(Math.round(gst))+'</span></div>';
+
+  /* Shipping row — live if cart pincode entered, otherwise prompt */
+  if (cartShipping && cartShipping.zone) {
+    var shipStr = cartShipping.isFree ? '🎉 FREE' : fmt(cartShipping.amount);
+    sumHtml += '<div class="cart-summary-row"><span>Shipping <span style="font-size:.72rem;color:var(--muted);">('+esc(cartShipping.zoneLabel)+')</span></span><span class="val" style="color:var(--green)">'+shipStr+'</span></div>';
+    var grandTotal = subtotal + (cartShipping.amount || 0);
+    sumHtml += '<div class="cart-summary-row total"><span>Grand Total</span><span class="val">'+fmt(grandTotal)+'</span></div>';
+  } else {
+    sumHtml += '<div class="cart-summary-row"><span>Shipping</span><span style="font-size:.78rem;color:var(--muted)">Enter pincode above ↑</span></div>';
+    sumHtml += '<div class="cart-summary-row total"><span>Total (excl. shipping)</span><span class="val">'+fmt(subtotal)+'</span></div>';
+  }
+  sum.innerHTML = sumHtml;
   /* Attach qty/remove handlers */
   el.querySelectorAll('.qty-btn').forEach(function(btn){
     btn.addEventListener('click', function(){
@@ -905,18 +1231,88 @@ document.getElementById('mobCartBtn').addEventListener('click', function(e){ e.p
 document.getElementById('cartClose').addEventListener('click', closeCart);
 document.getElementById('cartOverlay').addEventListener('click', closeCart);
 
-/* ── CHECKOUT MODAL ── */
-document.getElementById('btnCheckout').addEventListener('click', function(){
-  closeCart();
-  /* Populate order summary */
-  var subtotal = getCartTotal();
+/* ── ORDER SUMMARY (shared by checkout open + live pincode update) ── */
+function updateCheckoutOrderSummary(){
+  var subtotal  = getCartTotal();
+  var gst       = getCartGST();
+  var shipping  = currentShipping;
+  var total     = subtotal + (shipping.amount || 0);
   var rows = cart.map(function(item){
     return '<div class="os-row"><span>'+esc(item.product.name)+' ×'+item.qty+'</span><span>'+fmt(getItemPrice(item)*item.qty)+'</span></div>';
   }).join('');
-  rows += '<div class="os-row total"><span>Total</span><span>'+fmt(subtotal)+'</span></div>';
+  rows += '<div class="os-row os-gst"><span>GST included (~'+Math.round(gst/subtotal*100)+'%)</span><span>~'+fmt(Math.round(gst))+'</span></div>';
+  /* Shipping row */
+  if (shipping.zone) {
+    if (shipping.isFree) {
+      rows += '<div class="os-row os-shipping-free"><span>Shipping <span class="ship-tag">FREE · '+esc(shipping.zoneLabel)+'</span></span><span>₹0</span></div>';
+    } else {
+      rows += '<div class="os-row os-shipping"><span>Shipping <span class="ship-tag">'+esc(shipping.zoneLabel)+'</span></span><span>'+fmt(shipping.amount)+'</span></div>';
+    }
+    rows += '<div class="os-row" style="font-size:.72rem;color:var(--muted)"><span>Est. delivery</span><span>'+esc(shipping.delivery)+'</span></div>';
+  } else {
+    rows += '<div class="os-row"><span>Shipping</span><span style="color:var(--muted);font-size:.8rem">Enter pincode above ↑ to calculate</span></div>';
+  }
+  rows += '<div class="os-row total"><span>Grand Total</span><span>'+fmt(total)+'</span></div>';
   document.getElementById('orderSummaryBox').innerHTML = '<h4>Order Summary</h4>'+rows;
+}
+
+/* ── CART PINCODE LISTENER — attach once when cart first opens ── */
+(function attachCartPin(){
+  var cartPin = document.getElementById('cart-pincode');
+  if (!cartPin) return;
+  cartPin.addEventListener('input', function(){
+    this.value = this.value.replace(/\D/g,'').substring(0,6);
+    onCartPincodeInput(this.value);
+  });
+})();
+
+/* ── CHECKOUT MODAL ── */
+document.getElementById('btnCheckout').addEventListener('click', function(){
+  closeCart();
+
+  var pinInput   = document.getElementById('co-pincode');
+  var stateInput = document.getElementById('co-state');
+  var pinWrap    = document.getElementById('pinZoneWrap');
+
+  /* Pre-fill pincode from cart input (if user already entered it) */
+  var cartPinEl  = document.getElementById('cart-pincode');
+  var cartPinVal = cartPinEl ? cartPinEl.value.trim() : '';
+
+  if (cartPinVal.length === 6 && cartShipping && cartShipping.zone) {
+    /* Carry over shipping already calculated in cart */
+    currentShipping = cartShipping;
+    if (pinInput)   pinInput.value   = cartPinVal;
+    if (stateInput) stateInput.value = pincodeToState(cartPinVal) || cartShipping.zoneLabel;
+    if (pinWrap)    pinWrap.innerHTML = buildZoneChip(cartShipping);
+  } else {
+    /* Fresh start */
+    currentShipping = { amount: 0, zone: null, zoneKey: null, zoneLabel: '', delivery: '', isFree: false, pincode: '' };
+    if (pinInput)   pinInput.value   = '';
+    if (stateInput) stateInput.value = '';
+    if (pinWrap)    pinWrap.innerHTML = '';
+  }
+
+  updateCheckoutOrderSummary();
   document.getElementById('checkoutModal').classList.add('open');
   document.body.style.overflow = 'hidden';
+
+  /* Attach checkout pincode listener (once) */
+  if (pinInput && !pinInput._nexevBound) {
+    pinInput._nexevBound = true;
+    pinInput.addEventListener('input', function(){
+      this.value = this.value.replace(/\D/g,'').substring(0,6);
+      onPincodeInput(this.value);
+    });
+  }
+
+  /* Focus pincode field if empty, else focus name */
+  setTimeout(function(){
+    if (pinInput && !pinInput.value) pinInput.focus();
+    else {
+      var nameEl = document.getElementById('co-name');
+      if (nameEl) nameEl.focus();
+    }
+  }, 150);
 });
 document.getElementById('closeCheckout').addEventListener('click', function(){
   document.getElementById('checkoutModal').classList.remove('open');
@@ -953,27 +1349,39 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e){
     if(show){ field.classList.add('err'); if(em) em.classList.add('show'); ok=false; }
     else     { field.classList.remove('err'); if(em) em.classList.remove('show'); }
   }
-  setErr(name,  'err-name',  !name.value.trim());
-  setErr(phone, 'err-phone', !/^[+]?[\d\s\-]{10,15}$/.test(phone.value.trim()));
-  setErr(email, 'err-email', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()));
-  setErr(addr,  'err-addr',  addr.value.trim().length < 10);
+  var pincode = document.getElementById('co-pincode');
+
+  setErr(name,    'err-name',    !name.value.trim());
+  setErr(phone,   'err-phone',   !/^[+]?[\d\s\-]{10,15}$/.test(phone.value.trim()));
+  setErr(email,   'err-email',   !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()));
+  setErr(addr,    'err-addr',    addr.value.trim().length < 10);
+  setErr(pincode, 'err-pincode', !/^\d{6}$/.test((pincode ? pincode.value : '').trim()));
 
   /* Live-clear validation errors on input */
-  [name,phone,email,addr].forEach(function(f){
+  [name,phone,email,addr,pincode].forEach(function(f){
+    if(!f) return;
     f.addEventListener('input', function(){
       f.classList.remove('err');
-      var em = f.nextElementSibling;
-      if(em && em.classList.contains('err-msg')) em.classList.remove('show');
+      var em = document.getElementById('err-'+f.id.replace('co-',''));
+      if(em) em.classList.remove('show');
     }, {once:false});
   });
   if(!ok) return;
 
+  /* Require pincode shipping to be calculated */
+  if (!currentShipping.zone) {
+    showToast('Please enter your pincode to calculate shipping.', 'error');
+    if (pincode) pincode.focus();
+    return;
+  }
+
   /* Capture values before closing modal */
-  var nameVal  = name.value.trim();
-  var phoneVal = phone.value.trim();
-  var emailVal = email.value.trim();
-  var addrVal  = addr.value.trim();
-  var notesVal = notes.value.trim();
+  var nameVal    = name.value.trim();
+  var phoneVal   = phone.value.trim();
+  var emailVal   = email.value.trim();
+  var addrVal    = addr.value.trim();
+  var pincodeVal = pincode ? pincode.value.trim() : '';
+  var notesVal   = notes.value.trim();
 
   /* Build items payload for backend */
   var itemsPayload = cart.map(function(i){ return { id: i.product.id, qty: i.qty }; });
@@ -991,14 +1399,22 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e){
     body: JSON.stringify({
       items: itemsPayload,
       customer: {
-        name:  nameVal,
-        email: emailVal,
-        phone: phoneVal,
+        name:    nameVal,
+        email:   emailVal,
+        phone:   phoneVal,
+        address: addrVal,
+        pincode: pincodeVal,
       }
     })
   })
   .then(function(res){
-    return res.json().then(function(data){ return { status: res.status, data: data }; });
+    var status = res.status;
+    return res.text().then(function(text){
+      var data;
+      try { data = JSON.parse(text); }
+      catch(_){ data = { error: 'Server error (' + status + '). Please try again or contact us on WhatsApp.' }; }
+      return { status: status, data: data };
+    });
   })
   .then(function(result){
     btnPay.disabled = false;
@@ -1058,16 +1474,20 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e){
 
           /* ── STEP 5: Verified — build WhatsApp confirmation + show success modal ── */
           rzpPaymentId = response.razorpay_payment_id;
-          var subtotal = order.amount / 100; /* server amount, in rupees */
+          var subtotalRs  = (order.subtotal  || 0) / 100;
+          var shippingRs  = (order.shipping  || 0) / 100;
+          var totalRs     = order.amount / 100;
           var lines = ['*NexEV Order — Payment Confirmed ✅*', ''];
           lines.push('*Payment ID:* ' + rzpPaymentId);
           lines.push('*Order ID:*   ' + order.order_id);
           lines.push('');
-          lines.push('*Name:*    ' + nameVal);
-          lines.push('*Phone:*   ' + phoneVal);
-          lines.push('*Email:*   ' + emailVal);
-          lines.push('*Address:* ' + addrVal);
-          if(notesVal) lines.push('*Notes:* ' + notesVal);
+          lines.push('*Customer Details:*');
+          lines.push('Name:    ' + nameVal);
+          lines.push('Phone:   ' + phoneVal);
+          lines.push('Email:   ' + emailVal);
+          lines.push('Address: ' + addrVal);
+          lines.push('Pincode: ' + pincodeVal);
+          if(notesVal) lines.push('Notes:   ' + notesVal);
           lines.push('');
           lines.push('*Order Items:*');
           cart.forEach(function(item){
@@ -1077,9 +1497,15 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e){
               + ' = ₹' + (price * item.qty).toLocaleString('en-IN') + (bulk ? ' [' + bulk + ']' : ''));
           });
           lines.push('');
-          lines.push('*Amount Paid: ₹' + subtotal.toLocaleString('en-IN') + '*');
+          lines.push('*Subtotal:* ₹' + subtotalRs.toLocaleString('en-IN'));
+          if(shippingRs > 0){
+            lines.push('*Shipping (' + (order.shipping_zone||'') + '):* ₹' + shippingRs.toLocaleString('en-IN'));
+          } else {
+            lines.push('*Shipping:* FREE (' + (order.shipping_zone||'') + ')');
+          }
+          lines.push('*Total Paid: ₹' + totalRs.toLocaleString('en-IN') + '*');
           lines.push('');
-          lines.push('Please confirm my order and share shipping details. Thank you!');
+          lines.push('Please confirm dispatch and share tracking. Thank you!');
           waOrderText = 'https://wa.me/' + OWNER_WA + '?text=' + encodeURIComponent(lines.join('\n'));
 
           document.getElementById('rzpPaymentId').textContent = rzpPaymentId;
@@ -1144,20 +1570,22 @@ document.getElementById('scrollTop').addEventListener('click', function(){ windo
 /* ── HAMBURGER ── */
 var hb = document.getElementById('hamburger');
 var mm = document.getElementById('mobMenu');
-hb.addEventListener('click', function(){
-  var o = mm.classList.toggle('open');
-  hb.setAttribute('aria-expanded', String(o));
-  mm.setAttribute('aria-hidden', String(!o));
-  document.body.style.overflow = o?'hidden':'';
-});
-mm.querySelectorAll('a').forEach(function(a){
-  a.addEventListener('click', function(){
-    mm.classList.remove('open');
-    hb.setAttribute('aria-expanded','false');
-    mm.setAttribute('aria-hidden','true');
-    document.body.style.overflow='';
+if(hb && mm){
+  hb.addEventListener('click', function(){
+    var o = mm.classList.toggle('open');
+    hb.setAttribute('aria-expanded', String(o));
+    mm.setAttribute('aria-hidden', String(!o));
+    document.body.style.overflow = o?'hidden':'';
   });
-});
+  mm.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mm.classList.remove('open');
+      hb.setAttribute('aria-expanded','false');
+      mm.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+    });
+  });
+}
 
 /* ── INIT ── */
 updateCartBadge();

@@ -500,9 +500,9 @@
     },
 
     {
-      "id": "kapton-tape-25mm",
-      "name": "Kapton / Polyimide Tape — 25mm",
-      "tagline": "Self-adhesive polyimide, 200m per roll",
+      "id": "kapton-tape-20mm",
+      "name": "Kapton / Polyimide Tape — 20mm",
+      "tagline": "Self-adhesive polyimide, 33m per roll",
       "category": "insulation",
       "status": "active",
       "featured": false,
@@ -518,14 +518,14 @@
       "sku": "NE-KT-001",
       "hsn_code": "3919",
       "gst_rate": 18,
-      "images": ["assets/products/kapton-tape.jpg"],
+      "images": ["assets/products/kaptonTape1.png","assets/products/kaptonTape2.png","assets/products/kaptonTape2.png"],
       "image_fallback": "kapton",
       "tags": ["kapton","polyimide","tape","insulation","thermal","3919"],
-      "short_description": "High-temperature Kapton polyimide tape, 25mm width, 200m roll. Cell insulation, tab coverage, thermal protection.",
+      "short_description": "High-temperature Kapton polyimide tape, 20mm width, 33m roll. Cell insulation, tab coverage, thermal protection.",
       "description": "Genuine polyimide tape for battery pack insulation. Used on positive cell terminals, between cell groups, and anywhere electrical isolation is needed near heat.",
       "specs": {
         "Material":    "Polyimide (Kapton-type)",
-        "Width":       "25mm",
+        "Width":       "20mm",
         "Length":      "200 metres per roll",
         "Adhesive":    "Silicone-based (self-adhesive)",
         "Temperature": "Up to 260°C continuous",
@@ -535,8 +535,8 @@
       "shipping": { "weight_grams": 120, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
       "amazon_url": "",
       "meta": {
-        "title": "Kapton Polyimide Tape 25mm 200m — Battery Pack | NexEV",
-        "description": "High-temperature Kapton / polyimide self-adhesive tape, 25mm, 200m roll. HSN 3919. Ships from Karnataka."
+        "title": "Kapton Polyimide Tape 20mm 33m — Battery Pack | NexEV",
+        "description": "High-temperature Kapton / polyimide self-adhesive tape, 20mm, 33m roll. HSN 3919. Ships from Karnataka."
       }
     },
 
