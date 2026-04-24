@@ -17,46 +17,62 @@
    Prices MUST match products.json (server validates — never trust frontend price).
 ═══════════════════════════════════════════════════ */
 const PRODUCTS = {
-  'kit-1s-micro':                 { name: 'Kit A — 1S 3.7V Micro',            basePrice: 24900,  weightGrams: 80  },
-  'kit-1s-fast-charge':           { name: 'Kit B — 1S Fast Charge',            basePrice: 34900,  weightGrams: 110 },
-  'kit-2s-boost':                 { name: 'Kit C — 2S Boost',                  basePrice: 44900,  weightGrams: 150 },
-  'kit-3s-12v-backup':            { name: 'Kit D — 3S 12V Backup',             basePrice: 59900,  weightGrams: 220 },
-  'kit-7s-24v-solar-ev':          { name: 'Kit E — 7S 24V Solar & EV',         basePrice: 129900, weightGrams: 450 },
-  'kit-10s-36v-ev-robotics':      { name: 'Kit F — 10S 36V EV Robotics',       basePrice: 179900, weightGrams: 600 },
-  'bms-pcm-1s-3s':                { name: 'BMS / PCM Board (1S–3S)',                        basePrice: 14900,  weightGrams: 15  },
-  'bms-7s-10s':                   { name: 'BMS Board (7S / 10S)',                            basePrice: 59900,  weightGrams: 80  },
-  'charger-tp4057-1s-typec':      { name: 'TP4057 1A Li-Ion Charging Board — Type-C',       basePrice: 7900,   weightGrams: 8   },
-  'charger-2s-typec-84v':         { name: 'Multi-Core 2S Type-C Booster Charger — 8.4V',   basePrice: 14900,  weightGrams: 25  },
-  'charger-3s-typec-126v':        { name: 'Multi-Core 3S Type-C Booster Charger — 12.6V',  basePrice: 15900,  weightGrams: 30  },
-  'nickel-strip-1m':              { name: 'Pure Nickel Strip — 1m Roll',       basePrice: 12900,  weightGrams: 60  },
-  'wire-14awg-1m-pair':           { name: '14 AWG Silicone Wire — 1m Pair',   basePrice: 14900,  weightGrams: 90  },
-  'kapton-tape-25mm':             { name: 'Kapton / Polyimide Tape — 25mm',   basePrice: 19900,  weightGrams: 120 },
-  'pvc-heat-shrink-170mm':        { name: 'PVC Heat Shrink Tube — 170mm',     basePrice: 8900,   weightGrams: 80  },
-  'insulation-paper-barley-rings':{ name: 'Insulation Paper & Barley Rings',  basePrice: 14900,  weightGrams: 100 },
-  'xt60h-jst-connector':          { name: 'XT60H / JST Connectors',           basePrice: 11900,  weightGrams: 25  },
-  'cell-holder-18650-abs':        { name: '18650 Cell Holders (ABS)',          basePrice: 14900,  weightGrams: 80  },
+  /* ── Kits ── */
+  'kit-1s-micro':                 { name: 'Kit A — 1S 3.7V Micro',                          basePrice: 24900,  weightGrams: 80  },
+  'kit-1s-fast-charge':           { name: 'Kit B — 1S Fast Charge',                          basePrice: 34900,  weightGrams: 110 },
+  'kit-2s-boost':                 { name: 'Kit C — 2S Boost',                                basePrice: 44900,  weightGrams: 150 },
+  'kit-3s-12v-backup':            { name: 'Kit D — 3S 12V Backup',                           basePrice: 59900,  weightGrams: 220 },
+  'kit-7s-24v-solar-ev':          { name: 'Kit E — 7S 24V Solar & EV',                       basePrice: 129900, weightGrams: 450 },
+  'kit-10s-36v-ev-robotics':      { name: 'Kit F — 10S 36V EV Robotics',                     basePrice: 179900, weightGrams: 600 },
+  /* ── BMS / PCM boards ── */
+  'bms-pcm-1s-3a':                { name: 'BMS / PCM Board (1S — 3A)',                       basePrice: 12900,  weightGrams: 15  },
+  'bms-pcm-2s-8a':                { name: 'BMS / PCM Board (2S — 8A)',                       basePrice: 14900,  weightGrams: 15  },
+  'bms-pcm-3s-10a':               { name: 'BMS / PCM Board (3S — 10A)',                      basePrice: 19900,  weightGrams: 15  },
+  'bms-6s':                       { name: 'BMS Board (6S — 24V)',                             basePrice: 39900,  weightGrams: 80  },
+  /* ── Charger modules ── */
+  'charger-tp4057-1s-typec':      { name: 'TP4057 1A Li-Ion Charging Board — Type-C',        basePrice: 7900,   weightGrams: 8   },
+  'charger-2s-typec-8.4v':        { name: 'Multi-Core 2S Type-C Booster Charger — 8.4V',    basePrice: 14900,  weightGrams: 25  },
+  'charger-3s-typec-126v':        { name: 'Multi-Core 3S Type-C Booster Charger — 12.6V',   basePrice: 15900,  weightGrams: 30  },
+  /* ── Conductors ── */
+  'nickel-strip-1m':              { name: 'Pure Nickel Strip — 1m Roll',                     basePrice: 12900,  weightGrams: 60  },
+  'wire-14awg-1m-pair':           { name: '14 AWG Silicone Wire — 1m Pair',                  basePrice: 14900,  weightGrams: 90  },
+  /* ── Insulation ── */
+  'kapton-tape-20mm':             { name: 'Kapton / Polyimide Tape — 20mm',                  basePrice: 19900,  weightGrams: 120 },
+  'pvc-heat-shrink-170mm':        { name: 'PVC Heat Shrink Tube — 170mm',                    basePrice: 8900,   weightGrams: 80  },
+  'insulation-paper-barley-rings':{ name: 'Insulation Paper & Barley Rings',                 basePrice: 14900,  weightGrams: 100 },
+  /* ── Connectors & holders ── */
+  'xt60h-connector':              { name: 'XT60H Connectors',                                 basePrice: 11900,  weightGrams: 25  },
+  'cell-holder-18650-abs':        { name: '18650 Cell Holders (ABS)',                         basePrice: 10000,  weightGrams: 80  },
 };
 
 /* Bulk pricing tiers — qty threshold → price in paise */
 const BULK_TIERS = {
+  /* Kits */
   'kit-1s-micro':            [{ qty:5,  price:21900 }, { qty:10, price:18900 }],
   'kit-1s-fast-charge':      [{ qty:5,  price:30900 }, { qty:10, price:27900 }],
   'kit-2s-boost':            [{ qty:5,  price:39900 }, { qty:10, price:36900 }],
   'kit-3s-12v-backup':       [{ qty:5,  price:54900 }, { qty:10, price:49900 }],
-  'kit-7s-24v-solar-ev':     [{ qty:3,  price:119900}, { qty:5,  price:109900}, { qty:10, price:99900 }],
-  'kit-10s-36v-ev-robotics': [{ qty:3,  price:164900}, { qty:5,  price:149900}, { qty:10, price:134900}],
-  'bms-pcm-1s-3s':           [{ qty:5,  price:12900 }, { qty:10, price:10900 }, { qty:25, price:8900  }],
-  'bms-7s-10s':              [{ qty:3,  price:54900 }, { qty:5,  price:49900 }, { qty:10, price:44900 }],
+  'kit-7s-24v-solar-ev':     [{ qty:3,  price:119900 }, { qty:5, price:109900 }, { qty:10, price:99900  }],
+  'kit-10s-36v-ev-robotics': [{ qty:3,  price:164900 }, { qty:5, price:149900 }, { qty:10, price:134900 }],
+  /* BMS / PCM boards */
+  'bms-pcm-1s-3a':           [{ qty:5,  price:12500 }, { qty:10, price:12000 }, { qty:25, price:10000 }],
+  'bms-pcm-2s-8a':           [{ qty:5,  price:14500 }, { qty:10, price:14000 }, { qty:25, price:13000 }],
+  'bms-pcm-3s-10a':          [{ qty:5,  price:19000 }, { qty:10, price:18500 }, { qty:25, price:18000 }],
+  'bms-6s':                  [{ qty:5,  price:38900 }, { qty:10, price:37900 }, { qty:50, price:34900 }],
+  /* Chargers */
   'charger-tp4057-1s-typec': [{ qty:5,  price:7000  }, { qty:10, price:6500  }, { qty:25, price:5900  }],
-  'charger-2s-typec-84v':    [{ qty:3,  price:13900 }, { qty:5,  price:12900 }, { qty:10, price:11900 }],
+  'charger-2s-typec-8.4v':   [{ qty:3,  price:13900 }, { qty:5,  price:12900 }, { qty:10, price:11900 }],
   'charger-3s-typec-126v':   [{ qty:3,  price:14900 }, { qty:5,  price:13900 }, { qty:10, price:12900 }],
+  /* Conductors */
   'nickel-strip-1m':         [{ qty:5,  price:11500 }, { qty:10, price:9900  }],
   'wire-14awg-1m-pair':      [{ qty:5,  price:12900 }, { qty:10, price:10900 }],
-  'kapton-tape-25mm':        [{ qty:3,  price:17900 }, { qty:10, price:15900 }],
+  /* Insulation */
+  'kapton-tape-20mm':        [{ qty:10, price:19500 }, { qty:50, price:18500 }],
   'pvc-heat-shrink-170mm':   [{ qty:5,  price:7500  }, { qty:10, price:6500  }],
-  'insulation-paper-barley-rings':[{qty:5,price:12900},{qty:10,price:10900}],
-  'xt60h-jst-connector':     [{ qty:5,  price:9900  }, { qty:10, price:8500  }, { qty:25, price:7500 }],
-  'cell-holder-18650-abs':   [{ qty:3,  price:13500 }, { qty:10, price:11900 }],
+  'insulation-paper-barley-rings': [{ qty:5, price:12900 }, { qty:10, price:10900 }],
+  /* Connectors & holders */
+  'xt60h-connector':         [{ qty:5,  price:9900  }, { qty:10, price:8500  }, { qty:25, price:7500  }],
+  'cell-holder-18650-abs':   [{ qty:3,  price:9000  }, { qty:10, price:8000  }, { qty:20, price:7500  }],
 };
 
 function getUnitPrice(productId, qty) {
