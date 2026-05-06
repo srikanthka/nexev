@@ -49,7 +49,7 @@
       "label": "Karnataka",
       "freeAbove": 1500,
       "tiers": [
-        { "maxGrams": 500,  "price": 1  },
+        { "maxGrams": 500,  "price": 110 },
         { "maxGrams": 1000, "price": 170  },
         { "maxGrams": 2000, "price": 210 },
         { "maxGrams": 5000, "price": 260 },
