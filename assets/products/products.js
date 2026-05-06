@@ -21,7 +21,7 @@ window.NEXEV_PRODUCTS = {
       "category": "kit",
       "status": "active",
       "featured": true,
-      "price": 1,
+      "price": 249,
       "compare_price": 299,
       "unit": "kit",
       "min_qty": 1,
