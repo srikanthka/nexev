@@ -33,7 +33,7 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-KIT-1S-001",
       "hsn_code": "8542",
       "gst_rate": 5,
-      "images": ["assets/products/kit-1s-micro.jpg","assets/products/kit-1s-micro-2.jpg","assets/products/kit-1s-micro-3.jpg"],
+      "images": ["assets/products/kit-1s-micro.png","assets/products/kit-1s-micro-2.jpg","assets/products/kit-1s-micro-3.jpg"],
       "image_fallback": "kit",
       "tags": ["kit","1S","3.7V","TP4057","single-cell","micro"],
       "short_description": "1S 3.7V micro battery kit built around the TP4057 charge management PCB. Ideal for coin cell replacements and small Li-Ion projects.",
