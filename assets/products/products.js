@@ -22,7 +22,7 @@ window.NEXEV_PRODUCTS = {
       "status": "active",
       "featured": true,
       "price": 249,
-      "compare_price": 299,
+      "compare_price": 399,
       "unit": "kit",
       "min_qty": 1,
       "bulk_tiers": [
@@ -42,10 +42,10 @@ window.NEXEV_PRODUCTS = {
         "TP4057 PCB charge board",
         "1S PCM protection module",
         "Nickel strip (spot-weld grade)",
-        "18650 insulation rings (10 pcs)",
+        "18650 insulation rings (2P-1 Pair) ",
         "18650 cell holder (\u00d71)",
-        "Kapton tape strip",
-        "Silicone wire leads (red + black)"
+        "Heat Shrink Sleeve",
+        "JST XH 2.54 2Pin"
       ],
       "specs": {
         "Configuration":  "1S (3.7V nominal)",
