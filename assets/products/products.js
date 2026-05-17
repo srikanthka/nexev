@@ -957,7 +957,7 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-BH-001",
       "hsn_code": "3926",
       "gst_rate": 18,
-      "images": ["assets/products/18650 2S Cell Holders1.png","assets/products/18650 3x5 Cell Holders1.png","assets/products/18650 3x5 Cell Holders2.png"],
+      "images": ["assets/products/18650 2S Cell Holders1.png","assets/products/18650 3x5 Cell Holders2.png","assets/products/4x5holder.png"],
       "image_fallback": "holder",
       "tags": ["holder","cell-holder","18650","ABS","alignment","3926"],
       "short_description": "ABS plastic 18650 cell holders. Keeps cells in precise series/parallel alignment during spot welding. 10 per pack.",
