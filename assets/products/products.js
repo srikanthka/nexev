@@ -894,7 +894,7 @@ window.NEXEV_PRODUCTS = {
     "title": "Insulation Barley Paper 50 MM — Battery Pack Insulation | NexEV",
     "description": "50mm insulation barley paper for lithium battery pack assembly. ₹15/meter, ₹10/meter for 100+ meter orders. HSN 4823."
   }
-}
+},
 
     {
       "id": "xt60h-connector",
