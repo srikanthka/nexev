@@ -181,13 +181,13 @@ window.NEXEV_PRODUCTS = {
       "category": "kit",
       "status": "active",
       "featured": false,
-      "price": 499,
+      "price": 549,
       "compare_price": 749,
       "unit": "kit",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 5,  "price": 449, "label": "5+ kits" },
-        { "qty": 10, "price": 429, "label": "10+ kits" }
+        { "qty": 5,  "price": 519, "label": "5+ kits" },
+        { "qty": 10, "price": 499, "label": "10+ kits" }
       ],
       "stock": "in_stock",
       "sku": "NE-KIT-3S-BST-001",
@@ -946,7 +946,7 @@ window.NEXEV_PRODUCTS = {
       "featured": false,
       "price": 80,
       "compare_price": null,
-      "unit": "holder",
+      "unit": "pack",
       "min_qty": 1,
       "bulk_tiers": [
         { "qty": 10,  "price": 75, "label": "10+ packs" },
