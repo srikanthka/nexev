@@ -807,8 +807,8 @@ window.NEXEV_PRODUCTS = {
       "min_qty": 1,
       "bulk_tiers": [
         { "qty": 10,  "price": 48, "label": "10+ packs" },
-        { "qty": 50, "price": 45, "label": "50+ packs" }
-		 { "qty": 100, "price": 40, "label": "100+ packs" }
+        { "qty": 50, "price": 45, "label": "50+ packs" },
+		{ "qty": 100, "price": 40, "label": "100+ packs" }
       ],
       "stock": "in_stock",
       "sku": "NE-INS-001",
