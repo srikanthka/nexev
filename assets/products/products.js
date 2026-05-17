@@ -122,7 +122,7 @@ window.NEXEV_PRODUCTS = {
 
     {
       "id": "kit-2s-boost",
-      "name": "Kit C \u2014 2S Boost",
+      "name": "Kit B \u2014 2S Boost",
       "tagline": "IP2326 boost module for 2S Li-Ion packs",
       "category": "kit",
       "status": "active",
@@ -176,7 +176,7 @@ window.NEXEV_PRODUCTS = {
 
     {
       "id": "kit-3s-12v-backup",
-      "name": "Kit D \u2014 3S 12V Backup",
+      "name": "Kit C \u2014 3S 12V Backup",
       "tagline": "3S BMS board \u2014 12V backup and UPS packs",
       "category": "kit",
       "status": "active",
@@ -226,7 +226,7 @@ window.NEXEV_PRODUCTS = {
         "description": "3S 12V Li-Ion pack kit with BMS board. All components for backup and UPS builds. Ships from Karnataka."
       }
     },
-
+/*
     {
       "id": "kit-7s-24v-solar-ev",
       "name": "Kit E \u2014 7S 24V Solar & EV",
@@ -337,7 +337,7 @@ window.NEXEV_PRODUCTS = {
         "description": "10S 36V 30A BMS kit for e-bike and robotics. Complete assembly components. Ships from Karnataka."
       }
     },
-
+*/
     {
       "id": "bms-pcm-1s-3a",
       "name": "BMS / PCM Board (1S)",
