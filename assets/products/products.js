@@ -33,7 +33,7 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-KIT-1S-001",
       "hsn_code": "8542",
       "gst_rate": 5,
-      "images": ["assets/products/kit-1s-micro.png","assets/products/kit-1s-micro-2.jpg","assets/products/kit-1s-micro-3.jpg"],
+      "images": ["assets/products/kit1.png","assets/products/kit-1s-micro.jpg","assets/products/kit-1s-micro-3.jpg"],
       "image_fallback": "kit",
       "tags": ["kit","1S","3.7V","TP4057","single-cell","micro"],
       "short_description": "1S 3.7V micro battery kit built around the TP4057 charge management PCB. Ideal for coin cell replacements and small Li-Ion projects.",
@@ -67,7 +67,7 @@ window.NEXEV_PRODUCTS = {
       }
     },
 
-    {
+    /*{
       "id": "kit-1s-fast-charge",
       "name": "Kit B \u2014 1S Fast Charge",
       "tagline": "3A PCM BMS for rapid single-cell charging",
@@ -118,7 +118,7 @@ window.NEXEV_PRODUCTS = {
         "title": "Kit B \u2014 1S Fast Charge Battery Kit | NexEV",
         "description": "1S 3A PCM BMS fast-charge kit. All components for a single-cell 18650 pack. Ships from Karnataka."
       }
-    },
+    },*/
 
     {
       "id": "kit-2s-boost",
@@ -127,19 +127,19 @@ window.NEXEV_PRODUCTS = {
       "category": "kit",
       "status": "active",
       "featured": false,
-      "price": 449,
+      "price": 349,
       "compare_price": 549,
       "unit": "kit",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 5,  "price": 399, "label": "5+ kits" },
-        { "qty": 10, "price": 369, "label": "10+ kits" }
+        { "qty": 5,  "price": 339, "label": "5+ kits" },
+        { "qty": 10, "price": 329, "label": "10+ kits" }
       ],
       "stock": "in_stock",
       "sku": "NE-KIT-2S-BST-001",
       "hsn_code": "8542",
       "gst_rate": 18,
-      "images": ["assets/products/kit-2s-boost.jpg","assets/products/kit-2s-boost-2.jpg","assets/products/kit-2s-boost-3.jpg"],
+      "images": ["assets/products/kit2.png","assets/products/kit-2s-boost-2.jpg","assets/products/kit-2s-boost-3.jpg"],
       "image_fallback": "kit",
       "tags": ["kit","2S","7.4V","boost","IP2326","power-bank"],
       "short_description": "2S 7.4V pack kit with IP2326/boost module \u2014 suitable for 5V USB power banks, drone packs, and portable devices.",
@@ -181,19 +181,19 @@ window.NEXEV_PRODUCTS = {
       "category": "kit",
       "status": "active",
       "featured": false,
-      "price": 599,
+      "price": 499,
       "compare_price": 749,
       "unit": "kit",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 5,  "price": 549, "label": "5+ kits" },
-        { "qty": 10, "price": 499, "label": "10+ kits" }
+        { "qty": 5,  "price": 449, "label": "5+ kits" },
+        { "qty": 10, "price": 429, "label": "10+ kits" }
       ],
       "stock": "in_stock",
       "sku": "NE-KIT-3S-BST-001",
       "hsn_code": "8537",
       "gst_rate": 18,
-      "images": ["assets/products/kit-3s-12v.jpg","assets/products/kit-3s-12v-2.jpg","assets/products/kit-3s-12v-3.jpg"],
+      "images": ["assets/products/kit3.png","assets/products/kit-3s-12v-2.jpg","assets/products/kit-3s-12v-3.jpg"],
       "image_fallback": "bms",
       "tags": ["kit","3S","12V","BMS","backup","UPS"],
       "short_description": "3S 12V pack kit with a quality BMS board. Ideal for 12V backup, mini-UPS systems, and lighting packs.",
