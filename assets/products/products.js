@@ -725,7 +725,7 @@ window.NEXEV_PRODUCTS = {
       "min_qty": 1,
       "bulk_tiers": [
         { "qty": 10,  "price": 195, "label": "10+ rolls" },
-        { "qty": 50, "price": 185, "label": "50+ rolls" }
+        { "qty": 50, "price": 190, "label": "50+ rolls" }
       ],
       "stock": "in_stock",
       "sku": "NE-KT-001",
@@ -760,19 +760,19 @@ window.NEXEV_PRODUCTS = {
       "category": "insulation",
       "status": "active",
       "featured": false,
-      "price": 89,
+      "price": 35,
       "compare_price": null,
       "unit": "metre",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 5,  "price": 75, "label": "5+ metres" },
-        { "qty": 10, "price": 65, "label": "10+ metres" }
+        { "qty": 10,  "price":30 , "label": "10+ metres" },
+        { "qty": 100, "price": 20, "label": "100+ metres" }
       ],
       "stock": "in_stock",
       "sku": "NE-HS-001",
       "hsn_code": "3917",
       "gst_rate": 18,
-      "images": ["assets/products/heatshrinksleeve1.png","assets/products/heatshrinksleeve.png","assets/products/heatshrinksleeve3.png"],
+      "images": ["assets/products/heatshrink.png","assets/products/heatshrinksleeve.png","assets/products/heatshrinksleeve3.png"],
       "image_fallback": "heat-shrink",
       "tags": ["heat-shrink","PVC","insulation","pack-wrap","3917"],
       "short_description": "Blue PVC heat shrink tube, 170mm flat width. Wraps a completed 18650 battery pack for insulation and clean finish.",
@@ -796,18 +796,19 @@ window.NEXEV_PRODUCTS = {
 
     {
       "id": "insulation-paper-barley-rings",
-      "name": "Insulation Paper & Barley Rings",
+      "name": "2P Insulation Paper & Barley Rings",
       "tagline": "Cell-end insulation rings + between-group barrier paper",
       "category": "insulation",
       "status": "active",
       "featured": false,
-      "price": 149,
+      "price": 50,
       "compare_price": null,
       "unit": "pack",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 5,  "price": 129, "label": "5+ packs" },
-        { "qty": 10, "price": 109, "label": "10+ packs" }
+        { "qty": 10,  "price": 48, "label": "10+ packs" },
+        { "qty": 50, "price": 45, "label": "50+ packs" }
+		 { "qty": 100, "price": 40, "label": "100+ packs" }
       ],
       "stock": "in_stock",
       "sku": "NE-INS-001",
@@ -839,6 +840,62 @@ window.NEXEV_PRODUCTS = {
       }
     },
 
+	{
+  "id": "insulation-barley-paper-50mm",
+  "name": "Insulation Barley Paper 50 MM",
+  "tagline": "Electrical insulation barley paper roll for battery pack builds",
+  "category": "insulation",
+  "status": "active",
+  "featured": false,
+  "price": 15,
+  "compare_price": null,
+  "unit": "meter",
+  "min_qty": 1,
+  "bulk_tiers": [
+    { "qty": 100, "price": 10, "label": "100+ meters" }
+  ],
+  "stock": "in_stock",
+  "sku": "NE-INS-002",
+  "hsn_code": "4823",
+  "gst_rate": 12,
+  "images": [
+    "assets/products/BarleyInsulationPaper2.png",
+    "assets/products/BarleyInsulationPaper1.png",
+  ],
+  "image_fallback": "insulation-paper",
+  "tags": [
+    "insulation",
+    "barley-paper",
+    "battery-pack",
+    "50mm",
+    "4823",
+    "cell"
+  ],
+  "short_description": "50mm electrical insulation barley paper for 18650 battery pack insulation and cell group separation.",
+  "description": "High-quality electrical insulation barley paper used in lithium battery pack assembly. Suitable for insulating cell groups, pack housing, and spot-welded sections to improve safety and durability.",
+  "contents": [
+    "50mm insulation barley paper roll — sold per meter"
+  ],
+  "specs": {
+    "Material": "Electrical insulation barley paper",
+    "Width": "50mm",
+    "Thickness": "0.2mm",
+    "Length": "Custom per order",
+    "HSN code": "4823",
+    "Application": "Battery pack insulation, cell group separation, pack lining"
+  },
+  "shipping": {
+    "weight_grams": 50,
+    "fulfillment": "Ships within 2 business days",
+    "courier": "Speed Post / Delhivery"
+  },
+  "amazon_url": "",
+  "meta": {
+    "title": "Insulation Barley Paper 50 MM — Battery Pack Insulation | NexEV",
+    "description": "50mm insulation barley paper for lithium battery pack assembly. ₹15/meter, ₹10/meter for 100+ meter orders. HSN 4823."
+  }
+}
+
     {
       "id": "xt60h-connector",
       "name": "XT60H Connectors",
@@ -846,14 +903,14 @@ window.NEXEV_PRODUCTS = {
       "category": "connector",
       "status": "active",
       "featured": false,
-      "price": 119,
+      "price": 85,
       "compare_price": null,
       "unit": "pair",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 5,  "price": 99,  "label": "5+ pairs" },
-        { "qty": 10, "price": 85,  "label": "10+ pairs" },
-        { "qty": 25, "price": 75,  "label": "25+ pairs (workshop)" }
+        { "qty": 10,  "price": 80,  "label": "10+ pairs" },
+        { "qty": 50, "price": 75,  "label": "50+ pairs" },
+        { "qty": 100, "price": 70,  "label": "100+ pairs (workshop)" }
       ],
       "stock": "in_stock",
       "sku": "NE-XT-001",
@@ -887,20 +944,20 @@ window.NEXEV_PRODUCTS = {
       "category": "holder",
       "status": "active",
       "featured": false,
-      "price": 100,
+      "price": 80,
       "compare_price": null,
       "unit": "holder",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 3,  "price": 90, "label": "3+ packs" },
-        { "qty": 10, "price": 80, "label": "10+ packs" },
-		{ "qty": 20, "price": 75, "label": "20+ packs" }
+        { "qty": 10,  "price": 75, "label": "10+ packs" },
+        { "qty": 50, "price": 70, "label": "50+ packs" },
+		{ "qty": 100, "price": 65, "label": "100+ packs" }
       ],
       "stock": "in_stock",
       "sku": "NE-BH-001",
       "hsn_code": "3926",
       "gst_rate": 18,
-      "images": ["assets/products/18650 2S Cell Holders1.png","assets/products/18650 3x5 Cell Holders1.png","assets/products/18650 3x5 Cell Holders2.png"],
+      "images": ["assets/products/1X2 Holders.png","assets/products/18650 3x5 Cell Holders1.png","assets/products/18650 3x5 Cell Holders2.png"],
       "image_fallback": "holder",
       "tags": ["holder","cell-holder","18650","ABS","alignment","3926"],
       "short_description": "ABS plastic 18650 cell holders. Keeps cells in precise series/parallel alignment during spot welding. 10 per pack.",
