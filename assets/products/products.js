@@ -26,7 +26,7 @@ window.NEXEV_PRODUCTS = {
       "min_qty": 1,
       "bulk_tiers": [
         { "qty": 5,  "price": 115, "label": "5+ rolls" },
-        { "qty": 10, "price": 99,  "label": "10+ rolls" }
+        { "qty": 10, "price": 99,  "label": "10+ rolls" },
 		{ "qty": 50, "price": 90,  "label": "50+ rolls" }
       ],
       "stock": "in_stock",
