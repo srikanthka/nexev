@@ -13,8 +13,6 @@ window.NEXEV_PRODUCTS = {
 	{ "id": "charger",     "label": "Battery Charge Module"         }
   ],
   "products": [
-	
-	
     {
       "id": "nickel-strip-1m",
       "name": "Pure Nickel Strip \u2014 1m Roll",
@@ -29,6 +27,7 @@ window.NEXEV_PRODUCTS = {
       "bulk_tiers": [
         { "qty": 5,  "price": 115, "label": "5+ rolls" },
         { "qty": 10, "price": 99,  "label": "10+ rolls" }
+		{ "qty": 50, "price": 90,  "label": "50+ rolls" }
       ],
       "stock": "in_stock",
       "sku": "NE-NS-001",
@@ -62,13 +61,13 @@ window.NEXEV_PRODUCTS = {
       "category": "conductor",
       "status": "active",
       "featured": false,
-      "price": 149,
+      "price": 159,
       "compare_price": null,
       "unit": "pair",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 5,  "price": 129, "label": "5+ pairs" },
-        { "qty": 10, "price": 109, "label": "10+ pairs" }
+        { "qty": 10,  "price": 149, "label": "10+ pairs" },
+        { "qty": 100, "price": 139, "label": "100+ pairs" }
       ],
       "stock": "in_stock",
       "sku": "NE-WR-001",
@@ -103,13 +102,13 @@ window.NEXEV_PRODUCTS = {
       "category": "insulation",
       "status": "active",
       "featured": false,
-      "price": 199,
+      "price": 230,
       "compare_price": null,
       "unit": "roll",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 10,  "price": 195, "label": "10+ rolls" },
-        { "qty": 50, "price": 190, "label": "50+ rolls" }
+        { "qty": 10,  "price": 220, "label": "10+ rolls" },
+        { "qty": 50, "price": 210, "label": "50+ rolls" }
       ],
       "stock": "in_stock",
       "sku": "NE-KT-001",
@@ -144,13 +143,13 @@ window.NEXEV_PRODUCTS = {
       "category": "insulation",
       "status": "active",
       "featured": false,
-      "price": 35,
+      "price": 50,
       "compare_price": null,
       "unit": "metre",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 10,  "price":30 , "label": "10+ metres" },
-        { "qty": 100, "price": 20, "label": "100+ metres" }
+        { "qty": 10,  "price":45 , "label": "10+ metres" },
+        { "qty": 100, "price": 35, "label": "100+ metres" }
       ],
       "stock": "in_stock",
       "sku": "NE-HS-001",
@@ -185,19 +184,19 @@ window.NEXEV_PRODUCTS = {
       "category": "insulation",
       "status": "active",
       "featured": false,
-      "price": 50,
+      "price": 65,
       "compare_price": null,
       "unit": "pack",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 10,  "price": 48, "label": "10+ packs" },
-        { "qty": 50, "price": 45, "label": "50+ packs" },
-		{ "qty": 100, "price": 40, "label": "100+ packs" }
+        { "qty": 10,  "price": 60, "label": "10+ packs" },
+        { "qty": 50, "price": 55, "label": "50+ packs" },
+		{ "qty": 100, "price": 50, "label": "100+ packs" }
       ],
       "stock": "in_stock",
       "sku": "NE-INS-001",
       "hsn_code": "4823",
-      "gst_rate": 12,
+      "gst_rate": 18,
       "images": ["assets/products/18650 2P Insulation Stcikers2.png","assets/products/18650 2P Insulation Stcikers1.png","assets/products/18650 2P Insulation Stcikers3.png"],
       "image_fallback": "insulation-paper",
       "tags": ["insulation","paper","barley","rings","4823","cell"],
@@ -231,12 +230,14 @@ window.NEXEV_PRODUCTS = {
   "category": "insulation",
   "status": "active",
   "featured": false,
-  "price": 15,
+  "price": 40,
   "compare_price": null,
   "unit": "meter",
   "min_qty": 1,
   "bulk_tiers": [
-    { "qty": 100, "price": 10, "label": "100+ meters" }
+    { "qty": 10, "price": 35, "label": "10+ meters" },
+	 { "qty": 50, "price": 30, "label": "50+ meters" },
+    { "qty": 100, "price": 25, "label": "100+ meters" }
   ],
   "stock": "in_stock",
   "sku": "NE-INS-002",
@@ -328,14 +329,14 @@ window.NEXEV_PRODUCTS = {
       "category": "holder",
       "status": "active",
       "featured": false,
-      "price": 80,
+      "price": 90,
       "compare_price": null,
       "unit": "pack",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 10,  "price": 75, "label": "10+ packs" },
-        { "qty": 50, "price": 70, "label": "50+ packs" },
-		{ "qty": 100, "price": 65, "label": "100+ packs" }
+        { "qty": 10,  "price": 85, "label": "10+ packs" },
+        { "qty": 50, "price": 80, "label": "50+ packs" },
+		{ "qty": 100, "price": 75, "label": "100+ packs" }
       ],
       "stock": "in_stock",
       "sku": "NE-BH-001",
@@ -374,8 +375,8 @@ window.NEXEV_PRODUCTS = {
       "unit": "kit",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 5,  "price": 219, "label": "5+ kits" },
-        { "qty": 10, "price": 189, "label": "10+ kits" }
+        { "qty": 5,  "price": 239, "label": "5+ kits" },
+        { "qty": 10, "price": 229, "label": "10+ kits" }
       ],
       "stock": "in_stock",
       "sku": "NE-KIT-1S-001",
@@ -693,14 +694,14 @@ window.NEXEV_PRODUCTS = {
       "category": "bms",
       "status": "active",
       "featured": false,
-      "price": 129,
+      "price": 149,
       "compare_price": null,
       "unit": "unit",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 5,  "price": 125, "label": "5+ units" },
-        { "qty": 10, "price": 120, "label": "10+ units" },
-        { "qty": 25, "price": 100,  "label": "25+ units (workshop)" }
+        { "qty": 5,  "price": 145, "label": "5+ units" },
+        { "qty": 10, "price": 140, "label": "10+ units" },
+        { "qty": 25, "price": 130,  "label": "25+ units (workshop)" }
       ],
       "stock": "in_stock",
       "sku": "NE-BMS-1S3S-001",
@@ -734,14 +735,14 @@ window.NEXEV_PRODUCTS = {
       "category": "bms",
       "status": "active",
       "featured": false,
-      "price": 149,
+      "price": 169,
       "compare_price": null,
       "unit": "unit",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 5,  "price": 145, "label": "5+ units" },
-        { "qty": 10, "price": 140, "label": "10+ units" },
-        { "qty": 25, "price": 130,  "label": "25+ units (workshop)" }
+        { "qty": 5,  "price": 165, "label": "5+ units" },
+        { "qty": 10, "price": 160, "label": "10+ units" },
+        { "qty": 25, "price": 150,  "label": "25+ units (workshop)" }
       ],
       "stock": "in_stock",
       "sku": "NE-BMS-1S3S-002",
@@ -857,14 +858,14 @@ window.NEXEV_PRODUCTS = {
       "category": "bms",
       "status": "active",
       "featured": false,
-      "price": 79,
+      "price": 99,
       "compare_price": null,
       "unit": "unit",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 5,  "price": 70, "label": "5+ units" },
-        { "qty": 10, "price": 65, "label": "10+ units" },
-        { "qty": 25, "price": 59, "label": "25+ units (workshop)" }
+        { "qty": 5,  "price": 90, "label": "5+ units" },
+        { "qty": 10, "price": 85, "label": "10+ units" },
+        { "qty": 25, "price": 80, "label": "25+ units (workshop)" }
       ],
       "stock": "in_stock",
       "sku": "NE-CHG-1S-001",
