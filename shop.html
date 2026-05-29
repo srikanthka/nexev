@@ -669,7 +669,7 @@ function pcGallerySet(pcImg, images, idx){
 'use strict';
 
 /* ── CONFIG ── */
-var OWNER_WA = '919905603640';
+var OWNER_WA = '+919019901711';
 var DATA_URL = 'assets/products/products.json';
 /* RZP_KEY is intentionally absent — key_id is returned by the server at checkout time */
 
@@ -874,10 +874,12 @@ function buildZoneChip(s, subtotal) {
   return html;
 }
 
-/* ── Checkout modal pincode (live lookup, updates order summary below it) ── */
+/* ── Checkout modal pincode (Delhivery serviceability + live charges) ── */
 var _pinTimer = null;
+var _pinAbort = null;
 function onPincodeInput(val) {
   clearTimeout(_pinTimer);
+  if (_pinAbort) { _pinAbort.abort(); _pinAbort = null; }
   var wrap  = document.getElementById('pinZoneWrap');
   var state = document.getElementById('co-state');
   if (!wrap) return;
@@ -889,30 +891,58 @@ function onPincodeInput(val) {
     updateCheckoutOrderSummary();
     return;
   }
-  wrap.innerHTML = '<span class="pin-zone-chip detecting">Checking…</span>';
+  wrap.innerHTML = '<span class="pin-zone-chip detecting">Checking delivery availability…</span>';
   _pinTimer = setTimeout(function() {
-    if (!shippingRates) {
-      wrap.innerHTML = '<span class="pin-zone-chip err">Rate file loading — try again in a moment</span>';
-      return;
-    }
-    var s = calcShipping(val);
-    if (!s) {
-      wrap.innerHTML = '<span class="pin-zone-chip err">Enter a valid 6-digit pincode</span>';
-      return;
-    }
-    currentShipping = s;
-    /* Use proper state name, not zone label */
-    var stateName = pincodeToState(val);
-    if (state) state.value = stateName || s.zoneLabel;
-    wrap.innerHTML = buildZoneChip(s);
-    updateCheckoutOrderSummary();
-  }, 380);
+    var abort = new AbortController();
+    _pinAbort = abort;
+    var weight = Math.max(10, getCartWeight());
+    fetch('/api/delhivery-serviceability?pincode=' + val, { signal: abort.signal })
+      .then(function(r) { return r.json(); })
+      .then(function(svc) {
+        if (abort.signal.aborted) return;
+        if (!svc.serviceable) {
+          wrap.innerHTML = '<span class="pin-zone-chip err">Delivery not available to this pincode</span>';
+          currentShipping = { amount: 0, zone: null, zoneKey: null, zoneLabel: '', delivery: '', isFree: false, pincode: val };
+          if (state) state.value = pincodeToState(val) || '';
+          updateCheckoutOrderSummary();
+          return;
+        }
+        return fetch('/api/delhivery-charges?d_pin=' + val + '&cgm=' + weight, { signal: abort.signal })
+          .then(function(r) { return r.json(); })
+          .then(function(charge) {
+            if (abort.signal.aborted) return;
+            var amt      = Math.round((charge.total_amount || 0) * 100) / 100;
+            var stateName = pincodeToState(val);
+            currentShipping = {
+              amount:    amt,
+              zone:      'delhivery',
+              zoneKey:   'delhivery',
+              zoneLabel: stateName || 'India',
+              delivery:  svc.is_oda ? '7–10 business days (ODA)' : '3–7 business days',
+              isFree:    amt === 0,
+              pincode:   val,
+              freeAbove: 9999999,
+            };
+            if (state) state.value = stateName || '';
+            wrap.innerHTML = buildZoneChip(currentShipping);
+            updateCheckoutOrderSummary();
+          });
+      })
+      .catch(function(err) {
+        if (err.name === 'AbortError') return;
+        wrap.innerHTML = '<span class="pin-zone-chip err">Could not check delivery — please try again</span>';
+        currentShipping = { amount: 0, zone: null, zoneKey: null, zoneLabel: '', delivery: '', isFree: false, pincode: val };
+        updateCheckoutOrderSummary();
+      });
+  }, 500);
 }
 
-/* ── Cart drawer pincode (live lookup, updates cart summary) ── */
+/* ── Cart drawer pincode (Delhivery serviceability + live charges) ── */
 var _cartPinTimer = null;
+var _cartPinAbort = null;
 function onCartPincodeInput(val) {
   clearTimeout(_cartPinTimer);
+  if (_cartPinAbort) { _cartPinAbort.abort(); _cartPinAbort = null; }
   var wrap = document.getElementById('cart-pin-zone');
   if (!wrap) return;
   val = val.replace(/\D/g, '').substring(0, 6);
@@ -922,21 +952,48 @@ function onCartPincodeInput(val) {
     renderCart();
     return;
   }
-  wrap.innerHTML = '<span class="pin-zone-chip detecting">Checking…</span>';
+  wrap.innerHTML = '<span class="pin-zone-chip detecting">Checking delivery availability…</span>';
   _cartPinTimer = setTimeout(function() {
-    if (!shippingRates) {
-      wrap.innerHTML = '<span class="pin-zone-chip err">Rate file loading — try again in a moment</span>';
-      return;
-    }
-    var s = calcShipping(val);
-    if (!s) {
-      wrap.innerHTML = '<span class="pin-zone-chip err">Enter a valid 6-digit pincode</span>';
-      return;
-    }
-    cartShipping = s;
-    wrap.innerHTML = buildZoneChip(s);
-    renderCart(); /* re-render summary with actual shipping row */
-  }, 380);
+    var abort = new AbortController();
+    _cartPinAbort = abort;
+    var weight = Math.max(10, getCartWeight());
+    fetch('/api/delhivery-serviceability?pincode=' + val, { signal: abort.signal })
+      .then(function(r) { return r.json(); })
+      .then(function(svc) {
+        if (abort.signal.aborted) return;
+        if (!svc.serviceable) {
+          wrap.innerHTML = '<span class="pin-zone-chip err">Delivery not available to this pincode</span>';
+          cartShipping = null;
+          renderCart();
+          return;
+        }
+        return fetch('/api/delhivery-charges?d_pin=' + val + '&cgm=' + weight, { signal: abort.signal })
+          .then(function(r) { return r.json(); })
+          .then(function(charge) {
+            if (abort.signal.aborted) return;
+            var amt      = Math.round((charge.total_amount || 0) * 100) / 100;
+            var stateName = pincodeToState(val);
+            cartShipping = {
+              amount:    amt,
+              zone:      'delhivery',
+              zoneKey:   'delhivery',
+              zoneLabel: stateName || 'India',
+              delivery:  svc.is_oda ? '7–10 business days (ODA)' : '3–7 business days',
+              isFree:    amt === 0,
+              pincode:   val,
+              freeAbove: 9999999,
+            };
+            wrap.innerHTML = buildZoneChip(cartShipping);
+            renderCart();
+          });
+      })
+      .catch(function(err) {
+        if (abort.signal.aborted) return;
+        wrap.innerHTML = '<span class="pin-zone-chip err">Could not check delivery — please try again</span>';
+        cartShipping = null;
+        renderCart();
+      });
+  }, 500);
 }
 
 /* ── CART PERSISTENCE ── */
@@ -1370,9 +1427,12 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e){
   });
   if(!ok) return;
 
-  /* Require pincode shipping to be calculated */
+  /* Require pincode shipping to be calculated and serviceable */
   if (!currentShipping.zone) {
-    showToast('Please enter your pincode to calculate shipping.', 'error');
+    var pinMsg = (currentShipping.pincode && currentShipping.pincode.length === 6)
+      ? 'Sorry, delivery is not available to this pincode. Please contact us on WhatsApp.'
+      : 'Please enter your pincode to calculate shipping.';
+    showToast(pinMsg, 'error');
     if (pincode) pincode.focus();
     return;
   }

@@ -1,0 +1,7 @@
+{
+  "_comment": "Delhivery shipping config. API token is secret — set DELHIVERY_TOKEN in Cloudflare Dashboard. Set DELHIVERY_PICKUP_PINCODE env var to match pickup_pincode below.",
+  "pickup_pincode": "560048",
+  "mode": "E",
+  "payment_type": "Pre-paid",
+  "status": "Delivered"
+}

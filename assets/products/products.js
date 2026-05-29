@@ -20,7 +20,7 @@ window.NEXEV_PRODUCTS = {
       "category": "conductor",
       "status": "active",
       "featured": false,
-      "price": 129,
+      "price": 125,
       "compare_price": null,
       "unit": "roll",
       "min_qty": 1,
@@ -73,7 +73,7 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-WR-001",
       "hsn_code": "8544",
       "gst_rate": 28,
-      "images": ["assets/products/14awg_black_1.png","assets/products/14awg_red_1.png","assets/products/wire-14awg-3.jpg"],
+      "images": ["assets/products/redblack14awg.png","assets/products/14awg_red_1.png","assets/products/14awg_black_1.png"],
       "image_fallback": "wire",
       "tags": ["wire","14awg","silicone","cable","8544"],
       "short_description": "Flexible silicone-jacketed 14 AWG wire \u2014 rated for battery pack current, heat-resistant. Red + black, 1m each.",
@@ -108,7 +108,7 @@ window.NEXEV_PRODUCTS = {
       "min_qty": 1,
       "bulk_tiers": [
         { "qty": 10,  "price": 220, "label": "10+ rolls" },
-        { "qty": 50, "price": 210, "label": "50+ rolls" }
+        { "qty": 50, "price": 190, "label": "50+ rolls" }
       ],
       "stock": "in_stock",
       "sku": "NE-KT-001",
@@ -143,13 +143,13 @@ window.NEXEV_PRODUCTS = {
       "category": "insulation",
       "status": "active",
       "featured": false,
-      "price": 50,
+      "price": 80,
       "compare_price": null,
       "unit": "metre",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 10,  "price":45 , "label": "10+ metres" },
-        { "qty": 100, "price": 35, "label": "100+ metres" }
+        { "qty": 10,  "price":60 , "label": "10+ metres" },
+        { "qty": 100, "price": 45, "label": "100+ metres" }
       ],
       "stock": "in_stock",
       "sku": "NE-HS-001",
@@ -184,14 +184,14 @@ window.NEXEV_PRODUCTS = {
       "category": "insulation",
       "status": "active",
       "featured": false,
-      "price": 65,
+      "price": 99,
       "compare_price": null,
       "unit": "pack",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 10,  "price": 60, "label": "10+ packs" },
-        { "qty": 50, "price": 55, "label": "50+ packs" },
-		{ "qty": 100, "price": 50, "label": "100+ packs" }
+        { "qty": 10,  "price": 89, "label": "10+ packs" },
+        { "qty": 50, "price": 79, "label": "50+ packs" },
+		{ "qty": 100, "price": 69, "label": "100+ packs" }
       ],
       "stock": "in_stock",
       "sku": "NE-INS-001",
@@ -230,14 +230,14 @@ window.NEXEV_PRODUCTS = {
   "category": "insulation",
   "status": "active",
   "featured": false,
-  "price": 40,
+  "price": 80,
   "compare_price": null,
   "unit": "meter",
   "min_qty": 1,
   "bulk_tiers": [
-    { "qty": 10, "price": 35, "label": "10+ meters" },
-	 { "qty": 50, "price": 30, "label": "50+ meters" },
-    { "qty": 100, "price": 25, "label": "100+ meters" }
+    { "qty": 10, "price": 70, "label": "10+ meters" },
+	 { "qty": 50, "price": 60, "label": "50+ meters" },
+    { "qty": 100, "price": 50, "label": "100+ meters" }
   ],
   "stock": "in_stock",
   "sku": "NE-INS-002",
@@ -288,20 +288,20 @@ window.NEXEV_PRODUCTS = {
       "category": "connector",
       "status": "active",
       "featured": false,
-      "price": 85,
+      "price": 109,
       "compare_price": null,
       "unit": "pair",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 10,  "price": 80,  "label": "10+ pairs" },
-        { "qty": 50, "price": 75,  "label": "50+ pairs" },
-        { "qty": 100, "price": 70,  "label": "100+ pairs (workshop)" }
+        { "qty": 10,  "price": 99,  "label": "10+ pairs" },
+        { "qty": 50, "price": 95,  "label": "50+ pairs" },
+        { "qty": 100, "price": 90,  "label": "100+ pairs (workshop)" }
       ],
       "stock": "in_stock",
       "sku": "NE-XT-001",
       "hsn_code": "8536",
       "gst_rate": 18,
-      "images": ["assets/products/xt60_1.png","assets/products/xt60_3.png","assets/products/xt60_4.png"],
+      "images": ["assets/products/xt60h22.png","assets/products/xt60h6.png","assets/products/xt60_4.png"],
       "image_fallback": "xt60h",
       "tags": ["connector","XT60H","JST","amass","gold-plated","8536"],
       "short_description": "Genuine Amass XT60H male + female pair. ",
@@ -329,13 +329,13 @@ window.NEXEV_PRODUCTS = {
       "category": "holder",
       "status": "active",
       "featured": false,
-      "price": 90,
+      "price": 99,
       "compare_price": null,
       "unit": "pack",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 10,  "price": 85, "label": "10+ packs" },
-        { "qty": 50, "price": 80, "label": "50+ packs" },
+        { "qty": 10,  "price": 90, "label": "10+ packs" },
+        { "qty": 50, "price": 85, "label": "50+ packs" },
 		{ "qty": 100, "price": 75, "label": "100+ packs" }
       ],
       "stock": "in_stock",
@@ -730,7 +730,7 @@ window.NEXEV_PRODUCTS = {
 	
 	{
       "id": "bms-pcm-2s-8a",
-      "name": "BMS / PCM Board (1S)",
+      "name": "BMS / PCM Board (2S)",
       "tagline": "Protection circuit modules for 2S 7.4V Li-Ion packs",
       "category": "bms",
       "status": "active",
@@ -771,7 +771,7 @@ window.NEXEV_PRODUCTS = {
 	
 	{
       "id": "bms-pcm-3s-10a",
-      "name": "BMS / PCM Board (1S)",
+      "name": "BMS / PCM Board (3S)",
       "tagline": "Protection circuit modules for 2S 12V Li-Ion packs",
       "category": "bms",
       "status": "active",
@@ -810,7 +810,7 @@ window.NEXEV_PRODUCTS = {
       }
     },
 
-    {
+    /*{
       "id": "bms-6s",
       "name": "BMS Board (6S)",
       "tagline": "Electric control boards for 24V Li-Ion packs",
@@ -849,7 +849,7 @@ window.NEXEV_PRODUCTS = {
         "title": "BMS Board 7S / 10S \u2014 24V 36V Li-Ion | NexEV",
         "description": "6S BMS boards for 24V  Li-Ion battery packs. EV and solar grade. Ships from Karnataka."
       }
-    },
+    },*/
 
     {
       "id": "charger-tp4057-1s-typec",

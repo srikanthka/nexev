@@ -87,8 +87,37 @@ function getUnitPrice(productId, qty) {
 }
 
 /* ═══════════════════════════════════════════════════
-   SHIPPING — mirrors assets/data/shipping-rates.json
-   Must stay in sync with the frontend JSON.
+   DELHIVERY — pickup pincode mirrors data/shipping.json
+   Set DELHIVERY_TOKEN + DELHIVERY_PICKUP_PINCODE in Cloudflare Dashboard.
+═══════════════════════════════════════════════════ */
+const DELHIVERY_PICKUP_PINCODE = '560048'; /* matches data/shipping.json pickup_pincode */
+
+async function delhiveryIsServiceable(pincode, token) {
+  const url = `https://staging-express.delhivery.com/c/api/pin-codes/json/?filter_codes=${pincode}`;
+  const res = await fetch(url, { headers: { 'Authorization': `Token ${token}` } });
+  if (!res.ok) throw new Error(`Delhivery serviceability HTTP ${res.status}`);
+  const data = await res.json();
+  const codes = data.delivery_codes || [];
+  return codes.length > 0 && codes[0]?.postal_code?.inc === 'Y';
+}
+
+async function delhiveryChargesPaise(dPin, oPin, weightGrams, token) {
+  const cgm = Math.max(10, weightGrams);
+  const url  = `https://staging-express.delhivery.com/api/kinko/v1/invoice/charges/.json?md=E&ss=Delivered&d_pin=${dPin}&o_pin=${oPin}&cgm=${cgm}&pt=Pre-paid`;
+  const res  = await fetch(url, {
+    headers: {
+      'Content-Type':  'application/json',
+      'Authorization': `Token ${token}`,
+    },
+  });
+  if (!res.ok) throw new Error(`Delhivery charges HTTP ${res.status}`);
+  const data = await res.json();
+  return Math.round((data.total_amount || 0) * 100); /* ₹ → paise */
+}
+
+/* ═══════════════════════════════════════════════════
+   SHIPPING (static fallback — used when DELHIVERY_TOKEN is not set)
+   Mirrors assets/data/shipping-rates.json.
 ═══════════════════════════════════════════════════ */
 /* ── Rates in paise — must exactly mirror shop.html inline shippingRates ── */
 const SHIPPING_ZONES = {
@@ -278,14 +307,33 @@ export async function onRequestPost({ request, env }) {
       );
     }
 
-    /* ── Calculate shipping ── */
-    const { shippingPaise, zone, isFree, error: zoneError } = calcShippingPaise(
-      customer.pincode,
-      totalWeightGrams,
-      subtotalPaise
-    );
-    if (zoneError) {
-      return new Response(JSON.stringify({ error: zoneError }), { status: 400, headers });
+    /* ── Calculate shipping via Delhivery (fallback to static rates if token absent) ── */
+    let shippingPaise   = 0;
+    let shippingZone    = null;
+    let shippingIsFree  = false;
+
+    if (env.DELHIVERY_TOKEN) {
+      const pickupPin = env.DELHIVERY_PICKUP_PINCODE || DELHIVERY_PICKUP_PINCODE;
+      const serviceable = await delhiveryIsServiceable(customer.pincode, env.DELHIVERY_TOKEN);
+      if (!serviceable) {
+        return new Response(
+          JSON.stringify({ error: 'Sorry, delivery is not available to your pincode. Please contact us on WhatsApp.' }),
+          { status: 400, headers }
+        );
+      }
+      shippingPaise  = await delhiveryChargesPaise(customer.pincode, pickupPin, totalWeightGrams, env.DELHIVERY_TOKEN);
+      shippingZone   = { label: 'Delhivery Express', delivery: '3–7 business days' };
+      shippingIsFree = shippingPaise === 0;
+    } else {
+      /* Static fallback — remove once DELHIVERY_TOKEN is configured */
+      console.warn('DELHIVERY_TOKEN not set — using static shipping rates');
+      const fallback = calcShippingPaise(customer.pincode, totalWeightGrams, subtotalPaise);
+      if (fallback.error) {
+        return new Response(JSON.stringify({ error: fallback.error }), { status: 400, headers });
+      }
+      shippingPaise  = fallback.shippingPaise;
+      shippingZone   = fallback.zone;
+      shippingIsFree = fallback.isFree;
     }
 
     const totalPaise = subtotalPaise + shippingPaise;
@@ -302,9 +350,9 @@ export async function onRequestPost({ request, env }) {
         customer_phone:   customer.phone,
         customer_address: customer.address,
         customer_pincode: customer.pincode,
-        shipping_zone:    zone?.label || 'Unknown',
+        shipping_zone:    shippingZone?.label || 'Unknown',
         shipping_amount:  String(shippingPaise / 100),
-        shipping_free:    String(isFree || false),
+        shipping_free:    String(shippingIsFree || false),
         items_summary:    validatedItems.map(i => `${i.name} ×${i.qty}`).join(', '),
       },
     };
@@ -335,9 +383,9 @@ export async function onRequestPost({ request, env }) {
       amount:          rzpOrder.amount,       /* subtotal + shipping, in paise */
       subtotal:        subtotalPaise,
       shipping:        shippingPaise,
-      shipping_free:   isFree,
-      shipping_zone:   zone?.label,
-      shipping_delivery: zone?.delivery,
+      shipping_free:     shippingIsFree,
+      shipping_zone:     shippingZone?.label,
+      shipping_delivery: shippingZone?.delivery,
       currency:        rzpOrder.currency,
       key_id:          env.RAZORPAY_KEY_ID,
       prefill: {
