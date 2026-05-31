@@ -64,7 +64,7 @@ export async function onRequestGet({ request, env }) {
     const data         = await res.json();
     const deliveryCodes = data.delivery_codes || [];
     const postal        = deliveryCodes[0]?.postal_code || null;
-    const serviceable   = deliveryCodes.length > 0 && postal?.inc === 'Y';
+    const serviceable   = deliveryCodes.length > 0 && typeof postal?.inc === 'string' && postal.inc.length > 0;
 
     return new Response(JSON.stringify({
       serviceable,
