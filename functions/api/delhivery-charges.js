@@ -71,9 +71,10 @@ export async function onRequestGet({ request, env }) {
     }
 
     const data = await res.json();
+    const entry = Array.isArray(data) ? data[0] : data;
     return new Response(JSON.stringify({
-      total_amount:   data.total_amount   || 0,
-      freight_charge: data.freight_charge || 0,
+      total_amount:   entry.total_amount || 0,
+      freight_charge: entry.charge_DL    || 0,
     }), { status: 200, headers });
 
   } catch (err) {
