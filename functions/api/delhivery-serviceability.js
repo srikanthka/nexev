@@ -51,7 +51,7 @@ export async function onRequestGet({ request, env }) {
   }
 
   try {
-    const apiUrl  = `https://staging-express.delhivery.com/c/api/pin-codes/json/?filter_codes=${pincode}`;
+    const apiUrl  = `https://track.delhivery.com/c/api/pin-codes/json/?filter_codes=${pincode}`;
     const res     = await fetch(apiUrl, {
       headers: { 'Authorization': `Token ${env.DELHIVERY_TOKEN}` },
     });
