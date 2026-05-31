@@ -57,7 +57,7 @@ export async function onRequestGet({ request, env }) {
   const weightGrams = Math.max(10, parseInt(cgm, 10) || 100);
 
   try {
-    const apiUrl = `https://staging-express.delhivery.com/api/kinko/v1/invoice/charges/.json?md=E&ss=Delivered&d_pin=${d_pin}&o_pin=${pickupPin}&cgm=${weightGrams}&pt=Pre-paid`;
+    const apiUrl = `https://track.delhivery.com/api/kinko/v1/invoice/charges/.json?md=E&ss=Delivered&d_pin=${d_pin}&o_pin=${pickupPin}&cgm=${weightGrams}&pt=Pre-paid`;
     const res    = await fetch(apiUrl, {
       headers: {
         'Content-Type':  'application/json',
