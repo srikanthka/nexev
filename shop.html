@@ -326,6 +326,11 @@ hr.footer-hr{border:none;border-top:1px solid rgba(255,255,255,.1);margin-bottom
 </style>
 <script src="assets/products/products.js"></script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="assets/js/firebase-init.js"></script>
+<script src="assets/js/nav-auth.js"></script>
 </head>
 <body>
 
@@ -360,6 +365,7 @@ hr.footer-hr{border:none;border-top:1px solid rgba(255,255,255,.1);margin-bottom
           Cart <span class="cart-count" id="cartCount">0</span>
         </button>
       </li>
+	  <li id="navAuthArea"></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -370,6 +376,7 @@ hr.footer-hr{border:none;border-top:1px solid rgba(255,255,255,.1);margin-bottom
   <a href="index.html">Home</a>
   <a href="index.html#products">Products</a>
   <a href="index.html#aftermarket">EV Parts</a>
+  <div id="mobMenuAuthArea"></div>
   <a href="index.html#opportunities">Partners</a>
   <a href="index.html#bis-services">BIS Services</a>
   <a href="shop.html" class="mob-shop">
@@ -1327,6 +1334,26 @@ function updateCheckoutOrderSummary(){
 
 /* ── CHECKOUT MODAL ── */
 document.getElementById('btnCheckout').addEventListener('click', function(){
+  /* Auth guard: sign-in required before checkout */
+  if (firebase.apps.length && firebase.auth && !firebase.auth().currentUser) {
+    closeCart();
+    window.location.href = 'auth.html?next=' + encodeURIComponent('shop.html?checkout=1');
+    return;
+  }
+  /* Prefill checkout form from saved profile */
+  (function(){
+    var u = firebase.apps.length && firebase.auth ? firebase.auth().currentUser : null;
+    if (!u) return;
+    firebase.database().ref('users/' + u.uid).once('value').then(function(snap){
+      var d = snap.val() || {};
+      var n = document.getElementById('co-name'),   ph = document.getElementById('co-phone'),
+          em = document.getElementById('co-email'), ad = document.getElementById('co-address');
+      if (n  && !n.value)  n.value  = d.name    || u.displayName || '';
+      if (ph && !ph.value) ph.value = d.phone   || '';
+      if (em && !em.value) em.value = u.email   || '';
+      if (ad && !ad.value) ad.value = d.address || '';
+    }).catch(function(){});
+  })();
   closeCart();
 
   var pinInput   = document.getElementById('co-pincode');
@@ -1536,6 +1563,44 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e){
 
           /* ── STEP 5: Verified — build WhatsApp confirmation + show success modal ── */
           rzpPaymentId = response.razorpay_payment_id;
+          /* Save order to Firebase */
+          (window._fbReady || Promise.resolve()).then(function(){
+            try {
+              var fbDb = firebase.database();
+              var fbUser = firebase.auth().currentUser;
+              var orderData = {
+                userId:  fbUser ? fbUser.uid : 'guest',
+                name:    nameVal,  email:    emailVal,
+                phone:   phoneVal, address:  addrVal,
+                pincode: pincodeVal,
+                state:   pincodeToState(pincodeVal) || '',
+                notes:   notesVal,
+                items: cart.map(function(i){
+                  return { id:i.product.id, name:i.product.name, sku:i.product.sku,
+                           qty:i.qty, price:getItemPrice(i), unit:i.product.unit,
+                           weight_grams:(i.product.shipping&&i.product.shipping.weight_grams)||100 };
+                }),
+                subtotal: subtotalRs,
+                shipping: shippingRs,
+                gst:      Math.round(getCartGST()*100)/100,
+                total:    totalRs,
+                paymentId: rzpPaymentId, paymentMethod: 'razorpay',
+                status: 'confirmed', createdAt: Date.now(), updatedAt: Date.now()
+              };
+              fbDb.ref('orders').push(orderData);
+              /* Order confirmation email (silent fail in local dev) */
+              fetch('/api/send-order-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  customerName: nameVal, customerEmail: emailVal,
+                  orderId: rzpPaymentId, items: orderData.items,
+                  total: orderData.total,
+                  address: addrVal + (pincodeVal ? ', ' + pincodeVal : '')
+                })
+              }).catch(function(){});
+            } catch(e) { console.warn('Firebase write skipped:', e.message); }
+          });
           var subtotalRs  = (order.subtotal  || 0) / 100;
           var shippingRs  = (order.shipping  || 0) / 100;
           var totalRs     = order.amount / 100;
@@ -1653,6 +1718,18 @@ if(hb && mm){
 updateCartBadge();
 renderCart();
 loadProducts();
+
+/* Auto-open checkout when user returns after sign-in redirect */
+(function(){
+  if (new URLSearchParams(location.search).get('checkout') !== '1') return;
+  history.replaceState({}, '', location.pathname);
+  (window._fbReady || Promise.resolve(true)).then(function(){
+    if (!firebase.apps.length || !firebase.auth || !firebase.auth().currentUser) return;
+    openCart();
+    renderCart();
+    setTimeout(function(){ if (cart.length > 0) document.getElementById('btnCheckout').click(); }, 500);
+  });
+})();
 
 })();
 </script>

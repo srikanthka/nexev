@@ -1,0 +1,535 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>My Account — NexEV India</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1a3a5c;--blue-d:#0f2540;
+  --green:#22c55e;--yellow:#f5c518;
+  --bg:#fff;--bg-alt:#f8fafc;
+  --text:#1e293b;--muted:#64748b;--border:#e2e8f0;
+  --radius:12px;--nav-h:64px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--bg-alt);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+
+/* NAVBAR */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.navbar.scrolled{border-color:var(--border);box-shadow:0 2px 20px rgba(0,0,0,.07)}
+.nav-c{max-width:1200px;margin:0 auto;padding:0 1.5rem;height:100%;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nav-logo{font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;line-height:1}
+.logo-nex{color:var(--blue)}.logo-ev{color:var(--green)}
+.nav-slogan{font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);line-height:1}
+.nav-right{display:flex;align-items:center;gap:.75rem}
+.nav-link{padding:.4rem .7rem;border-radius:7px;font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s,background .2s}
+.nav-link:hover{color:var(--blue);background:#f1f5f9}
+.nav-shop{display:inline-flex;align-items:center;gap:.35rem;background:var(--green);color:#fff!important;padding:.42rem 1rem;border-radius:20px;font-weight:700;font-size:.825rem;box-shadow:0 2px 10px rgba(34,197,94,.3);transition:background .2s}
+.nav-shop:hover{background:#16a34a}
+.nav-user-btn{display:flex;align-items:center;gap:.4rem;padding:.4rem .75rem;border-radius:7px;border:1.5px solid var(--border);font-size:.8rem;font-weight:600;color:var(--blue);cursor:pointer;background:#fff;transition:all .2s;font-family:inherit}
+.nav-user-btn:hover{border-color:var(--blue);background:var(--bg-alt)}
+.nav-avatar{width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+/* PAGE */
+.page-body{padding-top:calc(var(--nav-h) + 2rem);padding-bottom:4rem;min-height:100vh}
+.page-grid{display:grid;grid-template-columns:260px 1fr;gap:2rem;align-items:start}
+@media(max-width:900px){.page-grid{grid-template-columns:1fr}}
+
+/* SIDEBAR */
+.sidebar{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;position:sticky;top:calc(var(--nav-h)+1rem)}
+.sb-top{background:linear-gradient(135deg,var(--blue-d),var(--blue));padding:1.5rem;text-align:center}
+.sb-avatar{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.3);color:#fff;font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto .75rem}
+.sb-name{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:.2rem}
+.sb-email{font-size:.75rem;color:rgba(255,255,255,.6);word-break:break-all}
+.sb-nav{padding:.75rem}
+.sb-link{display:flex;align-items:center;gap:.7rem;padding:.65rem .85rem;border-radius:9px;font-size:.875rem;font-weight:600;color:var(--muted);cursor:pointer;transition:all .15s;border:none;background:none;width:100%;text-align:left;font-family:inherit}
+.sb-link:hover{background:var(--bg-alt);color:var(--text)}
+.sb-link.active{background:rgba(26,58,92,.07);color:var(--blue)}
+.sb-link svg{flex-shrink:0}
+.sb-divider{height:1px;background:var(--border);margin:.4rem .85rem}
+.sb-logout{display:flex;align-items:center;gap:.7rem;padding:.65rem .85rem;border-radius:9px;font-size:.875rem;font-weight:600;color:#dc2626;cursor:pointer;transition:background .15s;border:none;background:none;width:100%;text-align:left;font-family:inherit}
+.sb-logout:hover{background:rgba(239,68,68,.06)}
+
+/* MAIN CONTENT */
+.main-content{}
+.section-card{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:1.5rem}
+.sc-header{padding:1.25rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.sc-title{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--blue)}
+.sc-count{font-size:.8rem;background:var(--bg-alt);color:var(--muted);border-radius:20px;padding:.2rem .6rem;font-weight:600}
+
+/* SECTION VISIBILITY */
+.section-panel{display:none}
+.section-panel.active{display:block}
+
+/* ORDER CARD */
+.order-card{border-bottom:1px solid var(--border);padding:1.25rem 1.5rem;transition:background .15s}
+.order-card:last-child{border:none}
+.order-card:hover{background:#fafbfc}
+.oc-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.6rem}
+.oc-id{font-family:'Syne',sans-serif;font-size:.88rem;font-weight:700;color:var(--blue)}
+.oc-date{font-size:.75rem;color:var(--muted);margin-top:.15rem}
+.oc-right{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.oc-total{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:800;color:var(--text)}
+.status-badge{display:inline-flex;align-items:center;gap:.35rem;padding:.25rem .65rem;border-radius:20px;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:1px solid}
+.status-pending{color:#b45309;background:rgba(245,197,24,.1);border-color:rgba(245,197,24,.4)}
+.status-confirmed{color:#1a3a5c;background:rgba(26,58,92,.08);border-color:rgba(26,58,92,.25)}
+.status-processing{color:#6d28d9;background:rgba(109,40,217,.07);border-color:rgba(109,40,217,.25)}
+.status-shipped{color:#0369a1;background:rgba(3,105,161,.08);border-color:rgba(3,105,161,.25)}
+.status-delivered{color:#15803d;background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.3)}
+.status-cancelled{color:#dc2626;background:rgba(239,68,68,.07);border-color:rgba(239,68,68,.25)}
+
+.oc-items-row{font-size:.8rem;color:var(--muted);margin-bottom:.6rem}
+.oc-expand-btn{display:inline-flex;align-items:center;gap:.3rem;font-size:.78rem;font-weight:600;color:var(--blue);cursor:pointer;background:none;border:none;font-family:inherit;padding:0;transition:opacity .15s}
+.oc-expand-btn:hover{opacity:.7}
+.oc-detail{display:none;margin-top:.9rem;background:var(--bg-alt);border-radius:10px;padding:1rem;border:1px solid var(--border)}
+.oc-detail.open{display:block}
+.oc-items-table{width:100%;border-collapse:collapse;font-size:.8rem;margin-bottom:.85rem}
+.oc-items-table th{text-align:left;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding:.3rem .5rem .3rem 0;border-bottom:1px solid var(--border)}
+.oc-items-table td{padding:.4rem .5rem .4rem 0;color:var(--text);border-bottom:1px solid rgba(226,232,240,.6)}
+.oc-items-table tr:last-child td{border:none}
+.oc-meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;font-size:.8rem}
+@media(max-width:500px){.oc-meta-grid{grid-template-columns:1fr}}
+.oc-meta-item .k{color:var(--muted);margin-bottom:.15rem;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.oc-meta-item .v{color:var(--text);font-weight:500}
+.tracking-link{display:inline-flex;align-items:center;gap:.3rem;color:var(--blue);font-weight:600;font-size:.78rem}
+.tracking-link:hover{text-decoration:underline}
+
+/* EMPTY STATE */
+.empty-state{text-align:center;padding:3.5rem 2rem;color:var(--muted)}
+.empty-state svg{margin:0 auto 1rem;opacity:.25}
+.empty-state h3{font-family:'Syne',sans-serif;font-size:1.1rem;color:var(--blue);margin-bottom:.4rem}
+.empty-state p{font-size:.875rem;margin-bottom:1.25rem}
+.btn-go-shop{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.25rem;border-radius:10px;background:var(--green);color:#fff;font-weight:700;font-size:.875rem;border:none;cursor:pointer;font-family:inherit;transition:all .2s}
+.btn-go-shop:hover{background:#16a34a;transform:translateY(-1px)}
+
+/* PROFILE FORM */
+.profile-form{padding:1.5rem}
+.fg{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.9rem}
+.fg label{font-size:.78rem;font-weight:600;color:var(--text)}
+.fg input,.fg textarea{
+  padding:.68rem .9rem;border:1.5px solid var(--border);border-radius:9px;
+  font-family:inherit;font-size:.9rem;color:var(--text);background:#fff;outline:none;
+  transition:border-color .2s;width:100%}
+.fg input:focus,.fg textarea:focus{border-color:var(--blue)}
+.fg textarea{resize:vertical;min-height:80px}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+@media(max-width:500px){.fg-row{grid-template-columns:1fr}}
+.btn-save{padding:.72rem 1.75rem;border-radius:10px;background:var(--blue);color:#fff;font-family:inherit;font-size:.875rem;font-weight:700;border:none;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem}
+.btn-save:hover{background:var(--blue-d);transform:translateY(-1px)}
+.btn-save:disabled{background:var(--muted);transform:none;cursor:not-allowed}
+.save-ok{display:none;align-items:center;gap:.4rem;font-size:.82rem;color:#15803d;font-weight:600;margin-left:.75rem}
+.save-ok.on{display:inline-flex}
+
+/* TOAST */
+.toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(20px);background:#1e293b;color:#fff;padding:.7rem 1.25rem;border-radius:10px;font-size:.875rem;font-weight:500;z-index:500;opacity:0;transition:opacity .3s,transform .3s;pointer-events:none;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.success{background:#16a34a}.toast.error{background:#dc2626}
+
+/* LOADING */
+.loading-state{text-align:center;padding:3rem;color:var(--muted);font-size:.875rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sp{display:inline-block;width:20px;height:20px;border:2px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin .6s linear infinite;margin-bottom:.75rem}
+
+/* FULL NAVBAR EXTENSIONS */
+.nav-brand{display:flex;flex-direction:column;gap:.18rem;flex-shrink:0}
+.nav-logo-wrap{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.nav-logo-img{height:32px;width:auto;display:block}
+.nav-logo-text{display:flex;align-items:center;font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;line-height:1}
+.nav-links{display:flex;align-items:center;gap:.2rem;list-style:none}
+.nav-links a{padding:.4rem .7rem;border-radius:7px;font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s,background .2s;text-decoration:none}
+.nav-links a:hover{color:var(--blue);background:#f1f5f9}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--blue);border-radius:2px;transition:all .3s}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+.mob-menu{display:none;flex-direction:column;gap:.5rem;position:fixed;top:var(--nav-h);left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem 1.5rem 1.5rem;z-index:99;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mob-menu.open{display:flex}
+.mob-menu a{padding:.6rem .75rem;border-radius:8px;font-weight:500;color:var(--text);transition:background .15s;text-decoration:none}
+.mob-menu a:hover{background:var(--bg-alt)}
+.mob-menu .mob-shop{background:var(--green)!important;color:#fff!important;font-weight:700;border-radius:10px;text-align:center}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar" aria-label="Main navigation">
+  <div class="nav-c">
+    <div class="nav-brand">
+      <a href="index.html" class="nav-logo-wrap" aria-label="NexEV Home">
+        <img id="navLogoImg" src="assets/logo/nexev-logo.png" alt="NexEV" class="nav-logo-img"
+             onerror="this.style.display='none';document.getElementById('navLogoText').style.display='flex';"/>
+        <span class="nav-logo-text" id="navLogoText" style="display:none;">
+          <span class="logo-nex">nex</span><span class="logo-ev">EV</span>
+        </span>
+      </a>
+      <span class="nav-slogan">Driven by Electric Future</span>
+    </div>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#products">Products</a></li>
+      <li><a href="index.html#aftermarket">EV Parts</a></li>
+      <li><a href="index.html#opportunities">Partners</a></li>
+      <li><a href="index.html#bis-services">BIS Services</a></li>
+      <li><a href="shop.html" class="nav-shop"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg> Shop</a></li>
+      <li id="navAuthArea"></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu" aria-hidden="true">
+  <a href="index.html">Home</a>
+  <a href="index.html#products">Products</a>
+  <a href="index.html#aftermarket">EV Parts</a>
+  <a href="index.html#opportunities">Partners</a>
+  <a href="index.html#bis-services">BIS Services</a>
+  <a href="shop.html" class="mob-shop">Shop &mdash; NexEV Store</a>
+  <div id="mobMenuAuthArea"></div>
+</div>
+
+<!-- PAGE -->
+<div class="page-body">
+  <div class="container">
+    <div class="page-grid">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sb-top">
+          <div class="sb-avatar" id="sbAvatar">?</div>
+          <div class="sb-name" id="sbName">Loading…</div>
+          <div class="sb-email" id="sbEmail"></div>
+        </div>
+        <nav class="sb-nav">
+          <button class="sb-link active" data-panel="orders">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            My Orders
+          </button>
+          <button class="sb-link" data-panel="profile">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Profile
+          </button>
+          <div class="sb-divider"></div>
+          <button class="sb-logout" id="btnLogout">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            Sign Out
+          </button>
+        </nav>
+      </aside>
+
+      <!-- MAIN -->
+      <main class="main-content">
+
+        <!-- ORDERS SECTION -->
+        <div class="section-panel active" id="panel-orders">
+          <div class="section-card">
+            <div class="sc-header">
+              <span class="sc-title">My Orders</span>
+              <span class="sc-count" id="orderCount">—</span>
+            </div>
+            <div id="ordersContainer">
+              <div class="loading-state"><div class="sp"></div><br/>Loading orders…</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROFILE SECTION -->
+        <div class="section-panel" id="panel-profile">
+          <div class="section-card">
+            <div class="sc-header"><span class="sc-title">Profile Details</span></div>
+            <div class="profile-form">
+              <div class="fg-row">
+                <div class="fg">
+                  <label for="pName">Full Name</label>
+                  <input type="text" id="pName" placeholder="Your name" autocomplete="name"/>
+                </div>
+                <div class="fg">
+                  <label for="pPhone">Phone Number</label>
+                  <input type="tel" id="pPhone" placeholder="+91 XXXXXXXXXX" autocomplete="tel"/>
+                </div>
+              </div>
+              <div class="fg">
+                <label for="pEmail">Email Address</label>
+                <input type="email" id="pEmail" readonly style="background:var(--bg-alt);color:var(--muted);cursor:default"/>
+              </div>
+              <div class="fg">
+                <label for="pAddress">Default Delivery Address</label>
+                <textarea id="pAddress" placeholder="House no., Street, Area, City, State, Pincode"></textarea>
+              </div>
+              <div style="display:flex;align-items:center">
+                <button class="btn-save" id="btnSaveProfile">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                  Save Changes
+                </button>
+                <span class="save-ok" id="saveOk">
+                  <svg width="14" height="14" fill="none" stroke="#15803d" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  Saved!
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+</div>
+
+
+<div class="toast" id="toast"></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="assets/js/firebase-init.js"></script>
+<script src="assets/js/nav-auth.js"></script>
+<script>
+(function(){
+  var hb=document.getElementById('hamburger'),mm=document.getElementById('mobMenu');
+  if(!hb||!mm) return;
+  hb.addEventListener('click',function(){
+    var o=mm.classList.toggle('open'); hb.setAttribute('aria-expanded',String(o));
+    mm.setAttribute('aria-hidden',String(!o)); document.body.style.overflow=o?'hidden':'';
+  });
+  mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){
+    mm.classList.remove('open'); hb.setAttribute('aria-expanded','false');
+    mm.setAttribute('aria-hidden','true'); document.body.style.overflow='';
+  }); });
+})();
+</script>
+<script>
+window._fbReady.then(function(ok){
+if (!ok) return;
+(function(){
+'use strict';
+var auth = firebase.auth();
+var db   = firebase.database();
+var currentUid = null;
+
+/* Auth guard */
+auth.onAuthStateChanged(function(user){
+  if(!user){ window.location.href = 'auth.html?next=account.html'; return; }
+  currentUid = user.uid;
+  initAccount(user);
+});
+
+function initAccount(user){
+  var initials = (user.displayName||user.email||'?').charAt(0).toUpperCase();
+  document.getElementById('sbAvatar').textContent = initials;
+  document.getElementById('sbEmail').textContent  = user.email;
+  if (!user.emailVerified) showVerifyBanner();
+
+  /* Load profile */
+  db.ref('users/'+user.uid).once('value').then(function(snap){
+    var d = snap.val() || {};
+    var name = d.name || user.displayName || '';
+    document.getElementById('sbName').textContent = name || user.email;
+    document.getElementById('pName').value    = name;
+    document.getElementById('pPhone').value   = d.phone  || '';
+    document.getElementById('pEmail').value   = user.email;
+    document.getElementById('pAddress').value = d.address || '';
+  });
+
+  loadOrders(user.uid);
+}
+
+function showVerifyBanner(){
+  if (document.getElementById('verifyBanner')) return;
+  var b = document.createElement('div');
+  b.id = 'verifyBanner';
+  b.style.cssText = 'position:fixed;top:var(--nav-h);left:0;right:0;z-index:80;'    + 'background:rgba(245,197,24,.12);border-bottom:1px solid rgba(245,197,24,.35);'    + 'padding:.6rem 1.5rem;font-size:.82rem;font-weight:500;color:#92400e;'    + 'display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap';
+  b.innerHTML = '<span>&#128231; Please verify your email address to fully secure your account.</span>'
+    + '<div style="display:flex;gap:.5rem">'
+    + '<button onclick="resendVerify()" style="padding:.3rem .8rem;border-radius:7px;background:var(--blue);color:#fff;border:none;cursor:pointer;font-family:inherit;font-size:.78rem;font-weight:700">Resend Email</button>'
+    + '<button onclick="document.getElementById(\'verifyBanner\').remove()" style="padding:.3rem .5rem;border-radius:7px;background:none;border:none;cursor:pointer;color:var(--muted);font-size:.9rem">&#10005;</button>'
+    + '</div>';
+  document.body.insertBefore(b, document.body.firstElementChild);
+}
+window.resendVerify = function(){
+  firebase.auth().currentUser.sendEmailVerification()
+    .then(function(){
+      showToast('Verification email sent — check your inbox.','success');
+      var v = document.getElementById('verifyBanner'); if(v) v.remove();
+    })
+    .catch(function(e){ showToast(e.message,'error'); });
+};
+
+/* Panel switching */
+function switchPanel(panel){
+  document.querySelectorAll('.section-panel').forEach(function(el){ el.classList.remove('active'); });
+  document.querySelectorAll('.sb-link,.mob-tab').forEach(function(el){ el.classList.remove('active'); });
+  document.getElementById('panel-'+panel).classList.add('active');
+  document.querySelectorAll('[data-panel="'+panel+'"]').forEach(function(el){ el.classList.add('active'); });
+}
+document.querySelectorAll('.sb-link,.mob-tab').forEach(function(el){
+  if(el.dataset.panel) el.addEventListener('click', function(){ switchPanel(this.dataset.panel); });
+});
+
+/* Sign out */
+document.getElementById('btnLogout').addEventListener('click', function(){
+  auth.signOut().then(function(){ window.location.href='auth.html'; });
+});
+
+/* Sticky navbar */
+window.addEventListener('scroll', function(){
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+});
+
+/* ORDER STATUSES */
+var STATUS_META = {
+  pending:    { label:'Pending',    cls:'status-pending' },
+  confirmed:  { label:'Confirmed',  cls:'status-confirmed' },
+  processing: { label:'Processing', cls:'status-processing' },
+  shipped:    { label:'Shipped',    cls:'status-shipped' },
+  delivered:  { label:'Delivered',  cls:'status-delivered' },
+  cancelled:  { label:'Cancelled',  cls:'status-cancelled' }
+};
+function statusBadge(s){
+  var m = STATUS_META[s] || { label: s||'Unknown', cls:'status-pending' };
+  return '<span class="status-badge '+m.cls+'">'+m.label+'</span>';
+}
+
+/* Format helpers */
+function fmt(n){ return '₹'+(+n).toLocaleString('en-IN',{minimumFractionDigits:0,maximumFractionDigits:0}); }
+function fmtDate(ts){ return new Date(ts).toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}); }
+function ordId(key){ return 'ORD-'+key.replace('-','').substring(0,8).toUpperCase(); }
+
+/* LOAD ORDERS */
+function loadOrders(uid){
+  var el = document.getElementById('ordersContainer');
+  var tmo = setTimeout(function(){
+    if (el && el.querySelector('.sp')) {
+      el.innerHTML = '<div class="empty-state"><h3>Could not load orders</h3>'
+        + '<p>Check your connection and <a href="" onclick="location.reload();return false" style="color:var(--blue);font-weight:600">refresh</a>.</p></div>';
+      document.getElementById('orderCount').textContent = '';
+    }
+  }, 8000);
+  db.ref('orders').orderByChild('userId').equalTo(uid).on('value',
+    function(snap){
+      clearTimeout(tmo);
+      var orders = [];
+      snap.forEach(function(cs){ orders.push({ key:cs.key, data:cs.val() }); });
+      orders.sort(function(a,b){ return (b.data.createdAt||0)-(a.data.createdAt||0); });
+      renderOrders(orders);
+    },
+    function(err){
+      clearTimeout(tmo);
+      console.error('loadOrders:', err.message);
+      if (el) el.innerHTML = '<div class="empty-state"><h3>Could not load orders</h3>'
+        + '<p>' + (err.code === 'PERMISSION_DENIED' ? 'Please sign in to view your orders.' : err.message) + '</p></div>';
+      document.getElementById('orderCount').textContent = '';
+    }
+  );
+}
+
+function renderOrders(orders){
+  var container = document.getElementById('ordersContainer');
+  document.getElementById('orderCount').textContent = orders.length + ' order'+(orders.length===1?'':'s');
+  if(!orders.length){
+    container.innerHTML = '<div class="empty-state">'
+      + '<svg width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>'
+      + '<h3>No orders yet</h3><p>Your order history will appear here after your first purchase.</p>'
+      + '<button class="btn-go-shop" onclick="window.location.href=\'shop.html\'">Browse Shop</button></div>';
+    return;
+  }
+  var html = '';
+  orders.forEach(function(o){
+    var d = o.data;
+    var itemsStr = (d.items||[]).slice(0,2).map(function(i){ return i.name + ' x' + i.qty; }).join(', ');
+    if((d.items||[]).length>2) itemsStr += ' +' + ((d.items||[]).length-2) + ' more';
+    var trackingHtml = '';
+    if(d.trackingNumber){
+      trackingHtml = d.trackingUrl
+        ? '<a href="'+d.trackingUrl+'" target="_blank" class="tracking-link"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 8l4 4-4 4"/><path d="M2 12h20"/></svg>Track: '+d.trackingNumber+'</a>'
+        : '<span style="font-size:.78rem;font-weight:600;color:var(--blue)">Tracking: '+d.trackingNumber+'</span>';
+    }
+    html += '<div class="order-card">'
+      + '<div class="oc-head">'
+      + '<div><div class="oc-id">'+ordId(o.key)+'</div><div class="oc-date">'+fmtDate(d.createdAt||0)+'</div></div>'
+      + '<div class="oc-right">'+statusBadge(d.status)+'<div class="oc-total">'+fmt(d.total||0)+'</div></div>'
+      + '</div>'
+      + '<div class="oc-items-row">'+esc(itemsStr)+'</div>'
+      + (trackingHtml ? '<div style="margin-bottom:.6rem">'+trackingHtml+'</div>' : '')
+      + '<button class="oc-expand-btn" onclick="toggleDetail(this)">'
+      + '<svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>'
+      + 'View details</button>'
+      + '<div class="oc-detail">'
+      + buildOrderDetail(d)
+      + '</div>'
+      + '</div>';
+  });
+  container.innerHTML = html;
+}
+
+function buildOrderDetail(d){
+  var html = '';
+  if((d.items||[]).length){
+    html += '<table class="oc-items-table"><thead><tr><th>Item</th><th>Qty</th><th style="text-align:right">Price</th></tr></thead><tbody>';
+    (d.items||[]).forEach(function(item){
+      html += '<tr><td>'+esc(item.name)+'</td><td>'+item.qty+'</td><td style="text-align:right;font-weight:600">'+fmt(item.price * item.qty)+'</td></tr>';
+    });
+    html += '</tbody></table>';
+  }
+  html += '<div style="display:flex;flex-direction:column;gap:.3rem;font-size:.8rem;margin-bottom:.85rem;padding:.5rem 0;border-top:1px solid var(--border)">';
+  html += '<div style="display:flex;justify-content:space-between;color:var(--muted)"><span>Subtotal</span><span>'+fmt(d.subtotal||0)+'</span></div>';
+  html += '<div style="display:flex;justify-content:space-between;color:var(--muted)"><span>Shipping</span><span>'+(d.shipping===0?'FREE':fmt(d.shipping||0))+'</span></div>';
+  html += '<div style="display:flex;justify-content:space-between;font-weight:700;color:var(--text);border-top:1px solid var(--border);padding-top:.4rem;margin-top:.1rem"><span>Total</span><span>'+fmt(d.total||0)+'</span></div>';
+  html += '</div>';
+  html += '<div class="oc-meta-grid">';
+  if(d.address) html += '<div class="oc-meta-item"><div class="k">Delivery Address</div><div class="v">'+esc(d.address)+(d.pincode?', '+esc(d.pincode):'')+'</div></div>';
+  if(d.phone)   html += '<div class="oc-meta-item"><div class="k">Phone</div><div class="v">'+esc(d.phone)+'</div></div>';
+  if(d.paymentId) html += '<div class="oc-meta-item"><div class="k">Payment ID</div><div class="v" style="font-family:monospace;font-size:.75rem">'+esc(d.paymentId)+'</div></div>';
+  if(d.notes)   html += '<div class="oc-meta-item"><div class="k">Order Notes</div><div class="v">'+esc(d.notes)+'</div></div>';
+  html += '</div>';
+  return html;
+}
+
+window.toggleDetail = function(btn){
+  var detail = btn.nextElementSibling;
+  var open = detail.classList.toggle('open');
+  btn.innerHTML = open
+    ? '<svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>Hide details'
+    : '<svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>View details';
+};
+
+/* SAVE PROFILE */
+document.getElementById('btnSaveProfile').addEventListener('click', function(){
+  if(!currentUid) return;
+  var name    = document.getElementById('pName').value.trim();
+  var phone   = document.getElementById('pPhone').value.trim();
+  var address = document.getElementById('pAddress').value.trim();
+  var btn = document.getElementById('btnSaveProfile');
+  btn.disabled = true;
+  db.ref('users/'+currentUid).update({ name:name, phone:phone, address:address })
+    .then(function(){
+      btn.disabled = false;
+      document.getElementById('sbName').textContent = name;
+      var ok = document.getElementById('saveOk');
+      ok.classList.add('on');
+      setTimeout(function(){ ok.classList.remove('on'); }, 2500);
+    }).catch(function(){
+      btn.disabled = false;
+      showToast('Could not save. Please try again.','error');
+    });
+});
+
+function showToast(msg, type){
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast '+(type||'');
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 3500);
+}
+
+function esc(s){ return String(s||'').replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];}); }
+})();
+}); /* _fbReady */
+</script>
+</body>
+</html>
