@@ -65,7 +65,7 @@ export async function onRequestPost(context) {
     &nbsp;&middot;&nbsp; <a href="https://wa.me/919019901711" style="color:#1a3a5c;font-weight:600">WhatsApp +91 90199 01711</a></p>
   </div>
   <div style="background:#f8fafc;padding:1rem 2rem;text-align:center;font-size:.72rem;color:#94a3b8">
-    NexEV Private Limited &middot; GSTIN: 29AALCN2942C1ZF &middot; Bengaluru, Karnataka
+    NexEV Private Limited &middot; GSTIN: 29AALCN2942C1ZF &middot; Bengaluru, Karnataka,India
   </div>
 </div>
 </body></html>`;
