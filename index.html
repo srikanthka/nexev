@@ -1049,7 +1049,7 @@ img{max-width:100%;display:block}
             <svg width="48" height="40" viewBox="0 0 48 40" fill="none">
               <rect x="6" y="8" width="36" height="26" rx="4" fill="rgba(34,197,94,.18)" stroke="#22c55e" stroke-width="1.4"/>
               <line x1="6" y1="17" x2="42" y2="17" stroke="#22c55e" stroke-width="1" opacity=".55"/>
-              <path d="M16" y1="8" x2="L16 17" stroke="#22c55e" stroke-width=".9" opacity=".4"/>
+              <path d="M16 8 L16 17" stroke="#22c55e" stroke-width=".9" opacity=".4"/>
               <path d="M32 8 L32 17" stroke="#22c55e" stroke-width=".9" opacity=".4"/>
               <polyline points="16,23 21,29 32,20" stroke="#22c55e" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -2531,7 +2531,7 @@ if('IntersectionObserver' in window){
   reset();
 })();
 
-/* ── Enquiry form — sends via Resend (/api/send-enquiry) ── */
+/* ── Enquiry form — sends via Resend (/api/nxmail) ── */
 (function(){
   var fn   = document.getElementById('fn');
   var fe   = document.getElementById('fe');
@@ -2578,21 +2578,42 @@ if('IntersectionObserver' in window){
       /* Loading state */
       if(btn){ btn.disabled=true; btn.textContent='Sending…'; }
 
-      fetch('/api/send-enquiry',{
+      var BTN_HTML = 'Send Enquiry <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+
+      function resetBtn(){ if(btn){ btn.disabled=false; btn.innerHTML=BTN_HTML; } }
+      function showEnqError(msg){
+        resetBtn();
+        var errEl = document.getElementById('enq-send-err');
+        if(!errEl){
+          errEl = document.createElement('div');
+          errEl.id = 'enq-send-err';
+          errEl.style.cssText = 'margin-top:.75rem;padding:.75rem 1rem;background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.25);border-radius:8px;font-size:.82rem;color:#dc2626;line-height:1.5';
+          form.appendChild(errEl);
+        }
+        errEl.innerHTML = '⚠️ ' + msg + '<br/><span style="font-size:.78rem;color:#64748b;margin-top:.3rem;display:block">Email us directly: <a href="mailto:contact@nexev.in" style="color:#1a3a5c;font-weight:600">contact@nexev.in</a> &nbsp;·&nbsp; <a href="https://wa.me/919019901711" target="_blank" rel="noopener" style="color:#16a34a;font-weight:600">WhatsApp</a></span>';
+        errEl.style.display = 'block';
+        setTimeout(function(){ if(errEl) errEl.style.display='none'; }, 12000);
+      }
+
+      fetch('/api/nxmail',{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify(payload)
       })
-      .then(function(r){ return r.json(); })
-      .then(function(data){
-        if(btn){ btn.disabled=false; btn.innerHTML='Send Enquiry <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>'; }
-        if(data.error){ alert('Could not send enquiry: '+data.error+'\n\nPlease email us directly at contact@nexev.in'); return; }
+      .then(function(r){ return r.json().then(function(d){ return { status: r.status, data: d }; }); })
+      .then(function(res){
+        resetBtn();
+        if(!res.data.ok || res.status !== 200){
+          showEnqError(res.data.error || 'Could not send message (HTTP ' + res.status + ').');
+          return;
+        }
+        var errEl = document.getElementById('enq-send-err');
+        if(errEl) errEl.style.display='none';
         form.reset();
         if(fok){ fok.classList.add('show'); setTimeout(function(){ fok.classList.remove('show'); },8000); }
       })
-      .catch(function(){
-        if(btn){ btn.disabled=false; btn.innerHTML='Send Enquiry <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>'; }
-        alert('Network error. Please email us at contact@nexev.in or use WhatsApp.');
+      .catch(function(err){
+        showEnqError('Could not reach the server' + (err && err.message ? ': ' + err.message : '') + '.');
       });
     });
   }
@@ -2623,22 +2644,25 @@ if('IntersectionObserver' in window){
       if(!n||!em||!msg||msg.length<5){ if(cmErr) cmErr.style.display='block'; return; }
       if(cmErr) cmErr.style.display='none';
       if(cmBtn){ cmBtn.disabled=true; cmBtn.textContent='Sending…'; }
-      fetch('/api/send-enquiry',{
+      fetch('/api/nxmail',{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({ name:n, email:em, type:'General Enquiry (Footer)', message:msg })
       })
-      .then(function(r){ return r.json(); })
-      .then(function(data){
+      .then(function(r){ return r.json().then(function(d){ return { status:r.status, data:d }; }); })
+      .then(function(res){
         if(cmBtn){ cmBtn.disabled=false; cmBtn.textContent='Send Message'; }
-        if(data.error){ alert('Error: '+data.error); return; }
+        if(!res.data.ok || res.status!==200){
+          if(cmErr){ cmErr.textContent='⚠️ '+(res.data.error||'Send failed')+' — email contact@nexev.in'; cmErr.style.display='block'; }
+          return;
+        }
         cmForm.reset();
         if(cmOk) cmOk.style.display='block';
         setTimeout(function(){ if(cm){ cm.classList.remove('open'); document.body.style.overflow=''; } if(cmOk) cmOk.style.display='none'; },3000);
       })
-      .catch(function(){
+      .catch(function(err){
         if(cmBtn){ cmBtn.disabled=false; cmBtn.textContent='Send Message'; }
-        alert('Network error. Email us at contact@nexev.in');
+        if(cmErr){ cmErr.textContent='⚠️ Network error — email contact@nexev.in directly'; cmErr.style.display='block'; }
       });
     });
   }
