@@ -84,6 +84,7 @@ a{color:inherit;text-decoration:none}
 .status-shipped{color:#0369a1;background:rgba(3,105,161,.08);border-color:rgba(3,105,161,.25)}
 .status-delivered{color:#15803d;background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.3)}
 .status-cancelled{color:#dc2626;background:rgba(239,68,68,.07);border-color:rgba(239,68,68,.25)}
+.status-refunded{color:#0891b2;background:rgba(8,145,178,.07);border-color:rgba(8,145,178,.25)}
 
 .oc-items-row{font-size:.8rem;color:var(--muted);margin-bottom:.6rem}
 .oc-expand-btn{display:inline-flex;align-items:center;gap:.3rem;font-size:.78rem;font-weight:600;color:var(--blue);cursor:pointer;background:none;border:none;font-family:inherit;padding:0;transition:opacity .15s}
@@ -489,7 +490,8 @@ var STATUS_META = {
   processing: { label:'Processing', cls:'status-processing' },
   shipped:    { label:'Shipped',    cls:'status-shipped' },
   delivered:  { label:'Delivered',  cls:'status-delivered' },
-  cancelled:  { label:'Cancelled',  cls:'status-cancelled' }
+  cancelled:  { label:'Cancelled',  cls:'status-cancelled' },
+  refunded:   { label:'Refunded',   cls:'status-refunded' }
 };
 function statusBadge(s){
   var m = STATUS_META[s] || { label: s||'Unknown', cls:'status-pending' };

@@ -299,7 +299,15 @@ function checkRole(u){
   function _handleGoogle(user, isNew){
     if(isNew){
       db.ref('users/'+user.uid).set({ name:user.displayName||'', email:user.email, phone:'', address:'', createdAt:Date.now() })
-        .then(function(){ checkRole(user); });
+        .then(function(){
+          /* Welcome email for new Google sign-ups */
+          fetch('/api/send-welcome-email', {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify({ name: user.displayName || '', email: user.email }),
+          }).catch(function(){});
+          checkRole(user);
+        });
     } else {
       checkRole(user);
     }
@@ -428,6 +436,12 @@ document.getElementById('btnRegister').addEventListener('click', function(){
         c.user.sendEmailVerification()
       ];
       return Promise.all(saves).then(function(){
+        /* Welcome email — fire-and-forget, never blocks the redirect */
+        fetch('/api/send-welcome-email', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify({ name: name, email: email }),
+        }).catch(function(){});
         toast('Account created! Check your inbox to verify your email address.','ok');
         setTimeout(function(){ window.location.href='account.html'; }, 2500);
       });

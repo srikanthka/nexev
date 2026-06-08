@@ -14,7 +14,7 @@
   --green:#22c55e;--yellow:#f5c518;
   --bg:#fff;--bg-alt:#f8fafc;
   --text:#1e293b;--muted:#64748b;--border:#e2e8f0;
-  --radius:12px;--nav-h:60px;
+  --radius:12px;--nav-h:64px;
 }
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--bg-alt);line-height:1.6;overflow-x:hidden}
@@ -22,18 +22,23 @@ a{color:inherit;text-decoration:none}
 .container{max-width:1280px;margin:0 auto;padding:0 1.5rem}
 
 /* NAVBAR */
-.navbar{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:var(--blue-d);display:flex;align-items:center}
-.nav-c{max-width:1280px;margin:0 auto;padding:0 1.5rem;width:100%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
-.nav-logo{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:.6rem;text-decoration:none}
-.nav-logo span{color:var(--green)}
-.admin-badge{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(34,197,94,.2);color:var(--green);border:1px solid rgba(34,197,94,.35);border-radius:20px;padding:.2rem .6rem}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.navbar.scrolled{border-color:var(--border);box-shadow:0 2px 20px rgba(0,0,0,.07)}
+.nav-c{max-width:1280px;margin:0 auto;padding:0 1.5rem;height:100%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.nav-brand{display:flex;flex-direction:column;gap:.18rem;flex-shrink:0}
+.nav-logo-wrap{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.nav-logo-img{height:32px;width:auto;display:block}
+.nav-logo-text{display:flex;align-items:center;font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;line-height:1}
+.logo-nex{color:var(--blue)}.logo-ev{color:var(--green)}
+.nav-slogan{font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);line-height:1}
+.admin-badge{display:inline-flex;align-items:center;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(26,58,92,.08);color:var(--blue);border:1px solid rgba(26,58,92,.2);border-radius:20px;padding:.2rem .6rem;margin-left:.45rem}
 .nav-right{display:flex;align-items:center;gap:.75rem}
-.nav-user{font-size:.82rem;color:rgba(255,255,255,.65)}
-.btn-logout{padding:.4rem .85rem;border-radius:7px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.75);font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s}
-.btn-logout:hover{background:rgba(255,255,255,.18);color:#fff}
+.nav-user{font-size:.8rem;color:var(--muted);font-weight:500;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.btn-logout{display:inline-flex;align-items:center;gap:.35rem;padding:.42rem .85rem;border-radius:7px;background:#fff;border:1.5px solid var(--border);color:var(--blue);font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s}
+.btn-logout:hover{border-color:var(--blue);background:var(--bg-alt)}
 
 /* PAGE */
-.page-body{padding-top:calc(var(--nav-h)+1.75rem);padding-bottom:4rem;min-height:100vh}
+.page-body{padding-top:calc(var(--nav-h) + 2rem);padding-bottom:4rem;min-height:100vh}
 
 /* STATS ROW */
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
@@ -132,15 +137,27 @@ a{color:inherit;text-decoration:none}
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar">
+<nav class="navbar" id="navbar" aria-label="Admin navigation">
   <div class="nav-c">
-    <a href="index.html" class="nav-logo">
-      <span>nex<span>EV</span></span>
-      <span class="admin-badge">Admin</span>
-    </a>
+    <div class="nav-brand">
+      <div style="display:flex;align-items:center">
+        <a href="index.html" class="nav-logo-wrap" aria-label="NexEV Home">
+          <img id="navLogoImg" src="assets/logo/nexev-logo.png" alt="NexEV" class="nav-logo-img"
+               onerror="this.style.display='none';document.getElementById('navLogoText').style.display='flex';"/>
+          <span class="nav-logo-text" id="navLogoText" style="display:none;">
+            <span class="logo-nex">nex</span><span class="logo-ev">EV</span>
+          </span>
+        </a>
+        <span class="admin-badge">Admin</span>
+      </div>
+      <span class="nav-slogan">Driven by Electric Future</span>
+    </div>
     <div class="nav-right">
       <span class="nav-user" id="navUser"></span>
-      <button class="btn-logout" id="btnLogout">Sign Out</button>
+      <button class="btn-logout" id="btnLogout">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Sign Out
+      </button>
     </div>
   </div>
 </nav>
@@ -220,9 +237,21 @@ var STATUS_META = {
   processing: { label:'Processing' },
   shipped:    { label:'Shipped' },
   delivered:  { label:'Delivered' },
-  cancelled:  { label:'Cancelled' }
+  cancelled:  { label:'Cancelled' },
+  refunded:   { label:'Refunded' }
 };
-var STATUS_ORDER = ['pending','confirmed','processing','shipped','delivered','cancelled'];
+var STATUS_ORDER = ['pending','confirmed','processing','shipped','delivered','cancelled','refunded'];
+
+/* Default notes added to statusHistory for each transition */
+var STATUS_NOTES = {
+  pending:    'Order placed',
+  confirmed:  'Order confirmed',
+  processing: 'Preparing for dispatch',
+  shipped:    'Dispatched — in transit',
+  delivered:  'Delivered successfully',
+  cancelled:  'Order cancelled',
+  refunded:   'Refund initiated'
+};
 function statusBadge(s){
   var m = STATUS_META[s] || { label: s||'Unknown' };
   return '<span class="status-badge status-'+(s||'pending')+'">'+m.label+'</span>';
@@ -377,21 +406,66 @@ window.toggleRow = function(key){
   row.classList.toggle('expanded');
 };
 
+/* ── Shared helper: send status notification email (fire-and-forget) ── */
+function sendStatusEmail(orderData, key, type){
+  if(!orderData.email) return;
+  fetch('/api/send-status-email',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({ type:type, orderId:ordId(key), order:orderData })
+  }).catch(function(e){ console.warn('Status email failed:',e.message); });
+}
+
 window.updateStatus = function(key, newStatus){
-  db.ref('orders/'+key).update({ status: newStatus, updatedAt: Date.now() })
+  var ts    = Date.now();
+  var order = allOrders.find(function(o){ return o.key===key; });
+
+  /* 1. Update status + updatedAt */
+  db.ref('orders/'+key).update({ status: newStatus, updatedAt: ts })
+    .then(function(){
+      /* 2. Push new entry to statusHistory */
+      return db.ref('orders/'+key+'/statusHistory').push({
+        status:    newStatus,
+        timestamp: ts,
+        note:      STATUS_NOTES[newStatus] || 'Status updated'
+      });
+    })
     .then(function(){
       showToast('Status updated to '+STATUS_META[newStatus].label, 'success');
+      /* 3. Send email for customer-facing transitions */
+      var emailFor = ['shipped','delivered','cancelled','refunded'];
+      if(order && emailFor.indexOf(newStatus) !== -1){
+        sendStatusEmail(order.data, key, newStatus);
+      }
     })
     .catch(function(){ showToast('Failed to update status','error'); });
 };
 
 window.saveTracking = function(key){
-  var tn = document.getElementById('tn-'+key).value.trim();
-  var tu = document.getElementById('tu-'+key).value.trim();
-  db.ref('orders/'+key).update({ trackingNumber: tn, trackingUrl: tu, updatedAt: Date.now() })
-    .then(function(){ showToast('Tracking info saved','success'); })
+  var tn    = document.getElementById('tn-'+key).value.trim();
+  var tu    = document.getElementById('tu-'+key).value.trim();
+  var order = allOrders.find(function(o){ return o.key===key; });
+  var ts    = Date.now();
+
+  db.ref('orders/'+key).update({ trackingNumber: tn, trackingUrl: tu, updatedAt: ts })
+    .then(function(){
+      /* Push tracking note to statusHistory when AWB is added on a shipped order */
+      if(tn && order && order.data.status === 'shipped'){
+        db.ref('orders/'+key+'/statusHistory').push({
+          status:    'shipped',
+          timestamp: ts,
+          note:      'Tracking updated. AWB: ' + tn
+        }).catch(function(){});
+      }
+      showToast('Tracking info saved','success');
+    })
     .catch(function(){ showToast('Failed to save tracking','error'); });
 };
+
+/* NAVBAR SCROLL SHADOW */
+window.addEventListener('scroll', function(){
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+}, {passive:true});
 
 /* FILTER TABS */
 document.querySelectorAll('.ft').forEach(function(btn){

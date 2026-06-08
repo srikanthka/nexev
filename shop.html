@@ -1345,13 +1345,25 @@ document.getElementById('btnCheckout').addEventListener('click', function(){
     var u = firebase.apps.length && firebase.auth ? firebase.auth().currentUser : null;
     if (!u) return;
     firebase.database().ref('users/' + u.uid).once('value').then(function(snap){
-      var d = snap.val() || {};
-      var n = document.getElementById('co-name'),   ph = document.getElementById('co-phone'),
-          em = document.getElementById('co-email'), ad = document.getElementById('co-address');
-      if (n  && !n.value)  n.value  = d.name    || u.displayName || '';
-      if (ph && !ph.value) ph.value = d.phone   || '';
-      if (em && !em.value) em.value = u.email   || '';
-      if (ad && !ad.value) ad.value = d.address || '';
+      var d  = snap.val() || {};
+      var n  = document.getElementById('co-name');
+      var ph = document.getElementById('co-phone');
+      var em = document.getElementById('co-email');
+      var ad = document.getElementById('co-address');
+      var pi = document.getElementById('co-pincode');
+      if (n  && !n.value)  n.value  = d.name  || u.displayName || '';
+      if (ph && !ph.value) ph.value = d.phone || '';
+      if (em && !em.value) em.value = u.email || '';
+      if (ad && !ad.value) {
+        /* Build address string from new split fields; fall back to legacy d.address */
+        var parts = [d.addrLine1 || d.address, d.addrLine2, d.landmark, d.city].filter(Boolean);
+        ad.value = parts.join(', ');
+      }
+      /* Pre-fill pincode and trigger live shipping estimate */
+      if (pi && !pi.value && d.pincode) {
+        pi.value = d.pincode;
+        onPincodeInput(d.pincode);
+      }
     }).catch(function(){});
   })();
   closeCart();
@@ -1563,11 +1575,17 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e){
 
           /* ── STEP 5: Verified — build WhatsApp confirmation + show success modal ── */
           rzpPaymentId = response.razorpay_payment_id;
+          /* ── Capture amounts now (synchronous) so the Firebase write below has them ── */
+          var subtotalRs  = (order.subtotal  || 0) / 100;
+          var shippingRs  = (order.shipping  || 0) / 100;
+          var totalRs     = order.amount / 100;
+
           /* Save order to Firebase */
           (window._fbReady || Promise.resolve()).then(function(){
             try {
-              var fbDb = firebase.database();
+              var fbDb   = firebase.database();
               var fbUser = firebase.auth().currentUser;
+              var ts     = Date.now();
               var orderData = {
                 userId:  fbUser ? fbUser.uid : 'guest',
                 name:    nameVal,  email:    emailVal,
@@ -1580,12 +1598,23 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e){
                            qty:i.qty, price:getItemPrice(i), unit:i.product.unit,
                            weight_grams:(i.product.shipping&&i.product.shipping.weight_grams)||100 };
                 }),
-                subtotal: subtotalRs,
-                shipping: shippingRs,
-                gst:      Math.round(getCartGST()*100)/100,
-                total:    totalRs,
-                paymentId: rzpPaymentId, paymentMethod: 'razorpay',
-                status: 'confirmed', createdAt: Date.now(), updatedAt: Date.now()
+                subtotal:      subtotalRs,
+                shipping:      shippingRs,
+                gst:           Math.round(getCartGST()*100)/100,
+                total:         totalRs,
+                paymentId:     rzpPaymentId,
+                paymentMethod: 'razorpay',
+                status:        'confirmed',
+                createdAt:     ts,
+                updatedAt:     ts,
+                /* statusHistory powers the delivery timeline + 3-day return window in account.html */
+                statusHistory: [
+                  {
+                    status:    'confirmed',
+                    timestamp: ts,
+                    note:      'Payment confirmed via Razorpay. Payment ID: ' + rzpPaymentId
+                  }
+                ]
               };
               fbDb.ref('orders').push(orderData);
               /* Order confirmation email (silent fail in local dev) */
@@ -1601,9 +1630,6 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e){
               }).catch(function(){});
             } catch(e) { console.warn('Firebase write skipped:', e.message); }
           });
-          var subtotalRs  = (order.subtotal  || 0) / 100;
-          var shippingRs  = (order.shipping  || 0) / 100;
-          var totalRs     = order.amount / 100;
           var lines = ['*NexEV Order — Payment Confirmed ✅*', ''];
           lines.push('*Payment ID:* ' + rzpPaymentId);
           lines.push('*Order ID:*   ' + order.order_id);

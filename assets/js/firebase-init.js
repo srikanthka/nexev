@@ -23,12 +23,18 @@
  *   Create .dev.vars with the same FIREBASE_* keys — same as production path.
  *
  * DATABASE SECURITY RULES (paste in Firebase Console > Realtime Database > Rules):
+ *
+ * IMPORTANT: The orders query uses orderByChild('userId'), which requires .read at the
+ * /orders level (not just per-order). Without it you get PERMISSION_DENIED even when
+ * logged in. The .indexOn rule speeds up the query and avoids a Firebase console warning.
+ *
  * {
  *   "rules": {
  *     "users":  { "$uid": { ".read":"$uid===auth.uid", ".write":"$uid===auth.uid" } },
  *     "orders": {
+ *       ".read":   "auth!=null",
+ *       ".indexOn": ["userId"],
  *       "$orderId": {
- *         ".read":  "auth!=null&&(data.child('userId').val()===auth.uid||root.child('admins').child(auth.uid).exists())",
  *         ".write": "!data.exists()||(auth!=null&&root.child('admins').child(auth.uid).exists())"
  *       }
  *     },
