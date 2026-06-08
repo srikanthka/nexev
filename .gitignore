@@ -17,3 +17,5 @@ Thumbs.db
 *.swp
 *.swo
 .claude
+# Firebase local dev credentials
+firebase-local.js
