@@ -137,6 +137,28 @@ a{color:inherit;text-decoration:none}
 @keyframes spin{to{transform:rotate(360deg)}}
 .sp{display:inline-block;width:20px;height:20px;border:2px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin .6s linear infinite;margin-bottom:.75rem}
 
+/* STATUS HISTORY TIMELINE */
+.status-timeline{margin-top:.85rem;padding-top:.85rem;border-top:1px solid var(--border)}
+.st-heading{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.8rem}
+.st-list{display:flex;flex-direction:column;padding-left:1.4rem;position:relative}
+.st-list::before{content:'';position:absolute;left:7px;top:10px;bottom:10px;width:2px;background:var(--border);border-radius:2px}
+.st-item{display:flex;gap:.7rem;align-items:flex-start;padding-bottom:.8rem;position:relative}
+.st-item:last-child{padding-bottom:0}
+.st-dot{width:16px;height:16px;border-radius:50%;background:var(--border);border:2.5px solid var(--bg-alt);flex-shrink:0;position:absolute;left:-1.4rem;top:.1rem}
+.st-dot.done{background:var(--green);border-color:#fff}
+.st-dot.current{background:var(--blue);border-color:#fff;box-shadow:0 0 0 3px rgba(26,58,92,.15)}
+.st-dot.cancelled{background:#dc2626;border-color:#fff}
+.st-info{flex:1}
+.st-status-lbl{font-size:.8rem;font-weight:700;color:var(--text);line-height:1.3}
+.st-ts{font-size:.72rem;color:var(--muted);margin-top:.1rem}
+.st-note-txt{font-size:.78rem;color:var(--muted);margin-top:.2rem;font-style:italic}
+
+/* WHATSAPP CANCEL */
+.wa-cancel-wrap{margin-top:.85rem;padding-top:.85rem;border-top:1px solid var(--border)}
+.wa-cancel-btn{display:inline-flex;align-items:center;gap:.45rem;padding:.55rem 1.1rem;border-radius:9px;background:#25d366;color:#fff;font-size:.78rem;font-weight:700;text-decoration:none;transition:background .2s;font-family:inherit}
+.wa-cancel-btn:hover{background:#1ebe5d}
+.wa-cancel-note{font-size:.72rem;color:var(--muted);margin-top:.4rem}
+
 /* FULL NAVBAR EXTENSIONS */
 .nav-brand{display:flex;flex-direction:column;gap:.18rem;flex-shrink:0}
 .nav-logo-wrap{display:flex;align-items:center;gap:.5rem;text-decoration:none}
@@ -398,7 +420,45 @@ function statusBadge(s){
 /* Format helpers */
 function fmt(n){ return '₹'+(+n).toLocaleString('en-IN',{minimumFractionDigits:0,maximumFractionDigits:0}); }
 function fmtDate(ts){ return new Date(ts).toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}); }
+function fmtDateTime(ts){ return new Date(ts).toLocaleString('en-IN',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:true}); }
 function ordId(key){ return 'ORD-'+key.replace('-','').substring(0,8).toUpperCase(); }
+
+/* WhatsApp config */
+var WA_NUMBER = '919019901711';
+var CANCELLABLE = ['pending','confirmed','processing'];
+
+function buildTimeline(history, currentStatus){
+  if(!history||!history.length) return '';
+  var sorted = history.slice().sort(function(a,b){ return (a.timestamp||0)-(b.timestamp||0); });
+  var lastIdx = sorted.length-1;
+  var html = '<div class="status-timeline"><div class="st-heading">Delivery History</div><div class="st-list">';
+  sorted.forEach(function(h,i){
+    var isCurrent = (i===lastIdx);
+    var dotCls = h.status==='cancelled' ? 'cancelled' : (isCurrent ? 'current' : 'done');
+    var meta = STATUS_META[h.status]||{label:h.status||'Update'};
+    html += '<div class="st-item">'
+      +'<div class="st-dot '+dotCls+'"></div>'
+      +'<div class="st-info">'
+      +'<div class="st-status-lbl">'+esc(meta.label)+'</div>'
+      +'<div class="st-ts">'+fmtDateTime(h.timestamp||0)+'</div>'
+      +(h.note?'<div class="st-note-txt">'+esc(h.note)+'</div>':'')
+      +'</div></div>';
+  });
+  html += '</div></div>';
+  return html;
+}
+
+function buildCancelButton(orderKey, status){
+  if(CANCELLABLE.indexOf(status)===-1) return '';
+  var id = ordId(orderKey);
+  var msg = encodeURIComponent('Hi NexEV, I want to cancel my order '+id+'. Please assist me.');
+  return '<div class="wa-cancel-wrap"><div class="st-heading">Need to Cancel?</div>'
+    +'<a href="https://wa.me/'+WA_NUMBER+'?text='+msg+'" target="_blank" rel="noopener" class="wa-cancel-btn">'
+    +'<svg width="15" height="15" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.737 5.469 2.027 7.773L0 32l8.469-2.004A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.851l-.484-.287-5.027 1.188 1.213-4.895-.316-.503A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.293-9.907c-.4-.2-2.363-1.165-2.729-1.299-.367-.133-.633-.2-.9.2-.267.4-1.032 1.299-1.265 1.566-.233.267-.467.3-.867.1-.4-.2-1.688-.623-3.215-1.983-1.188-1.059-1.99-2.369-2.224-2.769-.233-.4-.025-.616.175-.815.18-.18.4-.467.6-.7.2-.233.267-.4.4-.666.133-.267.067-.5-.033-.7-.1-.2-.9-2.165-1.233-2.965-.325-.78-.655-.674-.9-.686l-.767-.013c-.267 0-.7.1-1.067.5-.367.4-1.4 1.366-1.4 3.332s1.433 3.865 1.633 4.132c.2.267 2.82 4.305 6.832 6.032.955.413 1.7.659 2.281.843.958.305 1.831.262 2.52.159.769-.115 2.363-.965 2.696-1.898.333-.933.333-1.733.233-1.9-.1-.167-.367-.267-.767-.467z"/></svg>'
+    +'Cancel via WhatsApp</a>'
+    +'<div class="wa-cancel-note">Our team will process your cancellation request promptly.</div>'
+    +'</div>';
+}
 
 /* LOAD ORDERS */
 function loadOrders(uid){
@@ -420,9 +480,14 @@ function loadOrders(uid){
     },
     function(err){
       clearTimeout(tmo);
-      console.error('loadOrders:', err.message);
-      if (el) el.innerHTML = '<div class="empty-state"><h3>Could not load orders</h3>'
-        + '<p>' + (err.code === 'PERMISSION_DENIED' ? 'Please sign in to view your orders.' : err.message) + '</p></div>';
+      console.error('loadOrders:', err.code, err.message);
+      var msg = err.code === 'PERMISSION_DENIED'
+        ? 'Database permission error — please update your Firebase security rules (see the <b>rules note</b> below) or contact support via '
+          + '<a href="https://wa.me/919019901711" target="_blank" style="color:var(--blue);font-weight:600">WhatsApp</a>.'
+        : esc(err.message);
+      if (el) el.innerHTML = '<div class="empty-state"><h3>Could not load orders</h3><p style="font-size:.82rem">' + msg + '</p>'
+        + '<p style="margin-top:.75rem;font-size:.75rem;color:var(--muted)">Rules note: in Firebase Console → Realtime Database → Rules, set <code style="background:#f1f5f9;padding:.1rem .35rem;border-radius:4px;font-size:.72rem">orders → .read: "auth!=null"</code> and add <code style="background:#f1f5f9;padding:.1rem .35rem;border-radius:4px;font-size:.72rem">.indexOn: ["userId"]</code>.</p>'
+        + '</div>';
       document.getElementById('orderCount').textContent = '';
     }
   );
@@ -460,14 +525,14 @@ function renderOrders(orders){
       + '<svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>'
       + 'View details</button>'
       + '<div class="oc-detail">'
-      + buildOrderDetail(d)
+      + buildOrderDetail(d, o.key)
       + '</div>'
       + '</div>';
   });
   container.innerHTML = html;
 }
 
-function buildOrderDetail(d){
+function buildOrderDetail(d, key){
   var html = '';
   if((d.items||[]).length){
     html += '<table class="oc-items-table"><thead><tr><th>Item</th><th>Qty</th><th style="text-align:right">Price</th></tr></thead><tbody>';
@@ -487,6 +552,8 @@ function buildOrderDetail(d){
   if(d.paymentId) html += '<div class="oc-meta-item"><div class="k">Payment ID</div><div class="v" style="font-family:monospace;font-size:.75rem">'+esc(d.paymentId)+'</div></div>';
   if(d.notes)   html += '<div class="oc-meta-item"><div class="k">Order Notes</div><div class="v">'+esc(d.notes)+'</div></div>';
   html += '</div>';
+  html += buildTimeline(d.statusHistory, d.status);
+  html += buildCancelButton(key, d.status);
   return html;
 }
 
