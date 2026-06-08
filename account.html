@@ -155,9 +155,42 @@ a{color:inherit;text-decoration:none}
 
 /* WHATSAPP CANCEL */
 .wa-cancel-wrap{margin-top:.85rem;padding-top:.85rem;border-top:1px solid var(--border)}
-.wa-cancel-btn{display:inline-flex;align-items:center;gap:.45rem;padding:.55rem 1.1rem;border-radius:9px;background:#25d366;color:#fff;font-size:.78rem;font-weight:700;text-decoration:none;transition:background .2s;font-family:inherit}
-.wa-cancel-btn:hover{background:#1ebe5d}
-.wa-cancel-note{font-size:.72rem;color:var(--muted);margin-top:.4rem}
+.wa-cancel-btn,.wa-return-btn{display:inline-flex;align-items:center;gap:.45rem;padding:.55rem 1.1rem;border-radius:9px;background:#25d366;color:#fff;font-size:.78rem;font-weight:700;text-decoration:none;cursor:pointer;border:none;font-family:inherit;transition:background .2s}
+.wa-cancel-btn:hover,.wa-return-btn:hover{background:#1ebe5d}
+.wa-cancel-note,.wa-return-note{font-size:.72rem;color:var(--muted);margin-top:.4rem}
+
+/* IN-TRANSIT NOTE */
+.transit-note{margin-top:.85rem;padding-top:.85rem;border-top:1px solid var(--border)}
+.transit-info{display:flex;align-items:flex-start;gap:.5rem;background:rgba(3,105,161,.06);border:1px solid rgba(3,105,161,.2);border-radius:8px;padding:.6rem .8rem;font-size:.78rem;color:#0369a1;line-height:1.45}
+
+/* RETURN & REFUND SECTION */
+.return-section{margin-top:.85rem;padding-top:.85rem;border-top:1px solid var(--border)}
+.return-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.72rem;font-weight:700;padding:.2rem .65rem;border-radius:20px;margin-bottom:.7rem;border:1px solid}
+.return-badge.eligible{background:rgba(34,197,94,.1);color:#15803d;border-color:rgba(34,197,94,.3)}
+.return-badge.expired{background:var(--bg-alt);color:var(--muted);border-color:var(--border)}
+.return-steps{counter-reset:step;list-style:none;display:flex;flex-direction:column;gap:.35rem;margin-bottom:.7rem;padding:0}
+.return-steps li{font-size:.78rem;color:var(--text);display:flex;gap:.5rem;align-items:flex-start;line-height:1.45}
+.return-steps li::before{content:counter(step);counter-increment:step;min-width:18px;height:18px;border-radius:50%;background:var(--blue);color:#fff;font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem}
+.return-conditions{background:rgba(245,197,24,.07);border:1px solid rgba(245,197,24,.35);border-radius:8px;padding:.6rem .8rem;margin-bottom:.7rem}
+.return-conditions .rc-title{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#92400e;margin-bottom:.3rem}
+.return-conditions ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:.2rem}
+.return-conditions ul li{font-size:.75rem;color:#78350f;padding-left:.8rem;position:relative;line-height:1.4}
+.return-conditions ul li::before{content:'•';position:absolute;left:0;color:#d97706}
+.refund-box{background:rgba(26,58,92,.04);border:1px solid rgba(26,58,92,.1);border-radius:8px;padding:.6rem .8rem;font-size:.78rem;color:var(--text);margin-bottom:.7rem;line-height:1.5}
+.refund-box strong{color:var(--blue)}
+.rf-field{display:flex;flex-direction:column;gap:.2rem}
+.rf-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.rf-select,.rf-input{padding:.52rem .75rem;border:1.5px solid var(--border);border-radius:8px;font-family:inherit;font-size:.82rem;color:var(--text);background:#fff;outline:none;transition:border-color .2s;width:100%}
+.rf-select:focus,.rf-input:focus{border-color:var(--blue)}
+.rf-row{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+@media(max-width:500px){.rf-row{grid-template-columns:1fr}}
+.rf-cod-wrap{background:var(--bg-alt);border:1px solid var(--border);border-radius:8px;padding:.65rem;display:flex;flex-direction:column;gap:.5rem}
+.rf-cod-title{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:.1rem}
+.return-form{display:flex;flex-direction:column;gap:.55rem;margin-top:.1rem}
+
+/* PROFILE ADDRESS */
+.fg select,.fg-select{padding:.68rem .9rem;border:1.5px solid var(--border);border-radius:9px;font-family:inherit;font-size:.9rem;color:var(--text);background:#fff;outline:none;transition:border-color .2s;width:100%;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .75rem center}
+.fg select:focus{border-color:var(--blue)}
 
 /* FULL NAVBAR EXTENSIONS */
 .nav-brand{display:flex;flex-direction:column;gap:.18rem;flex-shrink:0}
@@ -281,8 +314,49 @@ a{color:inherit;text-decoration:none}
                 <input type="email" id="pEmail" readonly style="background:var(--bg-alt);color:var(--muted);cursor:default"/>
               </div>
               <div class="fg">
-                <label for="pAddress">Default Delivery Address</label>
-                <textarea id="pAddress" placeholder="House no., Street, Area, City, State, Pincode"></textarea>
+                <label for="pAddrLine1">House / Flat / Door No. &amp; Building</label>
+                <input type="text" id="pAddrLine1" placeholder="e.g. 42, 3rd Floor, Sunrise Apartments" autocomplete="address-line1"/>
+              </div>
+              <div class="fg">
+                <label for="pAddrLine2">Street / Road / Colony</label>
+                <input type="text" id="pAddrLine2" placeholder="e.g. 3rd Cross, 4th Block, Koramangala" autocomplete="address-line2"/>
+              </div>
+              <div class="fg-row">
+                <div class="fg">
+                  <label for="pLandmark">Landmark <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+                  <input type="text" id="pLandmark" placeholder="e.g. Near Forum Mall"/>
+                </div>
+                <div class="fg">
+                  <label for="pCity">City / Town</label>
+                  <input type="text" id="pCity" placeholder="e.g. Bengaluru" autocomplete="address-level2"/>
+                </div>
+              </div>
+              <div class="fg-row">
+                <div class="fg">
+                  <label for="pState">State / UT</label>
+                  <select id="pState" autocomplete="address-level1">
+                    <option value="">Select state…</option>
+                    <option>Andaman &amp; Nicobar Islands</option><option>Andhra Pradesh</option>
+                    <option>Arunachal Pradesh</option><option>Assam</option><option>Bihar</option>
+                    <option>Chandigarh</option><option>Chhattisgarh</option>
+                    <option>Dadra &amp; Nagar Haveli and Daman &amp; Diu</option>
+                    <option>Delhi</option><option>Goa</option><option>Gujarat</option>
+                    <option>Haryana</option><option>Himachal Pradesh</option>
+                    <option>Jammu &amp; Kashmir</option><option>Jharkhand</option>
+                    <option>Karnataka</option><option>Kerala</option><option>Ladakh</option>
+                    <option>Lakshadweep</option><option>Madhya Pradesh</option>
+                    <option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option>
+                    <option>Mizoram</option><option>Nagaland</option><option>Odisha</option>
+                    <option>Puducherry</option><option>Punjab</option><option>Rajasthan</option>
+                    <option>Sikkim</option><option>Tamil Nadu</option><option>Telangana</option>
+                    <option>Tripura</option><option>Uttar Pradesh</option><option>Uttarakhand</option>
+                    <option>West Bengal</option>
+                  </select>
+                </div>
+                <div class="fg">
+                  <label for="pPincode">PIN Code</label>
+                  <input type="text" id="pPincode" placeholder="6-digit PIN" maxlength="6" pattern="[0-9]{6}" autocomplete="postal-code"/>
+                </div>
               </div>
               <div style="display:flex;align-items:center">
                 <button class="btn-save" id="btnSaveProfile">
@@ -352,10 +426,15 @@ function initAccount(user){
     var d = snap.val() || {};
     var name = d.name || user.displayName || '';
     document.getElementById('sbName').textContent = name || user.email;
-    document.getElementById('pName').value    = name;
-    document.getElementById('pPhone').value   = d.phone  || '';
-    document.getElementById('pEmail').value   = user.email;
-    document.getElementById('pAddress').value = d.address || '';
+    document.getElementById('pName').value     = name;
+    document.getElementById('pPhone').value    = d.phone  || '';
+    document.getElementById('pEmail').value    = user.email;
+    document.getElementById('pAddrLine1').value = d.addrLine1 || d.address || '';
+    document.getElementById('pAddrLine2').value = d.addrLine2 || '';
+    document.getElementById('pLandmark').value  = d.landmark  || '';
+    document.getElementById('pCity').value      = d.city      || '';
+    document.getElementById('pState').value     = d.state     || '';
+    document.getElementById('pPincode').value   = d.pincode   || '';
   });
 
   loadOrders(user.uid);
@@ -427,9 +506,18 @@ function ordId(key){ return 'ORD-'+key.replace('-','').substring(0,8).toUpperCas
 var WA_NUMBER = '919019901711';
 var CANCELLABLE = ['pending','confirmed','processing'];
 
-function buildTimeline(history, currentStatus){
-  if(!history||!history.length) return '';
-  var sorted = history.slice().sort(function(a,b){ return (a.timestamp||0)-(b.timestamp||0); });
+var WA_SVG = '<svg width="15" height="15" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.737 5.469 2.027 7.773L0 32l8.469-2.004A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.851l-.484-.287-5.027 1.188 1.213-4.895-.316-.503A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.293-9.907c-.4-.2-2.363-1.165-2.729-1.299-.367-.133-.633-.2-.9.2-.267.4-1.032 1.299-1.265 1.566-.233.267-.467.3-.867.1-.4-.2-1.688-.623-3.215-1.983-1.188-1.059-1.99-2.369-2.224-2.769-.233-.4-.025-.616.175-.815.18-.18.4-.467.6-.7.2-.233.267-.4.4-.666.133-.267.067-.5-.033-.7-.1-.2-.9-2.165-1.233-2.965-.325-.78-.655-.674-.9-.686l-.767-.013c-.267 0-.7.1-1.067.5-.367.4-1.4 1.366-1.4 3.332s1.433 3.865 1.633 4.132c.2.267 2.82 4.305 6.832 6.032.955.413 1.7.659 2.281.843.958.305 1.831.262 2.52.159.769-.115 2.363-.965 2.696-1.898.333-.933.333-1.733.233-1.9-.1-.167-.367-.267-.767-.467z"/></svg>';
+
+function toArr(val){
+  if(!val) return [];
+  if(Array.isArray(val)) return val;
+  return Object.keys(val).map(function(k){ return val[k]; });
+}
+
+function buildTimeline(history){
+  var arr = toArr(history);
+  if(!arr.length) return '';
+  var sorted = arr.slice().sort(function(a,b){ return (a.timestamp||0)-(b.timestamp||0); });
   var lastIdx = sorted.length-1;
   var html = '<div class="status-timeline"><div class="st-heading">Delivery History</div><div class="st-list">';
   sorted.forEach(function(h,i){
@@ -448,17 +536,127 @@ function buildTimeline(history, currentStatus){
   return html;
 }
 
-function buildCancelButton(orderKey, status){
-  if(CANCELLABLE.indexOf(status)===-1) return '';
+function buildActionSection(orderKey, d){
+  var status = d.status;
   var id = ordId(orderKey);
-  var msg = encodeURIComponent('Hi NexEV, I want to cancel my order '+id+'. Please assist me.');
-  return '<div class="wa-cancel-wrap"><div class="st-heading">Need to Cancel?</div>'
-    +'<a href="https://wa.me/'+WA_NUMBER+'?text='+msg+'" target="_blank" rel="noopener" class="wa-cancel-btn">'
-    +'<svg width="15" height="15" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.737 5.469 2.027 7.773L0 32l8.469-2.004A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.851l-.484-.287-5.027 1.188 1.213-4.895-.316-.503A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.293-9.907c-.4-.2-2.363-1.165-2.729-1.299-.367-.133-.633-.2-.9.2-.267.4-1.032 1.299-1.265 1.566-.233.267-.467.3-.867.1-.4-.2-1.688-.623-3.215-1.983-1.188-1.059-1.99-2.369-2.224-2.769-.233-.4-.025-.616.175-.815.18-.18.4-.467.6-.7.2-.233.267-.4.4-.666.133-.267.067-.5-.033-.7-.1-.2-.9-2.165-1.233-2.965-.325-.78-.655-.674-.9-.686l-.767-.013c-.267 0-.7.1-1.067.5-.367.4-1.4 1.366-1.4 3.332s1.433 3.865 1.633 4.132c.2.267 2.82 4.305 6.832 6.032.955.413 1.7.659 2.281.843.958.305 1.831.262 2.52.159.769-.115 2.363-.965 2.696-1.898.333-.933.333-1.733.233-1.9-.1-.167-.367-.267-.767-.467z"/></svg>'
-    +'Cancel via WhatsApp</a>'
-    +'<div class="wa-cancel-note">Our team will process your cancellation request promptly.</div>'
-    +'</div>';
+  var isCod = !d.paymentId || d.paymentMethod === 'cod';
+
+  /* Cancellable: pending / confirmed / processing */
+  if(CANCELLABLE.indexOf(status) !== -1){
+    var msg = encodeURIComponent('Hi NexEV, I want to cancel my order '+id+'. Please assist me.');
+    return '<div class="wa-cancel-wrap"><div class="st-heading">Need to Cancel?</div>'
+      +'<a href="https://wa.me/'+WA_NUMBER+'?text='+msg+'" target="_blank" rel="noopener" class="wa-cancel-btn">'+WA_SVG+'Cancel via WhatsApp</a>'
+      +'<div class="wa-cancel-note">Our team will process your cancellation request promptly.</div>'
+      +'</div>';
+  }
+
+  /* Shipped: in transit, cannot cancel */
+  if(status === 'shipped'){
+    return '<div class="transit-note"><div class="transit-info">'
+      +'<svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="flex-shrink:0;margin-top:.05rem"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
+      +'<span>Your order is already in transit and <strong>cannot be cancelled</strong> at this stage. '
+      +'If you have any concerns, <a href="https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent('Hi NexEV, I have a query about my order '+id+'.')+'" target="_blank" rel="noopener" style="color:#0369a1;font-weight:600">contact us on WhatsApp</a>.</span>'
+      +'</div></div>';
+  }
+
+  /* Delivered: return & refund within 3 days */
+  if(status === 'delivered'){
+    return buildReturnSection(orderKey, d, isCod);
+  }
+
+  return '';
 }
+
+function buildReturnSection(orderKey, d, isCod){
+  var arr = toArr(d.statusHistory);
+  var deliveredEntries = arr.filter(function(h){ return h.status==='delivered'; });
+  var deliveredAt = deliveredEntries.length ? (deliveredEntries[deliveredEntries.length-1].timestamp||0) : (d.createdAt||0);
+  var WINDOW = 3*24*60*60*1000;
+  var elapsed = Date.now() - deliveredAt;
+  var eligible = elapsed < WINDOW;
+  var daysLeft = Math.max(1, Math.ceil((WINDOW - elapsed)/(24*60*60*1000)));
+  var id = ordId(orderKey);
+  var sk = orderKey.replace(/[^a-zA-Z0-9]/g,'_');
+
+  var html = '<div class="return-section"><div class="st-heading">Return &amp; Refund</div>';
+
+  if(!eligible){
+    html += '<div class="return-badge expired">Return window closed (3 days from delivery)</div></div>';
+    return html;
+  }
+
+  html += '<div class="return-badge eligible">&#9200; '+daysLeft+' day'+(daysLeft===1?'':'s')+' left to return</div>';
+
+  /* How to return steps */
+  html += '<ol class="return-steps">'
+    +'<li>Pack the item securely in its original box (or a sturdy equivalent).</li>'
+    +'<li>Include a slip with your Order ID <strong>'+id+'</strong> inside the package.</li>'
+    +'<li>Ship to <strong>NexEV Returns, Bengaluru, Karnataka</strong> and share the AWB / tracking number with us on WhatsApp.</li>'
+    +'<li>We inspect the item and initiate your refund within <strong>2–3 business days</strong> of receipt.</li>'
+    +'</ol>';
+
+  /* Conditions */
+  html += '<div class="return-conditions"><div class="rc-title">Return conditions</div><ul>'
+    +'<li>Item must be unused, uninstalled, and in its original condition.</li>'
+    +'<li>Tampered, damaged, or missing-component items will not be accepted.</li>'
+    +'<li>Broken seals or signs of use make the item ineligible for return.</li>'
+    +'</ul></div>';
+
+  /* Refund method */
+  if(isCod){
+    html += '<div class="refund-box"><strong>Refund (COD order):</strong> Refund will be processed as a bank transfer to the account you provide below — within 5–7 business days after we receive and verify the item.</div>';
+  } else {
+    html += '<div class="refund-box"><strong>Refund:</strong> Amount will be credited to your original payment method (card / UPI / wallet) within 5–7 business days after we receive and verify the item.</div>';
+  }
+
+  /* Form */
+  html += '<div class="return-form" id="rf-'+sk+'">'
+    +'<div class="rf-field"><label class="rf-label">Reason for return</label>'
+    +'<select class="rf-select" id="rf-reason-'+sk+'">'
+    +'<option value="">Select a reason…</option>'
+    +'<option>Received wrong item</option>'
+    +'<option>Item damaged in transit</option>'
+    +'<option>Item not as described</option>'
+    +'<option>Missing components</option>'
+    +'<option>Changed my mind</option>'
+    +'<option>Other</option>'
+    +'</select></div>';
+
+  if(isCod){
+    html += '<div class="rf-cod-wrap"><div class="rf-cod-title">Bank account for refund</div>'
+      +'<div class="rf-row">'
+      +'<div class="rf-field"><label class="rf-label">Account Holder Name</label><input class="rf-input" id="rf-acname-'+sk+'" placeholder="As per bank records"/></div>'
+      +'<div class="rf-field"><label class="rf-label">Account Number</label><input class="rf-input" id="rf-acno-'+sk+'" placeholder="XXXXXXXXXXXXXX"/></div>'
+      +'</div>'
+      +'<div class="rf-row">'
+      +'<div class="rf-field"><label class="rf-label">IFSC Code</label><input class="rf-input" id="rf-ifsc-'+sk+'" placeholder="e.g. SBIN0001234"/></div>'
+      +'<div class="rf-field"><label class="rf-label">Bank &amp; Branch</label><input class="rf-input" id="rf-bank-'+sk+'" placeholder="e.g. SBI, Koramangala"/></div>'
+      +'</div></div>';
+  }
+
+  html += '<div>'
+    +'<button class="wa-return-btn" onclick="initiateReturn(\''+sk+'\',\''+id+'\','+isCod+')">'+WA_SVG+'Initiate Return via WhatsApp</button>'
+    +'<div class="wa-return-note">We will confirm return pickup/drop-off details over WhatsApp.</div>'
+    +'</div></div></div>';
+
+  return html;
+}
+
+window.initiateReturn = function(sk, id, isCod){
+  var reason = (document.getElementById('rf-reason-'+sk)||{}).value||'';
+  if(!reason){ showToast('Please select a reason for return.','error'); return; }
+  var msg = 'Hi NexEV, I would like to return my order *'+id+'*.\nReason: '+reason;
+  if(isCod){
+    var acName = (document.getElementById('rf-acname-'+sk)||{}).value||'';
+    var acNo   = (document.getElementById('rf-acno-'+sk)||{}).value||'';
+    var ifsc   = (document.getElementById('rf-ifsc-'+sk)||{}).value||'';
+    var bank   = (document.getElementById('rf-bank-'+sk)||{}).value||'';
+    if(!acName||!acNo||!ifsc){ showToast('Please fill in all bank account details.','error'); return; }
+    msg += '\n\n*Bank details for refund*\nName: '+acName+'\nAccount No: '+acNo+'\nIFSC: '+ifsc+'\nBank & Branch: '+bank;
+  }
+  msg += '\n\nKindly guide me through the return process. Thank you.';
+  window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg),'_blank');
+};
 
 /* LOAD ORDERS */
 function loadOrders(uid){
@@ -552,8 +750,8 @@ function buildOrderDetail(d, key){
   if(d.paymentId) html += '<div class="oc-meta-item"><div class="k">Payment ID</div><div class="v" style="font-family:monospace;font-size:.75rem">'+esc(d.paymentId)+'</div></div>';
   if(d.notes)   html += '<div class="oc-meta-item"><div class="k">Order Notes</div><div class="v">'+esc(d.notes)+'</div></div>';
   html += '</div>';
-  html += buildTimeline(d.statusHistory, d.status);
-  html += buildCancelButton(key, d.status);
+  html += buildTimeline(d.statusHistory);
+  html += buildActionSection(key, d);
   return html;
 }
 
@@ -568,12 +766,17 @@ window.toggleDetail = function(btn){
 /* SAVE PROFILE */
 document.getElementById('btnSaveProfile').addEventListener('click', function(){
   if(!currentUid) return;
-  var name    = document.getElementById('pName').value.trim();
-  var phone   = document.getElementById('pPhone').value.trim();
-  var address = document.getElementById('pAddress').value.trim();
+  var name      = document.getElementById('pName').value.trim();
+  var phone     = document.getElementById('pPhone').value.trim();
+  var addrLine1 = document.getElementById('pAddrLine1').value.trim();
+  var addrLine2 = document.getElementById('pAddrLine2').value.trim();
+  var landmark  = document.getElementById('pLandmark').value.trim();
+  var city      = document.getElementById('pCity').value.trim();
+  var state     = document.getElementById('pState').value;
+  var pincode   = document.getElementById('pPincode').value.trim();
   var btn = document.getElementById('btnSaveProfile');
   btn.disabled = true;
-  db.ref('users/'+currentUid).update({ name:name, phone:phone, address:address })
+  db.ref('users/'+currentUid).update({ name:name, phone:phone, addrLine1:addrLine1, addrLine2:addrLine2, landmark:landmark, city:city, state:state, pincode:pincode })
     .then(function(){
       btn.disabled = false;
       document.getElementById('sbName').textContent = name;
