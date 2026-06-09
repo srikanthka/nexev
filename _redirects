@@ -15,7 +15,7 @@
 
 # 1. If someone accesses /products/name.html — redirect to clean URL
 #    (prevents _redirects from adding double .html when file isn't found)
-/products/:slug.html  /products/:slug         301
+#/products/:slug.html  /products/:slug         301
 
 # 2. Clean URL /products/name → serve the actual .html file (200 rewrite, no redirect)
 /products/:slug       /products/:slug.html    200
