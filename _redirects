@@ -10,6 +10,12 @@
 /pages/training.html          /pages/coming-soon.html   301
 /training                     /pages/coming-soon.html   301
 
-# ── Product clean URLs (200 rewrite — no redirect, no .html in URL) ──
-# /products/nickel-strip-1m  →  serves products/nickel-strip-1m.html at the same URL
-/products/:slug  /products/:slug.html  200
+# ── Product URLs ──────────────────────────────────────────────────────
+# Rule order matters — Cloudflare Pages applies the first match.
+
+# 1. If someone accesses /products/name.html — redirect to clean URL
+#    (prevents _redirects from adding double .html when file isn't found)
+/products/:slug.html  /products/:slug         301
+
+# 2. Clean URL /products/name → serve the actual .html file (200 rewrite, no redirect)
+/products/:slug       /products/:slug.html    200

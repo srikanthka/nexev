@@ -1146,7 +1146,7 @@ function renderProductCard(p){
   var html = '<div class="'+cardCls+'" data-id="'+esc(p.id)+'" data-cat="'+esc(p.category)+'">';
 
   /* Image gallery — wrapped in product page link for SEO */
-  var prodUrl = '/products/'+esc(p.id)+'.html';
+  var prodUrl = '/products/'+esc(p.id);
   var imgs = p.images || [];
   var imgsData = JSON.stringify(imgs).replace(/"/g,'&quot;');
   html += '<a href="'+prodUrl+'" class="pc-img-link" aria-label="View '+esc(p.name)+' product page"><div class="pc-img" data-images="'+imgsData+'">';
