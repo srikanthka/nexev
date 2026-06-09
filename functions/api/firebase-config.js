@@ -11,9 +11,11 @@ export async function onRequestGet(context) {
   const env = context.env;
 
   if (!env.FIREBASE_API_KEY) {
+    /* Return 404 (not 500) so search crawlers don't flag this as a server error.
+       The real fix is setting FIREBASE_* env vars in Cloudflare Pages settings. */
     return new Response(
-      JSON.stringify({ error: 'Firebase env vars not set. Configure them in Cloudflare Pages settings.' }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } }
+      JSON.stringify({ error: 'Not configured.' }),
+      { status: 404, headers: { 'Content-Type': 'application/json' } }
     );
   }
 

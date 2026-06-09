@@ -5,11 +5,9 @@
  * Reads  : assets/products/products.js  (window.NEXEV_PRODUCTS)
  * Writes : products/{product-id}.html   — one page per active product
  *
- * Header/footer are identical to shop.html:
- *   • Full navbar with logo, all nav links, cart count, Sign In (Firebase auth)
- *   • Hamburger + mobile menu (same breakpoint as shop.html)
- *   • Scroll-to-top button
- *   • Full shop.html footer (4 columns + legal row)
+ * Header matches index.html exactly:
+ *   Products · BMS · Suppliers · India Market · Partners · BIS Services · Shop · Contact Us · Sign In
+ * Footer matches index.html exactly (4-column layout + legal row)
  */
 
 'use strict';
@@ -66,12 +64,12 @@ img{max-width:100%;display:block}
 .container{max-width:1200px;margin:0 auto;padding:0 1.5rem}`;
 
 const CSS_NAVBAR = `
-/* ── NAVBAR (identical to shop.html) ── */
+/* ── NAVBAR (identical to index.html) ── */
 .navbar{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
 .navbar.scrolled{border-color:var(--border);box-shadow:0 2px 20px rgba(0,0,0,.07)}
 .nav-c{max-width:1200px;margin:0 auto;padding:0 1.5rem;height:100%;display:flex;align-items:center;justify-content:space-between;gap:2rem}
 .nav-brand{display:flex;flex-direction:column;gap:.18rem;flex-shrink:0}
-.nav-logo-wrap{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.nav-logo-wrap{display:flex;align-items:center;gap:.5rem;flex-shrink:0;text-decoration:none}
 .nav-logo-img{height:32px;width:auto;display:block}
 .nav-logo-text{display:flex;align-items:center;font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;line-height:1}
 .logo-nex{color:var(--blue)}.logo-ev{color:var(--green)}
@@ -79,19 +77,21 @@ const CSS_NAVBAR = `
 .nav-links{display:flex;align-items:center;gap:.2rem;list-style:none}
 .nav-links a{padding:.4rem .7rem;border-radius:7px;font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s,background .2s}
 .nav-links a:hover{color:var(--blue);background:#f1f5f9}
-.nav-links .nav-shop{display:inline-flex;align-items:center;gap:.35rem;background:var(--green);color:#fff!important;padding:.42rem 1rem!important;border-radius:20px;font-weight:700;font-size:.825rem;box-shadow:0 2px 10px rgba(34,197,94,.3);transition:background .2s,transform .2s,box-shadow .2s!important}
-.nav-links .nav-shop:hover{background:#16a34a!important;transform:translateY(-1px);box-shadow:0 4px 16px rgba(34,197,94,.4)}
-.nav-cart{display:flex;align-items:center;gap:.4rem;padding:.45rem .9rem;border-radius:7px;background:var(--blue);color:#fff;font-size:.875rem;font-weight:700;transition:all .2s;cursor:pointer;border:none;text-decoration:none}
-.nav-cart:hover{background:var(--blue-d);transform:translateY(-1px)}
-.cart-count{background:var(--green);color:#fff;width:18px;height:18px;border-radius:50%;font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;line-height:1}
+/* Contact Us — blue CTA button (index.html style) */
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:.45rem 1rem!important;border-radius:7px}
+.nav-cta:hover{background:var(--blue-d)!important}
+/* Shop — green pill */
+.nav-shop{display:inline-flex!important;align-items:center;gap:.35rem;background:var(--green)!important;color:#fff!important;padding:.42rem 1rem!important;border-radius:20px!important;font-weight:700!important;font-size:.825rem!important;box-shadow:0 2px 10px rgba(34,197,94,.3);transition:background .2s,transform .2s,box-shadow .2s!important}
+.nav-shop:hover{background:#16a34a!important;transform:translateY(-1px);box-shadow:0 4px 16px rgba(34,197,94,.4)!important}
+/* Hamburger — 44×44 tap target (index.html style) */
 .hamburger{display:none;flex-direction:column;gap:5px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;padding:10px;flex-shrink:0;min-width:44px;min-height:44px;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 .hamburger span{display:block;width:24px;height:2.5px;background:var(--blue);border-radius:3px;transition:all .3s;flex-shrink:0}
 .mob-menu{display:none;flex-direction:column;gap:.5rem;position:fixed;top:var(--nav-h);left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem 1.5rem 1.5rem;z-index:101;box-shadow:0 8px 24px rgba(0,0,0,.08)}
 .mob-menu.open{display:flex}
 .mob-menu a{padding:.6rem .75rem;border-radius:8px;font-weight:500;color:var(--text);transition:background .15s}
 .mob-menu a:hover{background:var(--bg-alt)}
-.mob-menu .mob-shop{background:var(--green)!important;color:#fff!important;font-weight:700;border-radius:10px;text-align:center}
-.mob-menu .mob-cart-btn{background:var(--blue)!important;color:#fff!important;text-align:center;margin-top:.25rem;font-weight:700;border-radius:10px;padding:.75rem;display:block;text-decoration:none}
+.mob-cta{background:var(--blue)!important;color:#fff!important;text-align:center;margin-top:.5rem;border-radius:8px}
+.mob-shop{background:var(--green)!important;color:#fff!important;font-weight:700!important;border-radius:10px!important;text-align:center}
 @media(max-width:960px){.nav-links{display:none}.hamburger{display:flex}}
 @media(max-width:960px){.nav-c{gap:.75rem}}`;
 
@@ -130,13 +130,13 @@ const CSS_TOAST = `
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .toast.success{background:#16a34a}`;
 
-/* ── 5. Shared HTML blocks (identical to shop.html) ──────────────── */
+/* ── 5. Shared HTML blocks (identical to index.html) ─────────────── */
 const HTML_NAVBAR = `
 <!-- ═══ NAVBAR ═══ -->
 <nav class="navbar" id="navbar" aria-label="Main navigation">
   <div class="nav-c">
     <div class="nav-brand">
-      <a href="/index.html" class="nav-logo-wrap" aria-label="NexEV Home">
+      <a href="/index.html" class="nav-logo-wrap" aria-label="NexEV">
         <img id="navLogoImg" src="/assets/logo/nexev-logo.png" alt="NexEV" class="nav-logo-img"
              onerror="this.style.display='none';document.getElementById('navLogoText').style.display='flex';"/>
         <span class="nav-logo-text" id="navLogoText" style="display:none;">
@@ -145,10 +145,11 @@ const HTML_NAVBAR = `
       </a>
       <span class="nav-slogan">Driven by Electric Future</span>
     </div>
-    <ul class="nav-links" role="list">
-      <li><a href="/index.html">Home</a></li>
+    <ul class="nav-links">
       <li><a href="/index.html#products">Products</a></li>
-      <li><a href="/index.html#aftermarket">EV Parts</a></li>
+      <li><a href="/index.html#bms-design">BMS</a></li>
+      <li><a href="/index.html#taiwan">Suppliers</a></li>
+      <li><a href="/index.html#market">India Market</a></li>
       <li><a href="/index.html#opportunities">Partners</a></li>
       <li><a href="/index.html#bis-services">BIS Services</a></li>
       <li>
@@ -157,31 +158,27 @@ const HTML_NAVBAR = `
           Shop
         </a>
       </li>
-      <li>
-        <a href="/shop.html" class="nav-cart" id="navCartBtn" aria-label="View cart">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
-          Cart <span class="cart-count" id="cartCount">0</span>
-        </a>
-      </li>
+      <li><a href="/index.html#enquiry" class="nav-cta">Contact Us</a></li>
       <li id="navAuthArea"><a href="/auth.html" class="nav-signin-link"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Sign In</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 <div class="mob-menu" id="mobMenu" aria-hidden="true">
-  <a href="/index.html">Home</a>
   <a href="/index.html#products">Products</a>
-  <a href="/index.html#aftermarket">EV Parts</a>
-  <div id="mobMenuAuthArea"></div>
+  <a href="/index.html#taiwan">Supplier Partnership</a>
+  <a href="/index.html#market">India Market</a>
   <a href="/index.html#opportunities">Partners</a>
+  <a href="/index.html#bms-design">BMS</a>
   <a href="/index.html#bis-services">BIS Services</a>
   <a href="/shop.html" class="mob-shop">
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:.3rem"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
     Shop — NexEV Store
   </a>
-  <a href="/shop.html" class="mob-cart-btn" id="mobCartBtn">🛒 View Cart (<span id="mobCartCount">0</span>)</a>
+  <a href="/index.html#enquiry" class="mob-cta">Contact Us</a>
+  <div id="mobMenuAuthArea"></div>
 </div>`;
 
 const HTML_FOOTER = `
@@ -283,21 +280,7 @@ if (hb && mm) {
   });
 }
 
-/* ── Cart count from localStorage ── */
-function refreshCartCount() {
-  try {
-    var cart  = JSON.parse(localStorage.getItem('nexev_cart') || '[]');
-    var total = cart.reduce(function(s, i){ return s + (i.qty || 1); }, 0);
-    var cc = document.getElementById('cartCount');
-    var mc = document.getElementById('mobCartCount');
-    if (cc) cc.textContent = total;
-    if (mc) mc.textContent = total;
-  } catch(e) {}
-}
-refreshCartCount();
-window.addEventListener('storage', function(e){
-  if (e.key === 'nexev_cart') refreshCartCount();
-});
+/* ── Cart count is not shown in the index.html-style nav ── */
 
 /* ── Scroll top ── */
 var stBtn = document.getElementById('scrollTop');
@@ -453,7 +436,6 @@ ${firstImg ? `<meta property="og:image" content="${esc(firstImg)}"/>` : ''}
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
-${HTML_FIREBASE_SCRIPTS}
 <style>
 ${CSS_BASE}
 ${CSS_NAVBAR}
@@ -574,6 +556,8 @@ ${HTML_FOOTER}
 
 <div class="toast" id="toast" role="alert" aria-live="polite"></div>
 
+<!-- Firebase + auth — deferred to end of body so page renders immediately -->
+${HTML_FIREBASE_SCRIPTS}
 <script src="/assets/products/products.js"></script>
 <script>
 (function(){
