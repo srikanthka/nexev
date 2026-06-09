@@ -112,9 +112,23 @@ Disallow: /
 User-agent: *
 Allow: /
 Crawl-delay: 10
+
+# Non-indexable paths — block to prevent 5xx/redirect noise in GSC
 Disallow: /cdn-cgi/
 Disallow: /private/
 Disallow: /admin/
+Disallow: /admin.html
+Disallow: /account.html
+Disallow: /auth.html
+Disallow: /order-success.html
+Disallow: /api/
+Disallow: /functions/
+Disallow: /_unused/
+
+# Redirect / placeholder pages — exclude from crawl
+Disallow: /pages/training-redirect.html
+Disallow: /pages/training.html
+Disallow: /pages/coming-soon.html
 
 
 # ── Sitemap ──────────────────────────────────────────────────────

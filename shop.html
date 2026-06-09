@@ -118,7 +118,9 @@ img{max-width:100%;display:block}
 /* Product body */
 .pc-body{padding:1.25rem;flex:1;display:flex;flex-direction:column}
 .pc-cat{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:.35rem}
-.pc-name{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:.25rem;line-height:1.25}
+.pc-name{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:.25rem;line-height:1.25;display:block;text-decoration:none}
+.pc-name:hover{color:#2563eb;text-decoration:underline;text-underline-offset:2px}
+.pc-img-link{display:block;color:inherit;text-decoration:none}
 .pc-tagline{font-size:.8rem;color:var(--muted);margin-bottom:.85rem;line-height:1.45}
 .pc-price-row{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.35rem}
 .pc-price{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--blue)}
@@ -1143,10 +1145,11 @@ function renderProductCard(p){
   var cardCls = 'pc' + (p.featured?' featured':'') + (isSoon?' coming-soon':'');
   var html = '<div class="'+cardCls+'" data-id="'+esc(p.id)+'" data-cat="'+esc(p.category)+'">';
 
-  /* Image gallery */
+  /* Image gallery — wrapped in product page link for SEO */
+  var prodUrl = '/products/'+esc(p.id);
   var imgs = p.images || [];
   var imgsData = JSON.stringify(imgs).replace(/"/g,'&quot;');
-  html += '<div class="pc-img" data-images="'+imgsData+'">';
+  html += '<a href="'+prodUrl+'" class="pc-img-link" aria-label="View '+esc(p.name)+' product page"><div class="pc-img" data-images="'+imgsData+'">';
   if(imgs.length > 1){
     html += '<img class="pc-gallery-img" data-idx="0" src="'+esc(imgs[0])+'" alt="'+esc(p.name)+'" loading="lazy" onerror="this.style.display=\'none\';var s=this.parentNode.querySelector(\'.pc-svg\');if(s)s.style.display=\'flex\'"/>';
     html += '<div class="pc-svg" style="display:none">'+svgFb+'</div>';
@@ -1168,12 +1171,12 @@ function renderProductCard(p){
   if(hasSale){ html += '<span class="pc-badge badge-sale">Sale</span>'; }
   if(isSoon){ html += '<span class="pc-badge badge-soon">Coming Soon</span>'; }
   if(bestBulk && isActive){ html += '<span class="pc-badge badge-bulk">Bulk deals</span>'; }
-  html += '</div></div>';
+  html += '</div></div></a>';
 
   /* Body */
   html += '<div class="pc-body">';
   html += '<div class="pc-cat">'+esc(CAT_LABELS[p.category]||p.category)+'</div>';
-  html += '<div class="pc-name">'+esc(p.name)+'</div>';
+  html += '<a class="pc-name" href="'+prodUrl+'">'+esc(p.name)+'</a>';
   html += '<div class="pc-tagline">'+esc(p.tagline)+'</div>';
 
   if(isActive && p.price){

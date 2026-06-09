@@ -136,15 +136,16 @@ img{max-width:100%;display:block}
 .nav-cta:hover{background:var(--blue-d)!important}
 .nav-shop{display:inline-flex!important;align-items:center;gap:.35rem;background:var(--green)!important;color:#fff!important;padding:.42rem 1rem!important;border-radius:20px!important;font-weight:700!important;font-size:.825rem!important;box-shadow:0 2px 10px rgba(34,197,94,.3);transition:background .2s,transform .2s,box-shadow .2s!important}
 .nav-shop:hover{background:#16a34a!important;transform:translateY(-1px);box-shadow:0 4px 16px rgba(34,197,94,.4)!important}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.hamburger span{display:block;width:22px;height:2px;background:var(--blue);border-radius:2px;transition:all .3s}
-.mob-menu{display:none;flex-direction:column;gap:.5rem;position:fixed;top:var(--nav-h);left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem 1.5rem 1.5rem;z-index:99;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.hamburger{display:none;flex-direction:column;gap:5px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;padding:10px;flex-shrink:0;min-width:44px;min-height:44px;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--blue);border-radius:3px;transition:all .3s;flex-shrink:0}
+.mob-menu{display:none;flex-direction:column;gap:.5rem;position:fixed;top:var(--nav-h);left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem 1.5rem 1.5rem;z-index:101;box-shadow:0 8px 24px rgba(0,0,0,.08)}
 .mob-menu.open{display:flex}
 .mob-menu a{padding:.6rem .75rem;border-radius:8px;font-weight:500;color:var(--text)}
 .mob-menu a:hover{background:var(--bg-alt)}
 .mob-cta{background:var(--blue)!important;color:#fff!important;text-align:center;margin-top:.5rem}
 .mob-shop{background:var(--green)!important;color:#fff!important;font-weight:700!important;border-radius:10px!important;text-align:center}
-@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+@media(max-width:960px){.nav-links{display:none}.hamburger{display:flex}}
+@media(max-width:960px){.nav-c{gap:.75rem}}
 
 /* ═══ HERO ═══ */
 /* ── HERO ── */
@@ -471,7 +472,7 @@ img{max-width:100%;display:block}
 
 /* ═══ FOOTER ═══ */
 .footer{background:var(--blue);color:rgba(255,255,255,.7);padding:3.5rem 0 1.5rem}
-.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:1.5rem;margin-bottom:2rem}
 .ft-tag{font-size:.875rem;line-height:1.65;margin-bottom:1rem;color:rgba(255,255,255,.55)}
 .ft-legal p{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.6}
 .ft-legal .cin{font-family:monospace;font-size:.75rem}
@@ -483,8 +484,9 @@ img{max-width:100%;display:block}
 .fl-row{display:flex;gap:1rem}
 .fl-btn{background:none;border:none;color:rgba(255,255,255,.38);font-size:.8rem;cursor:pointer;padding:0;transition:color .2s}
 .fl-btn:hover{color:rgba(255,255,255,.8)}
-@media(max-width:768px){.ft{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.ft{grid-template-columns:1fr}}
+@media(max-width:960px){.ft{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:600px){.ft{grid-template-columns:1fr 1fr}}
+@media(max-width:380px){.ft{grid-template-columns:1fr}}
 
 /* scroll top */
 #scrollTop{position:fixed;bottom:1.5rem;right:1.5rem;z-index:50;width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;border:none;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.2);transition:all .2s}
@@ -607,7 +609,64 @@ img{max-width:100%;display:block}
 .modal-body h3{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--blue);margin:1rem 0 .4rem}
 .modal-body p{font-size:.875rem;color:var(--muted);line-height:1.65}
 .modal-ft{margin-top:1.5rem;text-align:right}
+
+/* ═══ SECTION ENHANCEMENTS ═══ */
+/* About / Bridge cards */
+.bc{transition:transform .22s,box-shadow .22s}
+.bc:hover{transform:translateY(-3px)}
+.bc--tw:hover{box-shadow:0 10px 32px rgba(34,197,94,.14)}
+.bc--in:hover{box-shadow:0 10px 32px rgba(245,197,24,.12)}
+/* Pillar cards */
+.pillar{transition:transform .22s,box-shadow .22s,border-color .22s}
+.pillar:hover{transform:translateY(-3px);box-shadow:0 6px 22px rgba(0,0,0,.07);border-color:rgba(34,197,94,.3)}
+/* India market stats */
+.ms{transition:transform .22s,box-shadow .22s,border-color .22s;cursor:default}
+.ms:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(26,58,92,.1);border-color:rgba(26,58,92,.28)}
+.ms-val{font-size:2.2rem}
+/* Roadmap cards */
+.rm{transition:transform .22s}
+.rm:hover{transform:translateY(-3px)}
+/* Opportunities cards */
+.oc{transition:transform .22s,box-shadow .22s,border-color .22s;position:relative;overflow:hidden}
+.oc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:transparent;transition:background .22s;z-index:1}
+.oc:not(.oc--ft):hover{transform:translateY(-3px);border-color:rgba(34,197,94,.3)}
+.oc:not(.oc--ft):hover::before{background:var(--green)}
+.oc--ft{overflow:hidden;transition:transform .22s}
+.oc--ft:hover{transform:translateY(-3px)}
+/* Component cards */
+.cc{transition:transform .22s,border-color .2s,box-shadow .2s}
+.cc:hover{transform:translateY(-3px)}
+/* BIS pillar hover */
+.bis-pillar{transition:transform .22s,box-shadow .22s}
+.bis-pillar:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.1)}
+/* Taiwan cards */
+.tw-card{transition:transform .22s,background .2s,border-color .2s}
+.tw-card:hover{transform:translateY(-3px)}
+/* Enquiry contact items */
+.ci{padding:.65rem .9rem;background:var(--bg-alt);border-radius:10px;border:1px solid var(--border);transition:background .2s,border-color .2s,transform .18s}
+.ci:hover{background:#f1f5f9;border-color:rgba(26,58,92,.2);transform:translateX(3px)}
+/* Status strip */
+.status-strip{background:linear-gradient(135deg,var(--blue) 0%,#1e4d7b 100%);box-shadow:0 4px 20px rgba(26,58,92,.25)}
+.st-chip{padding:.3rem .65rem;border-radius:20px;background:rgba(255,255,255,.07)}
+/* Kit visual box */
+.kit-visual-box{box-shadow:0 8px 48px rgba(15,37,64,.4);transition:transform .3s}
+.kit-visual-box:hover{transform:translateY(-4px)}
+/* Hero TM badge */
+.h-tm-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.32rem .85rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:20px;font-size:.66rem;font-weight:700;color:rgba(255,255,255,.6);letter-spacing:.06em;text-transform:uppercase;margin-top:.6rem;backdrop-filter:blur(8px);width:fit-content}
+/* Footer marketplace */
+.ft-marketplace{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+.ft-mp{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .88rem;border-radius:8px;font-size:.75rem;font-weight:700;text-decoration:none;transition:all .2s}
+.ft-mp-az{background:rgba(255,153,0,.12);border:1px solid rgba(255,153,0,.3);color:#ffb74d}
+.ft-mp-az:hover{background:rgba(255,153,0,.22);color:#ffcc80}
+.ft-mp-fk{background:rgba(40,116,240,.12);border:1px solid rgba(40,116,240,.3);color:#90caf9}
+.ft-mp-fk:hover{background:rgba(40,116,240,.22);color:#bbdefb}
+.footer-brand-tm{font-size:.6rem;color:rgba(255,255,255,.28);letter-spacing:.06em;text-transform:uppercase;margin-top:.4rem;display:flex;align-items:center;gap:.25rem}
 </style>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="assets/js/firebase-init.js"></script>
+<script src="assets/js/nav-auth.js"></script>
 </head>
 <body>
 
@@ -638,6 +697,7 @@ img{max-width:100%;display:block}
         </a>
       </li>
       <li><a href="#enquiry" class="nav-cta">Contact Us</a></li>
+      <li id="navAuthArea"><a href="auth.html" class="nav-signin-link"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Sign In</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -656,6 +716,7 @@ img{max-width:100%;display:block}
     Shop — NexEV Store
   </a>
   <a href="#enquiry" class="mob-cta">Contact Us</a>
+  <div id="mobMenuAuthArea"></div>
 </div>
 
 
@@ -954,7 +1015,7 @@ img{max-width:100%;display:block}
   <div class="slide" id="s2">
     <div class="slide-left">
       <div class="h-badge" style="background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.38);color:#4ade80;">
-        <span class="h-badge-dot" style="background:#22c55e;"></span>Available Now &nbsp;·&nbsp; Amazon India
+        <span class="h-badge-dot" style="background:#22c55e;"></span>Available Now &nbsp;·&nbsp; Amazon &amp; Flipkart
       </div>
       <p class="h-eyebrow">18650 DIY Components</p>
       <h1 class="h-title">
@@ -970,8 +1031,19 @@ img{max-width:100%;display:block}
         <div class="h-chip"><span class="h-chip-v">IP Rated</span><span class="h-chip-l">Heat Shrink</span></div>
       </div>
       <div class="h-ctas">
-        <a href="https://www.amazon.in/l/27943762031?ie=UTF8&marketplaceID=A21TJRUUN4KGV&product=B0GYSJQX27&me=A3AFIE9FQK6QM6" target="_blank" rel="noopener noreferrer" class="h-btn-p" style="background:#22c55e;box-shadow:0 0 28px rgba(34,197,94,.32);">Shop on Amazon India <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        <a href="https://www.amazon.in/l/27943762031?ie=UTF8&marketplaceID=A21TJRUUN4KGV&product=B0GYSJQX27&me=A3AFIE9FQK6QM6" target="_blank" rel="noopener noreferrer" class="h-btn-p" style="background:#FF9900;color:#131921;box-shadow:0 0 28px rgba(255,153,0,.35);">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Amazon India
+        </a>
+        <a href="https://www.flipkart.com/search?q=amass-xdivee-xt60h-2p-two-pin-plug" target="_blank" rel="noopener noreferrer" class="h-btn-p" style="background:#2874F0;color:#fff;box-shadow:0 0 28px rgba(40,116,240,.35);">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Flipkart
+        </a>
         <a href="#products" class="h-btn-s">View Kit Contents</a>
+      </div>
+      <div class="h-tm-badge">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        XDIVEE™ &nbsp;·&nbsp; Official Brand &nbsp;·&nbsp; Bengaluru, India
       </div>
     </div>
     <div class="slide-right">
@@ -1103,7 +1175,7 @@ img{max-width:100%;display:block}
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
       <span><strong>Incorporated</strong> · Karnataka, India</span>
     </div>
-    <a class="tc" href="https://www.amazon.in/s?me=A3AFIE9FQK6QM6&_encoding=UTF8&content-id=amzn1.sym.b72bd100-ee36-45d4-9484-be15891619a9&pd_rd_r=821bc2f3-77d8-4ba1-b594-fb10028fa453&pd_rd_w=fjI3n&pd_rd_wg=4aqgV&pf_rd_p=b72bd100-ee36-45d4-9484-be15891619a9&pf_rd_r=VX91KH7M9SMCKMW6DXDQ&ref=lscx_w_ssf_ac" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit" title="Browse NexEV store on Amazon India">
+    <a class="tc" href="https://www.amazon.in/l/27943762031?ie=UTF8&marketplaceID=A21TJRUUN4KGV&product=B0GYSJQX27&me=A3AFIE9FQK6QM6" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit" title="Browse NexEV store on Amazon India">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
       <span><strong>Battery Kits</strong> · Amazon India ↗</span>
     </a>
@@ -1143,7 +1215,7 @@ img{max-width:100%;display:block}
         <h4>The India Opportunity</h4>
         <p>NexEV is currently selling 18650 DIY battery assembly kits on Amazon India and to local EV workshops. This gives us direct market contact — real customers, real demand signals, and a growing network of workshops.</p>
         <ul class="bc-list">
-          <li><a href="https://www.amazon.in/s?me=A3AFIE9FQK6QM6&_encoding=UTF8&content-id=amzn1.sym.b72bd100-ee36-45d4-9484-be15891619a9&pd_rd_r=821bc2f3-77d8-4ba1-b594-fb10028fa453&pd_rd_w=fjI3n&pd_rd_wg=4aqgV&pf_rd_p=b72bd100-ee36-45d4-9484-be15891619a9&pf_rd_r=VX91KH7M9SMCKMW6DXDQ&ref=lscx_w_ssf_ac" target="_blank" rel="noopener noreferrer" style="color:inherit">Active Amazon India presence — battery kits ↗</a></li>
+          <li><a href="https://www.amazon.in/l/27943762031?ie=UTF8&marketplaceID=A21TJRUUN4KGV&product=B0GYSJQX27&me=A3AFIE9FQK6QM6" target="_blank" rel="noopener noreferrer" style="color:inherit">Active Amazon India presence — battery kits ↗</a></li>
           <li>EV workshop customer network in Karnataka</li>
           <li>Incorporated entity — GSTIN: 29AALCN2942C1ZF</li>
         </ul>
@@ -1168,7 +1240,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="status-strip fi">
       <div class="st-chip"><span class="dot dot-g"></span> Distribution Active — Karnataka</div>
-      <a class="st-chip" href="https://www.amazon.in/s?me=A3AFIE9FQK6QM6&_encoding=UTF8&content-id=amzn1.sym.b72bd100-ee36-45d4-9484-be15891619a9&pd_rd_r=821bc2f3-77d8-4ba1-b594-fb10028fa453&pd_rd_w=fjI3n&pd_rd_wg=4aqgV&pf_rd_p=b72bd100-ee36-45d4-9484-be15891619a9&pf_rd_r=VX91KH7M9SMCKMW6DXDQ&ref=lscx_w_ssf_ac" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit" title="View NexEV store on Amazon India"><span class="dot dot-g"></span> Amazon India — Battery Kits Live ↗</a>
+      <a class="st-chip" href="https://www.amazon.in/l/27943762031?ie=UTF8&marketplaceID=A21TJRUUN4KGV&product=B0GYSJQX27&me=A3AFIE9FQK6QM6" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit" title="View NexEV store on Amazon India"><span class="dot dot-g"></span> Amazon India — Battery Kits Live ↗</a>
       <div class="st-chip">NexEV Pvt Ltd &nbsp;·&nbsp; GSTIN: 29AALCN2942C1ZF</div>
       <div class="st-chip"><span class="dot dot-y"></span> BMS Sourcing — In Progress</div>
     </div>
@@ -1194,9 +1266,9 @@ img{max-width:100%;display:block}
         <p class="kit-desc">NexEV kits are assembled with workshop-grade components — properly rated wire, quality nickel strip, correct insulation, and reliable connectors. Designed for assemblers who want a consistent, sourced-for-quality bill of materials.</p>
         <p class="kit-desc">Suitable for: e-bike battery builds, power tool packs, solar storage, EV conversion projects.</p>
         <div class="kit-ctas">
-          <a href="https://www.amazon.in/s?me=A3AFIE9FQK6QM6&_encoding=UTF8&content-id=amzn1.sym.b72bd100-ee36-45d4-9484-be15891619a9&pd_rd_r=821bc2f3-77d8-4ba1-b594-fb10028fa453&pd_rd_w=fjI3n&pd_rd_wg=4aqgV&pf_rd_p=b72bd100-ee36-45d4-9484-be15891619a9&pf_rd_r=VX91KH7M9SMCKMW6DXDQ&ref=lscx_w_ssf_ac" target="_blank" rel="noopener noreferrer" class="btn btn-green">View on Amazon India <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-          
-		  <a href="shop.html" class="btn btn-green">Buy Now</a>
+          <a href="https://www.amazon.in/l/27943762031?ie=UTF8&marketplaceID=A21TJRUUN4KGV&product=B0GYSJQX27&me=A3AFIE9FQK6QM6" target="_blank" rel="noopener noreferrer" class="btn" style="background:#FF9900;color:#131921;box-shadow:0 4px 14px rgba(255,153,0,.3);">Amazon India <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          <a href="https://www.flipkart.com/search?q=amass-xdivee-xt60h-2p-two-pin-plug" target="_blank" rel="noopener noreferrer" class="btn" style="background:#2874F0;color:#fff;box-shadow:0 4px 14px rgba(40,116,240,.28);">Flipkart <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          <a href="shop.html" class="btn btn-green">Buy Now</a>
         </div>
       </div>
       <div class="kit-visual-box">
@@ -1767,7 +1839,7 @@ img{max-width:100%;display:block}
         <div class="rm-label">Phase 1 · Active Now</div>
         <h3>18650 DIY Battery Kits</h3>
         <p>Supplying battery pack assembly components — nickel strip, wire, connectors, tape, holders — to EV workshops, hobbyists, and assemblers via Amazon India and direct bulk orders. Revenue-generating, customer network growing.</p>
-        <a class="rm-tag" href="https://www.amazon.in/s?me=A3AFIE9FQK6QM6&_encoding=UTF8&content-id=amzn1.sym.b72bd100-ee36-45d4-9484-be15891619a9&pd_rd_r=821bc2f3-77d8-4ba1-b594-fb10028fa453&pd_rd_w=fjI3n&pd_rd_wg=4aqgV&pf_rd_p=b72bd100-ee36-45d4-9484-be15891619a9&pf_rd_r=VX91KH7M9SMCKMW6DXDQ&ref=lscx_w_ssf_ac" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit" title="View NexEV on Amazon India"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Active · Amazon India ↗</a>
+        <a class="rm-tag" href="https://www.amazon.in/l/27943762031?ie=UTF8&marketplaceID=A21TJRUUN4KGV&product=B0GYSJQX27&me=A3AFIE9FQK6QM6" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit" title="View NexEV on Amazon India"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Active · Amazon India ↗</a>
       </div>
       <div class="rm rm--b">
         <div class="rm-label">Phase 2 · Active Now</div>
@@ -2276,6 +2348,20 @@ img{max-width:100%;display:block}
           <p class="cin">GSTIN: 29AALCN2942C1ZF</p>
           <p>Registered in Karnataka, India</p>
         </div>
+        <div class="footer-brand-tm">
+          <img src="assets/logo/xdivee.jpg" alt="DIVEE Trademark" style="height:26px;width:auto;border-radius:4px;object-fit:contain;display:block;opacity:.85;"/>
+          <span>Registered Trademark · India</span>
+        </div>
+        <div class="ft-marketplace">
+          <a href="https://www.amazon.in/l/27943762031?ie=UTF8&marketplaceID=A21TJRUUN4KGV&product=B0GYSJQX27&me=A3AFIE9FQK6QM6" target="_blank" rel="noopener noreferrer" class="ft-mp ft-mp-az">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Amazon India
+          </a>
+          <a href="https://www.flipkart.com/search?q=amass-xdivee-xt60h-2p-two-pin-plug" target="_blank" rel="noopener noreferrer" class="ft-mp ft-mp-fk">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Flipkart
+          </a>
+        </div>
       </div>
       <div class="fc">
         <h4>Company</h4>
@@ -2291,6 +2377,13 @@ img{max-width:100%;display:block}
         <a href="#opportunities">Workshop Partners</a>
 		 <a href="#bis-services">BIS Services</a>
         <a href="#enquiry">Contact</a>
+      </div>
+      <div class="fc">
+        <h4>Shop Online</h4>
+        <a href="https://www.amazon.in/l/27943762031?ie=UTF8&marketplaceID=A21TJRUUN4KGV&product=B0GYSJQX27&me=A3AFIE9FQK6QM6" target="_blank" rel="noopener noreferrer">Amazon India ↗</a>
+        <a href="https://www.flipkart.com/search?q=amass-xdivee-xt60h-2p-two-pin-plug" target="_blank" rel="noopener noreferrer">Flipkart ↗</a>
+        <a href="shop.html">NexEV Direct Store</a>
+        <span>Ships from Karnataka, India</span>
       </div>
       <div class="fc">
         <h4>Contact</h4>

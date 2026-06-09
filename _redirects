@@ -1,0 +1,15 @@
+# ═══ NexEV — Cloudflare Pages _redirects ═══
+# Docs: https://developers.cloudflare.com/pages/configuration/redirects/
+
+# ── 301 Permanent redirects (fixes "Page with redirect" in GSC) ──────
+# Replace HTML meta-refresh redirects with proper HTTP 301s
+
+/pages/training-redirect      /pages/coming-soon.html   301
+/pages/training-redirect.html /pages/coming-soon.html   301
+/pages/training               /pages/coming-soon.html   301
+/pages/training.html          /pages/coming-soon.html   301
+/training                     /pages/coming-soon.html   301
+
+# ── Product clean URLs (200 rewrite — no redirect, no .html in URL) ──
+# /products/nickel-strip-1m  →  serves products/nickel-strip-1m.html at the same URL
+/products/:slug  /products/:slug.html  200

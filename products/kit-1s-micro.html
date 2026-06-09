@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Kit A — 1S 3.7V Micro Battery Kit | NexEV</title>
+<meta name="description" content="TP4057-based 1S micro Li-Ion assembly kit. Charge board, protection PCB, nickel strip, cell holder. Ships from Karnataka."/>
+<link rel="canonical" href="https://nexev.in/products/kit-1s-micro"/>
+<meta property="og:title"       content="Kit A — 1S 3.7V Micro Battery Kit | NexEV"/>
+<meta property="og:description" content="TP4057-based 1S micro Li-Ion assembly kit. Charge board, protection PCB, nickel strip, cell holder. Ships from Karnataka."/>
+<meta property="og:type"        content="product"/>
+<meta property="og:url"         content="https://nexev.in/products/kit-1s-micro"/>
+<meta property="og:image" content="https://nexev.in/assets/products/kit1.png"/>
+<meta property="og:site_name"   content="NexEV"/>
+<meta property="product:price:amount"   content="249"/>
+<meta property="product:price:currency" content="INR"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Kit A — 1S 3.7V Micro","description":"Kit A is NexEV's entry-level single-cell assembly kit. Centred on a TP4057-based charge PCB, it includes everything to build, protect, and charge a single 18650 or Li-Ion pouch cell. Perfect for IoT sensors, torches, and DIY gadgets.","sku":"NE-KIT-1S-001","brand":{"@type":"Brand","name":"NexEV"},"url":"https://nexev.in/products/kit-1s-micro","image":["https://nexev.in/assets/products/kit1.png","https://nexev.in/assets/products/kit-1s-micro.jpg","https://nexev.in/assets/products/kit-1s-micro-3.jpg"],"offers":{"@type":"Offer","priceCurrency":"INR","price":249,"availability":"https://schema.org/InStock","url":"https://nexev.in/products/kit-1s-micro","priceValidUntil":"2027-12-31","seller":{"@type":"Organization","name":"NexEV Private Limited"}}}</script>
+<link rel="icon" href="/assets/logo/favicon.ico"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="/assets/js/firebase-init.js"></script>
+<script src="/assets/js/nav-auth.js"></script>
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1a3a5c;--blue-d:#0f2540;
+  --green:#22c55e;--yellow:#f5c518;
+  --bg:#fff;--bg-alt:#f8fafc;
+  --text:#1e293b;--muted:#64748b;--border:#e2e8f0;
+  --radius:12px;--nav-h:64px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--bg);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+
+/* ── NAVBAR (identical to shop.html) ── */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.navbar.scrolled{border-color:var(--border);box-shadow:0 2px 20px rgba(0,0,0,.07)}
+.nav-c{max-width:1200px;margin:0 auto;padding:0 1.5rem;height:100%;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nav-brand{display:flex;flex-direction:column;gap:.18rem;flex-shrink:0}
+.nav-logo-wrap{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.nav-logo-img{height:32px;width:auto;display:block}
+.nav-logo-text{display:flex;align-items:center;font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;line-height:1}
+.logo-nex{color:var(--blue)}.logo-ev{color:var(--green)}
+.nav-slogan{font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.15rem;line-height:1}
+.nav-links{display:flex;align-items:center;gap:.2rem;list-style:none}
+.nav-links a{padding:.4rem .7rem;border-radius:7px;font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--blue);background:#f1f5f9}
+.nav-links .nav-shop{display:inline-flex;align-items:center;gap:.35rem;background:var(--green);color:#fff!important;padding:.42rem 1rem!important;border-radius:20px;font-weight:700;font-size:.825rem;box-shadow:0 2px 10px rgba(34,197,94,.3);transition:background .2s,transform .2s,box-shadow .2s!important}
+.nav-links .nav-shop:hover{background:#16a34a!important;transform:translateY(-1px);box-shadow:0 4px 16px rgba(34,197,94,.4)}
+.nav-cart{display:flex;align-items:center;gap:.4rem;padding:.45rem .9rem;border-radius:7px;background:var(--blue);color:#fff;font-size:.875rem;font-weight:700;transition:all .2s;cursor:pointer;border:none;text-decoration:none}
+.nav-cart:hover{background:var(--blue-d);transform:translateY(-1px)}
+.cart-count{background:var(--green);color:#fff;width:18px;height:18px;border-radius:50%;font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;line-height:1}
+.hamburger{display:none;flex-direction:column;gap:5px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;padding:10px;flex-shrink:0;min-width:44px;min-height:44px;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--blue);border-radius:3px;transition:all .3s;flex-shrink:0}
+.mob-menu{display:none;flex-direction:column;gap:.5rem;position:fixed;top:var(--nav-h);left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem 1.5rem 1.5rem;z-index:101;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mob-menu.open{display:flex}
+.mob-menu a{padding:.6rem .75rem;border-radius:8px;font-weight:500;color:var(--text);transition:background .15s}
+.mob-menu a:hover{background:var(--bg-alt)}
+.mob-menu .mob-shop{background:var(--green)!important;color:#fff!important;font-weight:700;border-radius:10px;text-align:center}
+.mob-menu .mob-cart-btn{background:var(--blue)!important;color:#fff!important;text-align:center;margin-top:.25rem;font-weight:700;border-radius:10px;padding:.75rem;display:block;text-decoration:none}
+@media(max-width:960px){.nav-links{display:none}.hamburger{display:flex}}
+@media(max-width:960px){.nav-c{gap:.75rem}}
+
+/* ── FOOTER (identical to shop.html) ── */
+.footer{background:var(--blue);color:rgba(255,255,255,.75);padding:4rem 0 2rem}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+@media(max-width:860px){.footer-top{grid-template-columns:1fr 1fr;gap:2rem}}
+@media(max-width:520px){.footer-top{grid-template-columns:1fr}}
+.footer-brand .nav-logo-text{color:#fff}
+.footer-tagline{font-size:.83rem;line-height:1.65;margin:.75rem 0 1.25rem}
+.footer-legal-block p{font-size:.76rem;color:rgba(255,255,255,.45);line-height:1.6}
+.footer-legal-block .cin{font-family:monospace;font-size:.72rem;color:rgba(255,255,255,.35)}
+.footer-loc{display:flex;align-items:center;gap:.4rem;font-size:.76rem;color:rgba(255,255,255,.5);margin-top:.4rem}
+.footer-loc svg{width:13px;height:13px;flex-shrink:0}
+.footer-col h4{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem}
+.footer-col a{display:block;font-size:.82rem;color:rgba(255,255,255,.65);margin-bottom:.5rem;transition:color .2s}
+.footer-col a:hover{color:#fff}
+.footer-col span{display:block;font-size:.78rem;color:rgba(255,255,255,.35);margin-top:.35rem}
+hr.footer-hr{border:none;border-top:1px solid rgba(255,255,255,.1);margin-bottom:1.5rem}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.78rem}
+.footer-bottom p{color:rgba(255,255,255,.35)}
+.footer-legal-row{display:flex;gap:1rem}
+.footer-legal-btn{background:none;border:none;cursor:pointer;font-size:.78rem;color:rgba(255,255,255,.4);font-family:inherit;transition:color .2s}
+.footer-legal-btn:hover{color:rgba(255,255,255,.8)}
+
+/* ── SCROLL TOP ── */
+#scrollTop{position:fixed;bottom:1.5rem;right:1.5rem;z-index:50;width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;border:none;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.2);transition:all .2s}
+#scrollTop.show{display:flex}
+#scrollTop:hover{background:var(--blue-d);transform:translateY(-2px)}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(20px);background:#1e293b;color:#fff;padding:.75rem 1.25rem;border-radius:10px;font-size:.875rem;font-weight:500;z-index:500;opacity:0;transition:opacity .3s,transform .3s;pointer-events:none;max-width:90vw;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.success{background:#16a34a}
+
+/* ── BREADCRUMB ── */
+.breadcrumb{padding:.8rem 0;background:var(--bg-alt);border-bottom:1px solid var(--border)}
+.bc-inner{display:flex;align-items:center;gap:.45rem;list-style:none;font-size:.8rem;color:var(--muted);flex-wrap:wrap}
+.bc-inner li+li::before{content:'›';margin-right:.45rem}
+.bc-inner a:hover{color:var(--blue)}
+.bc-inner .bc-cur{color:var(--text);font-weight:600}
+
+/* ── PRODUCT LAYOUT ── */
+.prod-page{padding:2.5rem 0 4rem}
+.prod-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+@media(max-width:768px){.prod-grid{grid-template-columns:1fr}}
+
+/* ── GALLERY ── */
+.gallery{position:sticky;top:calc(var(--nav-h) + 1.25rem)}
+.gal-main{border-radius:14px;overflow:hidden;background:var(--bg-alt);border:1.5px solid var(--border);aspect-ratio:1;display:flex;align-items:center;justify-content:center;margin-bottom:.65rem}
+.gal-main img{width:100%;height:100%;object-fit:contain;padding:1rem}
+.thumbs{display:flex;gap:.5rem;flex-wrap:wrap}
+.thumb{width:62px;height:62px;border-radius:8px;border:2px solid var(--border);overflow:hidden;cursor:pointer;padding:0;background:none;transition:border-color .18s;flex-shrink:0}
+.thumb:hover,.thumb.on{border-color:var(--green)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+
+/* ── PRODUCT INFO ── */
+.prod-cat{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.35rem}
+h1.prod-name{font-family:'Syne',sans-serif;font-size:clamp(1.45rem,3vw,2.1rem);font-weight:800;color:var(--blue);line-height:1.15;margin-bottom:.35rem}
+.prod-tagline{font-size:.88rem;color:var(--muted);margin-bottom:1.2rem}
+.price-row{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.3rem}
+.price-main{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;color:var(--blue)}
+.price-compare{font-size:.95rem;color:var(--muted);text-decoration:line-through}
+.price-unit{font-size:.78rem;color:var(--muted)}
+.stock-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;font-weight:700;color:#16a34a;margin-bottom:1.2rem}
+.stock-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 6px #22c55e}
+.stock-badge.out{color:#dc2626}.stock-badge.out .stock-dot{background:#ef4444;box-shadow:none}
+.short-desc{font-size:.88rem;color:var(--muted);line-height:1.7;margin-bottom:1.4rem;padding:.8rem 1rem;background:var(--bg-alt);border-radius:10px;border-left:3px solid var(--green)}
+
+/* ── QTY + ACTIONS ── */
+.qty-row{display:flex;align-items:center;gap:.7rem;margin-bottom:.9rem}
+.qty-label{font-size:.82rem;font-weight:600;color:var(--text)}
+.qty-ctrl{display:flex;align-items:center;gap:.3rem}
+.qty-btn{width:32px;height:32px;border:1.5px solid var(--border);border-radius:7px;background:#fff;font-size:1.05rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;line-height:1}
+.qty-btn:hover{border-color:var(--blue);color:var(--blue)}
+.qty-val{font-size:.9rem;font-weight:700;min-width:26px;text-align:center}
+.btn-atc{display:flex;align-items:center;justify-content:center;gap:.45rem;width:100%;padding:.88rem;border-radius:12px;background:var(--green);color:#fff;font-size:.92rem;font-weight:800;border:none;cursor:pointer;box-shadow:0 4px 14px rgba(34,197,94,.3);transition:all .2s;margin-bottom:.6rem}
+.btn-atc:hover{background:#16a34a;transform:translateY(-1px)}
+.btn-atc:disabled{background:var(--muted);box-shadow:none;cursor:not-allowed;transform:none}
+.btn-enq{display:flex;align-items:center;justify-content:center;gap:.4rem;width:100%;padding:.78rem;border-radius:12px;background:transparent;border:1.5px solid var(--border);color:var(--text);font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s;text-decoration:none;margin-bottom:.5rem}
+.btn-enq:hover{border-color:var(--blue);color:var(--blue)}
+.ship-note{display:flex;align-items:center;gap:.45rem;font-size:.76rem;color:var(--muted);margin-top:.65rem}
+.ship-note svg{flex-shrink:0;color:var(--green)}
+.secure-note{display:flex;align-items:center;gap:.45rem;font-size:.72rem;color:var(--muted);margin-top:.3rem}
+
+/* ── SPEC / BULK TABLES ── */
+.sect-h{font-family:'Syne',sans-serif;font-size:.92rem;font-weight:700;color:var(--blue);margin-bottom:.7rem;margin-top:1.6rem}
+.dt{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1.5px solid var(--border)}
+.dt th{background:var(--bg-alt);padding:.5rem .85rem;font-size:.7rem;font-weight:700;text-align:left;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);border-bottom:1.5px solid var(--border)}
+.dt td{padding:.48rem .85rem;border-bottom:1px solid var(--border);font-size:.83rem}
+.dt tr:last-child td{border:none}
+.dk{color:var(--muted);width:42%;background:var(--bg-alt)}
+.dv{font-weight:600}
+.bp{font-weight:700;color:var(--blue)}
+
+/* ── CONTENTS LIST ── */
+.contents-list{list-style:none;display:flex;flex-direction:column;gap:.38rem;margin-bottom:1.5rem}
+.contents-list li{font-size:.875rem;padding:.35rem .8rem;background:var(--bg-alt);border-radius:8px;border:1px solid var(--border)}
+.contents-list li::before{content:"✓ ";color:var(--green);font-weight:700}
+
+/* ── BACK BAR ── */
+.back-bar{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.back-bar a{display:inline-flex;align-items:center;gap:.4rem;font-size:.875rem;font-weight:600;color:var(--blue);transition:gap .15s;text-decoration:none}
+.back-bar a:hover{gap:.65rem}
+</style>
+</head>
+<body>
+
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" id="navbar" aria-label="Main navigation">
+  <div class="nav-c">
+    <div class="nav-brand">
+      <a href="/index.html" class="nav-logo-wrap" aria-label="NexEV Home">
+        <img id="navLogoImg" src="/assets/logo/nexev-logo.png" alt="NexEV" class="nav-logo-img"
+             onerror="this.style.display='none';document.getElementById('navLogoText').style.display='flex';"/>
+        <span class="nav-logo-text" id="navLogoText" style="display:none;">
+          <span class="logo-nex">nex</span><span class="logo-ev">EV</span>
+        </span>
+      </a>
+      <span class="nav-slogan">Driven by Electric Future</span>
+    </div>
+    <ul class="nav-links" role="list">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/index.html#products">Products</a></li>
+      <li><a href="/index.html#aftermarket">EV Parts</a></li>
+      <li><a href="/index.html#opportunities">Partners</a></li>
+      <li><a href="/index.html#bis-services">BIS Services</a></li>
+      <li>
+        <a href="/shop.html" class="nav-shop">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
+          Shop
+        </a>
+      </li>
+      <li>
+        <a href="/shop.html" class="nav-cart" id="navCartBtn" aria-label="View cart">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
+          Cart <span class="cart-count" id="cartCount">0</span>
+        </a>
+      </li>
+      <li id="navAuthArea"><a href="/auth.html" class="nav-signin-link"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Sign In</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu" aria-hidden="true">
+  <a href="/index.html">Home</a>
+  <a href="/index.html#products">Products</a>
+  <a href="/index.html#aftermarket">EV Parts</a>
+  <div id="mobMenuAuthArea"></div>
+  <a href="/index.html#opportunities">Partners</a>
+  <a href="/index.html#bis-services">BIS Services</a>
+  <a href="/shop.html" class="mob-shop">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:.3rem"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
+    Shop — NexEV Store
+  </a>
+  <a href="/shop.html" class="mob-cart-btn" id="mobCartBtn">🛒 View Cart (<span id="mobCartCount">0</span>)</a>
+</div>
+
+<!-- ═══ BREADCRUMB ═══ -->
+<nav class="breadcrumb" aria-label="Breadcrumb" style="margin-top:var(--nav-h)">
+  <div class="container">
+    <ol class="bc-inner" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/index.html" itemprop="item"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1"/>
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/shop.html" itemprop="item"><span itemprop="name">Shop</span></a>
+        <meta itemprop="position" content="2"/>
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span class="bc-cur" itemprop="name">Kit A — 1S 3.7V Micro</span>
+        <meta itemprop="position" content="3"/>
+      </li>
+    </ol>
+  </div>
+</nav>
+
+<!-- ═══ PRODUCT PAGE ═══ -->
+<main class="prod-page">
+  <div class="container">
+    <div class="prod-grid">
+
+      <!-- Gallery -->
+      <div class="gallery">
+        <div class="gal-main"><img id="galMain" src="/assets/products/kit1.png" alt="Kit A — 1S 3.7V Micro" loading="eager" onerror="this.style.opacity='.15'"></div>
+        <div class="thumbs"><button class="thumb on" onclick="swapImg('/assets/products/kit1.png',this)" aria-label="Image 1">
+          <img src="/assets/products/kit1.png" alt="Kit A — 1S 3.7V Micro view 1" loading="lazy">
+         </button><button class="thumb" onclick="swapImg('/assets/products/kit-1s-micro.jpg',this)" aria-label="Image 2">
+          <img src="/assets/products/kit-1s-micro.jpg" alt="Kit A — 1S 3.7V Micro view 2" loading="lazy">
+         </button><button class="thumb" onclick="swapImg('/assets/products/kit-1s-micro-3.jpg',this)" aria-label="Image 3">
+          <img src="/assets/products/kit-1s-micro-3.jpg" alt="Kit A — 1S 3.7V Micro view 3" loading="lazy">
+         </button></div>
+      </div>
+
+      <!-- Product info -->
+      <div>
+        <p class="prod-cat">kit</p>
+        <h1 class="prod-name">Kit A — 1S 3.7V Micro</h1>
+        <p class="prod-tagline">TP4057-based single-cell charge board kit</p>
+
+        <div class="price-row">
+          <span class="price-main" id="dp">₹249</span>
+          <span class="price-compare">₹399</span>
+          <span class="price-unit">/ kit</span>
+        </div>
+
+        <div class="stock-badge">
+          <span class="stock-dot"></span>
+          In Stock &nbsp;·&nbsp; Ships within 2 business days
+        </div>
+
+        <p class="short-desc">1S 3.7V micro battery kit built around the TP4057 charge management PCB. Ideal for coin cell replacements and small Li-Ion projects.</p>
+
+        <div class="qty-row">
+          <span class="qty-label">Qty:</span>
+          <div class="qty-ctrl">
+            <button class="qty-btn" onclick="adj(-1)" aria-label="Decrease quantity">−</button>
+            <span class="qty-val" id="qv">1</span>
+            <button class="qty-btn" onclick="adj(1)" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+
+        <button class="btn-atc" id="atcBtn" onclick="atcClick()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
+          Add to Cart
+        </button>
+
+        <a href="/index.html#enquiry" class="btn-enq">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Bulk / Wholesale Enquiry
+        </a>
+
+        <div class="ship-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          Ships within 2 business days from Bengaluru, Karnataka &nbsp;·&nbsp; Speed Post / Delhivery / Shiprocket
+        </div>
+        <div class="secure-note">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Secure checkout &nbsp;·&nbsp; Razorpay &nbsp;·&nbsp; UPI · Cards · Netbanking
+        </div>
+
+        <h2 class="sect-h">Bulk / Workshop Pricing</h2>
+        <table class="dt"><thead><tr><th>Quantity</th><th>Unit Price</th></tr></thead>
+        <tbody><tr><td>5+ kits</td><td class="bp">₹239 / kit</td></tr><tr><td>10+ kits</td><td class="bp">₹229 / kit</td></tr></tbody></table>
+
+        <h2 class="sect-h">What's Included</h2>
+    <ul class="contents-list"><li>TP4057 PCB charge board</li><li>1S PCM protection module</li><li>Nickel strip (spot-weld grade)</li><li>18650 insulation rings (2P-1 Pair) </li><li>18650 cell holder (×1)</li><li>Heat Shrink Sleeve</li><li>JST XH 2.54 2Pin</li></ul>
+
+        <h2 class="sect-h">Specifications</h2>
+        <table class="dt"><tbody><tr><td class="dk">Configuration</td><td class="dv">1S (3.7V nominal)</td></tr><tr><td class="dk">Charge IC</td><td class="dv">TP4057</td></tr><tr><td class="dk">Charge current</td><td class="dv">Up to 1A (adjustable)</td></tr><tr><td class="dk">Protection</td><td class="dv">Over-charge, over-discharge, short-circuit</td></tr><tr><td class="dk">Cell format</td><td class="dv">18650 / Li-Ion pouch</td></tr><tr><td class="dk">Use case</td><td class="dv">IoT, sensors, torches, micro packs</td></tr></tbody></table>
+
+        <div class="back-bar">
+          <a href="/shop.html">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+            Back to Shop
+          </a>
+          <a href="/shop.html">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
+            View Cart
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /prod-grid -->
+  </div>
+</main>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/index.html" class="nav-logo-wrap" aria-label="NexEV" style="margin-bottom:.75rem;display:flex;">
+          <img src="/assets/logo/nexev-logo.png" alt="NexEV" class="nav-logo-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <span class="nav-logo-text" style="display:none;color:#fff;">
+            <span style="color:#fff;">nex</span><span class="logo-ev">EV</span>
+          </span>
+        </a>
+        <p class="footer-tagline">NexEV India | EV Battery Packs,<br/> BMS &amp; Components for E-Bikes, E-Scooters &amp; Small EVs.</p>
+        <div class="footer-legal-block">
+          <p>NexEV Private Limited</p>
+          <p class="cin">GSTIN: 29AALCN2942C1ZF</p>
+          <p class="footer-loc">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+            Registered in Karnataka, India
+          </p>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/index.html#about">About NexEV</a>
+        <a href="/index.html#products">Products</a>
+        <a href="/index.html#aftermarket">EV Parts</a>
+        <a href="/index.html#opportunities">Opportunities</a>
+        <a href="/index.html#bis-services">BIS Services</a>
+      </div>
+      <div class="footer-col">
+        <h4>Engage</h4>
+        <a href="/index.html#opportunities">Dealer Programme</a>
+        <a href="/index.html#opportunities">Investor Relations</a>
+        <a href="/index.html#aftermarket">Parts Distributor</a>
+        <a href="/index.html#bis-services">BIS / AIR Services</a>
+        <a href="/index.html#enquiry">Enquire Now</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:service@nexev.in">service@nexev.in</a>
+        <span>Response within 48 hrs</span>
+        <span>Made in India 🇮🇳</span>
+      </div>
+    </div>
+    <hr class="footer-hr" />
+    <div class="footer-bottom">
+      <p>&copy; 2026 NexEV. All rights reserved.</p>
+      <div class="footer-legal-row">
+        <button type="button" class="footer-legal-btn">Privacy Policy</button>
+        <button type="button" class="footer-legal-btn">Terms &amp; Conditions</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTop" aria-label="Scroll to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+<script src="/assets/products/products.js"></script>
+<script>
+(function(){
+'use strict';
+
+/* ── Shared nav/footer behaviour ── */
+
+/* ── Navbar scroll class ── */
+var nav = document.getElementById('navbar');
+window.addEventListener('scroll', function(){
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 20);
+  var st = document.getElementById('scrollTop');
+  if (st) st.classList.toggle('show', window.scrollY > 400);
+}, { passive: true });
+
+/* ── Hamburger ── */
+var hb = document.getElementById('hamburger');
+var mm = document.getElementById('mobMenu');
+if (hb && mm) {
+  hb.addEventListener('click', function(){
+    var o = mm.classList.toggle('open');
+    hb.setAttribute('aria-expanded', String(o));
+    mm.setAttribute('aria-hidden', String(!o));
+    document.body.style.overflow = o ? 'hidden' : '';
+  });
+  mm.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mm.classList.remove('open');
+      hb.setAttribute('aria-expanded', 'false');
+      mm.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+  });
+}
+
+/* ── Cart count from localStorage ── */
+function refreshCartCount() {
+  try {
+    var cart  = JSON.parse(localStorage.getItem('nexev_cart') || '[]');
+    var total = cart.reduce(function(s, i){ return s + (i.qty || 1); }, 0);
+    var cc = document.getElementById('cartCount');
+    var mc = document.getElementById('mobCartCount');
+    if (cc) cc.textContent = total;
+    if (mc) mc.textContent = total;
+  } catch(e) {}
+}
+refreshCartCount();
+window.addEventListener('storage', function(e){
+  if (e.key === 'nexev_cart') refreshCartCount();
+});
+
+/* ── Scroll top ── */
+var stBtn = document.getElementById('scrollTop');
+if (stBtn) stBtn.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+/* ── Product page logic ── */
+var PID = 'kit-1s-micro';
+var qty = 1;
+
+window.swapImg = function(src, btn) {
+  var m = document.getElementById('galMain');
+  if (m) m.src = src;
+  document.querySelectorAll('.thumb').forEach(function(t){ t.classList.remove('on'); });
+  if (btn) btn.classList.add('on');
+};
+
+window.adj = function(d) {
+  qty = Math.max(1, qty + d);
+  document.getElementById('qv').textContent = qty;
+  var data = window.NEXEV_PRODUCTS;
+  if (!data) return;
+  var prod = (data.products || []).find(function(x){ return x.id === PID; });
+  if (!prod) return;
+  var price = prod.price;
+  (prod.bulk_tiers || []).slice().reverse().forEach(function(t){
+    if (qty >= t.qty) price = t.price;
+  });
+  var dp = document.getElementById('dp');
+  if (dp) dp.textContent = '\u20b9' + price.toLocaleString('en-IN');
+};
+
+function showToast(msg, cls) {
+  var el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = 'toast' + (cls ? ' ' + cls : '');
+  el.classList.add('show');
+  setTimeout(function(){ el.classList.remove('show'); }, 3500);
+}
+
+function getCart(){ try{ return JSON.parse(localStorage.getItem('nexev_cart')||'[]'); }catch(e){ return []; } }
+function saveCart(c){ localStorage.setItem('nexev_cart', JSON.stringify(c)); }
+
+window.atcClick = function() {
+  var data = window.NEXEV_PRODUCTS;
+  if (!data) { showToast('Product data not loaded — please refresh'); return; }
+  var prod = (data.products||[]).find(function(x){ return x.id === PID; });
+  if (!prod) { showToast('Product not found'); return; }
+  var cart = getCart();
+  var ex = cart.find(function(i){ return i.id === PID; });
+  if (ex) { ex.qty += qty; } else { cart.push({ id: PID, qty: qty, product: prod }); }
+  saveCart(cart);
+  refreshCartCount();
+  showToast('Added to cart ✓', 'success');
+  var btn = document.getElementById('atcBtn');
+  if (btn) {
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Added to Cart';
+    setTimeout(function(){
+      btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg> Add to Cart';
+    }, 2500);
+  }
+};
+
+})();
+</script>
+</body>
+</html>
