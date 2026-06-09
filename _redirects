@@ -10,12 +10,7 @@
 /pages/training.html          /pages/coming-soon.html   301
 /training                     /pages/coming-soon.html   301
 
-# ── Product URLs ──────────────────────────────────────────────────────
-# Rule order matters — Cloudflare Pages applies the first match.
-
-# 1. If someone accesses /products/name.html — redirect to clean URL
-#    (prevents _redirects from adding double .html when file isn't found)
-/products/:slug.html  /products/:slug         301
-
-# 2. Clean URL /products/name → serve the actual .html file (200 rewrite, no redirect)
-/products/:slug       /products/:slug.html    200
+# ── Product pages are now at root level (e.g. /xt60h-connector.html) ──
+# Redirect any old /products/* URLs to root-level equivalents
+/products/:slug.html  /:slug.html             301
+/products/:slug       /:slug.html             301

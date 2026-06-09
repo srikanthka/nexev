@@ -31,8 +31,7 @@ if (!catalogue || !catalogue.products) {
 const products = catalogue.products;
 
 /* ── 2. Output directory ──────────────────────────────────────────── */
-const outDir = path.join(rootDir, 'products');
-if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+const outDir = rootDir;
 
 /* ── 3. Helpers ───────────────────────────────────────────────────── */
 function esc(s) {
@@ -360,7 +359,7 @@ h1.prod-name{font-family:'Syne',sans-serif;font-size:clamp(1.45rem,3vw,2.1rem);f
 
 /* ── 8. Page builder ──────────────────────────────────────────────── */
 function buildPage(p) {
-  const canonical = `https://nexev.in/products/${p.id}`;
+  const canonical = `https://nexev.in/${p.id}`;
   const inStock   = p.stock === 'in_stock';
   const hasSale   = p.compare_price && p.compare_price > p.price;
   const firstImg  = p.images && p.images[0] ? `https://nexev.in/${p.images[0]}` : '';
@@ -635,12 +634,12 @@ products.forEach(function(p) {
   if (p.status !== 'active') return;
   try {
     fs.writeFileSync(path.join(outDir, `${p.id}.html`), buildPage(p), 'utf8');
-    console.log(`  ✓  products/${p.id}.html`);
+    console.log(`  ✓  ${p.id}.html`);
     count++;
   } catch(err) {
     console.error(`  ✗  ${p.id}: ${err.message}`);
   }
 });
 
-console.log(`\nDone — ${count} product pages written to products/`);
+console.log(`\nDone — ${count} product pages written to project root/`);
 console.log('Tip: run this script any time products.js changes.');
