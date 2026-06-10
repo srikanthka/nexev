@@ -155,7 +155,7 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-HS-001",
       "hsn_code": "3917",
       "gst_rate": 18,
-      "images": ["assets/products/heatshrink.png","assets/products/heatshrinksleeve.png","assets/products/heatshrinksleeve2.png"],
+      "images": ["assets/products/heatshrinksleeve2.png","assets/products/heatshrinksleeve.png","assets/products/heatshrink.png"],
       "image_fallback": "heat-shrink",
       "tags": ["heat-shrink","PVC","insulation","pack-wrap","3917"],
       "short_description": "Blue PVC heat shrink tube, 170mm flat width. Wraps a completed 18650 battery pack for insulation and clean finish.",
@@ -236,7 +236,7 @@ window.NEXEV_PRODUCTS = {
   "min_qty": 1,
   "bulk_tiers": [
     { "qty": 10, "price": 70, "label": "10+ meters" },
-	 { "qty": 50, "price": 60, "label": "50+ meters" },
+	{ "qty": 50, "price": 60, "label": "50+ meters" },
     { "qty": 100, "price": 50, "label": "100+ meters" }
   ],
   "stock": "in_stock",
