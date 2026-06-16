@@ -471,15 +471,74 @@ img{max-width:100%;display:block}
           <h3>NexEV Customer Support</h3>
           <p>Email: <a href="mailto:service@nexev.in">service@nexev.in</a><br/>Response within 48 business hours · Bengaluru, Karnataka, India</p>
         </div>
-        <a href="mailto:service@nexev.in?subject=Return%20Request" class="btn-contact">
+        <button type="button" class="btn-contact" id="openSupportModal">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           Email Support
-        </a>
+        </button>
       </div>
     </div>
 
   </div><!-- /policy-wrap -->
 </main>
+
+<!-- ═══ SUPPORT MODAL ═══ -->
+<div id="supportModal" role="dialog" aria-modal="true" aria-labelledby="supportModalTitle"
+     style="display:none;position:fixed;inset:0;z-index:400;background:rgba(0,0,0,.55);align-items:center;justify-content:center;padding:1rem">
+  <div style="background:#fff;border-radius:16px;width:100%;max-width:460px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.2)">
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#0f2540,#1a3a5c);padding:1.5rem 1.75rem;display:flex;align-items:center;justify-content:space-between">
+      <div>
+        <div id="supportModalTitle" style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:#fff">Return / Support Request</div>
+        <div style="font-size:.75rem;color:rgba(255,255,255,.55);margin-top:.2rem">We reply within 48 business hours</div>
+      </div>
+      <button id="supportModalClose" aria-label="Close" style="background:rgba(255,255,255,.1);border:none;border-radius:8px;cursor:pointer;color:#fff;width:32px;height:32px;display:flex;align-items:center;justify-content:center">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <!-- Form -->
+    <form id="supportForm" novalidate style="padding:1.5rem;display:flex;flex-direction:column;gap:.85rem">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+        <div style="display:flex;flex-direction:column;gap:.3rem">
+          <label for="sm-name" style="font-size:.75rem;font-weight:600;color:#1e293b">Full Name <span style="color:#dc2626">*</span></label>
+          <input id="sm-name" type="text" placeholder="Your name" required autocomplete="name"
+                 style="padding:.6rem .85rem;border:1.5px solid #e2e8f0;border-radius:8px;font-family:inherit;font-size:.875rem;outline:none;transition:border-color .2s"
+                 onfocus="this.style.borderColor='#1a3a5c'" onblur="this.style.borderColor='#e2e8f0'"/>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:.3rem">
+          <label for="sm-email" style="font-size:.75rem;font-weight:600;color:#1e293b">Email <span style="color:#dc2626">*</span></label>
+          <input id="sm-email" type="email" placeholder="you@email.com" required autocomplete="email"
+                 style="padding:.6rem .85rem;border:1.5px solid #e2e8f0;border-radius:8px;font-family:inherit;font-size:.875rem;outline:none;transition:border-color .2s"
+                 onfocus="this.style.borderColor='#1a3a5c'" onblur="this.style.borderColor='#e2e8f0'"/>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.3rem">
+        <label for="sm-order" style="font-size:.75rem;font-weight:600;color:#1e293b">Order Number</label>
+        <input id="sm-order" type="text" placeholder="e.g. NXV-20260001 (if available)"
+               style="padding:.6rem .85rem;border:1.5px solid #e2e8f0;border-radius:8px;font-family:inherit;font-size:.875rem;outline:none;transition:border-color .2s"
+               onfocus="this.style.borderColor='#1a3a5c'" onblur="this.style.borderColor='#e2e8f0'"/>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.3rem">
+        <label for="sm-msg" style="font-size:.75rem;font-weight:600;color:#1e293b">Describe the Issue <span style="color:#dc2626">*</span></label>
+        <textarea id="sm-msg" rows="4" required placeholder="Describe the damage or defect. Include photos if possible — attach them in a follow-up email to service@nexev.in"
+                  style="padding:.6rem .85rem;border:1.5px solid #e2e8f0;border-radius:8px;font-family:inherit;font-size:.875rem;outline:none;resize:vertical;transition:border-color .2s"
+                  onfocus="this.style.borderColor='#1a3a5c'" onblur="this.style.borderColor='#e2e8f0'"></textarea>
+      </div>
+      <p id="smErr" style="display:none;font-size:.78rem;color:#dc2626;margin:0;padding:.5rem .75rem;background:rgba(239,68,68,.06);border-radius:6px;border:1px solid rgba(239,68,68,.2)">Please fill in all required fields.</p>
+      <p id="smOk" style="display:none;font-size:.875rem;color:#166534;font-weight:600;margin:0;padding:.6rem .75rem;background:#f0fdf4;border-radius:6px;border:1px solid #bbf7d0">
+        ✅ Request sent! We'll respond within 48 business hours.
+      </p>
+      <button id="smBtn" type="submit"
+              style="background:#1a3a5c;color:#fff;border:none;border-radius:10px;padding:.75rem;font-family:inherit;font-size:.9rem;font-weight:700;cursor:pointer;transition:background .2s"
+              onmouseover="this.style.background='#0f2540'" onmouseout="this.style.background='#1a3a5c'">
+        Send Return Request
+      </button>
+      <p style="text-align:center;font-size:.75rem;color:#94a3b8;margin:0">
+        Or email us directly at
+        <a href="mailto:service@nexev.in" style="color:#1a3a5c;font-weight:600">service@nexev.in</a>
+      </p>
+    </form>
+  </div>
+</div>
 
 <!-- ═══ FOOTER ═══ -->
 <footer class="footer" role="contentinfo">
@@ -567,6 +626,90 @@ window.addEventListener('scroll', function(){
   if(st) st.classList.toggle('vis', window.scrollY > 400);
 }, {passive:true});
 if(st) st.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+
+// ── Support modal ──
+(function(){
+  var modal   = document.getElementById('supportModal');
+  var openBtn = document.getElementById('openSupportModal');
+  var closeBtn= document.getElementById('supportModalClose');
+  var form    = document.getElementById('supportForm');
+  var smBtn   = document.getElementById('smBtn');
+  var smErr   = document.getElementById('smErr');
+  var smOk    = document.getElementById('smOk');
+
+  function openModal(){
+    if(!modal) return;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    var nameEl = document.getElementById('sm-name');
+    if(nameEl) nameEl.focus();
+  }
+  function closeModal(){
+    if(!modal) return;
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+    if(smOk) smOk.style.display = 'none';
+    if(smErr) smErr.style.display = 'none';
+  }
+
+  if(openBtn) openBtn.addEventListener('click', openModal);
+  if(closeBtn) closeBtn.addEventListener('click', closeModal);
+  if(modal) modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && modal && modal.style.display === 'flex') closeModal();
+  });
+
+  function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
+
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name  = (document.getElementById('sm-name').value  || '').trim();
+      var email = (document.getElementById('sm-email').value || '').trim();
+      var order = (document.getElementById('sm-order').value || '').trim();
+      var msg   = (document.getElementById('sm-msg').value   || '').trim();
+
+      if(!name || !isEmail(email) || msg.length < 10){
+        if(smErr){ smErr.textContent = 'Please fill in all required fields (message min 10 characters).'; smErr.style.display = 'block'; }
+        return;
+      }
+      if(smErr) smErr.style.display = 'none';
+
+      var fullMsg = (order ? 'Order: ' + order + '\n\n' : '') + msg;
+
+      if(smBtn){ smBtn.disabled = true; smBtn.textContent = 'Sending…'; }
+
+      fetch('/api/nxmail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name:    name,
+          email:   email,
+          company: order ? 'Order #' + order : '',
+          phone:   '',
+          type:    'Return / Support Enquiry',
+          message: fullMsg
+        })
+      })
+      .then(function(r){ return r.json().then(function(d){ return { status: r.status, data: d }; }); })
+      .then(function(res){
+        if(smBtn){ smBtn.disabled = false; smBtn.textContent = 'Send Return Request'; }
+        if(!res.data.ok || res.status !== 200){
+          if(smErr){ smErr.textContent = '⚠️ ' + (res.data.error || 'Send failed') + ' — email service@nexev.in directly.'; smErr.style.display = 'block'; }
+          return;
+        }
+        form.reset();
+        if(smOk) smOk.style.display = 'block';
+        setTimeout(function(){ closeModal(); }, 3500);
+      })
+      .catch(function(){
+        if(smBtn){ smBtn.disabled = false; smBtn.textContent = 'Send Return Request'; }
+        if(smErr){ smErr.textContent = '⚠️ Network error — email service@nexev.in directly.'; smErr.style.display = 'block'; }
+      });
+    });
+  }
+})();
 </script>
 </body>
 </html>

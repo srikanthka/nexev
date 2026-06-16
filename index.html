@@ -2402,6 +2402,7 @@ img{max-width:100%;display:block}
     <div class="fb">
       <p>© 2026 NexEV Private Limited. All rights reserved.</p>
       <div class="fl-row">
+        <a href="/return-policy.html" class="fl-btn" style="text-decoration:none">Return Policy</a>
         <button class="fl-btn" id="btnPrivacy">Privacy Policy</button>
         <button class="fl-btn" id="btnTerms">Terms &amp; Conditions</button>
       </div>
@@ -2777,15 +2778,4 @@ var mCfg = [
 mCfg.forEach(function(c){
   var btn = document.getElementById(c[0]);
   if(btn) btn.addEventListener('click', function(){
-    var m = document.getElementById(c[1]);
-    if(m && m.classList.contains('open')) closeM(c[1]); else openM(c[1]);
-  });
-});
-document.querySelectorAll('.modal').forEach(function(m){
-  m.addEventListener('click', function(e){ if(e.target===m) closeM(m.id); });
-});
-
-})();
-</script>
-</body>
-</html>
+    var m = do
