@@ -33,7 +33,7 @@
       "date": "2026-06-12",
       "author": "NexEV Team",
       "readTime": "5 min read",
-      "image": "/assets/images/18650vc21700.png",
+      "image": "/assets/images/18650vs21700_1.png",
       "description": "The two most popular cylindrical cells compared on capacity, current, cost and pack design — so you can pick the format that fits your project.",
       "content": [
         { "type": "p", "text": "18650 and 21700 are named after their dimensions in millimetres. The 18650 is 18mm x 65mm; the 21700 is 21mm x 70mm. That small size difference changes a lot about how your pack performs." },
@@ -56,7 +56,7 @@
       "date": "2026-06-05",
       "author": "NexEV Team",
       "readTime": "7 min read",
-      "image": "/assets/hero/battery.png",
+      "image": "/assets/products/NikkleStrip2.png",
       "description": "Soldering directly to cells damages them. Spot welding is the safe, professional way to build a pack. Here's the workflow from strip to finished pack.",
       "content": [
         { "type": "p", "text": "Heat is the enemy of lithium cells. A soldering iron held against a cell terminal for too long degrades the internal chemistry. Spot welding delivers a high-current pulse for milliseconds, bonding nickel to the terminal without cooking the cell." },
@@ -80,7 +80,7 @@
       "date": "2026-05-28",
       "author": "NexEV Team",
       "readTime": "8 min read",
-      "image": "/assets/hero/scooter.png",
+      "image": "/assets/images/ebike.png",
       "description": "Thinking of building an e-scooter? This roadmap covers motor sizing, battery voltage, the controller, and the components you'll source from NexEV.",
       "content": [
         { "type": "p", "text": "An electric conversion comes down to four systems working together: the motor, the battery, the controller and the throttle. Get the voltage right across all four and the rest is assembly." },
@@ -104,7 +104,7 @@
       "date": "2026-05-20",
       "author": "NexEV Team",
       "readTime": "5 min read",
-      "image": "/assets/images/ebike.png",
+      "image": "/assets/hero/battery.png",
       "description": "Lithium packs are safe when built correctly. Follow these seven non-negotiable rules to protect yourself, your build and the people around you.",
       "content": [
         { "type": "p", "text": "Most lithium incidents trace back to a handful of avoidable mistakes. Internalise these rules before you weld your first cell." },
@@ -129,7 +129,7 @@
       "date": "2026-05-12",
       "author": "NexEV Team",
       "readTime": "4 min read",
-      "image": "/assets/hero/scooter2.png",
+      "image": "/assets/images/charger.png",
       "description": "Voltage, current and connector — the three things that must line up between your charger and your pack. A quick reference for small lithium builds.",
       "content": [
         { "type": "p", "text": "A charger that mismatches your pack is at best useless and at worst dangerous. Three numbers must agree: voltage, current and connector type." },
