@@ -1,0 +1,148 @@
+{
+  "blogs": [
+    {
+      "slug": "choosing-the-right-bms",
+      "title": "How to Choose the Right BMS for Your Battery Pack",
+      "category": "Guides",
+      "date": "2026-06-18",
+      "author": "NexEV Team",
+      "readTime": "6 min read",
+      "image": "/assets/hero/bms.png",
+      "description": "A Battery Management System protects, balances and monitors your cells. Here's how to match the right BMS to your pack's voltage, current and chemistry.",
+      "content": [
+        { "type": "p", "text": "The Battery Management System (BMS) is the brain of every lithium pack. It prevents over-charge, over-discharge, over-current and short circuits, and it keeps individual cells balanced so the whole pack ages evenly. Picking the wrong BMS is the single most common mistake we see from first-time builders." },
+        { "type": "h2", "text": "1. Match the cell count (S rating)" },
+        { "type": "p", "text": "A BMS is rated in series groups: 1S, 2S, 3S and so on. This must exactly match how many cell groups you wire in series. A 3-series Li-ion pack (nominal 11.1V) needs a 3S BMS — never a 2S or 4S." },
+        { "type": "h2", "text": "2. Size the continuous current" },
+        { "type": "p", "text": "Add up the maximum current your load draws and add 20-30% headroom. A motor that pulls 8A continuous is comfortable on a 10A BMS, not a 8A one. Undersized boards overheat and trip." },
+        { "type": "ul", "items": [
+          "1S 3A — small gadgets, sensors, LED lights",
+          "2S 8A — power banks, small tools, boost packs",
+          "3S 10A — 12V backup, routers, e-bike accessories"
+        ] },
+        { "type": "h2", "text": "3. Confirm the chemistry" },
+        { "type": "p", "text": "Li-ion / Li-po boards cut off around 4.2V per cell; LiFePO4 boards cut off near 3.65V. Using a Li-ion BMS on a LiFePO4 pack will over-charge and damage it." },
+        { "type": "quote", "text": "When in doubt, size up on current and match the S-rating exactly. The cells will thank you with years of service." },
+        { "type": "p", "text": "Still unsure? Send us your pack specs on WhatsApp and we'll recommend a board from the NexEV range." }
+      ]
+    },
+    {
+      "slug": "18650-vs-21700",
+      "title": "18650 vs 21700: Which Lithium Cell Is Right for Your Build?",
+      "category": "Components",
+      "date": "2026-06-12",
+      "author": "NexEV Team",
+      "readTime": "5 min read",
+      "image": "/assets/images/18650vc21700.png",
+      "description": "The two most popular cylindrical cells compared on capacity, current, cost and pack design — so you can pick the format that fits your project.",
+      "content": [
+        { "type": "p", "text": "18650 and 21700 are named after their dimensions in millimetres. The 18650 is 18mm x 65mm; the 21700 is 21mm x 70mm. That small size difference changes a lot about how your pack performs." },
+        { "type": "h2", "text": "Capacity and energy density" },
+        { "type": "p", "text": "21700 cells typically store 4000-5000mAh versus 2500-3500mAh for 18650. For the same pack voltage, fewer 21700 cells deliver the same range, which simplifies wiring and spot-welding." },
+        { "type": "h2", "text": "Current handling" },
+        { "type": "p", "text": "21700 cells generally sustain higher continuous discharge, making them the better choice for high-drain applications such as scooters and power tools." },
+        { "type": "ul", "items": [
+          "Choose 18650 for compact builds and the widest cell selection",
+          "Choose 21700 for maximum range and high current",
+          "Never mix formats or brands inside one pack"
+        ] },
+        { "type": "p", "text": "Both formats spot-weld the same way with pure-nickel strip. NexEV stocks holders and nickel for both — see the shop for current options." }
+      ]
+    },
+    {
+      "slug": "spot-welding-nickel-strips",
+      "title": "Spot Welding Nickel Strips: A Beginner's Guide",
+      "category": "Tutorials",
+      "date": "2026-06-05",
+      "author": "NexEV Team",
+      "readTime": "7 min read",
+      "image": "/assets/hero/battery.png",
+      "description": "Soldering directly to cells damages them. Spot welding is the safe, professional way to build a pack. Here's the workflow from strip to finished pack.",
+      "content": [
+        { "type": "p", "text": "Heat is the enemy of lithium cells. A soldering iron held against a cell terminal for too long degrades the internal chemistry. Spot welding delivers a high-current pulse for milliseconds, bonding nickel to the terminal without cooking the cell." },
+        { "type": "h2", "text": "What you need" },
+        { "type": "ul", "items": [
+          "A spot welder (battery-powered or mains)",
+          "Pure-nickel or nickel-plated strip sized to your current",
+          "Cell holders to keep alignment",
+          "Kapton tape and barley paper for insulation"
+        ] },
+        { "type": "h2", "text": "The basic workflow" },
+        { "type": "p", "text": "Lay your cells in holders, place the nickel strip across the terminals, and fire two weld points per joint for redundancy. Tug-test every weld — a good weld tears the nickel before it lifts off the cell." },
+        { "type": "quote", "text": "Two welds per joint, always tug-test. A pack is only as reliable as its weakest connection." },
+        { "type": "p", "text": "Finish with insulation rings on the positive ends and barley paper over the pack face before heat-shrinking. This prevents shorts that can be catastrophic." }
+      ]
+    },
+    {
+      "slug": "scooter-electric-conversion",
+      "title": "Converting Your Scooter to Electric: Where to Start",
+      "category": "Projects",
+      "date": "2026-05-28",
+      "author": "NexEV Team",
+      "readTime": "8 min read",
+      "image": "/assets/hero/scooter.png",
+      "description": "Thinking of building an e-scooter? This roadmap covers motor sizing, battery voltage, the controller, and the components you'll source from NexEV.",
+      "content": [
+        { "type": "p", "text": "An electric conversion comes down to four systems working together: the motor, the battery, the controller and the throttle. Get the voltage right across all four and the rest is assembly." },
+        { "type": "h2", "text": "Pick your voltage first" },
+        { "type": "p", "text": "Everything else follows from system voltage. A 36V system (10S) is common for light scooters; 48V (13S) gives more speed and efficiency. Your motor, controller and charger must all match this number." },
+        { "type": "h2", "text": "Size the battery" },
+        { "type": "p", "text": "Range depends on watt-hours. Multiply pack voltage by amp-hours: a 48V 15Ah pack stores 720Wh, roughly 30-40km of real-world range depending on rider weight and terrain." },
+        { "type": "ul", "items": [
+          "Motor: hub or mid-drive, matched to system voltage",
+          "Battery: built from 18650/21700 with a matching BMS",
+          "Controller: rated for peak motor current",
+          "Wiring: XT60/XT90 connectors, correct gauge"
+        ] },
+        { "type": "p", "text": "NexEV supplies the battery side of this build — cells, holders, BMS, nickel, connectors and insulation. Reach out with your target range and we'll spec a pack." }
+      ]
+    },
+    {
+      "slug": "lithium-battery-safety",
+      "title": "Lithium Battery Safety: 7 Rules Every Builder Should Know",
+      "category": "Safety",
+      "date": "2026-05-20",
+      "author": "NexEV Team",
+      "readTime": "5 min read",
+      "image": "/assets/images/ebike.png",
+      "description": "Lithium packs are safe when built correctly. Follow these seven non-negotiable rules to protect yourself, your build and the people around you.",
+      "content": [
+        { "type": "p", "text": "Most lithium incidents trace back to a handful of avoidable mistakes. Internalise these rules before you weld your first cell." },
+        { "type": "ul", "items": [
+          "Never solder directly to cells — spot weld instead",
+          "Always fit a correctly-rated BMS",
+          "Match cell brand, capacity and age within a pack",
+          "Insulate positive terminals with rings and barley paper",
+          "Use a charger rated for your exact pack voltage and chemistry",
+          "Fuse the main discharge lead",
+          "Charge on a non-flammable surface and never unattended overnight"
+        ] },
+        { "type": "h2", "text": "If a cell gets hot or swells" },
+        { "type": "p", "text": "Stop immediately, disconnect if safe to do so, and move the pack to a fireproof location outdoors. A swelling cell is venting — it will not recover and must be retired." },
+        { "type": "quote", "text": "A few rupees of insulation and a fuse are the cheapest insurance you will ever buy." }
+      ]
+    },
+    {
+      "slug": "choosing-a-charger",
+      "title": "Picking the Correct Charger for 1S / 2S / 3S Packs",
+      "category": "Guides",
+      "date": "2026-05-12",
+      "author": "NexEV Team",
+      "readTime": "4 min read",
+      "image": "/assets/hero/scooter2.png",
+      "description": "Voltage, current and connector — the three things that must line up between your charger and your pack. A quick reference for small lithium builds.",
+      "content": [
+        { "type": "p", "text": "A charger that mismatches your pack is at best useless and at worst dangerous. Three numbers must agree: voltage, current and connector type." },
+        { "type": "h2", "text": "Charge voltage" },
+        { "type": "ul", "items": [
+          "1S Li-ion charges to 4.2V (TP4057 Type-C is ideal)",
+          "2S charges to 8.4V",
+          "3S charges to 12.6V"
+        ] },
+        { "type": "h2", "text": "Charge current" },
+        { "type": "p", "text": "A safe default is 0.5C — half the pack's amp-hour rating. A 2Ah pack charges happily at 1A. Higher currents reduce lifespan and add heat." },
+        { "type": "p", "text": "NexEV stocks Type-C chargers for 1S, 2S and 3S packs. Tell us your pack and we'll point you to the right one." }
+      ]
+    }
+  ]
+}

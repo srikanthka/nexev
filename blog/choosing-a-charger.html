@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Picking the Correct Charger for 1S / 2S / 3S Packs — NexEV Blog</title>
+<meta name="description" content="Voltage, current and connector — the three things that must line up between your charger and your pack. A quick reference for small lithium builds."/>
+<meta name="robots" content="index,follow,max-image-preview:large"/>
+<meta property="og:title" content="Picking the Correct Charger for 1S / 2S / 3S Packs"/>
+<meta property="og:description" content="Voltage, current and connector — the three things that must line up between your charger and your pack. A quick reference for small lithium builds."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://nexev.in/blog/choosing-a-charger.html"/>
+<meta property="og:image" content="https://nexev.in/assets/hero/scooter2.png"/>
+<meta property="og:site_name" content="NexEV"/>
+<meta property="article:published_time" content="2026-05-12"/>
+<meta property="article:section" content="Guides"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Picking the Correct Charger for 1S / 2S / 3S Packs"/>
+<meta name="twitter:description" content="Voltage, current and connector — the three things that must line up between your charger and your pack. A quick reference for small lithium builds."/>
+<meta name="twitter:image" content="https://nexev.in/assets/hero/scooter2.png"/>
+<link rel="canonical" href="https://nexev.in/blog/choosing-a-charger.html"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Picking the Correct Charger for 1S / 2S / 3S Packs","description":"Voltage, current and connector — the three things that must line up between your charger and your pack. A quick reference for small lithium builds.","image":["https://nexev.in/assets/hero/scooter2.png"],"datePublished":"2026-05-12","dateModified":"2026-05-12","articleSection":"Guides","author":{"@type":"Organization","name":"NexEV Team","url":"https://nexev.in"},"publisher":{"@type":"Organization","name":"NexEV Private Limited","logo":{"@type":"ImageObject","url":"https://nexev.in/assets/logo/nexev-logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://nexev.in/blog/choosing-a-charger.html"}}</script>
+<link rel="icon" href="/assets/logo/favicon.ico"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1a3a5c;--blue-d:#0f2540;
+  --green:#22c55e;--yellow:#f5c518;
+  --bg:#fff;--bg-alt:#f8fafc;
+  --text:#1e293b;--muted:#64748b;--border:#e2e8f0;
+  --radius:12px;--nav-h:64px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--bg);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.navbar.scrolled{border-color:var(--border);box-shadow:0 2px 20px rgba(0,0,0,.07)}
+.nav-c{max-width:1200px;margin:0 auto;padding:0 1.5rem;height:100%;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nav-brand{display:flex;flex-direction:column;gap:.18rem;flex-shrink:0}
+.nav-logo-wrap{display:flex;align-items:center;gap:.5rem;flex-shrink:0;text-decoration:none}
+.nav-logo-img{height:32px;width:auto;display:block}
+.nav-logo-text{display:flex;align-items:center;font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;line-height:1}
+.logo-nex{color:var(--blue)}.logo-ev{color:var(--green)}
+.nav-slogan{font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.15rem;line-height:1}
+.nav-links{display:flex;align-items:center;gap:.2rem;list-style:none}
+.nav-links a{padding:.4rem .7rem;border-radius:7px;font-size:.875rem;font-weight:500;color:var(--muted);transition:color .2s,background .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue);background:#f1f5f9}
+.nav-cta{background:var(--blue)!important;color:#fff!important;padding:.45rem 1rem!important;border-radius:7px}
+.nav-cta:hover{background:var(--blue-d)!important}
+.nav-shop{display:inline-flex!important;align-items:center;gap:.35rem;background:var(--green)!important;color:#fff!important;padding:.42rem 1rem!important;border-radius:20px!important;font-weight:700!important;font-size:.825rem!important;box-shadow:0 2px 10px rgba(34,197,94,.3);transition:background .2s,transform .2s,box-shadow .2s!important}
+.nav-shop:hover{background:#16a34a!important;transform:translateY(-1px);box-shadow:0 4px 16px rgba(34,197,94,.4)!important}
+.nav-signin-link{display:inline-flex;align-items:center;gap:.35rem}
+.hamburger{display:none;flex-direction:column;gap:5px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;padding:10px;flex-shrink:0;min-width:44px;min-height:44px;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--blue);border-radius:3px;transition:all .3s;flex-shrink:0}
+.mob-menu{display:none;flex-direction:column;gap:.5rem;position:fixed;top:var(--nav-h);left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem 1.5rem 1.5rem;z-index:101;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mob-menu.open{display:flex}
+.mob-menu a{padding:.6rem .75rem;border-radius:8px;font-weight:500;color:var(--text);transition:background .15s}
+.mob-menu a:hover{background:var(--bg-alt)}
+.mob-cta{background:var(--blue)!important;color:#fff!important;text-align:center;margin-top:.5rem;border-radius:8px}
+.mob-shop{background:var(--green)!important;color:#fff!important;font-weight:700!important;border-radius:10px!important;text-align:center}
+@media(max-width:960px){.nav-links{display:none}.hamburger{display:flex}.nav-c{gap:.75rem}}
+.breadcrumb{padding:.8rem 0;background:var(--bg-alt);border-bottom:1px solid var(--border);margin-top:var(--nav-h)}
+.bc-inner{display:flex;align-items:center;gap:.45rem;list-style:none;font-size:.8rem;color:var(--muted);flex-wrap:wrap}
+.bc-inner li+li::before{content:'›';margin-right:.45rem}
+.bc-inner a:hover{color:var(--blue)}
+.bc-inner .bc-cur{color:var(--text);font-weight:600}
+.blog-hero{background:var(--blue);color:#fff;padding:3.5rem 0;text-align:center}
+.blog-hero .eyebrow{color:rgba(255,255,255,.65);background:rgba(255,255,255,.1);padding:.35rem .9rem;border-radius:20px;border:1px solid rgba(255,255,255,.15);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;display:inline-block;margin-bottom:.85rem}
+.blog-hero h1{font-family:'Syne',sans-serif;font-size:clamp(1.9rem,5vw,3rem);font-weight:800;line-height:1.1;margin-bottom:1rem;color:#fff}
+.blog-hero p{font-size:clamp(.95rem,2vw,1.1rem);color:rgba(255,255,255,.8);max-width:600px;margin:0 auto;line-height:1.65}
+.blog-section{padding:3.5rem 0 4.5rem}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem}
+@media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.blog-grid{grid-template-columns:1fr}}
+.blog-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(15,37,64,.12);border-color:var(--green)}
+.blog-card:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.bc-thumb{aspect-ratio:16/9;overflow:hidden;background:linear-gradient(135deg,#0f1e2e,#1a3a5c);position:relative}
+.bc-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.blog-card:hover .bc-thumb img{transform:scale(1.05)}
+.bc-cat{position:absolute;top:.8rem;left:.8rem;background:rgba(34,197,94,.95);color:#fff;font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.32rem .7rem;border-radius:20px}
+.bc-body{padding:1.25rem 1.25rem 1.4rem;display:flex;flex-direction:column;flex:1}
+.bc-meta{display:flex;gap:.5rem;align-items:center;font-size:.72rem;color:var(--muted);margin-bottom:.55rem}
+.bc-dot{width:3px;height:3px;border-radius:50%;background:var(--muted)}
+.bc-title{font-family:'Syne',sans-serif;font-size:1.08rem;font-weight:800;color:var(--blue);line-height:1.3;margin-bottom:.5rem}
+.bc-desc{font-size:.86rem;color:var(--muted);line-height:1.6;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.bc-readmore{margin-top:1.1rem;font-size:.82rem;font-weight:700;color:var(--green);display:inline-flex;align-items:center;gap:.35rem;transition:gap .2s}
+.blog-card:hover .bc-readmore{gap:.6rem}
+.article{max-width:760px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+.article-back{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:600;color:var(--muted);margin-bottom:1.75rem;transition:color .2s}
+.article-back:hover{color:var(--blue)}
+.article-cat{display:inline-block;background:#f0fdf4;color:#16a34a;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:.3rem .8rem;border-radius:20px;margin-bottom:1rem}
+.article h1{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;color:var(--blue);line-height:1.18;margin-bottom:1rem}
+.article-meta{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;font-size:.8rem;color:var(--muted);margin-bottom:1.75rem}
+.article-hero{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;margin-bottom:2rem;background:linear-gradient(135deg,#0f1e2e,#1a3a5c)}
+.article-content p{font-size:1.02rem;line-height:1.8;color:var(--text);margin-bottom:1.3rem}
+.article-content h2{font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:800;color:var(--blue);margin:2.1rem 0 .9rem;line-height:1.25}
+.article-content ul{margin:0 0 1.4rem 1.25rem;display:flex;flex-direction:column;gap:.5rem}
+.article-content li{font-size:1rem;line-height:1.7;color:var(--text)}
+.article-content li::marker{color:var(--green)}
+.article-content blockquote{border-left:3px solid var(--green);padding:.4rem 0 .4rem 1.25rem;margin:1.6rem 0;color:var(--blue);font-style:italic;font-size:1.05rem;line-height:1.7}
+.article-content img{border-radius:12px;margin:1.6rem 0;width:100%}
+.article-cta{margin-top:2.5rem;padding:1.75rem;background:var(--bg-alt);border:1px solid var(--border);border-radius:16px;text-align:center}
+.article-cta h3{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--blue);margin-bottom:.5rem}
+.article-cta p{font-size:.9rem;color:var(--muted);margin-bottom:1.1rem}
+.btn-green{display:inline-flex;align-items:center;gap:.4rem;padding:.7rem 1.5rem;border-radius:10px;background:var(--green);color:#fff;font-weight:700;font-size:.875rem;transition:all .2s}
+.btn-green:hover{background:#16a34a;transform:translateY(-1px)}
+.article-more{max-width:1200px;margin:0 auto;padding:0 1.5rem 4rem}
+.article-more h3{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--blue);margin-bottom:1.5rem}
+.footer{background:var(--blue);color:rgba(255,255,255,.75);padding:4rem 0 2rem}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+@media(max-width:860px){.footer-top{grid-template-columns:1fr 1fr;gap:2rem}}
+@media(max-width:520px){.footer-top{grid-template-columns:1fr}}
+.footer-brand .nav-logo-text{color:#fff}
+.footer-tagline{font-size:.83rem;line-height:1.65;margin:.75rem 0 1.25rem}
+.footer-legal-block p{font-size:.76rem;color:rgba(255,255,255,.45);line-height:1.6}
+.footer-legal-block .cin{font-family:monospace;font-size:.72rem;color:rgba(255,255,255,.35)}
+.footer-loc{display:flex;align-items:center;gap:.4rem;font-size:.76rem;color:rgba(255,255,255,.5);margin-top:.4rem}
+.footer-loc svg{width:13px;height:13px;flex-shrink:0}
+.footer-col h4{font-family:'Syne',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem}
+.footer-col a{display:block;font-size:.82rem;color:rgba(255,255,255,.65);margin-bottom:.5rem;transition:color .2s}
+.footer-col a:hover{color:#fff}
+.footer-col span{display:block;font-size:.78rem;color:rgba(255,255,255,.35);margin-top:.35rem}
+hr.footer-hr{border:none;border-top:1px solid rgba(255,255,255,.1);margin-bottom:1.5rem}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.78rem}
+.footer-bottom p{color:rgba(255,255,255,.35)}
+#scrollTop{position:fixed;bottom:1.5rem;right:1.5rem;z-index:50;width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;border:none;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.2);transition:all .2s}
+#scrollTop.show{display:flex}
+#scrollTop:hover{background:var(--blue-d);transform:translateY(-2px)}</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar" aria-label="Main navigation">
+  <div class="nav-c">
+    <div class="nav-brand">
+      <a href="/index.html" class="nav-logo-wrap" aria-label="NexEV">
+        <img id="navLogoImg" src="/assets/logo/nexev-logo.png" alt="NexEV" class="nav-logo-img"
+             onerror="this.style.display='none';document.getElementById('navLogoText').style.display='flex';"/>
+        <span class="nav-logo-text" id="navLogoText" style="display:none;">
+          <span class="logo-nex">nex</span><span class="logo-ev">EV</span>
+        </span>
+      </a>
+      <span class="nav-slogan">Driven by Electric Future</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/index.html#products">Products</a></li>
+      <li><a href="/index.html#bms-design">BMS</a></li>
+      <li><a href="/index.html#market">India Market</a></li>
+      <li><a href="/index.html#bis-services">BIS Services</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog.html" class="active">Blog</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+      <li>
+        <a href="/shop.html" class="nav-shop">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
+          Shop
+        </a>
+      </li>
+      <li><a href="/index.html#enquiry" class="nav-cta">Contact Us</a></li>
+      <li id="navAuthArea"><a href="/auth.html" class="nav-signin-link"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Sign In</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu" aria-hidden="true">
+  <a href="/index.html#products">Products</a>
+  <a href="/index.html#market">India Market</a>
+  <a href="/index.html#bms-design">BMS</a>
+  <a href="/index.html#bis-services">BIS Services</a>
+  <a href="/about.html">About</a>
+  <a href="/blog.html">Blog</a>
+  <a href="/faq.html">FAQ</a>
+  <a href="/shop.html" class="mob-shop">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:.3rem"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
+    Shop — NexEV Store
+  </a>
+  <a href="/index.html#enquiry" class="mob-cta">Contact Us</a>
+  <div id="mobMenuAuthArea"></div>
+</div>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <ol class="bc-inner" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/index.html" itemprop="item"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"/></li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/blog.html" itemprop="item"><span itemprop="name">Blog</span></a><meta itemprop="position" content="2"/></li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span class="bc-cur" itemprop="name">Picking the Correct Charger for 1S / 2S / 3S Packs</span><meta itemprop="position" content="3"/></li>
+    </ol>
+  </div>
+</nav>
+
+<article class="article">
+  <a class="article-back" href="/blog.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>All articles</a>
+  <span class="article-cat">Guides</span>
+  <h1>Picking the Correct Charger for 1S / 2S / 3S Packs</h1>
+  <div class="article-meta"><span>By NexEV Team</span><span class="bc-dot"></span><span>12 May 2026</span><span class="bc-dot"></span><span>4 min read</span></div>
+  <img class="article-hero" src="/assets/hero/scooter2.png" alt="Picking the Correct Charger for 1S / 2S / 3S Packs" onerror="this.style.display='none'"/>
+  <div class="article-content">
+<p>A charger that mismatches your pack is at best useless and at worst dangerous. Three numbers must agree: voltage, current and connector type.</p>
+<h2>Charge voltage</h2>
+<ul><li>1S Li-ion charges to 4.2V (TP4057 Type-C is ideal)</li><li>2S charges to 8.4V</li><li>3S charges to 12.6V</li></ul>
+<h2>Charge current</h2>
+<p>A safe default is 0.5C — half the pack&#39;s amp-hour rating. A 2Ah pack charges happily at 1A. Higher currents reduce lifespan and add heat.</p>
+<p>NexEV stocks Type-C chargers for 1S, 2S and 3S packs. Tell us your pack and we&#39;ll point you to the right one.</p>
+  </div>
+  <div class="article-cta">
+    <h3>Building a battery pack?</h3>
+    <p>NexEV stocks cells, holders, BMS boards, nickel strip, chargers and connectors — everything in these guides.</p>
+    <a class="btn-green" href="/shop.html">Browse the Shop</a>
+  </div>
+</article>
+<div class="article-more"><h3>More from the journal</h3><div class="blog-grid">
+        <a class="blog-card" href="/blog/choosing-the-right-bms.html" aria-label="Read: How to Choose the Right BMS for Your Battery Pack">
+          <div class="bc-thumb"><img src="/assets/hero/bms.png" alt="How to Choose the Right BMS for Your Battery Pack" loading="lazy" onerror="this.style.visibility='hidden'"/><span class="bc-cat">Guides</span></div>
+          <div class="bc-body">
+            <div class="bc-meta"><span>18 Jun 2026</span><span class="bc-dot"></span><span>6 min read</span></div>
+            <h2 class="bc-title">How to Choose the Right BMS for Your Battery Pack</h2>
+            <p class="bc-desc">A Battery Management System protects, balances and monitors your cells. Here&#39;s how to match the right BMS to your pack&#39;s voltage, current and chemistry.</p>
+            <span class="bc-readmore">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </a>
+        <a class="blog-card" href="/blog/18650-vs-21700.html" aria-label="Read: 18650 vs 21700: Which Lithium Cell Is Right for Your Build?">
+          <div class="bc-thumb"><img src="/assets/images/18650vc21700.png" alt="18650 vs 21700: Which Lithium Cell Is Right for Your Build?" loading="lazy" onerror="this.style.visibility='hidden'"/><span class="bc-cat">Components</span></div>
+          <div class="bc-body">
+            <div class="bc-meta"><span>12 Jun 2026</span><span class="bc-dot"></span><span>5 min read</span></div>
+            <h2 class="bc-title">18650 vs 21700: Which Lithium Cell Is Right for Your Build?</h2>
+            <p class="bc-desc">The two most popular cylindrical cells compared on capacity, current, cost and pack design — so you can pick the format that fits your project.</p>
+            <span class="bc-readmore">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </a>
+        <a class="blog-card" href="/blog/spot-welding-nickel-strips.html" aria-label="Read: Spot Welding Nickel Strips: A Beginner&#39;s Guide">
+          <div class="bc-thumb"><img src="/assets/hero/battery.png" alt="Spot Welding Nickel Strips: A Beginner&#39;s Guide" loading="lazy" onerror="this.style.visibility='hidden'"/><span class="bc-cat">Tutorials</span></div>
+          <div class="bc-body">
+            <div class="bc-meta"><span>5 Jun 2026</span><span class="bc-dot"></span><span>7 min read</span></div>
+            <h2 class="bc-title">Spot Welding Nickel Strips: A Beginner&#39;s Guide</h2>
+            <p class="bc-desc">Soldering directly to cells damages them. Spot welding is the safe, professional way to build a pack. Here&#39;s the workflow from strip to finished pack.</p>
+            <span class="bc-readmore">Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </a>
+    </div></div>
+
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/index.html" class="nav-logo-wrap" aria-label="NexEV" style="margin-bottom:.75rem;display:flex;">
+          <img src="/assets/logo/nexev-logo.png" alt="NexEV" class="nav-logo-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <span class="nav-logo-text" style="display:none;color:#fff;">
+            <span style="color:#fff;">nex</span><span class="logo-ev">EV</span>
+          </span>
+        </a>
+        <p class="footer-tagline">NexEV India | EV Battery Packs,<br/> BMS &amp; Components for E-Bikes, E-Scooters &amp; Small EVs.</p>
+        <div class="footer-legal-block">
+          <p>NexEV Private Limited</p>
+          <p class="cin">GSTIN: 29AALCN2942C1ZF</p>
+          <p class="footer-loc">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+            Registered in Karnataka, India
+          </p>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about.html">About NexEV</a>
+        <a href="/index.html#products">Products</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/index.html#opportunities">Opportunities</a>
+        <a href="/index.html#bis-services">BIS Services</a>
+      </div>
+      <div class="footer-col">
+        <h4>Engage</h4>
+        <a href="/shop.html">Shop</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/index.html#aftermarket">Parts Distributor</a>
+        <a href="/index.html#enquiry">Enquire Now</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:service@nexev.in">service@nexev.in</a>
+        <span>Response within 48 hrs</span>
+        <span>Made in India 🇮🇳</span>
+      </div>
+    </div>
+    <hr class="footer-hr" />
+    <div class="footer-bottom">
+      <p>&copy; 2026 NexEV. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTop" aria-label="Scroll to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="/assets/js/firebase-init.js"></script>
+<script src="/assets/js/nav-auth.js"></script>
+<script>
+(function(){
+'use strict';
+var nav = document.getElementById('navbar');
+window.addEventListener('scroll', function(){
+  if (nav) nav.classList.toggle('scrolled', window.scrollY > 20);
+  var st = document.getElementById('scrollTop');
+  if (st) st.classList.toggle('show', window.scrollY > 400);
+}, { passive: true });
+var hb = document.getElementById('hamburger'), mm = document.getElementById('mobMenu');
+if (hb && mm) {
+  hb.addEventListener('click', function(){
+    var o = mm.classList.toggle('open');
+    hb.setAttribute('aria-expanded', String(o));
+    mm.setAttribute('aria-hidden', String(!o));
+    document.body.style.overflow = o ? 'hidden' : '';
+  });
+  mm.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mm.classList.remove('open'); hb.setAttribute('aria-expanded','false');
+      mm.setAttribute('aria-hidden','true'); document.body.style.overflow='';
+    });
+  });
+}
+var stBtn = document.getElementById('scrollTop');
+if (stBtn) stBtn.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
+})();
+</script>
+</body>
+</html>
