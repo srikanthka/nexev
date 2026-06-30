@@ -45,17 +45,7 @@ function esc(s) {
 function fmt(n) {
   return '₹' + Number(n).toLocaleString('en-IN');
 }
-/* Deterministic rating per product id — stable across builds */
-function pseudoRating(id) {
-  let h = 0;
-  for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) >>> 0;
-  return { rating: (46 + (h % 4)) / 10, count: 11 + (h % 120) };
-}
-function starsHtml(rating) {
-  const pct = Math.round(rating / 5 * 100);
-  return `<span class="stars"><span class="stars-fill" style="width:${pct}%"></span></span>`;
-}
-const CHECK_SVG = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+const CHECK_SVG ='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
 
 /* ── 4. Shared CSS blocks (identical to shop.html) ────────────────── */
 const CSS_BASE = `
@@ -81,7 +71,7 @@ const CSS_NAVBAR = `
 .nav-brand{display:flex;flex-direction:column;gap:.18rem;flex-shrink:0}
 .nav-logo-wrap{display:flex;align-items:center;gap:.5rem;flex-shrink:0;text-decoration:none}
 .nav-logo-img{height:32px;width:auto;display:block}
-.nav-logo-text{display:flex;align-items:center;font-family:'Poppins',sans-serif;font-size:1.35rem;font-weight:800;line-height:1}
+.nav-logo-text{display:flex;align-items:center;font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:800;line-height:1}
 .logo-nex{color:var(--blue)}.logo-ev{color:var(--green)}
 .nav-slogan{font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.15rem;line-height:1}
 .nav-links{display:flex;align-items:center;gap:.2rem;list-style:none}
@@ -117,7 +107,7 @@ const CSS_FOOTER = `
 .footer-legal-block .cin{font-family:monospace;font-size:.72rem;color:rgba(255,255,255,.35)}
 .footer-loc{display:flex;align-items:center;gap:.4rem;font-size:.76rem;color:rgba(255,255,255,.5);margin-top:.4rem}
 .footer-loc svg{width:13px;height:13px;flex-shrink:0}
-.footer-col h4{font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem}
+.footer-col h4{font-family:'Inter',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem}
 .footer-col a{display:block;font-size:.82rem;color:rgba(255,255,255,.65);margin-bottom:.5rem;transition:color .2s}
 .footer-col a:hover{color:#fff}
 .footer-col span{display:block;font-size:.78rem;color:rgba(255,255,255,.35);margin-top:.35rem}
@@ -322,10 +312,10 @@ const CSS_PRODUCT_PAGE = `
 
 /* ── PRODUCT INFO ── */
 .prod-cat{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.35rem}
-h1.prod-name{font-family:'Poppins',sans-serif;font-size:clamp(1.45rem,3vw,2.1rem);font-weight:800;color:var(--blue);line-height:1.15;margin-bottom:.35rem}
+h1.prod-name{font-family:'Inter',sans-serif;font-size:clamp(1.45rem,3vw,2.1rem);font-weight:800;color:var(--blue);line-height:1.15;margin-bottom:.35rem}
 .prod-tagline{font-size:.88rem;color:var(--muted);margin-bottom:1.2rem}
 .price-row{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.3rem}
-.price-main{font-family:'Poppins',sans-serif;font-size:1.9rem;font-weight:800;color:var(--blue)}
+.price-main{font-family:'Inter',sans-serif;font-size:1.9rem;font-weight:800;color:var(--blue)}
 .price-compare{font-size:.95rem;color:var(--muted);text-decoration:line-through}
 .price-unit{font-size:.78rem;color:var(--muted)}
 .stock-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;font-weight:700;color:#16a34a;margin-bottom:1.2rem}
@@ -350,7 +340,7 @@ h1.prod-name{font-family:'Poppins',sans-serif;font-size:clamp(1.45rem,3vw,2.1rem
 .secure-note{display:flex;align-items:center;gap:.45rem;font-size:.72rem;color:var(--muted);margin-top:.3rem}
 
 /* ── SPEC / BULK TABLES ── */
-.sect-h{font-family:'Poppins',sans-serif;font-size:.92rem;font-weight:700;color:var(--blue);margin-bottom:.7rem;margin-top:1.6rem}
+.sect-h{font-family:'Inter',sans-serif;font-size:.92rem;font-weight:700;color:var(--blue);margin-bottom:.7rem;margin-top:1.6rem}
 .dt{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1.5px solid var(--border)}
 .dt th{background:var(--bg-alt);padding:.5rem .85rem;font-size:.7rem;font-weight:700;text-align:left;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);border-bottom:1.5px solid var(--border)}
 .dt td{padding:.48rem .85rem;border-bottom:1px solid var(--border);font-size:.83rem}
@@ -370,13 +360,7 @@ h1.prod-name{font-family:'Poppins',sans-serif;font-size:clamp(1.45rem,3vw,2.1rem
 .back-bar a:hover{gap:.65rem}
 
 /* ── RATING ── */
-.prod-rating{display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;font-size:.82rem}
-.stars{position:relative;display:inline-block;font-size:1rem;line-height:1;font-family:Arial,sans-serif;letter-spacing:2px}
-.stars::before{content:"★★★★★";color:#e2e8f0}
-.stars .stars-fill{position:absolute;top:0;left:0;overflow:hidden;white-space:nowrap;color:#f5a623}
-.stars .stars-fill::before{content:"★★★★★"}
-.prod-rating .rc{color:var(--muted);font-weight:500}
-.prod-rating .sku{margin-left:auto;font-size:.72rem;color:var(--muted)}
+.prod-sku{font-size:.78rem;color:var(--muted);margin-bottom:1rem}
 
 /* ── PRICE BLOCK ── */
 .price-save{font-size:.74rem;font-weight:800;color:#15803d;background:rgba(34,197,94,.12);border-radius:7px;padding:.2rem .55rem}
@@ -405,7 +389,7 @@ h1.prod-name{font-family:'Poppins',sans-serif;font-size:clamp(1.45rem,3vw,2.1rem
 
 /* ── RELATED PRODUCTS ── */
 .related{margin-top:3.5rem}
-.related h2{font-family:'Poppins',sans-serif;font-size:1.25rem;font-weight:800;color:var(--blue);margin-bottom:1.25rem}
+.related h2{font-family:'Inter',sans-serif;font-size:1.25rem;font-weight:800;color:var(--blue);margin-bottom:1.25rem}
 .rel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
 @media(max-width:768px){.rel-grid{grid-template-columns:repeat(2,1fr)}}
 .rel-card{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:#fff;transition:border-color .2s,box-shadow .2s,transform .2s;display:flex;flex-direction:column}
@@ -415,7 +399,7 @@ h1.prod-name{font-family:'Poppins',sans-serif;font-size:clamp(1.45rem,3vw,2.1rem
 .rel-card:hover .rel-img img{transform:scale(1.05)}
 .rel-body{padding:.8rem .9rem 1rem}
 .rel-name{font-size:.86rem;font-weight:600;color:var(--text);line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:.4rem;min-height:2.4em}
-.rel-price{font-family:'Poppins',sans-serif;font-size:1.05rem;font-weight:800;color:var(--blue)}
+.rel-price{font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:800;color:var(--blue)}
 .rel-compare{font-size:.78rem;color:var(--muted);text-decoration:line-through;margin-left:.35rem}`;
 
 /* ── 8. Page builder ──────────────────────────────────────────────── */
@@ -427,7 +411,6 @@ function buildPage(p) {
   const imgs      = p.images || [];
 
   /* Rating, pricing breakdown */
-  const rv        = pseudoRating(p.id);
   const gstRate   = p.gst_rate || 18;
   const basePrice = Math.round((p.price / (1 + gstRate / 100)) * 100) / 100;
   const saveAmt   = hasSale ? (p.compare_price - p.price) : 0;
@@ -532,7 +515,7 @@ ${firstImg ? `<meta property="og:image" content="${esc(firstImg)}"/>` : ''}
 <link rel="icon" href="/assets/logo/favicon.ico"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 ${CSS_BASE}
 ${CSS_NAVBAR}
@@ -583,11 +566,7 @@ ${HTML_NAVBAR}
         <h1 class="prod-name">${esc(p.name)}</h1>
         <p class="prod-tagline">${esc(p.tagline)}</p>
 
-        <div class="prod-rating">
-          ${starsHtml(rv.rating)}
-          <span class="rc">${rv.rating.toFixed(1)} · ${rv.count} reviews</span>
-          ${p.sku ? `<span class="sku">SKU: ${esc(p.sku)}</span>` : ''}
-        </div>
+        ${p.sku ? `<p class="prod-sku">SKU: ${esc(p.sku)}</p>` : ''}
 
         <div class="price-row">
           <span class="price-main" id="dp">${fmt(p.price)}</span>

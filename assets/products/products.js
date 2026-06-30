@@ -33,7 +33,7 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-NS-001",
       "hsn_code": "7506",
       "gst_rate": 18,
-      "images": ["assets/products/NikkleStrip4.png","assets/products/NikkleStrip3.png","assets/products/NikkleStrip1.png"],
+      "images": ["assets/products/NikkleStrp.png","assets/products/NikkleStrip1.png","assets/products/n3.png"],
       "image_fallback": "nickel-strip",
       "tags": ["nickel","strip","spot-weld","conductor","7506"],
       "short_description": "High-purity nickel strip for cell-to-cell spot welding. Correct width and thickness for 18650 series/parallel connections.",
@@ -61,19 +61,19 @@ window.NEXEV_PRODUCTS = {
       "category": "conductor",
       "status": "active",
       "featured": false,
-      "price": 159,
+      "price": 199,
       "compare_price": null,
       "unit": "pair",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 10,  "price": 149, "label": "10+ pairs" },
-        { "qty": 100, "price": 139, "label": "100+ pairs" }
+        { "qty": 10,  "price": 189, "label": "10+ pairs" },
+        { "qty": 100, "price": 179, "label": "100+ pairs" }
       ],
       "stock": "in_stock",
       "sku": "NE-WR-001",
       "hsn_code": "8544",
       "gst_rate": 28,
-      "images": ["assets/products/redblack14awg.png","assets/products/14awg_red_1.png","assets/products/14awg_black_1.png"],
+      "images": ["assets/products/14awg_red_1.png","assets/products/14awg_black_1.png","assets/products/300strands.png",],
       "image_fallback": "wire",
       "tags": ["wire","14awg","silicone","cable","8544"],
       "short_description": "Flexible silicone-jacketed 14 AWG wire \u2014 rated for battery pack current, heat-resistant. Red + black, 1m each.",
@@ -114,7 +114,7 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-KT-001",
       "hsn_code": "3919",
       "gst_rate": 18,
-      "images": ["assets/products/KeptonTape4.png","assets/products/KeptonTape3.png","assets/products/KeptonTape2.png"],
+      "images": ["assets/products/KeptonTape1.png","assets/products/KeptonTape3.png","assets/products/KeptonTape4.png"],
       "image_fallback": "kapton",
       "tags": ["kapton","polyimide","tape","insulation","thermal","3919"],
       "short_description": "High-temperature Kapton polyimide tape, 20mm width, 33m roll. Cell insulation, tab coverage, thermal protection.",
@@ -155,7 +155,7 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-HS-001",
       "hsn_code": "3917",
       "gst_rate": 18,
-      "images": ["assets/products/heatshrinksleeve2.png","assets/products/heatshrinksleeve.png","assets/products/heatshrink.png"],
+      "images": ["assets/products/heatshrinksleeve.png","assets/products/heatshrink.png","assets/products/heatshrinksleeve2.png"],
       "image_fallback": "heat-shrink",
       "tags": ["heat-shrink","PVC","insulation","pack-wrap","3917"],
       "short_description": "Blue PVC heat shrink tube, 170mm flat width. Wraps a completed 18650 battery pack for insulation and clean finish.",
@@ -197,7 +197,7 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-INS-001",
       "hsn_code": "4823",
       "gst_rate": 18,
-      "images": ["assets/products/18650 2P Insulation Stcikers2.png","assets/products/18650 2P Insulation Stcikers4.png","assets/products/18650 2P Insulation Stcikers3.png"],
+      "images": ["assets/products/InsulationRIngs2p.png","assets/products/18650 2P Insulation Stcikers2.png","assets/products/18650 2P Insulation Stcikers1.png"],
       "image_fallback": "insulation-paper",
       "tags": ["insulation","paper","barley","rings","4823","cell"],
       "short_description": "Combo pack: 18650 barley/mika insulation rings (100 pcs) + electrical insulation paper roll (10m). Essential for any pack build.",
@@ -244,9 +244,9 @@ window.NEXEV_PRODUCTS = {
   "hsn_code": "4823",
   "gst_rate": 12,
   "images": [
+    "assets/products/barlypaper.png",
     "assets/products/BarleyInsulationPaper2.png",
-    "assets/products/BarleyInsulationPaper1.png",
-	"assets/products/BarleyInsulationPaper3.png",
+	"assets/products/BarleyInsulationPaper1.png",
   ],
   "image_fallback": "insulation-paper",
   "tags": [
@@ -302,7 +302,7 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-XT-001",
       "hsn_code": "8536",
       "gst_rate": 18,
-      "images": ["assets/products/xt60h11.png","assets/products/xt60h6.png","assets/products/xt60_4.png"],
+      "images": ["assets/products/xt60h3.png","assets/products/xt60h2.png","assets/products/xt60h6.png"],
       "image_fallback": "xt60h",
       "tags": ["connector","XT60H","JST","amass","gold-plated","8536"],
       "short_description": "Genuine Amass XT60H male + female pair. ",
@@ -343,7 +343,7 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-BH-001",
       "hsn_code": "3926",
       "gst_rate": 18,
-      "images": ["assets/products/18650 2S Cell Holders1.png","assets/products/18650 3x5 Cell Holders2.png","assets/products/4x5holder.png"],
+      "images": ["assets/products/18650 2S Cell Holders1.png","assets/products/18650 3x5 Cell Holders2.png","assets/products/4x5holder.png","assets/products/1x2.png","assets/products/3x5.png","assets/products/5x4.png"],
       "image_fallback": "holder",
       "tags": ["holder","cell-holder","18650","ABS","alignment","3926"],
       "short_description": "ABS plastic 18650 cell holders. Keeps cells in precise series/parallel alignment during spot welding. 10 per pack.",
@@ -371,8 +371,8 @@ window.NEXEV_PRODUCTS = {
       "category": "kit",
       "status": "active",
       "featured": true,
-      "price": 249,
-      "compare_price": 399,
+      "price": 349,
+      "compare_price": 499,
       "unit": "kit",
       "min_qty": 1,
       "bulk_tiers": [
@@ -383,14 +383,14 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-KIT-1S-001",
       "hsn_code": "8542",
       "gst_rate": 5,
-      "images": ["assets/products/kit1.png","assets/products/TP4057_1A_1.png","assets/products/1S.png"],
+      "images": ["assets/products/kit1.png","assets/products/TP4057.png","assets/products/1sfb.png"],
       "image_fallback": "kit",
       "tags": ["kit","1S","3.7V","TP4057","single-cell","micro"],
       "short_description": "1S 3.7V micro battery kit built around the TP4057 charge management PCB. Ideal for coin cell replacements and small Li-Ion projects.",
       "description": "Kit A is NexEV's entry-level single-cell assembly kit. Centred on a TP4057-based charge PCB, it includes everything to build, protect, and charge a single 18650 or Li-Ion pouch cell. Perfect for IoT sensors, torches, and DIY gadgets.",
       "contents": [
         "TP4057 PCB charge board",
-        "1S PCM protection module",
+        "1S BMS protection module",
         "Nickel strip (spot-weld grade)",
         "18650 insulation rings (2P-1 Pair) ",
         "18650 cell holder (\u00d71)",
@@ -406,7 +406,7 @@ window.NEXEV_PRODUCTS = {
         "Use case":       "IoT, sensors, torches, micro packs"
       },
       "shipping": {
-        "weight_grams": 80,
+        "weight_grams": 150,
         "fulfillment": "Ships within 2 business days from Bengaluru, Karnataka",
         "courier": "Speed Post / Delhivery / Shiprocket"
       },
@@ -477,8 +477,8 @@ window.NEXEV_PRODUCTS = {
       "category": "kit",
       "status": "active",
       "featured": false,
-      "price": 349,
-      "compare_price": 549,
+      "price": 449,
+      "compare_price": 649,
       "unit": "kit",
       "min_qty": 1,
       "bulk_tiers": [
@@ -501,7 +501,7 @@ window.NEXEV_PRODUCTS = {
         "18650 insulation rings (20 pcs)",
         "2\u00d7 18650 cell holders",
         "14 AWG silicone wire leads",
-        "Kapton tape strip",
+        "Kapton tape strip(8 CM)",
         "PVC heat shrink tube (small)"
       ],
       "specs": {
@@ -531,13 +531,13 @@ window.NEXEV_PRODUCTS = {
       "category": "kit",
       "status": "active",
       "featured": false,
-      "price": 549,
-      "compare_price": 749,
+      "price": 749,
+      "compare_price": 949,
       "unit": "kit",
       "min_qty": 1,
       "bulk_tiers": [
-        { "qty": 5,  "price": 519, "label": "5+ kits" },
-        { "qty": 10, "price": 499, "label": "10+ kits" }
+        { "qty": 5,  "price": 719, "label": "5+ kits" },
+        { "qty": 10, "price": 699, "label": "10+ kits" }
       ],
       "stock": "in_stock",
       "sku": "NE-KIT-3S-BST-001",
@@ -554,7 +554,7 @@ window.NEXEV_PRODUCTS = {
         "18650 insulation rings (30 pcs)",
         "3\u00d7 18650 cell holders",
         "14 AWG silicone wire leads (red + black)",
-        "Kapton tape strip",
+        "Kapton tapp(1 roll)",
         "PVC heat shrink tube",
         "XT60H connector pair"
       ],
@@ -752,8 +752,8 @@ window.NEXEV_PRODUCTS = {
       "images": ["assets/products/2S7_4_1.png"],
       "image_fallback": "bms",
       "tags": ["BMS","PCM","1S","2S","3S","protection","Li-Ion"],
-      "short_description": "BMS / PCM protection boards for 1S Li-Ion configurations. Select variant at checkout.",
-      "description": "Electronic integrated circuit protection boards for small Li-Ion packs. Available in 1S (7.4V) configurations. Provides over-charge, over-discharge, over-current, and short-circuit protection.",
+      "short_description": "BMS / PCM protection board for 2S (7.4V) Li-Ion packs. 8A rating.",
+      "description": "Electronic integrated circuit protection board for 2S (7.4V) Li-Ion packs. Provides over-charge, over-discharge, over-current, and short-circuit protection.",
       "specs": {
         "Variants":       "2S (specify in order notes)",
         "Chemistry":      "Li-Ion / LiPo",
@@ -773,7 +773,7 @@ window.NEXEV_PRODUCTS = {
 	{
       "id": "bms-pcm-3s-10a",
       "name": "BMS / PCM Board (3S)",
-      "tagline": "Protection circuit modules for 2S 12V Li-Ion packs",
+      "tagline": "Protection circuit modules for 3S 12V Li-Ion packs",
       "category": "bms",
       "status": "active",
       "featured": false,
@@ -787,14 +787,14 @@ window.NEXEV_PRODUCTS = {
         { "qty": 25, "price": 180,  "label": "25+ units (workshop)" }
       ],
       "stock": "in_stock",
-      "sku": "NE-BMS-1S3S-002",
+      "sku": "NE-BMS-1S3S-003",
       "hsn_code": "8542",
       "gst_rate": 18,
       "images": ["assets/products/3S_10A_12V_1.png"],
       "image_fallback": "bms",
       "tags": ["BMS","PCM","1S","2S","3S","protection","Li-Ion"],
-      "short_description": "BMS / PCM protection boards for 1S Li-Ion configurations. Select variant at checkout.",
-      "description": "Electronic integrated circuit protection boards for small Li-Ion packs. Available in 3S (12V) configurations. Provides over-charge, over-discharge, over-current, and short-circuit protection.",
+      "short_description": "BMS / PCM protection board for 3S (12V) Li-Ion packs. 10A rating.",
+      "description": "Electronic integrated circuit protection board for 3S (12V) Li-Ion packs. Provides over-charge, over-discharge, over-current, and short-circuit protection.",
       "specs": {
         "Variants":       "3S (specify in order notes)",
         "Chemistry":      "Li-Ion / LiPo",
@@ -806,8 +806,8 @@ window.NEXEV_PRODUCTS = {
       "shipping": { "weight_grams": 15, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
       "amazon_url": "",
       "meta": {
-        "title": "BMS / PCM Board 2S Li-Ion Protection | NexEV",
-        "description": "Li-Ion protection PCM / BMS boards for 2S packs. Over-charge, over-discharge, short-circuit protection. Ships from Karnataka."
+        "title": "BMS / PCM Board 3S Li-Ion Protection | NexEV",
+        "description": "Li-Ion protection PCM / BMS boards for 3S packs. Over-charge, over-discharge, short-circuit protection. Ships from Karnataka."
       }
     },
 
@@ -872,7 +872,7 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-CHG-1S-001",
       "hsn_code": "8504",
       "gst_rate": 18,
-      "images": ["assets/products/TP4057_1A_1.png","assets/products/TP4057_1A_2.png"],
+      "images": ["assets/products/TP4057.png","assets/products/TP4057_1A_2.png"],
       "image_fallback": "bms",
       "tags": ["TP4057","charger","1S","3.7V","Type-C","Li-Ion","LiPo","protection","charging-board"],
       "short_description": "Compact TP4057-based 1S Li-Ion / LiPo charging board with Type-C input and onboard over-charge & over-discharge protection.",
