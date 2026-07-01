@@ -322,6 +322,47 @@ window.NEXEV_PRODUCTS = {
         "description": "Amass XT60H connector pairs. HSN 8536. Ships from Karnataka."
       }
     },
+	
+	{
+      "id": "xt90-connector",
+      "name": "XT90 Connectors",
+      "tagline": "XT90 \u2014 gold-plated",
+      "category": "connector",
+      "status": "active",
+      "featured": false,
+      "price": 130,
+      "compare_price": null,
+      "unit": "pair",
+      "min_qty": 1,
+      "bulk_tiers": [
+        { "qty": 10,  "price": 125,  "label": "10+ pairs" },
+        { "qty": 50, "price": 120,  "label": "50+ pairs" },
+        { "qty": 100, "price": 120,  "label": "100+ pairs (workshop)" }
+      ],
+      "stock": "in_stock",
+      "sku": "NE-XT-002",
+      "hsn_code": "8536",
+      "gst_rate": 18,
+      "images": ["assets/products/xt9014.png","assets/products/xt902.png","assets/products/xt9013.png"],
+      "image_fallback": "xt60h",
+      "tags": ["connector","XT90","JST","amass","gold-plated","8536"],
+      "short_description": "Genuine XT90 male + female pair. ",
+      "description": "Gold-plated electrical connectors for battery pack applications. XT90 (industry standard for e-bikes and RC). All connectors are rated \u22641000V and handle high continuous currents.",
+      "specs": {
+        "Variants":     "XT90 (specify in order)",
+        "XT60H rating": "20A continuous, 60A burst",
+        "Contact":      "Gold-plated copper",
+        "Housing":      "High-temp nylon",
+        "Wire gauge":   "12\u201316 AWG compatible",
+        "HSN code":     "8536"
+      },
+      "shipping": { "weight_grams": 15, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
+      "amazon_url": "",
+      "meta": {
+        "title": "XT90 Pair \u2014 Battery Pack | NexEV",
+        "description": "Amass XT90 connector pairs. HSN 8536. Ships from Karnataka."
+      }
+    },
 
     {
       "id": "cell-holder-18650-abs",
