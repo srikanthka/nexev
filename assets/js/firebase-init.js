@@ -22,25 +22,46 @@
  * LOCAL WRANGLER (npx wrangler pages dev):
  *   Create .dev.vars with the same FIREBASE_* keys — same as production path.
  *
- * DATABASE SECURITY RULES (paste in Firebase Console > Realtime Database > Rules):
+ * ★ DATABASE SECURITY RULES — YOU MUST PASTE THESE IN
+ *   Firebase Console > Realtime Database > Rules AND PUBLISH.
+ *   These rules are the ONLY thing protecting customer data — the client code
+ *   below cannot enforce them. The previous rules let ANY logged-in user read
+ *   EVERY customer's orders (name, phone, email, address) and let anyone create
+ *   an order. The hardened rules below fix both.
  *
- * IMPORTANT: The orders query uses orderByChild('userId'), which requires .read at the
- * /orders level (not just per-order). Without it you get PERMISSION_DENIED even when
- * logged in. The .indexOn rule speeds up the query and avoids a Firebase console warning.
+ * How the reads work:
+ *   - account.html lists a user's own orders with
+ *       orderByChild('userId').equalTo(<their uid>)
+ *     The /orders ".read" rule permits that query ONLY when equalTo == the
+ *     caller's own uid, so a user can never list other people's orders.
+ *   - admin.html (an admin uid) can read all orders.
+ *   - A single order can be read only by its owner or an admin.
+ *
+ * How writes work:
+ *   - Creating an order requires auth AND the new order's userId must equal the
+ *     caller's uid (no anonymous or spoofed orders).
+ *   - Only admins can update/modify an existing order (e.g. status changes).
  *
  * {
  *   "rules": {
  *     "users":  { "$uid": { ".read":"$uid===auth.uid", ".write":"$uid===auth.uid" } },
  *     "orders": {
- *       ".read":   "auth!=null",
+ *       ".read": "auth!=null && ((query.orderByChild==='userId' && query.equalTo===auth.uid) || root.child('admins').child(auth.uid).exists())",
  *       ".indexOn": ["userId"],
  *       "$orderId": {
- *         ".write": "!data.exists()||(auth!=null&&root.child('admins').child(auth.uid).exists())"
+ *         ".read":  "auth!=null && (data.child('userId').val()===auth.uid || root.child('admins').child(auth.uid).exists())",
+ *         ".write": "auth!=null && (!data.exists() ? newData.child('userId').val()===auth.uid : root.child('admins').child(auth.uid).exists())"
  *       }
  *     },
  *     "admins": { ".read":"auth!=null", ".write":false }
  *   }
  * }
+ *
+ * NOTE: A logged-in user can still create an order under their OWN uid with a
+ * client-supplied total. The authoritative record of what was actually paid is
+ * the Razorpay order/payment (see /api/verify-payment, which now confirms the
+ * captured amount). Treat admin.html "Total Revenue" as indicative; reconcile
+ * against the Razorpay dashboard before fulfilment.
  */
 
 (function () {

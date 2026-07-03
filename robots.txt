@@ -121,13 +121,9 @@ Disallow: /admin.html
 Disallow: /account.html
 Disallow: /auth.html
 Disallow: /thankyou.html
+Disallow: /order-success.html
 Disallow: /api/
 Disallow: /functions/
-
-# Redirect / placeholder pages — exclude from crawl
-Disallow: /pages/training-redirect.html
-Disallow: /pages/training.html
-Disallow: /pages/coming-soon.html
 
 
 # ── Sitemap ──────────────────────────────────────────────────────

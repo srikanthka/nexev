@@ -72,7 +72,7 @@ window.NEXEV_PRODUCTS = {
       "stock": "in_stock",
       "sku": "NE-WR-001",
       "hsn_code": "8544",
-      "gst_rate": 28,
+      "gst_rate": 18,
       "images": ["assets/products/14awg_red_1.png","assets/products/14awg_black_1.png","assets/products/300strands.png",],
       "image_fallback": "wire",
       "tags": ["wire","14awg","silicone","cable","8544"],
@@ -200,14 +200,14 @@ window.NEXEV_PRODUCTS = {
       "images": ["assets/products/InsulationRIngs2p.png","assets/products/18650 2P Insulation Stcikers2.png","assets/products/18650 2P Insulation Stcikers1.png"],
       "image_fallback": "insulation-paper",
       "tags": ["insulation","paper","barley","rings","4823","cell"],
-      "short_description": "Combo pack: 18650 barley/mika insulation rings (100 pcs) + electrical insulation paper roll (10m). Essential for any pack build.",
+      "short_description": "Combo pack: 18650 barley/mica insulation rings (100 pcs) + electrical insulation paper roll (10m). Essential for any pack build.",
       "description": "Combined insulation consumables pack. Barley rings sit on the positive 18650 cell terminal to prevent shorts during spot welding. Insulation paper goes between cell groups and between the pack and housing. Both are essential for a safe build.",
       "contents": [
-        "18650 barley / mika insulation rings \u2014 100 pcs",
+        "18650 barley / mica insulation rings \u2014 100 pcs",
         "Electrical insulation paper roll \u2014 10m \u00d7 100mm"
       ],
       "specs": {
-        "Rings material":    "Mika / barley paper",
+        "Rings material":    "Mica / barley paper",
         "Rings quantity":    "100 per pack",
         "Paper material":    "Electrical insulation / kraft paper",
         "Paper dimensions":  "100mm wide \u00d7 10m roll",
@@ -242,7 +242,7 @@ window.NEXEV_PRODUCTS = {
   "stock": "in_stock",
   "sku": "NE-INS-002",
   "hsn_code": "4823",
-  "gst_rate": 12,
+  "gst_rate": 18,
   "images": [
     "assets/products/barlypaper.png",
     "assets/products/BarleyInsulationPaper2.png",
@@ -278,7 +278,7 @@ window.NEXEV_PRODUCTS = {
   "amazon_url": "",
   "meta": {
     "title": "Insulation Barley Paper 50 MM — Battery Pack Insulation | NexEV",
-    "description": "50mm insulation barley paper for lithium battery pack assembly. ₹15/meter, ₹10/meter for 100+ meter orders. HSN 4823."
+    "description": "50mm insulation barley paper for lithium battery pack assembly. ₹80/meter, ₹50/meter for 100+ meter orders. HSN 4823."
   }
 },
 
@@ -350,7 +350,7 @@ window.NEXEV_PRODUCTS = {
       "description": "Gold-plated electrical connectors for battery pack applications. XT90 (industry standard for e-bikes and RC). All connectors are rated \u22641000V and handle high continuous currents.",
       "specs": {
         "Variants":     "XT90 (specify in order)",
-        "XT60H rating": "20A continuous, 60A burst",
+        "XT90 rating":  "90A continuous, 100A+ burst",
         "Contact":      "Gold-plated copper",
         "Housing":      "High-temp nylon",
         "Wire gauge":   "12\u201316 AWG compatible",
@@ -441,7 +441,7 @@ window.NEXEV_PRODUCTS = {
       "specs": {
         "Configuration":  "1S (3.7V nominal)",
         "Charge IC":      "TP4057",
-        "Charge current": "Up to 1A (adjustable)",
+        "Charge current": "Up to 500 mA",
         "Protection":     "Over-charge, over-discharge, short-circuit",
         "Cell format":    "18650 / Li-Ion pouch",
         "Use case":       "IoT, sensors, torches, micro packs"
@@ -534,7 +534,7 @@ window.NEXEV_PRODUCTS = {
       "image_fallback": "kit",
       "tags": ["kit","2S","7.4V","boost","IP2326","power-bank"],
       "short_description": "2S 7.4V pack kit with IP2326/boost module \u2014 suitable for 5V USB power banks, drone packs, and portable devices.",
-      "description": "Kit C bundles a 2S BMS with an IP2326-based boost converter module that outputs regulated 5V USB from a 2S Li-Ion pack. Ideal for power banks, GPS trackers, and small RC/drone applications.",
+      "description": "Kit B bundles a 2S BMS with an IP2326-based boost converter module that outputs regulated 5V USB from a 2S Li-Ion pack. Ideal for power banks, GPS trackers, and small RC/drone applications.",
       "contents": [
         "IP2326 boost/charge module",
         "2S BMS protection board",
@@ -549,7 +549,7 @@ window.NEXEV_PRODUCTS = {
         "Configuration":  "2S (7.4V nominal)",
         "Boost module":   "IP2326",
         "USB output":     "5V regulated",
-        "BMS current":    "5A continuous",
+        "BMS current":    "8A continuous",
         "Protection":     "Over-charge, over-discharge, short-circuit",
         "Use case":       "USB power banks, drones, GPS"
       },
@@ -560,7 +560,7 @@ window.NEXEV_PRODUCTS = {
       },
       "amazon_url": "",
       "meta": {
-        "title": "Kit C \u2014 2S Boost Battery Kit | NexEV",
+        "title": "Kit B \u2014 2S Boost Battery Kit | NexEV",
         "description": "2S Li-Ion boost kit with IP2326 module. 5V USB output. All components included. Ships from Karnataka."
       }
     },
@@ -588,20 +588,20 @@ window.NEXEV_PRODUCTS = {
       "image_fallback": "bms",
       "tags": ["kit","3S","12V","BMS","backup","UPS"],
       "short_description": "3S 12V pack kit with a quality BMS board. Ideal for 12V backup, mini-UPS systems, and lighting packs.",
-      "description": "Kit D is designed for 12V applications \u2014 router backups, LED systems, and small UPS builds. The 3S BMS board provides full cell-level protection and passive balancing.",
+      "description": "Kit C is designed for 12V applications \u2014 router backups, LED systems, and small UPS builds. The 3S BMS board provides full cell-level protection and passive balancing.",
       "contents": [
         "3S BMS protection board",
         "Pure nickel strip (1m)",
         "18650 insulation rings (30 pcs)",
         "3\u00d7 18650 cell holders",
         "14 AWG silicone wire leads (red + black)",
-        "Kapton tapp(1 roll)",
+        "Kapton tape (1 roll)",
         "PVC heat shrink tube",
         "XT60H connector pair"
       ],
       "specs": {
         "Configuration":  "3S (11.1V nominal / 12.6V full charge)",
-        "Continuous":     "20A BMS",
+        "Continuous":     "10A BMS",
         "Protection":     "Over-charge, over-discharge, over-current, short-circuit, balance",
         "Cell format":    "18650",
         "Use case":       "12V backup, UPS, LED packs, CCTV"
@@ -613,7 +613,7 @@ window.NEXEV_PRODUCTS = {
       },
       "amazon_url": "",
       "meta": {
-        "title": "Kit D \u2014 3S 12V Backup Battery Kit | NexEV",
+        "title": "Kit C \u2014 3S 12V Backup Battery Kit | NexEV",
         "description": "3S 12V Li-Ion pack kit with BMS board. All components for backup and UPS builds. Ships from Karnataka."
       }
     },
@@ -895,7 +895,7 @@ window.NEXEV_PRODUCTS = {
 
     {
       "id": "charger-tp4057-1s-typec",
-      "name": "TP4057 1A Li-Ion Charging Board — Type-C",
+      "name": "TP4057 Li-Ion Charging Board — Type-C",
       "tagline": "Single-cell 1S charge module with Type-C input & built-in protection",
       "category": "bms",
       "status": "active",
@@ -923,7 +923,7 @@ window.NEXEV_PRODUCTS = {
         "Input port":       "USB Type-C",
         "Input voltage":    "4.5V – 5.5V (USB 5V)",
         "Charge voltage":   "4.2V (Li-Ion / LiPo)",
-        "Charge current":   "Up to 1A",
+        "Charge current":   "Up to 500 mA",
         "Protection":       "Over-charge, over-discharge, short-circuit",
         "Configuration":    "1S (3.7V nominal)",
         "Form factor":      "Compact PCB module"
@@ -931,7 +931,7 @@ window.NEXEV_PRODUCTS = {
       "shipping": { "weight_grams": 8, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
       "amazon_url": "",
       "meta": {
-        "title": "TP4057 1A Li-Ion Charging Board Type-C — 1S | NexEV",
+        "title": "TP4057 Li-Ion Charging Board Type-C — 1S | NexEV",
         "description": "TP4057-based single-cell Li-Ion charger with USB Type-C input and protection. Ships from Karnataka."
       }
     },
@@ -999,7 +999,7 @@ window.NEXEV_PRODUCTS = {
       "sku": "NE-CHG-3S-001",
       "hsn_code": "8504",
       "gst_rate": 18,
-      "images": ["assets/products/Multi_Core_2S_4A_1.png","assets/products/Multi_Core_2S_4A_2.png"],
+      "images": ["assets/products/Multi_Core_3S_4A_2.png"],
       "image_fallback": "bms",
       "tags": ["charger","3S","12.6V","11.1V","Type-C","booster","Li-Ion","multi-core","boost-charger"],
       "short_description": "Multi-core boost charger for 3S 11.1V Li-Ion packs. Type-C input (DC 3–6V), charges to 12.6V. Available in 1A, 2A and 4A input current versions.",

@@ -2,13 +2,11 @@
 # Docs: https://developers.cloudflare.com/pages/configuration/redirects/
 
 # ── 301 Permanent redirects (fixes "Page with redirect" in GSC) ──────
-# Replace HTML meta-refresh redirects with proper HTTP 301s
-
-/pages/training-redirect      /pages/coming-soon.html   301
-/pages/training-redirect.html /pages/coming-soon.html   301
-/pages/training               /pages/coming-soon.html   301
-/pages/training.html          /pages/coming-soon.html   301
-/training                     /pages/coming-soon.html   301
+# The legacy /pages/* corporate site has been removed. Redirect any
+# already-indexed URLs to the homepage so they don't 404.
+/pages/*                      /                         301
+/training                     /                         301
+/solutions                    /                         301
 
 # ── Product pages are now at root level (e.g. /xt60h-connector.html) ──
 # Redirect any old /products/* URLs to root-level equivalents

@@ -16,63 +16,64 @@
    IDs MUST match products.json exactly.
    Prices MUST match products.json (server validates — never trust frontend price).
 ═══════════════════════════════════════════════════ */
+/* Each product mirrors the LIVE catalogue in assets/products/products.js.
+   basePrice is GST-INCLUSIVE, in paise. gstRate is the GST % embedded in the
+   price (used only to compute the tax breakup for the invoice — GST is NOT
+   added on top). Keep this table in exact sync with products.js. */
 const PRODUCTS = {
   /* ── Kits ── */
-  'kit-1s-micro':                 { name: 'Kit A — 1S 3.7V Micro',                          basePrice: 24900,  weightGrams: 80  },
-  'kit-1s-fast-charge':           { name: 'Kit B — 1S Fast Charge',                          basePrice: 34900,  weightGrams: 110 },
-  'kit-2s-boost':                 { name: 'Kit C — 2S Boost',                                basePrice: 44900,  weightGrams: 150 },
-  'kit-3s-12v-backup':            { name: 'Kit D — 3S 12V Backup',                           basePrice: 59900,  weightGrams: 220 },
-  'kit-7s-24v-solar-ev':          { name: 'Kit E — 7S 24V Solar & EV',                       basePrice: 129900, weightGrams: 450 },
-  'kit-10s-36v-ev-robotics':      { name: 'Kit F — 10S 36V EV Robotics',                     basePrice: 179900, weightGrams: 600 },
+  'kit-1s-micro':                 { name: 'Kit A — 1S 3.7V Micro',                           basePrice: 34900, weightGrams: 150, gstRate: 18 },
+  'kit-2s-boost':                 { name: 'Kit B — 2S Boost',                                basePrice: 44900, weightGrams: 150, gstRate: 18 },
+  'kit-3s-12v-backup':            { name: 'Kit C — 3S 12V Backup',                           basePrice: 74900, weightGrams: 220, gstRate: 18 },
   /* ── BMS / PCM boards ── */
-  'bms-pcm-1s-3a':                { name: 'BMS / PCM Board (1S — 3A)',                       basePrice: 12900,  weightGrams: 15  },
-  'bms-pcm-2s-8a':                { name: 'BMS / PCM Board (2S — 8A)',                       basePrice: 14900,  weightGrams: 15  },
-  'bms-pcm-3s-10a':               { name: 'BMS / PCM Board (3S — 10A)',                      basePrice: 19900,  weightGrams: 15  },
-  'bms-6s':                       { name: 'BMS Board (6S — 24V)',                             basePrice: 39900,  weightGrams: 80  },
+  'bms-pcm-1s-3a':                { name: 'BMS / PCM Board (1S)',                            basePrice: 14900, weightGrams: 15,  gstRate: 18 },
+  'bms-pcm-2s-8a':                { name: 'BMS / PCM Board (2S)',                            basePrice: 16900, weightGrams: 15,  gstRate: 18 },
+  'bms-pcm-3s-10a':               { name: 'BMS / PCM Board (3S)',                            basePrice: 19900, weightGrams: 15,  gstRate: 18 },
   /* ── Charger modules ── */
-  'charger-tp4057-1s-typec':      { name: 'TP4057 1A Li-Ion Charging Board — Type-C',        basePrice: 7900,   weightGrams: 8   },
-  'charger-2s-typec-8.4v':        { name: 'Multi-Core 2S Type-C Booster Charger — 8.4V',    basePrice: 14900,  weightGrams: 25  },
-  'charger-3s-typec-126v':        { name: 'Multi-Core 3S Type-C Booster Charger — 12.6V',   basePrice: 15900,  weightGrams: 30  },
+  'charger-tp4057-1s-typec':      { name: 'TP4057 Li-Ion Charging Board — Type-C',           basePrice: 9900,  weightGrams: 8,   gstRate: 18 },
+  'charger-2s-typec-8.4v':        { name: 'Multi-Core 2S Type-C Booster Charger — 8.4V',     basePrice: 14900, weightGrams: 25,  gstRate: 18 },
+  'charger-3s-typec-126v':        { name: 'Multi-Core 3S Type-C Booster Charger — 12.6V',    basePrice: 15900, weightGrams: 30,  gstRate: 18 },
   /* ── Conductors ── */
-  'nickel-strip-1m':              { name: 'Pure Nickel Strip — 1m Roll',                     basePrice: 12900,  weightGrams: 60  },
-  'wire-14awg-1m-pair':           { name: '14 AWG Silicone Wire — 1m Pair',                  basePrice: 14900,  weightGrams: 90  },
+  'nickel-strip-1m':              { name: 'Pure Nickel Strip — 1m Roll',                     basePrice: 12500, weightGrams: 60,  gstRate: 18 },
+  'wire-14awg-1m-pair':           { name: '14 AWG Silicone Wire — 1m Pair',                  basePrice: 19900, weightGrams: 90,  gstRate: 18 },
   /* ── Insulation ── */
-  'kapton-tape-20mm':             { name: 'Kapton / Polyimide Tape — 20mm',                  basePrice: 19900,  weightGrams: 120 },
-  'pvc-heat-shrink-170mm':        { name: 'PVC Heat Shrink Tube — 170mm',                    basePrice: 8900,   weightGrams: 80  },
-  'insulation-paper-barley-rings':{ name: 'Insulation Paper & Barley Rings',                 basePrice: 14900,  weightGrams: 100 },
+  'kapton-tape-20mm':             { name: 'Kapton / Polyimide Tape — 20mm',                  basePrice: 23000, weightGrams: 120, gstRate: 18 },
+  'pvc-heat-shrink-170mm':        { name: 'PVC Heat Shrink Tube — 170mm',                    basePrice: 8000,  weightGrams: 80,  gstRate: 18 },
+  'insulation-paper-barley-rings':{ name: '2P Insulation Paper & Barley Rings',              basePrice: 9900,  weightGrams: 100, gstRate: 18 },
+  'insulation-barley-paper-50mm': { name: 'Insulation Barley Paper 50 MM',                   basePrice: 8000,  weightGrams: 50,  gstRate: 18 },
   /* ── Connectors & holders ── */
-  'xt60h-connector':              { name: 'XT60H Connectors',                                 basePrice: 11900,  weightGrams: 25  },
-  'cell-holder-18650-abs':        { name: '18650 Cell Holders (ABS)',                         basePrice: 10000,  weightGrams: 80  },
+  'xt60h-connector':              { name: 'XT60H Connectors',                                basePrice: 14900, weightGrams: 25,  gstRate: 18 },
+  'xt90-connector':               { name: 'XT90 Connectors',                                 basePrice: 13000, weightGrams: 15,  gstRate: 18 },
+  'cell-holder-18650-abs':        { name: '18650 Cell Holders (ABS)',                        basePrice: 9900,  weightGrams: 80,  gstRate: 18 },
 };
 
-/* Bulk pricing tiers — qty threshold → price in paise */
+/* Bulk pricing tiers — qty threshold → GST-inclusive price in paise.
+   Must exactly mirror the bulk_tiers in products.js. */
 const BULK_TIERS = {
   /* Kits */
-  'kit-1s-micro':            [{ qty:5,  price:21900 }, { qty:10, price:18900 }],
-  'kit-1s-fast-charge':      [{ qty:5,  price:30900 }, { qty:10, price:27900 }],
-  'kit-2s-boost':            [{ qty:5,  price:39900 }, { qty:10, price:36900 }],
-  'kit-3s-12v-backup':       [{ qty:5,  price:54900 }, { qty:10, price:49900 }],
-  'kit-7s-24v-solar-ev':     [{ qty:3,  price:119900 }, { qty:5, price:109900 }, { qty:10, price:99900  }],
-  'kit-10s-36v-ev-robotics': [{ qty:3,  price:164900 }, { qty:5, price:149900 }, { qty:10, price:134900 }],
+  'kit-1s-micro':            [{ qty:5,  price:23900 }, { qty:10, price:22900 }],
+  'kit-2s-boost':            [{ qty:5,  price:33900 }, { qty:10, price:32900 }],
+  'kit-3s-12v-backup':       [{ qty:5,  price:71900 }, { qty:10, price:69900 }],
   /* BMS / PCM boards */
-  'bms-pcm-1s-3a':           [{ qty:5,  price:12500 }, { qty:10, price:12000 }, { qty:25, price:10000 }],
-  'bms-pcm-2s-8a':           [{ qty:5,  price:14500 }, { qty:10, price:14000 }, { qty:25, price:13000 }],
+  'bms-pcm-1s-3a':           [{ qty:5,  price:14500 }, { qty:10, price:14000 }, { qty:25, price:13000 }],
+  'bms-pcm-2s-8a':           [{ qty:5,  price:16500 }, { qty:10, price:16000 }, { qty:25, price:15000 }],
   'bms-pcm-3s-10a':          [{ qty:5,  price:19000 }, { qty:10, price:18500 }, { qty:25, price:18000 }],
-  'bms-6s':                  [{ qty:5,  price:38900 }, { qty:10, price:37900 }, { qty:50, price:34900 }],
   /* Chargers */
-  'charger-tp4057-1s-typec': [{ qty:5,  price:7000  }, { qty:10, price:6500  }, { qty:25, price:5900  }],
+  'charger-tp4057-1s-typec': [{ qty:5,  price:9000  }, { qty:10, price:8500  }, { qty:25, price:8000  }],
   'charger-2s-typec-8.4v':   [{ qty:3,  price:13900 }, { qty:5,  price:12900 }, { qty:10, price:11900 }],
   'charger-3s-typec-126v':   [{ qty:3,  price:14900 }, { qty:5,  price:13900 }, { qty:10, price:12900 }],
   /* Conductors */
-  'nickel-strip-1m':         [{ qty:5,  price:11500 }, { qty:10, price:9900  }],
-  'wire-14awg-1m-pair':      [{ qty:5,  price:12900 }, { qty:10, price:10900 }],
+  'nickel-strip-1m':         [{ qty:5,  price:11500 }, { qty:10, price:9900  }, { qty:50, price:9000  }],
+  'wire-14awg-1m-pair':      [{ qty:10, price:18900 }, { qty:100, price:17900 }],
   /* Insulation */
-  'kapton-tape-20mm':        [{ qty:10, price:19500 }, { qty:50, price:18500 }],
-  'pvc-heat-shrink-170mm':   [{ qty:5,  price:7500  }, { qty:10, price:6500  }],
-  'insulation-paper-barley-rings': [{ qty:5, price:12900 }, { qty:10, price:10900 }],
+  'kapton-tape-20mm':        [{ qty:10, price:22000 }, { qty:50, price:19000 }],
+  'pvc-heat-shrink-170mm':   [{ qty:10, price:6000  }, { qty:100, price:4500 }],
+  'insulation-paper-barley-rings': [{ qty:10, price:8900 }, { qty:50, price:7900 }, { qty:100, price:6900 }],
+  'insulation-barley-paper-50mm':  [{ qty:10, price:7000 }, { qty:50, price:6000 }, { qty:100, price:5000 }],
   /* Connectors & holders */
-  'xt60h-connector':         [{ qty:5,  price:9900  }, { qty:10, price:8500  }, { qty:25, price:7500  }],
-  'cell-holder-18650-abs':   [{ qty:3,  price:9000  }, { qty:10, price:8000  }, { qty:20, price:7500  }],
+  'xt60h-connector':         [{ qty:10, price:13900 }, { qty:50, price:11900 }, { qty:100, price:8900 }],
+  'xt90-connector':          [{ qty:10, price:12500 }, { qty:50, price:12000 }, { qty:100, price:12000 }],
+  'cell-holder-18650-abs':   [{ qty:10, price:9000  }, { qty:50, price:8500  }, { qty:100, price:7500 }],
 };
 
 function getUnitPrice(productId, qty) {
@@ -126,11 +127,11 @@ const SHIPPING_ZONES = {
     delivery: '2–3 business days',
     freeAbove: 150000, /* ₹1500 */
     tiers: [
-      { maxGrams: 500,   price: 11100 }, /* ₹111 */
+      { maxGrams: 500,   price: 11000 }, /* ₹110 */
       { maxGrams: 1000,  price: 17000 }, /* ₹170 */
       { maxGrams: 2000,  price: 21000 }, /* ₹210 */
       { maxGrams: 5000,  price: 26000 }, /* ₹260 */
-      { maxGrams: 99999, price: 22000 }, /* ₹220 */
+      { maxGrams: 99999, price: 32000 }, /* ₹320 */
     ],
     prefixes: [
       '560','561','562','563','564','565','566','567','568','569',
@@ -145,10 +146,10 @@ const SHIPPING_ZONES = {
     freeAbove: 200000, /* ₹2000 */
     tiers: [
       { maxGrams: 500,   price: 13000 }, /* ₹130 */
-      { maxGrams: 1000,  price: 11500 }, /* ₹115 */
-      { maxGrams: 2000,  price: 16000 }, /* ₹160 */
-      { maxGrams: 5000,  price: 24000 }, /* ₹240 */
-      { maxGrams: 99999, price: 32000 }, /* ₹320 */
+      { maxGrams: 1000,  price: 16000 }, /* ₹160 */
+      { maxGrams: 2000,  price: 20000 }, /* ₹200 */
+      { maxGrams: 5000,  price: 26000 }, /* ₹260 */
+      { maxGrams: 99999, price: 34000 }, /* ₹340 */
     ],
     prefixes: [
       '110','111','112','113','114','115','116','117','118','119',
@@ -280,6 +281,7 @@ export async function onRequestPost({ request, env }) {
     }
 
     let subtotalPaise = 0;
+    let gstPaise = 0;            /* GST already embedded in the inclusive prices */
     let totalWeightGrams = 0;
     const validatedItems = [];
 
@@ -293,9 +295,14 @@ export async function onRequestPost({ request, env }) {
         return new Response(JSON.stringify({ error: `Invalid quantity for: ${item.id}` }), { status: 400, headers });
       }
       const unitPaise = getUnitPrice(item.id, qty);
-      subtotalPaise    += unitPaise * qty;
+      const linePaise = unitPaise * qty;
+      /* Extract the GST component from the GST-inclusive line price. */
+      const rate = product.gstRate || 0;
+      const lineGstPaise = rate > 0 ? Math.round(linePaise - linePaise / (1 + rate / 100)) : 0;
+      subtotalPaise    += linePaise;
+      gstPaise         += lineGstPaise;
       totalWeightGrams += product.weightGrams * qty;
-      validatedItems.push({ id: item.id, name: product.name, qty, unitPaise });
+      validatedItems.push({ id: item.id, name: product.name, qty, unitPaise, gstRate: rate });
     }
 
     /* ── Guard: env vars must be set in Cloudflare Dashboard ── */
@@ -353,6 +360,9 @@ export async function onRequestPost({ request, env }) {
         shipping_zone:    shippingZone?.label || 'Unknown',
         shipping_amount:  String(shippingPaise / 100),
         shipping_free:    String(shippingIsFree || false),
+        subtotal_amount:  String(subtotalPaise / 100),
+        gst_amount:       String(gstPaise / 100),
+        gst_note:         'GST included in item prices',
         items_summary:    validatedItems.map(i => `${i.name} ×${i.qty}`).join(', '),
       },
     };
@@ -382,6 +392,7 @@ export async function onRequestPost({ request, env }) {
       order_id:        rzpOrder.id,
       amount:          rzpOrder.amount,       /* subtotal + shipping, in paise */
       subtotal:        subtotalPaise,
+      gst:             gstPaise,              /* GST already included in subtotal */
       shipping:        shippingPaise,
       shipping_free:     shippingIsFree,
       shipping_zone:     shippingZone?.label,

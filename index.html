@@ -14,9 +14,12 @@
 <meta property="og:url" content="https://nexev.in"/>
 <meta property="og:site_name" content="NexEV"/>
 <meta property="og:locale" content="en_IN"/>
+<meta property="og:image" content="https://nexev.in/assets/og-image.png"/>
+<meta property="og:image:alt" content="NexEV — EV battery packs, BMS and components"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="NexEV India | EV Battery Packs, BMS & Components for E-Bikes, E-Scooters & Small EVs"/>
 <meta name="twitter:description" content="NexEV: India's premier hub for EV Battery Assembly Kits, high-performance BMS, EBikes, EScooters and wholesale components."/>
+<meta name="twitter:image" content="https://nexev.in/assets/og-image.png"/>
 <link rel="canonical" href="https://nexev.in"/>
 <script type="application/ld+json">
 {
@@ -2310,8 +2313,9 @@ img{max-width:100%;display:block}
     <div class="fb">
       <p>© 2026 NexEV Private Limited. All rights reserved.</p>
       <div class="fl-row">
-        <button class="fl-btn" id="btnPrivacy">Privacy Policy</button>
-        <button class="fl-btn" id="btnTerms">Terms &amp; Conditions</button>
+        <a class="fl-btn" href="/return-policy.html">Return Policy</a>
+        <a class="fl-btn" href="/privacy-policy.html">Privacy Policy</a>
+        <a class="fl-btn" href="/terms-of-service.html">Terms &amp; Conditions</a>
       </div>
     </div>
   </div>
@@ -2366,34 +2370,7 @@ img{max-width:100%;display:block}
 </div>
 
 <!-- Privacy Modal -->
-<div class="modal" id="modalPrivacy" aria-hidden="true">
-  <div class="modal-box">
-    <div class="modal-hd"><h3>Privacy Policy</h3><button class="modal-cl" id="closePrivacy" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
-    <div class="modal-body">
-      <h3>1. Data Collected</h3><p>NexEV collects name, email, phone, and company information submitted via the enquiry form. Used solely for responding to your enquiry.</p>
-      <h3>2. Data Sharing</h3><p>We do not sell or share your data with third parties outside of NexEV's directors handling your enquiry.</p>
-      <h3>3. Data Retention</h3><p>Enquiry data is retained for up to 24 months unless a business relationship is established.</p>
-      <h3>4. Your Rights</h3><p>Request deletion at any time by emailing <a href="/cdn-cgi/l/email-protection#54373b3a20353720143a312c31227a3d3a"><span class="__cf_email__" data-cfemail="9af9f5f4eefbf9eedaf4ffe2ffecb4f3f4">[email&#160;protected]</span></a>.</p>
-      <h3>5. Governing Law</h3><p>Governed by the Information Technology Act, 2000 and applicable Indian data protection rules.</p>
-    </div>
-    <div class="modal-ft"><button class="btn btn-blue" id="closePrivacy2">Got It</button></div>
-  </div>
-</div>
-
-<!-- Terms Modal -->
-<div class="modal" id="modalTerms" aria-hidden="true">
-  <div class="modal-box">
-    <div class="modal-hd"><h3>Terms &amp; Conditions</h3><button class="modal-cl" id="closeTerms" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
-    <div class="modal-body">
-      <h3>1. General</h3><p>This website is operated by NexEV Private Limited, incorporated in Karnataka, India.</p>
-      <h3>2. Products</h3><p>Products marked as "prototype" or "coming soon" are not available for purchase. Specifications subject to change.</p>
-      <h3>3. Enquiries</h3><p>Submitting an enquiry does not constitute a binding agreement. NexEV reserves the right to decline any partnership or order.</p>
-      <h3>4. Accuracy</h3><p>Market statistics are sourced from publicly available industry data. NexEV makes reasonable efforts to ensure accuracy.</p>
-      <h3>5. Governing Law</h3><p>Governed by the laws of India. Disputes subject to courts in Bengaluru, Karnataka.</p>
-    </div>
-    <div class="modal-ft"><button class="btn btn-blue" id="closeTerms2">Got It</button></div>
-  </div>
-</div>
+<!-- Privacy & Terms are now full pages: /privacy-policy.html and /terms-of-service.html -->
 
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
@@ -2678,10 +2655,7 @@ if('IntersectionObserver' in window){
 /* Modals */
 function openM(id){ var m=document.getElementById(id); if(!m) return; m.classList.add('open'); m.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
 function closeM(id){ var m=document.getElementById(id); if(!m) return; m.classList.remove('open'); m.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
-var mCfg = [
-  ['btnPrivacy','modalPrivacy'],['closePrivacy','modalPrivacy'],['closePrivacy2','modalPrivacy'],
-  ['btnTerms','modalTerms'],['closeTerms','modalTerms'],['closeTerms2','modalTerms']
-];
+var mCfg = [];
 mCfg.forEach(function(c){
   var btn = document.getElementById(c[0]);
   if(btn) btn.addEventListener('click', function(){

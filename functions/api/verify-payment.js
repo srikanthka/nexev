@@ -135,13 +135,67 @@ async function handleStandardCheckout({ request, env }) {
     );
   }
 
-  console.log('✅ Standard checkout verified:', razorpay_payment_id, 'for order:', razorpay_order_id);
+  /* ── Authoritative check against Razorpay ──
+     A valid signature alone does not prove the money was captured. Fetch the
+     payment from Razorpay and confirm it is captured, belongs to this order,
+     and (if the client passed the expected amount) that the amounts match. */
+  if (!env.RAZORPAY_KEY_ID) {
+    console.error('RAZORPAY_KEY_ID env var not set');
+    return new Response(JSON.stringify({ error: 'Server configuration error' }), { status: 500, headers });
+  }
+
+  let payment;
+  try {
+    const creds = btoa(`${env.RAZORPAY_KEY_ID}:${env.RAZORPAY_KEY_SECRET}`);
+    const rzpRes = await fetch(`https://api.razorpay.com/v1/payments/${razorpay_payment_id}`, {
+      headers: { 'Authorization': `Basic ${creds}` },
+    });
+    if (!rzpRes.ok) {
+      console.error(`Razorpay payment fetch failed [HTTP ${rzpRes.status}]`);
+      return new Response(
+        JSON.stringify({ error: 'Could not confirm payment with gateway. Do not fulfil this order.' }),
+        { status: 502, headers }
+      );
+    }
+    payment = await rzpRes.json();
+  } catch (e) {
+    console.error('Razorpay payment fetch error:', e);
+    return new Response(
+      JSON.stringify({ error: 'Could not confirm payment with gateway. Do not fulfil this order.' }),
+      { status: 502, headers }
+    );
+  }
+
+  /* Payment must be captured and tied to the order we created. */
+  const captured = payment.status === 'captured' || payment.captured === true;
+  if (!captured || payment.order_id !== razorpay_order_id) {
+    console.error('Payment not captured or order mismatch', {
+      status: payment.status, order_id: payment.order_id, expected: razorpay_order_id,
+    });
+    return new Response(
+      JSON.stringify({ error: 'Payment not captured. Do not fulfil this order.' }),
+      { status: 400, headers }
+    );
+  }
+
+  /* If the client passed the amount it displayed, it must match what was charged. */
+  const expectedAmount = Number(body.amount);
+  if (Number.isFinite(expectedAmount) && expectedAmount > 0 && payment.amount !== expectedAmount) {
+    console.error('Amount mismatch', { charged: payment.amount, expected: expectedAmount });
+    return new Response(
+      JSON.stringify({ error: 'Payment amount mismatch. Do not fulfil this order.' }),
+      { status: 400, headers }
+    );
+  }
+
+  console.log('✅ Standard checkout verified & captured:', razorpay_payment_id, 'for order:', razorpay_order_id, 'amount:', payment.amount);
 
   return new Response(
     JSON.stringify({
       verified: true,
       payment_id: razorpay_payment_id,
       order_id: razorpay_order_id,
+      amount: payment.amount,   /* authoritative captured amount, in paise */
     }),
     { status: 200, headers }
   );

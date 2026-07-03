@@ -17,10 +17,19 @@
 export async function onRequestPost(context) {
   const env = context.env;
 
-  /* ── Preflight / CORS ── */
+  /* ── Preflight / CORS (allowlist only — never reflect arbitrary origins) ── */
   const origin = context.request.headers.get('Origin') || '';
+  const allowedOrigins = [
+    'https://nexev.in',
+    'https://www.nexev.in',
+    'http://localhost:8788',
+    'http://localhost:3000',
+    'http://localhost:5500',
+    'http://127.0.0.1:5500',
+  ];
+  const allowOrigin = allowedOrigins.includes(origin) ? origin : 'https://nexev.in';
   const corsHeaders = {
-    'Access-Control-Allow-Origin': origin,
+    'Access-Control-Allow-Origin': allowOrigin,
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
   };
