@@ -141,7 +141,7 @@ img{max-width:100%;display:block}
 .nav-shop:hover{background:#16a34a!important;transform:translateY(-1px);box-shadow:0 4px 16px rgba(34,197,94,.4)!important}
 .hamburger{display:none;flex-direction:column;gap:5px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;padding:10px;flex-shrink:0;min-width:44px;min-height:44px;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 .hamburger span{display:block;width:24px;height:2.5px;background:var(--blue);border-radius:3px;transition:all .3s;flex-shrink:0}
-.mob-menu{display:none;flex-direction:column;gap:.5rem;position:fixed;top:var(--nav-h);left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem 1.5rem 1.5rem;z-index:101;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mob-menu{display:none;flex-direction:column;gap:.5rem;position:fixed;top:var(--nav-h);left:0;right:0;box-sizing:border-box;background:#fff;border-bottom:1px solid var(--border);padding:1rem 1.5rem 1.5rem;z-index:101;box-shadow:0 8px 24px rgba(0,0,0,.08);max-height:calc(100dvh - var(--nav-h));overflow-y:auto;overflow-x:hidden}
 .mob-menu.open{display:flex}
 .mob-menu a{padding:.6rem .75rem;border-radius:8px;font-weight:500;color:var(--text)}
 .mob-menu a:hover{background:var(--bg-alt)}
@@ -1191,10 +1191,6 @@ img{max-width:100%;display:block}
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       <span><strong>BMS</strong> · 16S 67.2V · Under Design</span>
     </div>
-    <div class="tc">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      <span><strong>Taipei Cycle Show 2026</strong> · Global Supplier Sourcing</span>
-    </div>
   </div>
 </div>
 
@@ -1829,7 +1825,6 @@ img{max-width:100%;display:block}
           <li>Incorporated entity — legitimate import/distribution capability</li>
           <li>Existing customer base — workshops, hobbyists, assemblers</li>
           <li>Karnataka base — proximity to EV manufacturers</li>
-          <li>Taipei Cycle Show 2026 — active global supplier outreach</li>
           <li>Early stage = exclusive, long-term partnership possible</li>
           <li>BIS compliance navigation — we understand the local path</li>
         </ul>
