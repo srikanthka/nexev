@@ -460,7 +460,8 @@ img{max-width:100%;display:block}
 .fg{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
 .fg label{font-size:.82rem;font-weight:600;color:var(--text)}
 .req{color:#ef4444}
-.fg input,.fg select,.fg textarea{padding:.65rem .85rem;border:1.5px solid var(--border);border-radius:8px;font-family:inherit;font-size:.9rem;color:var(--text);background:#fff;transition:border-color .2s;outline:none}
+/* width caps stop the select's longest option (~455px) from stretching the page sideways on mobile */
+.fg input,.fg select,.fg textarea{width:100%;min-width:0;max-width:100%;box-sizing:border-box;padding:.65rem .85rem;border:1.5px solid var(--border);border-radius:8px;font-family:inherit;font-size:.9rem;color:var(--text);background:#fff;transition:border-color .2s;outline:none}
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue)}
 .fg textarea{resize:vertical;min-height:100px}
 .f-sub{margin-top:.5rem}
@@ -475,8 +476,9 @@ img{max-width:100%;display:block}
 /* contact modal */
 .email-modal{display:none;position:fixed;inset:0;z-index:400;background:rgba(0,0,0,.55);align-items:center;justify-content:center;padding:1rem}
 .email-modal.open{display:flex}
-@media(max-width:900px){.enq-layout{grid-template-columns:1fr}}
-@media(max-width:550px){.frow{grid-template-columns:1fr}}
+@media(max-width:900px){.enq-layout{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:550px){.frow{grid-template-columns:minmax(0,1fr)}}
+.enq-layout>*,.frow>*{min-width:0}
 
 /* ═══ FOOTER ═══ */
 .footer{background:var(--blue);color:rgba(255,255,255,.7);padding:3.5rem 0 1.5rem}
@@ -1334,7 +1336,7 @@ img{max-width:100%;display:block}
         <p>High-purity nickel strip for cell-to-cell spot welding. Correct width and thickness for 18650 series/parallel connections.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
 		<div class="kit-ctas">
-		<a href="shop.html" class="btn btn-green">Buy Now</a>
+		<a href="nickel-strip-1m.html" class="btn btn-green">More Details</a>
 		</div>
       </div>
       <div class="cc">
@@ -1343,7 +1345,7 @@ img{max-width:100%;display:block}
         <p>Genuine Amass XT60H male and female connectors — high continuous current rating, gold-plated contacts, durable housing.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
 		<div class="kit-ctas">
-		<a href="shop.html" class="btn btn-green">Buy Now</a>
+		<a href="xt60h-connector.html" class="btn btn-green">More Details</a>
 		</div>
       </div>
       <div class="cc">
@@ -1352,7 +1354,7 @@ img{max-width:100%;display:block}
         <p>Flexible silicone-jacketed 14 AWG wire — heat-resistant, rated for battery pack current, suitable for tight routing.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
 		<div class="kit-ctas">
-		<a href="shop.html" class="btn btn-green">Buy Now</a>
+		<a href="wire-14awg-1m-pair.html" class="btn btn-green">More Details</a>
 		</div>
       </div>
       <div class="cc">
@@ -1361,7 +1363,7 @@ img{max-width:100%;display:block}
         <p>Blue PVC heat shrink tube, 170mm flat width — wraps a completed 18650 pack for insulation and professional finish.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
 		<div class="kit-ctas">
-		<a href="shop.html" class="btn btn-green">Buy Now</a>
+		<a href="pvc-heat-shrink-170mm.html" class="btn btn-green">More Details</a>
 		</div>
       </div>
       <div class="cc">
@@ -1370,7 +1372,7 @@ img{max-width:100%;display:block}
         <p>High-temperature polyimide tape, 20mm width, 200/roll — cell insulation, tab coverage, thermal protection.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
 		<div class="kit-ctas">
-		<a href="shop.html" class="btn btn-green">Buy Now</a>
+		<a href="kapton-tape-20mm.html" class="btn btn-green">More Details</a>
 		</div>
       </div>
       <div class="cc">
@@ -1379,7 +1381,7 @@ img{max-width:100%;display:block}
         <p>Cell-end insulation rings and insulation paper roll — prevents short circuits on positive terminals and between cell groups.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
 		<div class="kit-ctas">
-		<a href="shop.html" class="btn btn-green">Buy Now</a>
+		<a href="insulation-paper-barley-rings.html" class="btn btn-green">More Details</a>
 		</div>
       </div>
       <div class="cc">
@@ -1388,7 +1390,7 @@ img{max-width:100%;display:block}
         <p>Plastic 18650 cell holders — keeps cells aligned for spot welding. Available in series/parallel configurations.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
 		<div class="kit-ctas">
-		<a href="shop.html" class="btn btn-green">Buy Now</a>
+		<a href="cell-holder-18650-abs.html" class="btn btn-green">More Details</a>
 		</div>
       </div>
       <div class="cc" style="background:rgba(26,58,92,.03);border-color:rgba(26,58,92,.2);">
@@ -1397,7 +1399,7 @@ img{max-width:100%;display:block}
         <p>1S~3S BMS packs currently being sourced. Register interest for priority access when available.</p>
         <div class="cc-avail avail-g"><span class="avail-dot avail-dot--g"></span>In stock</div>
 		<div class="kit-ctas">
-		<a href="shop.html" class="btn btn-green">Buy Now</a>
+		<a href="bms-pcm-1s-3a.html" class="btn btn-green">More Details</a>
 		</div>
       </div>
     </div>
