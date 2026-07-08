@@ -365,9 +365,9 @@ window.NEXEV_PRODUCTS = {
     },
 
     {
-      "id": "cell-holder-18650-abs",
-      "name": "18650 Cell Holders (ABS)",
-      "tagline": "Rigid ABS plastic holders for spot-weld alignment",
+      "id": "cell-holder-18650-1x2",
+      "name": "18650 Cell Holder 1x2 (ABS)",
+      "tagline": "1\u00d72 ABS bracket \u2014 2-cell spot-weld alignment",
       "category": "holder",
       "status": "active",
       "featured": false,
@@ -381,30 +381,112 @@ window.NEXEV_PRODUCTS = {
 		{ "qty": 100, "price": 75, "label": "100+ packs" }
       ],
       "stock": "in_stock",
-      "sku": "NE-BH-001",
+      "sku": "NE-BH-002",
       "hsn_code": "3926",
       "gst_rate": 18,
-      "images": ["assets/products/18650 2S Cell Holders1.png","assets/products/18650 3x5 Cell Holders2.png","assets/products/4x5holder.png","assets/products/1x2.png","assets/products/3x5.png","assets/products/5x4.png"],
+      "images": ["assets/products/1x218650holder.png","assets/products/1x2.png","assets/products/18650 2S Cell Holders1.png"],
       "image_fallback": "holder",
-      "tags": ["holder","cell-holder","18650","ABS","alignment","3926"],
-      "short_description": "ABS plastic 18650 cell holders. Keeps cells in precise series/parallel alignment during spot welding. 10 per pack.",
-      "description": "Rigid ABS plastic cell holders sized for 18650 cells. Keeps cells in precise series/parallel alignment during spot welding. Essential for neat, consistent pack builds. 10 per pack.",
+      "tags": ["holder","cell-holder","18650","ABS","1x2","2S","alignment","3926"],
+      "short_description": "ABS plastic 1x2 (2-cell) 18650 holders. Snap-together brackets keep cells aligned for spot welding. 10 per pack.",
+      "description": "Rigid ABS plastic 1x2 cell holders sized for 18650 cells \u2014 holds 2 cells side by side. Snap-fit design combines into larger series/parallel layouts. Ideal for 2S/2P builds, power banks and small packs. 10 per pack.",
       "specs": {
-		"Variants":   "1x2,3x5,4x5 (specify in order notes)",
+        "Configuration": "1x2 (2 cells per bracket)",
         "Cell size":  "18650 compatible",
         "Material":   "ABS plastic",
         "Quantity":   "10 per pack",
-        "Type":       "Single cell (combine for S/P configs)",
+        "Type":       "Snap-fit (combine for S/P configs)",
         "HSN code":   "3926",
         "Colour":     "Black"
       },
-      "shipping": { "weight_grams": 80, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
+      "shipping": { "weight_grams": 60, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
       "amazon_url": "",
       "meta": {
-        "title": "18650 Cell Holders ABS \u2014 10 Pack | NexEV",
-        "description": "ABS plastic 18650 cell holders for spot-weld alignment. 10 per pack. HSN 3926. Ships from Karnataka."
+        "title": "18650 Cell Holder 1x2 ABS \u2014 10 Pack | NexEV",
+        "description": "ABS plastic 1x2 (2-cell) 18650 cell holders for spot-weld alignment. 10 per pack. HSN 3926. Ships from Karnataka."
       }
-    },	
+    },
+    {
+      "id": "cell-holder-18650-3x5",
+      "name": "18650 Cell Holder 3x5 (ABS)",
+      "tagline": "3\u00d75 ABS bracket \u2014 15-cell pack alignment",
+      "category": "holder",
+      "status": "active",
+      "featured": false,
+      "price": 99,
+      "compare_price": null,
+      "unit": "pack",
+      "min_qty": 1,
+      "bulk_tiers": [
+        { "qty": 10,  "price": 90, "label": "10+ packs" },
+        { "qty": 50, "price": 85, "label": "50+ packs" },
+		{ "qty": 100, "price": 75, "label": "100+ packs" }
+      ],
+      "stock": "in_stock",
+      "sku": "NE-BH-003",
+      "hsn_code": "3926",
+      "gst_rate": 18,
+      "images": ["assets/products/3x518650holders.png","assets/products/3x5.png","assets/products/18650 3x5 Cell Holders2.png"],
+      "image_fallback": "holder",
+      "tags": ["holder","cell-holder","18650","ABS","3x5","alignment","3926"],
+      "short_description": "ABS plastic 3x5 (15-cell) 18650 holders. Keeps a full cell group aligned for spot welding. 10 per pack.",
+      "description": "Rigid ABS plastic 3x5 cell holders sized for 18650 cells \u2014 holds 15 cells in a 3\u00d75 grid. Snap-fit design combines into larger series/parallel layouts. Ideal for 3S5P e-bike and backup pack builds. 10 per pack.",
+      "specs": {
+        "Configuration": "3x5 (15 cells per bracket)",
+        "Cell size":  "18650 compatible",
+        "Material":   "ABS plastic",
+        "Quantity":   "10 per pack",
+        "Type":       "Snap-fit (combine for S/P configs)",
+        "HSN code":   "3926",
+        "Colour":     "Black"
+      },
+      "shipping": { "weight_grams": 90, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
+      "amazon_url": "",
+      "meta": {
+        "title": "18650 Cell Holder 3x5 ABS \u2014 10 Pack | NexEV",
+        "description": "ABS plastic 3x5 (15-cell) 18650 cell holders for spot-weld alignment. 10 per pack. HSN 3926. Ships from Karnataka."
+      }
+    },
+    {
+      "id": "cell-holder-18650-4x5",
+      "name": "18650 Cell Holder 4x5 (ABS)",
+      "tagline": "4\u00d75 ABS bracket \u2014 20-cell pack alignment",
+      "category": "holder",
+      "status": "active",
+      "featured": false,
+      "price": 99,
+      "compare_price": null,
+      "unit": "pack",
+      "min_qty": 1,
+      "bulk_tiers": [
+        { "qty": 10,  "price": 90, "label": "10+ packs" },
+        { "qty": 50, "price": 85, "label": "50+ packs" },
+		{ "qty": 100, "price": 75, "label": "100+ packs" }
+      ],
+      "stock": "in_stock",
+      "sku": "NE-BH-004",
+      "hsn_code": "3926",
+      "gst_rate": 18,
+      "images": ["assets/products/4x518650holders.png","assets/products/5x4.png","assets/products/4x5holder.png"],
+      "image_fallback": "holder",
+      "tags": ["holder","cell-holder","18650","ABS","4x5","alignment","3926"],
+      "short_description": "ABS plastic 4x5 (20-cell) 18650 holders. Keeps a full cell group aligned for spot welding. 10 per pack.",
+      "description": "Rigid ABS plastic 4x5 cell holders sized for 18650 cells \u2014 holds 20 cells in a 4\u00d75 grid. Snap-fit design combines into larger series/parallel layouts. Ideal for 4S5P and larger EV pack builds. 10 per pack.",
+      "specs": {
+        "Configuration": "4x5 (20 cells per bracket)",
+        "Cell size":  "18650 compatible",
+        "Material":   "ABS plastic",
+        "Quantity":   "10 per pack",
+        "Type":       "Snap-fit (combine for S/P configs)",
+        "HSN code":   "3926",
+        "Colour":     "Black"
+      },
+      "shipping": { "weight_grams": 110, "fulfillment": "Ships within 2 business days", "courier": "Speed Post / Delhivery" },
+      "amazon_url": "",
+      "meta": {
+        "title": "18650 Cell Holder 4x5 ABS \u2014 10 Pack | NexEV",
+        "description": "ABS plastic 4x5 (20-cell) 18650 cell holders for spot-weld alignment. 10 per pack. HSN 3926. Ships from Karnataka."
+      }
+    },
     {
       "id": "kit-1s-micro",
       "name": "Kit A \u2014 1S 3.7V Micro",
