@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Nexev BMS</title>
+<style>
+  :root {
+    --bg:      #ffffff;
+    --surface: #f6f8fb;
+    --border:  #dfe5ee;
+    --text:    #14202e;
+    --muted:   #5a6a7e;
+    --accent:  #00718f;
+    --warn-bg: #fff6e0;
+    --warn-br: #e0b25c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:      #0d1420;
+      --surface: #151d2b;
+      --border:  #263245;
+      --text:    #e6ecf5;
+      --muted:   #9aa8bd;
+      --accent:  #4fc3e0;
+      --warn-bg: #2e2513;
+      --warn-br: #6b552a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0 auto; padding: 32px 20px 72px; max-width: 780px;
+    background: var(--bg); color: var(--text);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 6px; }
+  h2 { font-size: 1.25rem; margin: 40px 0 12px; padding-top: 18px;
+       border-top: 1px solid var(--border); }
+  h3 { font-size: 1.02rem; margin: 24px 0 8px; }
+  p, li { color: var(--text); }
+  a { color: var(--accent); }
+  .updated { color: var(--muted); font-size: .9rem; margin: 0 0 28px; }
+  .lead {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 18px 20px; margin: 0 0 8px;
+  }
+  .lead p:first-child { margin-top: 0; }
+  .lead p:last-child  { margin-bottom: 0; }
+  .todo {
+    background: var(--warn-bg); border: 1px solid var(--warn-br);
+    border-radius: 10px; padding: 14px 16px; margin: 20px 0;
+    font-size: .93rem;
+  }
+  .todo strong { letter-spacing: .02em; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: .94rem; }
+  th, td { border: 1px solid var(--border); padding: 9px 11px; text-align: left;
+           vertical-align: top; }
+  th { background: var(--surface); font-weight: 600; }
+  code { background: var(--surface); border: 1px solid var(--border);
+         border-radius: 5px; padding: 1px 5px; font-size: .88em; }
+  ul { padding-left: 22px; }
+  li { margin: 5px 0; }
+  .muted { color: var(--muted); font-size: .9rem; }
+  @media print {
+    body { max-width: none; padding: 0; }
+    .todo { border: 1px solid #999; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy — Nexev BMS</h1>
+<p class="updated">
+  Last updated: <!-- TODO -->17-08-2026 &middot;
+  Applies to the Nexev BMS mobile application (<code>com.nexev.diveebms</code>)
+</p>
+
+<div class="lead">
+  <p><strong>The short version.</strong> Nexev BMS talks to your battery over
+  Bluetooth and keeps what it learns on your phone.</p>
+  <p>There is no account and no sign-up. We do not run analytics, advertising,
+  tracking or crash reporting. We do not sell or share personal data. In normal
+  rider use, nothing you do in the app is transmitted to us or to anyone else.</p>
+</div>
+
+<h2>1. Who we are</h2>
+<p>
+  This app is published by Nexev Private Limited ("we", "us"), of
+  2F, No. 15 , Anjandri Layout, 1st Main Cross , Kodigehalli Main Road, Kodigehalli, Kadugodi, Bengaluru, Karnataka-560067. For anything in this policy, contact
+  <a href="mailto:privacy@nexev.in">privacy@nexev.in</a>.
+</p>
+
+<h2>2. What we collect</h2>
+<p>
+  <strong>We collect nothing on our servers from ordinary use of this app.</strong>
+  The app has no user accounts, no login, and no telemetry back to us. It contains
+  no advertising SDK, no analytics SDK and no crash-reporting SDK.
+</p>
+<p>
+  Everything described below is stored <em>on your device</em> unless a section
+  says otherwise.
+</p>
+
+<h2>3. Information stored on your device</h2>
+<table>
+  <tr><th>What</th><th>Why</th></tr>
+  <tr>
+    <td>Identifier and name of the last battery you connected to</td>
+    <td>To offer one-tap reconnection</td>
+  </tr>
+  <tr>
+    <td>Readings from your battery — charge, voltage, current, temperature,
+        per-cell voltages, faults, event log</td>
+    <td>To display them, chart trends and let you export them</td>
+  </tr>
+  <tr>
+    <td>Session, charge and health history for each battery</td>
+    <td>To show history and trends over time</td>
+  </tr>
+  <tr>
+    <td>Your app settings — pack configuration, alert limits, odometer, theme,
+        language</td>
+    <td>To calculate estimates and remember your preferences</td>
+  </tr>
+  <tr>
+    <td>A one-way <code>SHA-256</code> hash of your PIN and recovery phrase, if
+        you set them</td>
+    <td>To check the PIN you type. The PIN itself is never stored, and a hash
+        cannot be reversed back into it</td>
+  </tr>
+</table>
+<p class="muted">
+  This data lives in the app's private storage. Other apps cannot read it. It is
+  removed when you uninstall the app, subject to any device backup you have
+  enabled with Apple or Google — those backups are governed by their privacy
+  policies, not this one.
+</p>
+
+<h2>4. Permissions, and exactly what each is for</h2>
+
+<h3>Bluetooth</h3>
+<p>
+  Required. The app uses Bluetooth Low Energy to find and connect to your battery
+  management system. It communicates only with the battery you choose.
+</p>
+
+<h3>Location</h3>
+<p>
+  <strong>On Android</strong>, the operating system requires location permission
+  before an app may scan for Bluetooth devices at all. This is an Android
+  platform rule, not a choice we made. <strong>We do not collect, store or
+  transmit your location for this purpose, and the app does not read your
+  position when scanning.</strong>
+</p>
+<p>
+  <strong>Optional, fleet use only.</strong> If your operator enables geofencing
+  for a rental battery, the app compares your position against a boundary the
+  operator sets, so it can tell you when a battery leaves its permitted area.
+  This applies only to fleet-managed batteries. It is not used in personal use.
+</p>
+
+<h3>Camera</h3>
+<p>
+  Optional. Used only when you open the QR scanner to identify or provision a
+  battery. Images are processed on the device to read the code and are not
+  stored, uploaded or retained.
+</p>
+
+<h3>Notifications</h3>
+<p>
+  Optional. Used to alert you when your battery crosses a limit you have
+  configured — for example a temperature or charge threshold. Notifications are
+  generated on your device from readings taken from your battery. Nothing is sent
+  through a push server.
+</p>
+
+<h2>5. Battery data</h2>
+<p>
+  A battery management system records its own history: power-ups, protection
+  faults, thermal warnings, configuration changes and charge milestones. When you
+  read that log, it is transferred from the battery to your phone over Bluetooth
+  and shown to you.
+</p>
+<p>
+  This is technical data about a piece of equipment. It becomes personal data
+  only where the equipment is linked to you — for example a rental battery
+  assigned to your account by an operator.
+</p>
+
+<h2>6. Fleet and operator features</h2>
+<p>
+  The app includes optional features for organisations that operate batteries as
+  a fleet. These are not part of ordinary personal use and are not reachable in
+  the app's default configuration.
+</p>
+<p>
+  Where an operator has configured a message broker, the app can send battery
+  telemetry, rental session start and end events, and geofence alerts to that
+  operator's own server. <strong>If no broker is configured, which is the default,
+  no such data is transmitted and these functions do nothing.</strong>
+</p>
+<p>
+  In that arrangement the operator, not us, decides what is collected and for how
+  long it is kept, and is the data controller for it. Ask your operator for their
+  privacy notice.
+</p>
+
+<h2>7. Exporting and sharing</h2>
+<p>
+  You can export the battery event log, charge history and health history as CSV
+  files. Exporting is always something you start. The file is created on your
+  device and handed to the share sheet you choose — email, messaging, cloud
+  storage or another app. Once you send it somewhere, that destination's privacy
+  policy governs it.
+</p>
+
+<h2>8. Third-party components</h2>
+<p>
+  The app is built with open-source libraries for Bluetooth, charting, maps,
+  QR scanning, local notifications and local storage. These run on your device.
+  None of them is an analytics, advertising or tracking service.
+</p>
+<p>
+  One exception is worth naming: if you open the swap-station map in fleet mode,
+  map tiles are requested from <a href="https://www.openstreetmap.org/">OpenStreetMap</a>,
+  which will see your IP address as any website would. The map is not shown in
+  ordinary personal use.
+</p>
+
+<h2>9. Children</h2>
+<p>
+  This is a technical tool for battery equipment. It is not directed at children,
+  and we do not knowingly collect information from anyone under 16.
+</p>
+
+<h2>10. Keeping and deleting your data</h2>
+<p>
+  Data stays on your device until you remove it. You can:
+</p>
+<ul>
+  <li>reset the odometer and stored counters from Configuration;</li>
+  <li>clear app storage from your device's system settings; or</li>
+  <li>uninstall the app, which removes everything it stored.</li>
+</ul>
+<p>
+  Because we hold no copy of it, we cannot delete it for you — and equally,
+  we have nothing about you to disclose, sell or lose.
+</p>
+
+<h2>11. Security</h2>
+<p>
+  App data is held in storage private to the app. PINs and recovery phrases are
+  stored only as one-way hashes. Communication with your battery is a direct
+  Bluetooth link between your phone and the battery.
+</p>
+<p>
+  No system is perfectly secure. A device that is rooted, jailbroken or shared
+  with someone else weakens these protections, as it would for any app.
+</p>
+
+<h2>12. Your rights</h2>
+<p>
+  Depending on where you live, you may have rights to access, correct, delete or
+  port your personal data, and to object to certain processing — for example
+  under the EU/UK GDPR, the California Consumer Privacy Act, or Taiwan's Personal
+  Data Protection Act.
+</p>
+<p>
+  Because this app stores its data on your device and we hold no copy, you can
+  exercise most of these rights directly and immediately, as described in section
+  10. If you believe we hold personal data about you and want to make a request,
+  write to <a href="mailto:privacy@nexev.in">privacy@nexev.in</a>. You
+  also have the right to complain to your local data protection authority.
+</p>
+<p>
+  <strong>We do not sell personal information, and we do not share it for
+  cross-context behavioural advertising.</strong>
+</p>
+
+<h2>13. Changes to this policy</h2>
+<p>
+  If we change this policy we will update the date at the top and, where the
+  change is significant, note it in the app's release notes. Continuing to use
+  the app after a change means you accept the updated policy.
+</p>
+
+<h2>14. Contact</h2>
+<p>
+  Nexev Private Limited<br>
+  2F, No. 15 , Anjandri Layout, 1st Main Cross , Kodigehalli Main Road, Kodigehalli, Kadugodi, Bengaluru, Karnataka-560067<br>
+  <a href="mailto:privacy@nexev.in">privacy@nexev.in</a>
+</p>
+
+</body>
+</html>
